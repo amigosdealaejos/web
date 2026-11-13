@@ -20,7 +20,7 @@ LEMA = "Historia, patrimonio y memoria de la villa"
 # Formulario de contacto (página «Colabora"). Los mensajes los recibe un script de Google
 # Apps Script (_fuente/formulario-contacto.gs) y los reenvía por correo sin mostrar la dirección.
 # ENDPOINT_FORMULARIO es la URL /exec de ese script; mientras esté vacía, el formulario no envía.
-ENDPOINT_FORMULARIO = ""
+ENDPOINT_FORMULARIO = "https://script.google.com/macros/s/AKfycbz3MEZs8WffWujrJs6xeLY4Q9Nj5Z9IMLr7p3caSVsItI-HrvT3oBBd1hXvb9rl51zqBw/exec"
 CLAVE_FORMULARIO = "ada-web-2026"  # la misma que CLAVE en el script
 
 REDES = [
