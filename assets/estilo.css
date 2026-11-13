@@ -154,3 +154,22 @@ h1, h2, h3 { text-wrap: balance; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print { .cab, .submenu, .pie, .vecinos { display: none; } }
+
+/* Formulario de contacto */
+.form { display: grid; gap: 1.1rem; margin-top: 1.5rem; padding: clamp(1.2rem, 3vw, 1.8rem); background: var(--superficie); border-radius: var(--radio); font-family: var(--f-util); }
+.fila { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.1rem; }
+.campo { display: grid; gap: 0.35rem; min-width: 0; }
+.campo label { font-weight: 600; font-size: 0.95rem; }
+.form input, .form select, .form textarea { font: inherit; font-size: 1.05rem; color: var(--tinta); background: var(--papel); border: 1px solid var(--raya); border-radius: var(--radio); padding: 0.6rem 0.75rem; width: 100%; min-width: 0; }
+.form input:focus, .form select:focus, .form textarea:focus { border-color: var(--sepia); outline: none; box-shadow: 0 0 0 3px var(--resalte); }
+.form textarea { min-height: 9rem; resize: vertical; }
+.trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.consent { display: flex; gap: 0.6rem; align-items: flex-start; font-size: 0.95rem; color: var(--tenue); }
+.consent input { width: 1.1rem; height: 1.1rem; margin-top: 0.2rem; flex: none; accent-color: var(--enlace); }
+.enviar { justify-self: start; cursor: pointer; }
+.enviar:disabled { opacity: 0.6; cursor: wait; }
+.estado { margin: 0; font-size: 0.98rem; min-height: 1.4em; }
+.estado.ok { color: #2F6B3A; }
+.estado.error { color: #9A3324; }
+@media (prefers-color-scheme: dark) { .estado.ok { color: #9BCB8F; } .estado.error { color: #E59A8A; } }
+@media (max-width: 40rem) { .fila { grid-template-columns: 1fr; } }

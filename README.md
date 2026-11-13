@@ -19,7 +19,9 @@ Es un sitio estático, sin dependencias, pensado para GitHub Pages. Comparte ima
 2. Ejecuta `python3 _fuente/construir.py`.
 3. Sube los cambios.
 
-El correo de contacto se pone en `CORREO`, al principio de `_fuente/construir.py`.
+## Formulario de contacto
+
+El formulario de la página «Colabora» envía los mensajes a un script de Google Apps Script (`_fuente/formulario-contacto.gs`), que los reenvía por correo a la cuenta que lo publica, sin mostrar la dirección en la web. Las instrucciones de instalación están al principio del script. Su dirección `/exec` se pone en `ENDPOINT_FORMULARIO`, al principio de `_fuente/construir.py`.
 
 ## Criterios
 

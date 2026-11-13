@@ -17,8 +17,11 @@ URL_BASE = "https://www.amigosdealaejos.org/"
 NOMBRE = "Amigos de Alaejos"
 LEMA = "Historia, patrimonio y memoria de la villa"
 
-# Correo de contacto. Si se deja vacío, la página «Colabora» remite a las redes sociales.
-CORREO = ""
+# Formulario de contacto (página «Colabora"). Los mensajes los recibe un script de Google
+# Apps Script (_fuente/formulario-contacto.gs) y los reenvía por correo sin mostrar la dirección.
+# ENDPOINT_FORMULARIO es la URL /exec de ese script; mientras esté vacía, el formulario no envía.
+ENDPOINT_FORMULARIO = ""
+CLAVE_FORMULARIO = "ada-web-2026"  # la misma que CLAVE en el script
 
 REDES = [
     ("Instagram", "https://www.instagram.com/amigosdealaejos"),
@@ -226,11 +229,48 @@ def construir():
 
 
 def contacto():
-    redes = ", ".join(f'<a href="{u}">{n}</a>' for n, u in REDES[:2])
-    if CORREO:
-        return (f'<p>Escríbanos a <a href="mailto:{CORREO}">{CORREO}</a> o mándenos un mensaje por {redes}. '
-                'Le responderemos para ver juntos cómo hacerlo.</p>')
-    return (f'<p>Mándenos un mensaje por {redes} y le responderemos para ver juntos cómo hacerlo.</p>')
+    return FORMULARIO.replace("{{ENDPOINT}}", ENDPOINT_FORMULARIO).replace("{{CLAVE}}", CLAVE_FORMULARIO)
+
+
+FORMULARIO = """<form class="form" id="form-contacto" novalidate>
+  <div class="fila">
+    <div class="campo"><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" type="text" autocomplete="name" required></div>
+    <div class="campo"><label for="f-email">Su correo electrónico</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+  </div>
+  <div class="campo"><label for="f-motivo">Motivo</label>
+    <select id="f-motivo" name="motivo">
+      <option value="material">Tengo fotografías, programas o documentos</option>
+      <option value="correccion">Una corrección o un dato</option>
+      <option value="otra">Otra consulta</option>
+    </select></div>
+  <div class="campo"><label for="f-mensaje">Mensaje</label><textarea id="f-mensaje" name="mensaje" required></textarea></div>
+  <div class="trampa" aria-hidden="true"><label for="f-web">No rellenar</label><input id="f-web" name="web" type="text" tabindex="-1" autocomplete="off"></div>
+  <label class="consent" for="f-acepto"><input id="f-acepto" name="acepto" type="checkbox" required><span>Acepto que mis datos se usen solo para responder a este mensaje.</span></label>
+  <button class="btn enviar" id="f-enviar" type="submit">Enviar mensaje</button>
+  <p class="estado" id="f-estado" role="status" aria-live="polite"></p>
+</form>
+<script>
+(function(){
+  var ENDPOINT="{{ENDPOINT}}", CLAVE="{{CLAVE}}", abierto=Date.now();
+  var form=document.getElementById('form-contacto'), estado=document.getElementById('f-estado'), btn=document.getElementById('f-enviar');
+  function aviso(t,tipo){estado.textContent=t;estado.className='estado'+(tipo?' '+tipo:'');}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var d={nombre:form.nombre.value.trim(),email:form.email.value.trim(),motivo:form.motivo.value,
+           mensaje:form.mensaje.value.trim(),web:form.web.value,k:CLAVE,t:Date.now()-abierto};
+    if(!d.nombre||!d.email||!d.mensaje){aviso('Escriba su nombre, su correo y el mensaje.','error');return;}
+    if(!/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(d.email)){aviso('Revise su correo: parece que falta algo.','error');form.email.focus();return;}
+    if(!form.acepto.checked){aviso('Marque la casilla para que podamos responderle.','error');return;}
+    if(d.web){aviso('Gracias. Hemos recibido su mensaje.','ok');form.reset();return;}
+    if(!ENDPOINT){aviso('El formulario todavía no está activo. Vuelva a intentarlo en unos días.','error');return;}
+    btn.disabled=true;aviso('Enviando…');
+    fetch(ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(d)})
+      .then(function(){aviso('Gracias. Hemos recibido su mensaje y le contestaremos pronto.','ok');form.reset();})
+      .catch(function(){aviso('No se ha podido enviar. Compruebe su conexión e inténtelo de nuevo.','error');})
+      .then(function(){btn.disabled=false;});
+  });
+})();
+</script>"""
 
 
 if __name__ == "__main__":
