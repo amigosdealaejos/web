@@ -60,7 +60,7 @@ PAGINAS = [
     ("biblioteca/", "biblioteca", "biblioteca", "Biblioteca",
      "Textos sobre Alaejos para leer y descargar: los 178 artículos de los programas de fiestas (1954–2026) y otras publicaciones."),
     ("biblioteca/novena-de-la-virgen-de-la-casita/", "novena", "biblioteca", "La novena de la Virgen de la Casita",
-     "Las novenas a Nuestra Señora de la Casita, patrona de Alaejos, para descargar en PDF: la original de 1865 y la edición en castellano actual de 2026."),
+     "Las novenas a Nuestra Señora de la Casita, patrona de Alaejos, para descargar en PDF: la original de 1865, la «Historia y novena» de 1952 y la edición en castellano actual de 2026."),
     ("historia-del-pueblo/", "historia", "historia", "Historia del pueblo",
      "Alaejos, villa de señorío de los Fonseca en Tierra de Medina: el encierro de la reina Juana de Portugal, el cerco comunero de 1520 y el despoblado de Valdefuentes."),
     ("patrimonio/", "patrimonio", "patrimonio", "Patrimonio",
