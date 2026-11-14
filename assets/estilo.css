@@ -105,6 +105,17 @@ h1, h2, h3 { text-wrap: balance; }
 .estudio { margin: 1.6em 0; padding: 0.9rem 1.1rem; background: var(--superficie); border-left: 3px solid var(--sepia); border-radius: 0 var(--radio) var(--radio) 0; font-size: 1rem; line-height: 1.6; }
 .estudio strong { font-family: var(--f-util); font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--sepia); display: block; margin-bottom: 0.2rem; }
 
+/* Fotografías con pie y crédito */
+.foto { margin: 1.8em 0; }
+.foto img { display: block; width: 100%; height: auto; border-radius: var(--radio); background: var(--superficie); }
+.foto.vertical img { width: auto; max-width: 100%; max-height: 34rem; margin-inline: auto; }
+.foto figcaption { font-family: var(--f-util); font-size: 0.92rem; line-height: 1.45; color: var(--tenue); margin-top: 0.5rem; }
+.foto .credito { display: block; font-size: 0.8rem; margin-top: 0.15rem; }
+.foto .credito a { color: var(--tenue); }
+.fotos-par { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1.2rem; margin: 1.8em 0; align-items: start; }
+.fotos-par .foto { margin: 0; }
+.foto.portada { margin-top: 0; }
+
 .ficha { margin: 2em 0; padding: 1.1rem 1.2rem; background: var(--superficie); border-radius: var(--radio); font-family: var(--f-util); font-size: 0.98rem; }
 .ficha h2, .ficha h3 { font-family: var(--f-util); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tenue); margin: 0 0 0.4rem; }
 .ficha p { margin: 0.3rem 0; }
