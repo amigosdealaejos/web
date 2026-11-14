@@ -72,7 +72,7 @@ PAGINAS = [
     ("patrimonio/la-ermita-de-la-virgen-de-la-casita/", "casita", "patrimonio", "Ermita de la Virgen de la Casita",
      "El santuario de Nuestra Señora de la Casita, patrona de Alaejos: la talla del siglo XIII, la ermita de 1490 y 1699, la Cofradía de Pastores, la charambita y las fiestas de mayo y septiembre."),
     ("patrimonio/el-castillo/", "castillo", "patrimonio", "El castillo",
-     "Las ruinas del castillo de los Fonseca en Alaejos: su construcción hacia 1453, el cerco comunero de 1520 y lo que se conserva hoy."),
+     "El castillo de los Fonseca en Alaejos según los documentos: la licencia de 1453, la reina Juana de Portugal, la «sala rica» morisca, el cerco comunero de 1520, la ruina y las excavaciones."),
     ("fiestas-y-eventos/", "fiestas", "fiestas", "Fiestas y eventos",
      "El año festivo de Alaejos, de los Quintos a las fiestas de la Virgen de la Casita, y la colección de programas de fiestas desde 1954."),
     ("personas-de-alaejos/", "personas", "personas", "Personas de Alaejos",
