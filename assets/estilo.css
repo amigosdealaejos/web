@@ -115,6 +115,9 @@ h1, h2, h3 { text-wrap: balance; }
 .fotos-par { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: 1.2rem; margin: 1.8em 0; align-items: start; }
 .fotos-par .foto { margin: 0; }
 .foto.portada { margin-top: 0; }
+.galeria { grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr)); }
+.galeria .foto img { aspect-ratio: 3 / 4; object-fit: cover; }
+.nota-planos { font-family: var(--f-util); font-size: 0.9rem; color: var(--tenue); }
 
 .ficha { margin: 2em 0; padding: 1.1rem 1.2rem; background: var(--superficie); border-radius: var(--radio); font-family: var(--f-util); font-size: 0.98rem; }
 .ficha h2, .ficha h3 { font-family: var(--f-util); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tenue); margin: 0 0 0.4rem; }
