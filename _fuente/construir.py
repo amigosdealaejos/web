@@ -69,6 +69,10 @@ HISTORIA = [
 # Subapartados de Fiestas
 FIESTAS = [
     ("Fiestas y tradiciones", "fiestas-y-eventos/fiestas-y-tradiciones-de-alaejos/"),
+    ("Semana Santa", "fiestas-y-eventos/semana-santa/"),
+    ("Fiestas de la Casita", "fiestas-y-eventos/fiestas-de-la-virgen-de-la-casita/"),
+    ("Toros", "fiestas-y-eventos/toros-en-alaejos/"),
+    ("Los quintos", "fiestas-y-eventos/los-quintos/"),
 ]
 
 # Secciones con submenú: clave del menú -> (título, ruta de la presentación, subapartados)
@@ -120,6 +124,14 @@ PAGINAS = [
      "El año festivo de Alaejos, de los Quintos a las fiestas de la Virgen de la Casita, y la colección de programas de fiestas desde 1954."),
     ("fiestas-y-eventos/fiestas-y-tradiciones-de-alaejos/", "fiestas-tradiciones", "fiestas", "Fiestas y tradiciones de Alaejos",
      "El año festivo de Alaejos mes a mes: quintos, San Antón, Semana Santa, la romería de mayo, la Mariseca, las fiestas de la Virgen de la Casita, los toros desde 1583, el vino, las cabañuelas y la charambita."),
+    ("fiestas-y-eventos/semana-santa/", "fiestas-semana-santa", "fiestas", "Cuaresma y Semana Santa",
+     "La Semana Santa de Alaejos: el Cristo de la Caridad en Carnaval, los viernes de Jesús Nazareno, el vino del Cristo de la Salud, el Silencio y el Encuentro, y sus nueve cofradías."),
+    ("fiestas-y-eventos/fiestas-de-la-virgen-de-la-casita/", "fiestas-casita", "fiestas", "Las fiestas de la Virgen de la Casita",
+     "Las fiestas de la patrona de Alaejos: la romería del 10 de mayo, la bajada, la Mariseca de agosto, las fiestas de septiembre desde 1905 y la charambita de los danzantes."),
+    ("fiestas-y-eventos/toros-en-alaejos/", "fiestas-toros", "fiestas", "Toros en Alaejos",
+     "Los toros en Alaejos desde 1583: las corridas de las cofradías, las novilladas en la Plaza Mayor, las ganaderías del entorno y los encierros y festejos de hoy."),
+    ("fiestas-y-eventos/los-quintos/", "fiestas-quintos", "fiestas", "Los quintos",
+     "Los quintos de Alaejos: el rito de paso descrito en 1988, el aguinaldo y la hoguera de Nochevieja, la fiesta de Reyes y el álamo de mayo."),
     ("personas-de-alaejos/", "personas", "personas", "Personas de Alaejos",
      "Alaejanos de los que ha quedado memoria: el cardenal Arias y Porres, Hernández Morejón, Alejandro Ramírez, el beato Donato, Gonzala Santana y otros, con sus fuentes."),
     ("novedades/", "novedades", "novedades", "Novedades",
