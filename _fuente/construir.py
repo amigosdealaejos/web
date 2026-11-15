@@ -62,23 +62,30 @@ PATRIMONIO = [
     ("Mapa", "patrimonio/mapa/"),
 ]
 
-HISTORIA = [
-    ("Orígenes y Edad Media", "historia-del-pueblo/origenes-y-edad-media/"),
-    ("La villa de señorío", "historia-del-pueblo/la-villa-de-senorio/"),
+# Historia en dos grupos: las épocas (con la cronología) y los temas de la vida del pueblo
+HISTORIA_EPOCAS = [
+    ("Edad Media", "historia-del-pueblo/origenes-y-edad-media/"),
+    ("El señorío", "historia-del-pueblo/la-villa-de-senorio/"),
     ("Siglos XVI y XVII", "historia-del-pueblo/siglos-xvi-y-xvii/"),
-    ("El despoblado de Valdefuentes", "historia-del-pueblo/el-despoblado-de-valdefuentes/"),
-    ("El vino de Alaejos", "historia-del-pueblo/el-vino-de-alaejos/"),
-    ("El siglo XVIII", "historia-del-pueblo/el-siglo-xviii/"),
-    ("El siglo XIX", "historia-del-pueblo/el-siglo-xix/"),
-    ("El siglo XX", "historia-del-pueblo/el-siglo-xx/"),
-    ("Oficios, agua y vida diaria", "historia-del-pueblo/oficios-agua-y-vida-diaria/"),
-    ("Dichos, cabañuelas y habla", "historia-del-pueblo/dichos-cabanuelas-y-habla/"),
+    ("Valdefuentes", "historia-del-pueblo/el-despoblado-de-valdefuentes/"),
+    ("El vino", "historia-del-pueblo/el-vino-de-alaejos/"),
+    ("Siglo XVIII", "historia-del-pueblo/el-siglo-xviii/"),
+    ("Siglo XIX", "historia-del-pueblo/el-siglo-xix/"),
+    ("Siglo XX", "historia-del-pueblo/el-siglo-xx/"),
+    ("Cronología", "historia-del-pueblo/cronologia/"),
+]
+HISTORIA_TEMAS = [
+    ("Oficios y agua", "historia-del-pueblo/oficios-agua-y-vida-diaria/"),
+    ("Dichos y habla", "historia-del-pueblo/dichos-cabanuelas-y-habla/"),
     ("El término", "historia-del-pueblo/el-termino/"),
     ("Escudo y bandera", "historia-del-pueblo/escudo-y-bandera/"),
     ("Asociaciones", "historia-del-pueblo/asociaciones-y-lugares-de-encuentro/"),
     ("Fotografías antiguas", "historia-del-pueblo/fotografias-antiguas/"),
-    ("Alaejos en fechas", "historia-del-pueblo/cronologia/"),
 ]
+HISTORIA = HISTORIA_EPOCAS + HISTORIA_TEMAS
+GRUPOS = {"historia": [("Por épocas", HISTORIA_EPOCAS, "historia-del-pueblo/#la-historia-por-epocas"),
+                       ("Vida del pueblo", HISTORIA_TEMAS, "historia-del-pueblo/#la-vida-del-pueblo")]}
+
 
 FIESTAS = [
     ("Semana Santa", "fiestas-y-eventos/semana-santa/"),
@@ -233,11 +240,22 @@ def cabecera(ruta, clave, base):
         titulo, raiz, lista, _ = SECCIONES[clave]
         cur = ' aria-current="page"' if ruta == raiz else ""
         sub = [f'<a href="{base}{raiz}"{cur}>Presentación</a>']
+        otro = ""
+        cab_tit = f'<span class="submenu-tit">{titulo}</span>'
+        if clave in GRUPOS:
+            cab_tit = f'<a class="submenu-tit" href="{base}{raiz}"{cur}>{titulo}</a>'
+            sub = []
+            grupos = GRUPOS[clave]
+            g = next((k for k, (_, l, _) in enumerate(grupos) if ruta in [r for _, r in l]), 0)
+            nombre, lista, _ = grupos[g]
+            o_nombre, _, o_dest = grupos[1 - g]
+            otro = (f'<a class="submenu-otro" href="{base}{o_dest}">{o_nombre} →</a>' if g == 0
+                    else f'<a class="submenu-otro" href="{base}{o_dest}">← {o_nombre}</a>')
         for etiqueta, destino in lista:
             cur = ' aria-current="page"' if destino == ruta else ""
             sub.append(f'<a href="{base}{destino}"{cur}>{etiqueta}</a>')
-        out += (f'<nav class="submenu" aria-label="{titulo}"><span class="submenu-tit">{titulo}</span>'
-                f'<div class="submenu-in">{"".join(sub)}</div></nav>')
+        out += (f'<nav class="submenu" aria-label="{titulo}">{cab_tit}'
+                f'<div class="submenu-in">{"".join(sub)}</div>{otro}</nav>')
     return out
 
 

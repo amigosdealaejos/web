@@ -69,7 +69,7 @@ h1, h2, h3 { text-wrap: balance; }
 
 /* Subapartados (Patrimonio) */
 .submenu { max-width: var(--ancho); margin: 0 auto; display: flex; align-items: baseline; gap: 0.3rem 1.2rem; padding-block: 0.6rem; font-family: var(--f-util); font-size: 0.92rem; border-bottom: 1px solid var(--raya); }
-.submenu-in { display: flex; flex-wrap: wrap; gap: 0.3rem 1.2rem; min-width: 0; }
+.submenu-in { display: flex; flex-wrap: wrap; gap: 0.3rem 1.05rem; min-width: 0; }
 .submenu a { color: var(--tenue); text-decoration: none; }
 .submenu a:hover { color: var(--tinta); text-decoration: underline; }
 .submenu a[aria-current="page"] { color: var(--tinta); font-weight: 600; }
@@ -395,3 +395,10 @@ a.glosa:hover { color: var(--sepia); }
 .revision details.citar summary { cursor: pointer; color: var(--sepia); }
 .revision details.citar p { margin: 0.4rem 0 0; padding: 0.6rem 0.8rem; background: var(--papel-2, #f5f1ea); border-radius: 4px; font-size: 0.85rem; user-select: all; }
 .cronologia .crono-ver { font-family: var(--f-util); font-size: 0.82rem; white-space: nowrap; margin-left: 0.3em; }
+.submenu-grupo { color: var(--tinta); font-weight: 600; white-space: nowrap; }
+.submenu-grupo::after { content: ":"; }
+.submenu a.submenu-otro { color: var(--sepia); white-space: nowrap; }
+.submenu a.submenu-tit { color: var(--sepia); text-decoration: none; }
+.submenu a.submenu-tit:hover { text-decoration: underline; }
+.submenu a.submenu-otro { margin-left: auto; }
+@media (max-width: 44rem) { .submenu a.submenu-otro { display: none; } }

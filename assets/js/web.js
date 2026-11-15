@@ -16,7 +16,13 @@
   var actual = d.querySelector('.submenu-in [aria-current="page"]');
   if (actual && actual.scrollIntoView) {
     var fila = actual.parentNode;
-    fila.scrollLeft = actual.getBoundingClientRect().left - fila.getBoundingClientRect().left + fila.scrollLeft - 12;
+    var centrar = function () {
+      var r = actual.getBoundingClientRect(), f = fila.getBoundingClientRect();
+      fila.scrollLeft += (r.left - f.left) - (f.width - r.width) / 2;
+    };
+    centrar();
+    if (d.fonts && d.fonts.ready) d.fonts.ready.then(centrar);
+    window.addEventListener('load', centrar);
   }
 
   // Índice «En esta página»: abierto en pantallas anchas
