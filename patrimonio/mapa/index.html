@@ -34,10 +34,10 @@
 </ol>
 <h2 id="en-el-termino">En el término</h2>
 <ul>
-<li><a href="../../patrimonio/la-ermita-de-la-virgen-de-la-casita/"><strong>Ermita de la Virgen de la Casita</strong></a>. Fuera del pueblo, en la ladera de la loma que lleva su nombre, a unos dos kilómetros al este, saliendo hacia Tordesillas. No la situamos en el mapa porque no tenemos su posición exacta; puede buscarla en <a href="https://www.openstreetmap.org/search?query=Ermita%20de%20la%20Casita%2C%20Alaejos">OpenStreetMap</a>.</li>
+<li><a href="../../patrimonio/la-ermita-de-la-virgen-de-la-casita/"><strong>Ermita de la Virgen de la Casita</strong></a>. Fuera del pueblo, en la ladera de la loma que lleva su nombre, a unos dos kilómetros al este, saliendo hacia Tordesillas. Para ir, <a href="https://www.google.com/maps/dir/?api=1&amp;destination=41.3218351,-5.1934805">cómo llegar con Google Maps</a>.</li>
 <li><a href="../../historia-del-pueblo/el-despoblado-de-valdefuentes/"><strong>El despoblado de Valdefuentes</strong></a>. En el término de Alaejos; de su iglesia no queda nada en pie, y su retablo está en San Pedro.</li>
 </ul>
-<p>Si conoce la posición exacta de algún lugar que aparezca en esta web, como la ermita, el Caño, el antiguo convento franciscano o el Árbol de la Virgen, <a href="../../colabora/?motivo=correccion">díganoslo</a> y lo añadiremos.</p>
+<p>Si conoce la posición exacta de algún lugar que aparezca en esta web, como el Caño, el antiguo convento franciscano o el Árbol de la Virgen, <a href="../../colabora/?motivo=correccion">díganoslo</a> y lo añadiremos.</p>
 </div>
 <script src="../../assets/js/leaflet.js"></script>
 <script>
@@ -49,9 +49,11 @@
   L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png",{maxZoom:19,attribution:'© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(m);
   [[41.3073,-5.2158,"Plaza Mayor, San Pedro y Ayuntamiento","patrimonio/la-plaza-mayor/"],
    [41.30965,-5.21417,"Iglesia de Santa María","patrimonio/iglesia-de-santa-maria/"],
-   [41.3060,-5.2190,"Ruinas del castillo","patrimonio/el-castillo/"]].forEach(function(p){
+   [41.3060,-5.2190,"Ruinas del castillo","patrimonio/el-castillo/"],
+   [41.3218351,-5.1934805,"Ermita de la Virgen de la Casita","patrimonio/la-ermita-de-la-virgen-de-la-casita/"]].forEach(function(p){
     L.marker([p[0],p[1]]).addTo(m).bindPopup('<a href="'+base+p[3]+'">'+p[2]+'</a>');
   });
+  m.fitBounds([[41.3055,-5.2200],[41.3225,-5.1925]],{padding:[30,30]});
 })();
 </script>
 <div class="acciones"><a class="acc-error" href="../../colabora/?motivo=correccion&amp;sobre=Mapa%20de%20Alaejos#contacto">¿Ha visto un error o sabe algo más? Cuéntenoslo</a><span class="acc-compartir"><a href="https://wa.me/?text=Mapa%20de%20Alaejos%20%C2%B7%20Amigos%20de%20Alaejos%0Ahttps%3A//www.amigosdealaejos.org/patrimonio/mapa/" rel="noopener">Compartir por WhatsApp</a><button type="button" class="acc-nativo" hidden data-titulo="Mapa de Alaejos" data-url="https://www.amigosdealaejos.org/patrimonio/mapa/">Compartir…</button></span></div><nav class="vecinos" aria-label="Recorrido por el patrimonio"><a href="../../patrimonio/la-plaza-mayor/"><span>Anterior</span>La Plaza Mayor</a></nav></main>
