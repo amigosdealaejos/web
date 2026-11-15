@@ -1,15 +1,24 @@
 #!/usr/bin/env python3
-"""Genera las páginas de www.amigosdealaejos.org a partir de los textos de _fuente/paginas/.
+"""Genera www.amigosdealaejos.org a partir de los textos de _fuente/.
 
     _fuente/paginas/NOMBRE.html   texto de cada página (solo el contenido)
-    -> RUTA/index.html            página completa, con cabecera, menú y pie
+    _fuente/novedades.json        entradas de Novedades (también salen en la portada)
+    -> RUTA/index.html            página completa, con cabecera, menú, índice y pie
 
-Uso:  python3 _fuente/construir.py
+Además genera: el índice del buscador (assets/buscar.json), la página de
+Preguntas abiertas (reúne los recuadros «En estudio»), las versiones ligeras de
+las fotos (assets/img/800/), la imagen para compartir de cada página
+(assets/og/), sitemap.xml, robots.txt, 404.html y las redirecciones.
+
+Uso:  python3 _fuente/construir.py     (necesita beautifulsoup4 y Pillow)
 Para añadir una página: escribe su texto en _fuente/paginas/ y añádela a PAGINAS.
 """
 from pathlib import Path
 from datetime import date
-import html
+import html, json, re, unicodedata, hashlib
+
+from bs4 import BeautifulSoup, NavigableString
+from PIL import Image, ImageDraw, ImageFont
 
 RAIZ = Path(__file__).resolve().parent.parent
 FUENTE = RAIZ / "_fuente" / "paginas"
@@ -17,9 +26,8 @@ URL_BASE = "https://www.amigosdealaejos.org/"
 NOMBRE = "Amigos de Alaejos"
 LEMA = "Historia, patrimonio y memoria de la villa"
 
-# Formulario de contacto (página «Colabora"). Los mensajes los recibe un script de Google
+# Formulario de contacto (página «Colabora»). Los mensajes los recibe un script de Google
 # Apps Script (_fuente/formulario-contacto.gs) y los reenvía por correo sin mostrar la dirección.
-# ENDPOINT_FORMULARIO es la URL /exec de ese script; mientras esté vacía, el formulario no envía.
 ENDPOINT_FORMULARIO = "https://script.google.com/macros/s/AKfycbz3MEZs8WffWujrJs6xeLY4Q9Nj5Z9IMLr7p3caSVsItI-HrvT3oBBd1hXvb9rl51zqBw/exec"
 CLAVE_FORMULARIO = "ada-web-2026"  # la misma que CLAVE en el script
 
@@ -36,24 +44,24 @@ OTRAS_WEBS = [
 # Menú principal: (clave, etiqueta, ruta)
 MENU = [
     ("inicio", "Inicio", ""),
-    ("biblioteca", "Biblioteca", "biblioteca/"),
     ("historia", "Historia", "historia-del-pueblo/"),
     ("patrimonio", "Patrimonio", "patrimonio/"),
     ("fiestas", "Fiestas", "fiestas-y-eventos/"),
     ("personas", "Personas", "personas-de-alaejos/"),
+    ("biblioteca", "Biblioteca", "biblioteca/"),
     ("novedades", "Novedades", "novedades/"),
     ("colabora", "Colabora", "colabora/"),
 ]
 
-# Subapartados de Patrimonio, en el orden en que se leen
 PATRIMONIO = [
     ("Iglesia de Santa María", "patrimonio/iglesia-de-santa-maria/"),
     ("Iglesia de San Pedro", "patrimonio/iglesia-de-san-pedro/"),
     ("Ermita de la Virgen de la Casita", "patrimonio/la-ermita-de-la-virgen-de-la-casita/"),
     ("El castillo", "patrimonio/el-castillo/"),
+    ("La Plaza Mayor", "patrimonio/la-plaza-mayor/"),
+    ("Mapa", "patrimonio/mapa/"),
 ]
 
-# Subapartados de Historia, en orden cronológico y después los temáticos
 HISTORIA = [
     ("Orígenes y Edad Media", "historia-del-pueblo/origenes-y-edad-media/"),
     ("La villa de señorío", "historia-del-pueblo/la-villa-de-senorio/"),
@@ -64,32 +72,32 @@ HISTORIA = [
     ("El siglo XX", "historia-del-pueblo/el-siglo-xx/"),
     ("Oficios, agua y vida diaria", "historia-del-pueblo/oficios-agua-y-vida-diaria/"),
     ("Dichos, cabañuelas y habla", "historia-del-pueblo/dichos-cabanuelas-y-habla/"),
+    ("Fotografías antiguas", "historia-del-pueblo/fotografias-antiguas/"),
 ]
 
-# Subapartados de Fiestas
 FIESTAS = [
-    ("Fiestas y tradiciones", "fiestas-y-eventos/fiestas-y-tradiciones-de-alaejos/"),
     ("Semana Santa", "fiestas-y-eventos/semana-santa/"),
     ("Fiestas de la Casita", "fiestas-y-eventos/fiestas-de-la-virgen-de-la-casita/"),
     ("Toros", "fiestas-y-eventos/toros-en-alaejos/"),
     ("Los quintos", "fiestas-y-eventos/los-quintos/"),
 ]
 
-# Secciones con submenú: clave del menú -> (título, ruta de la presentación, subapartados)
+# Personas: (ruta, fragmento, nombre, fechas). El texto de cada una está en persona-*.html
+PERSONAS = [(f"personas-de-alaejos/{s}/", f"persona-{s}", n, f) for s, n, f in json.loads(
+    (RAIZ / "_fuente" / "personas.json").read_text(encoding="utf-8"))]
+
+# Secciones con subapartados: clave -> (título, ruta de la presentación, subapartados, ¿submenú?)
 SECCIONES = {
-    "historia": ("Historia", "historia-del-pueblo/", HISTORIA),
-    "patrimonio": ("Patrimonio", "patrimonio/", PATRIMONIO),
-    "fiestas": ("Fiestas", "fiestas-y-eventos/", FIESTAS),
+    "historia": ("Historia", "historia-del-pueblo/", HISTORIA, True),
+    "patrimonio": ("Patrimonio", "patrimonio/", PATRIMONIO, True),
+    "fiestas": ("Fiestas", "fiestas-y-eventos/", FIESTAS, True),
+    "personas": ("Personas", "personas-de-alaejos/", [(n, r) for r, _, n, _ in PERSONAS], False),
 }
 
 # Páginas: (ruta, fragmento, clave del menú, título, descripción)
 PAGINAS = [
     ("", "inicio", "inicio", NOMBRE + " · " + LEMA,
      "Archivo abierto sobre Alaejos (Valladolid): historia, patrimonio, fiestas y personas de la villa, reunidos desde archivos, publicaciones y colecciones particulares."),
-    ("biblioteca/", "biblioteca", "biblioteca", "Biblioteca",
-     "Textos sobre Alaejos para leer y descargar: los 178 artículos de los programas de fiestas (1954–2026) y otras publicaciones."),
-    ("biblioteca/novena-de-la-virgen-de-la-casita/", "novena", "biblioteca", "La novena de la Virgen de la Casita",
-     "Las novenas a Nuestra Señora de la Casita, patrona de Alaejos, para descargar en PDF: la original de 1865, la «Historia y novena» de 1952 y la edición en castellano actual de 2026."),
     ("historia-del-pueblo/", "historia", "historia", "Historia del pueblo",
      "La historia de Alaejos (Valladolid), de la aldea fronteriza de la Tierra de Medina a hoy: cronología, población a lo largo de los siglos y nueve capítulos documentados con los programas de fiestas."),
     ("historia-del-pueblo/origenes-y-edad-media/", "h-origenes", "historia", "Orígenes y Edad Media",
@@ -110,19 +118,23 @@ PAGINAS = [
      "El Caño y el Arca Madre, los pastores, los cantareros y los oficios desaparecidos de Alaejos: aguador, sereno, pregonero, capador, casitera."),
     ("historia-del-pueblo/dichos-cabanuelas-y-habla/", "h-tradicion-oral", "historia", "Dichos, cabañuelas y habla",
      "La tradición oral de Alaejos: las cabañuelas, los dichos sobre el pueblo y sobre Nava, los ramos de segadores, las supersticiones, palabras propias y grabaciones de su música."),
+    ("historia-del-pueblo/fotografias-antiguas/", "h-fotos-antiguas", "historia", "Fotografías antiguas",
+     "Alaejos en fotografías y grabados antiguos: el castillo en 1809, las postales de la villa, las iglesias, la Plaza Mayor y la Virgen de la Casita, con su procedencia."),
     ("patrimonio/", "patrimonio", "patrimonio", "Patrimonio",
-     "Las iglesias de Santa María y San Pedro, la ermita de la Virgen de la Casita y el castillo de los Fonseca: el patrimonio monumental de Alaejos."),
+     "Las iglesias de Santa María y San Pedro, la ermita de la Virgen de la Casita, el castillo de los Fonseca y la Plaza Mayor: el patrimonio monumental de Alaejos."),
     ("patrimonio/iglesia-de-santa-maria/", "santa-maria", "patrimonio", "Iglesia de Santa María",
      "La iglesia de Santa María de Alaejos: templo de ladrillo de finales del siglo XVI, armaduras mudéjares, retablo mayor de Esteban Jordán y museo de arte sacro."),
     ("patrimonio/iglesia-de-san-pedro/", "san-pedro", "patrimonio", "Iglesia de San Pedro",
      "La iglesia de San Pedro Apóstol de Alaejos, en la Plaza Mayor: la torre más alta de la villa, bóvedas de yesería, grisallas y retablo mayor romanista."),
     ("patrimonio/la-ermita-de-la-virgen-de-la-casita/", "casita", "patrimonio", "Ermita de la Virgen de la Casita",
-     "El santuario de Nuestra Señora de la Casita, patrona de Alaejos: la talla del siglo XIII, la ermita de 1490 y 1699, la Cofradía de Pastores, la charambita y las fiestas de mayo y septiembre."),
+     "El santuario de Nuestra Señora de la Casita, patrona de Alaejos: la talla del siglo XIII, la ermita de 1490 y 1699, la Cofradía de Pastores y la devoción a la patrona."),
     ("patrimonio/el-castillo/", "castillo", "patrimonio", "El castillo",
      "El castillo de los Fonseca en Alaejos según los documentos: la licencia de 1453, la reina Juana de Portugal, la «sala rica» morisca, el cerco comunero de 1520, la ruina y las excavaciones."),
-    ("fiestas-y-eventos/", "fiestas", "fiestas", "Fiestas y eventos",
-     "El año festivo de Alaejos, de los Quintos a las fiestas de la Virgen de la Casita, y la colección de programas de fiestas desde 1954."),
-    ("fiestas-y-eventos/fiestas-y-tradiciones-de-alaejos/", "fiestas-tradiciones", "fiestas", "Fiestas y tradiciones de Alaejos",
+    ("patrimonio/la-plaza-mayor/", "plaza-mayor", "patrimonio", "La Plaza Mayor",
+     "La Plaza Mayor de Alaejos: el Ayuntamiento, los soportales, San Pedro y su balcón, el mercado, los toros y las casas blasonadas de la villa."),
+    ("patrimonio/mapa/", "mapa", "patrimonio", "Mapa de Alaejos",
+     "Mapa de los lugares de Alaejos que aparecen en esta web: iglesias, ermita, castillo, Plaza Mayor, el Caño y otros, con enlace a cada página."),
+    ("fiestas-y-eventos/", "fiestas", "fiestas", "Fiestas y tradiciones",
      "El año festivo de Alaejos mes a mes: quintos, San Antón, Semana Santa, la romería de mayo, la Mariseca, las fiestas de la Virgen de la Casita, los toros desde 1583, el vino, las cabañuelas y la charambita."),
     ("fiestas-y-eventos/semana-santa/", "fiestas-semana-santa", "fiestas", "Cuaresma y Semana Santa",
      "La Semana Santa de Alaejos: el Cristo de la Caridad en Carnaval, los viernes de Jesús Nazareno, el vino del Cristo de la Salud, el Silencio y el Encuentro, y sus nueve cofradías."),
@@ -134,27 +146,36 @@ PAGINAS = [
      "Los quintos de Alaejos: el rito de paso descrito en 1988, el aguinaldo y la hoguera de Nochevieja, la fiesta de Reyes y el álamo de mayo."),
     ("personas-de-alaejos/", "personas", "personas", "Personas de Alaejos",
      "Alaejanos de los que ha quedado memoria: el cardenal Arias y Porres, Hernández Morejón, Alejandro Ramírez, el beato Donato, Gonzala Santana y otros, con sus fuentes."),
+] + [(r, frag, "personas", n, f"{n} ({f}): semblanza con sus fuentes, en Personas de Alaejos.") for r, frag, n, f in PERSONAS] + [
+    ("biblioteca/", "biblioteca", "biblioteca", "Biblioteca",
+     "Textos sobre Alaejos para leer y descargar: los 178 artículos de los programas de fiestas (1954–2026), los programas originales y la novena de la Virgen de la Casita."),
+    ("biblioteca/novena-de-la-virgen-de-la-casita/", "novena", "biblioteca", "La novena de la Virgen de la Casita",
+     "Las novenas a Nuestra Señora de la Casita, patrona de Alaejos, para descargar en PDF: la original de 1865, la «Historia y novena» de 1952 y la edición en castellano actual de 2026."),
     ("novedades/", "novedades", "novedades", "Novedades",
-     "Lo último que se ha incorporado a Amigos de Alaejos."),
+     "Lo último que se ha incorporado a Amigos de Alaejos, con su fecha."),
     ("colabora/", "colabora", "colabora", "Colabora",
      "Cómo aportar fotografías, programas de fiestas y documentos sobre Alaejos para que se digitalicen y se publiquen."),
+    ("preguntas-abiertas/", "preguntas", "colabora", "Preguntas abiertas",
+     "Lo que todavía no sabemos de la historia de Alaejos: todas las dudas que siguen en estudio en esta web, por si alguien puede resolverlas."),
+    ("quienes-somos/", "quienes-somos", "", "Quiénes somos",
+     "Qué es Amigos de Alaejos, con qué criterio se escribe, cómo citar esta web y de dónde proceden sus imágenes."),
+    ("buscar/", "buscar", "", "Buscar",
+     "Buscador de Amigos de Alaejos: encuentre cualquier nombre, lugar o fecha en las páginas de la web."),
 ]
 
-# Direcciones antiguas de Google Sites que deben seguir funcionando
+# Direcciones antiguas que deben seguir funcionando
 REDIRECCIONES = {
     "inicio/": "",
     "patrimonio/iglesia-de-santa-maría/": "patrimonio/iglesia-de-santa-maria/",
-    "programas-de-las-fiestas-de-alaejos/": "fiestas-y-eventos/#programas",
+    "programas-de-las-fiestas-de-alaejos/": "biblioteca/#programas",
+    "fiestas-y-eventos/fiestas-y-tradiciones-de-alaejos/": "fiestas-y-eventos/",
 }
 
-FUENTES_WEB = ('<link rel="preconnect" href="https://fonts.googleapis.com">'
-               '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
-               '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1'
-               '&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&family=Source+Sans+3:wght@400;600&display=swap">')
+ICONO_BUSCAR = ('<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+                'stroke-width="2.2" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>')
 
 
 def profundidad(ruta: str) -> str:
-    """Prefijo relativo para llegar a la raíz desde una ruta ('', 'a/', 'a/b/')."""
     return "../" * ruta.count("/")
 
 
@@ -162,35 +183,48 @@ def esc(t: str) -> str:
     return html.escape(t, quote=True)
 
 
+def slug(t: str) -> str:
+    t = unicodedata.normalize("NFKD", t).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"[^a-z0-9]+", "-", t).strip("-")[:60] or "apartado"
+
+
+def fecha_larga(f: str) -> str:
+    meses = "enero febrero marzo abril mayo junio julio agosto septiembre octubre noviembre diciembre".split()
+    p = f.split("-")
+    if len(p) == 3:
+        return f"{int(p[2])} de {meses[int(p[1]) - 1]} de {p[0]}"
+    return f"{meses[int(p[1]) - 1].capitalize()} de {p[0]}"
+
+
+# ---------------------------------------------------------------- cabecera y pie
+
 def cabecera(ruta, clave, base):
     enlaces = []
     for k, etiqueta, destino in MENU:
-        atr = ""
-        if destino == ruta:
-            atr = ' aria-current="page"'
-        elif k == clave:
-            atr = ' class="dentro"'
+        atr = ' aria-current="page"' if destino == ruta else (' class="dentro"' if k == clave else "")
         enlaces.append(f'<a href="{base}{destino}"{atr}>{etiqueta}</a>')
-    out = (f'<header class="cab"><div class="cab-in"><a class="marca" href="{base}">'
-           f'<span class="escudo" aria-hidden="true"></span><span class="marca-txt">'
+    cur = ' aria-current="page"' if ruta == "buscar/" else ""
+    out = (f'<header class="cab"><div class="cab-in">'
+           f'<a class="marca" href="{base}"><span class="escudo" aria-hidden="true"></span><span class="marca-txt">'
            f'<span class="marca-1">{NOMBRE}</span><span class="marca-2">{LEMA}</span></span></a>'
-           f'<nav class="menu" aria-label="Secciones">{"".join(enlaces)}</nav></div></header>')
-    if clave in SECCIONES:
-        titulo, raiz, lista = SECCIONES[clave]
+           f'<div class="cab-acc"><a class="lupa" href="{base}buscar/" title="Buscar"{cur}>{ICONO_BUSCAR}<span>Buscar</span></a>'
+           f'<button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menú</button></div>'
+           f'<nav class="menu" id="menu" aria-label="Secciones">{"".join(enlaces)}</nav></div></header>')
+    if clave in SECCIONES and SECCIONES[clave][3]:
+        titulo, raiz, lista, _ = SECCIONES[clave]
         cur = ' aria-current="page"' if ruta == raiz else ""
         sub = [f'<a href="{base}{raiz}"{cur}>Presentación</a>']
         for etiqueta, destino in lista:
             cur = ' aria-current="page"' if destino == ruta else ""
             sub.append(f'<a href="{base}{destino}"{cur}>{etiqueta}</a>')
         out += (f'<nav class="submenu" aria-label="{titulo}"><span class="submenu-tit">{titulo}</span>'
-                + "".join(sub) + '</nav>')
+                f'<div class="submenu-in">{"".join(sub)}</div></nav>')
     return out
 
 
 def vecinos(ruta, base):
-    """Anterior / siguiente dentro de una sección con subapartados (Historia, Patrimonio)."""
-    for titulo, raiz, lista in SECCIONES.values():
-        orden = [(titulo, raiz)] + lista
+    for titulo, raiz, lista, _ in SECCIONES.values():
+        orden = [(titulo if titulo != "Personas" else "Personas de Alaejos", raiz)] + lista
         rutas = [r for _, r in orden]
         if ruta in rutas:
             break
@@ -202,21 +236,25 @@ def vecinos(ruta, base):
         partes.append(f'<a href="{base}{orden[i-1][1]}"><span>Anterior</span>{orden[i-1][0]}</a>')
     if i < len(orden) - 1:
         partes.append(f'<a class="sig" href="{base}{orden[i+1][1]}"><span>Siguiente</span>{orden[i+1][0]}</a>')
-    articulo = {"Historia": "la historia", "Patrimonio": "el patrimonio", "Fiestas": "las fiestas"}.get(titulo, titulo.lower())
+    articulo = {"Historia": "la historia", "Patrimonio": "el patrimonio", "Fiestas": "las fiestas", "Personas": "las personas"}.get(titulo, titulo.lower())
     return f'<nav class="vecinos" aria-label="Recorrido por {articulo}">' + "".join(partes) + '</nav>'
 
 
 def pie(base):
     redes = "".join(f'<a href="{u}" rel="me">{n}</a>' for n, u in REDES)
     otras = "".join(f'<a href="{u}">{n}</a>' for n, u in OTRAS_WEBS)
+    propias = "".join(f'<a href="{base}{r}">{n}</a>' for n, r in [
+        ("Quiénes somos", "quienes-somos/"), ("Preguntas abiertas", "preguntas-abiertas/"),
+        ("Mapa", "patrimonio/mapa/"), ("Buscar", "buscar/"), ("Colabora", "colabora/")])
     return (f'<footer class="pie"><div class="pie-in"><div class="horizonte" aria-hidden="true"></div>'
             f'<p><strong>{NOMBRE}.</strong> Archivo abierto de historia, patrimonio y memoria de la villa de Alaejos (Valladolid).</p>'
+            f'<div class="otras">{propias}</div>'
             f'<p>Los materiales se publican con fines de consulta, estudio y divulgación, sin ánimo de lucro e indicando siempre que es posible su procedencia. '
             f'Si es titular de algún contenido y prefiere que no figure aquí, <a href="{base}colabora/">díganoslo</a> y lo retiraremos.</p>'
             f'<div class="redes">{redes}</div><div class="otras">{otras}</div></div></footer>')
 
 
-def pagina(ruta, titulo, descripcion, cuerpo, clave, es_portada=False):
+def pagina(ruta, titulo, descripcion, cuerpo, clave, og, es_portada=False, extra_head=""):
     base = profundidad(ruta)
     titulo_completo = titulo if es_portada else f"{titulo} · {NOMBRE}"
     url = URL_BASE + ruta
@@ -228,17 +266,21 @@ def pagina(ruta, titulo, descripcion, cuerpo, clave, es_portada=False):
 <title>{esc(titulo_completo)}</title>
 <meta name="description" content="{esc(descripcion)}">
 <link rel="canonical" href="{url}">
-<meta property="og:title" content="{esc(titulo_completo)}"><meta property="og:description" content="{esc(descripcion)}"><meta property="og:type" content="website"><meta property="og:url" content="{url}"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="{NOMBRE}"><meta property="og:image" content="{URL_BASE}assets/og.png">
+<meta property="og:title" content="{esc(titulo_completo)}"><meta property="og:description" content="{esc(descripcion)}"><meta property="og:type" content="website"><meta property="og:url" content="{url}"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="{NOMBRE}"><meta property="og:image" content="{URL_BASE}{og}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FDFCFA">
 <link rel="icon" href="{base}assets/escudo.png">
-{FUENTES_WEB}
-<link rel="stylesheet" href="{base}assets/estilo.css">
+<link rel="preload" href="{base}assets/fuentes/literata-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{base}assets/fuentes/im-fell-dw-pica-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{base}assets/estilo.css">{extra_head}
+<script>document.documentElement.className+=' js';</script>
 </head>
-<body>
+<body id="top">
 <a class="saltar" href="#contenido">Saltar al contenido</a>
 {cabecera(ruta, clave, base)}
 {cuerpo}
 {pie(base)}
+<a class="arriba" href="#top" aria-label="Volver arriba">↑</a>
+<script src="{base}assets/js/web.js" defer></script>
 </body>
 </html>
 """
@@ -253,35 +295,286 @@ def redireccion(destino_abs):
 """
 
 
+# ---------------------------------------------------------------- imágenes
+
+IMG_DIR = RAIZ / "assets" / "img"
+LIGERA = 800
+
+
+def version_ligera(nombre: str):
+    """Crea assets/img/800/NOMBRE (800 px de ancho) si la foto es mayor; devuelve (ancho original, ¿hay ligera?)."""
+    orig = IMG_DIR / nombre
+    im = Image.open(orig)
+    w, h = im.size
+    if w <= LIGERA + 100:
+        return w, False
+    dest = IMG_DIR / str(LIGERA) / nombre
+    if not dest.exists() or dest.stat().st_mtime < orig.stat().st_mtime:
+        dest.parent.mkdir(exist_ok=True)
+        im2 = im.copy()
+        im2.thumbnail((LIGERA, 10000))
+        if dest.suffix.lower() in (".jpg", ".jpeg"):
+            im2.convert("RGB").save(dest, quality=80, optimize=True, progressive=True)
+        else:
+            im2.save(dest, optimize=True)
+    return w, True
+
+
+def procesar_imagenes(s, base):
+    imgs = s.find_all("img")
+    for i, im in enumerate(imgs):
+        src = im.get("src", "")
+        pref = f"{base}assets/img/"
+        if not src.startswith(pref) or "/800/" in src:
+            continue
+        nombre = src[len(pref):]
+        if not (IMG_DIR / nombre).exists():
+            continue
+        w, ligera = version_ligera(nombre)
+        if ligera:
+            im["src"] = f"{pref}{LIGERA}/{nombre}"
+            im["srcset"] = f"{pref}{LIGERA}/{nombre} {LIGERA}w, {pref}{nombre} {w}w"
+            par = "fotos-par" in " ".join(" ".join(p.get("class") or []) for p in im.parents if p.name == "div")
+            im["sizes"] = "(max-width: 44rem) 50vw, 21rem" if par else "(max-width: 44rem) 100vw, 42rem"
+        fig = im.find_parent("figure")
+        vertical = fig is not None and "vertical" in (fig.get("class") or [])
+        if i > 0 and not vertical:
+            im["loading"] = "lazy"
+        elif vertical:   # las verticales tienen ancho automático: con carga diferida medirían 0
+            im.attrs.pop("loading", None)
+        im["decoding"] = "async"
+        # Ampliar: enlace a la foto original (el visor lo abre en grande)
+        if im.parent.name != "a" and im.find_parent("figure") is not None:
+            a = s.new_tag("a", href=f"{pref}{nombre}", attrs={"class": "ampliar", "aria-label": "Ver la foto en grande"})
+            im.wrap(a)
+
+
+# ---------------------------------------------------------------- procesado de cada página
+
+ESTUDIOS = []      # recuadros «En estudio» de toda la web
+INDICE = []        # entradas del buscador
+
+
+def procesar(texto, ruta, base, titulo, frag):
+    s = BeautifulSoup(texto, "html.parser")
+    # 1. Anclas en los h2 (y h3 de personas, etc.)
+    usados = set(t["id"] for t in s.find_all(id=True))
+    for h in s.find_all(["h2"]):
+        if not h.get("id"):
+            i = base_id = slug(h.get_text(" ", strip=True))
+            n = 2
+            while i in usados:
+                i = f"{base_id}-{n}"; n += 1
+            h["id"] = i; usados.add(i)
+    # 2. Recuadros «En estudio»: numerados y recogidos para Preguntas abiertas
+    for n, e in enumerate(s.select(".estudio"), 1):
+        if not e.get("id"):
+            e["id"] = f"en-estudio-{n}"
+        h = e.find_previous("h2")
+        copia = BeautifulSoup(e.decode_contents(), "html.parser")
+        st = copia.find("strong")
+        if st and st.get_text(strip=True).lower().startswith("en estudio"):
+            st.decompose()
+        ESTUDIOS.append(dict(ruta=ruta, titulo=titulo, apartado=h.get_text(" ", strip=True) if h else "",
+                             ancla=e["id"], html=str(copia).strip()))
+    # 3. Tablas de cuatro o más columnas: fichas en el móvil
+    for t in s.select("table"):
+        ths = [th.get_text(" ", strip=True) for th in (t.find("thead") or t).find_all("th")]
+        if len(ths) >= 4:
+            t["class"] = (t.get("class") or []) + ["fichas"]
+            for tr in t.select("tbody tr"):
+                for td, et in zip(tr.find_all(["td", "th"]), ths):
+                    td["data-label"] = et
+    # 4. Fotos ligeras, carga diferida y ampliables
+    procesar_imagenes(s, base)
+    # 5. Índice «En esta página» en las páginas largas
+    h2s = [h for h in s.find_all("h2") if not h.find_parent(class_=["indice", "ficha", "persona-tarjeta"])]
+    palabras = len(s.get_text(" ").split())
+    if ruta and len(h2s) >= 4 and palabras >= 1100:
+        items = "".join(f'<li><a href="#{h["id"]}">{esc(h.get_text(" ", strip=True))}</a></li>' for h in h2s)
+        ind = BeautifulSoup(f'<details class="indice"><summary>En esta página <span>({len(h2s)} apartados · {round(palabras/220)} min de lectura)</span></summary><ol>{items}</ol></details>', "html.parser")
+        ancla = s.find(class_="entradilla") or s.find("h1")
+        if ancla:
+            ancla.insert_after(ind)
+    # 6. Buscador: el texto de la página partido por apartados
+    if frag not in ("buscar", "preguntas"):
+        copia = BeautifulSoup(str(s), "html.parser")
+        for t in copia.select("script, form, .indice, figcaption .credito, iframe"):
+            t.decompose()
+        MARCA = "⁣§§"
+        for h in copia.find_all("h2"):
+            h.insert_before(NavigableString(f"{MARCA}{h['id']}|{h.get_text(' ', strip=True)}{MARCA}"))
+        trozos = copia.get_text(" ").split(MARCA)
+        apartado, ancla = "", ""
+        for k, tz in enumerate(trozos):
+            if k % 2 == 1:
+                ancla, apartado = tz.split("|", 1)
+                continue
+            limpio = re.sub(r"\s+", " ", tz).strip()
+            limpio = re.sub(r"\s+([,.;:)»?!])", r"\1", re.sub(r"([(«¿¡])\s+", r"\1", limpio))
+            if apartado:
+                limpio = re.sub(r"^" + re.escape(apartado) + r"\s*", "", limpio)
+            if len(limpio) < 20:
+                continue
+            INDICE.append({"t": titulo if ruta else "Portada", "a": apartado, "u": ruta + (f"#{ancla}" if ancla else ""), "x": limpio})
+    return str(s)
+
+
+# ---------------------------------------------------------------- piezas generadas
+
+def novedades():
+    return json.loads((RAIZ / "_fuente" / "novedades.json").read_text(encoding="utf-8"))
+
+
+def lista_novedades(base, n=None, compacta=False):
+    items = []
+    for e in novedades()[:n]:
+        texto = e["html"].replace("{{BASE}}", base)
+        if compacta:
+            txt = BeautifulSoup(texto, "html.parser").get_text(" ", strip=True)
+            txt = (txt[:170].rsplit(" ", 1)[0] + "…") if len(txt) > 175 else txt
+            primero = BeautifulSoup(texto, "html.parser").find("a")
+            destino = primero["href"] if primero else f"{base}novedades/"
+            items.append(f'<li><time datetime="{e["fecha"]}">{fecha_larga(e["fecha"])}</time>'
+                         f'<a href="{destino}">{esc(e["titulo"])}</a><span>{esc(txt)}</span></li>')
+        else:
+            items.append(f'<li><time class="nov-fecha" datetime="{e["fecha"]}">{fecha_larga(e["fecha"])}</time>'
+                         f'<span class="nov-txt"><strong>{esc(e["titulo"])}</strong>{texto}</span></li>')
+    return f'<ul class="{"ultimas" if compacta else "novedades"}">' + "".join(items) + "</ul>"
+
+
+def tarjetas_personas(base):
+    out = []
+    for r, frag, n, f in PERSONAS:
+        s = BeautifulSoup((FUENTE / f"{frag}.html").read_text(encoding="utf-8"), "html.parser")
+        p = s.select_one(".texto p")
+        txt = p.get_text(" ", strip=True) if p else ""
+        frase = re.split(r"(?<=[a-záéíóúñ\)»])\. ", txt, maxsplit=1)[0].rstrip(".") + "."
+        if len(frase) > 230:
+            frase = frase[:225].rsplit(" ", 1)[0] + "…"
+        out.append(f'<a class="persona-tarjeta" href="{base}{r}"><span class="p-tit">{esc(n)}</span>'
+                   f'<span class="fechas">{esc(f)}</span><span class="p-txt">{esc(frase)}</span></a>')
+    return '<div class="personas-lista">' + "".join(out) + "</div>"
+
+
+def preguntas(base):
+    por_pagina = {}
+    for e in ESTUDIOS:
+        por_pagina.setdefault((e["ruta"], e["titulo"]), []).append(e)
+    orden = [r for r, *_ in PAGINAS]
+    bloques = []
+    for (ruta, titulo), es in sorted(por_pagina.items(), key=lambda kv: orden.index(kv[0][0])):
+        items = "".join(
+            f'<li>{"<strong>" + esc(e["apartado"]) + ".</strong> " if e["apartado"] else ""}'
+            f'{BeautifulSoup(e["html"], "html.parser").get_text(" ", strip=True)} '
+            f'<a href="{base}{ruta}#{e["ancla"]}">Ver en la página</a></li>' for e in es)
+        bloques.append(f'<h2 id="{slug(titulo)}"><a href="{base}{ruta}">{esc(titulo)}</a> <span class="cuenta">{len(es)}</span></h2><ol class="preguntas">{items}</ol>')
+    return (f'<p class="resumen-preguntas"><strong>{len(ESTUDIOS)} preguntas</strong> en {len(por_pagina)} páginas.</p>'
+            + "".join(bloques))
+
+
+# ---------------------------------------------------------------- imagen para compartir
+
+TTF = RAIZ / "_fuente" / "ttf"
+
+
+def imagen_og(ruta, titulo, seccion):
+    nombre = (slug(ruta.strip("/").replace("/", "-")) or "portada") + ".jpg"
+    dest = RAIZ / "assets" / "og" / nombre
+    huella = hashlib.md5(f"{titulo}|{seccion}|v2".encode()).hexdigest()[:10]
+    marca = dest.with_suffix(".txt")
+    if dest.exists() and marca.exists() and marca.read_text() == huella:
+        return f"assets/og/{nombre}"
+    dest.parent.mkdir(exist_ok=True)
+    W, H = 1200, 630
+    papel, sepia, tinta = (253, 252, 250), (139, 115, 85), (34, 30, 25)
+    im = Image.new("RGB", (W, H), papel)
+    d = ImageDraw.Draw(im)
+    fell = lambda t: ImageFont.truetype(str(TTF / "im-fell-dw-pica-latin-400-normal.ttf"), t)
+    util = ImageFont.truetype(str(TTF / "source-sans-3-latin-600-normal.ttf"), 30)
+    esc_ = Image.open(RAIZ / "assets" / "escudo.png").convert("LA").split()[1]
+    eh = 92; ew = int(esc_.width * eh / esc_.height)
+    im.paste(Image.new("RGB", (ew, eh), sepia), (80, 64), esc_.resize((ew, eh), Image.LANCZOS))
+    d.text((80 + ew + 22, 78), NOMBRE.upper(), font=util, fill=sepia)
+    d.text((80 + ew + 22, 116), seccion, font=ImageFont.truetype(str(TTF / "source-sans-3-latin-400-normal.ttf"), 28), fill=(107, 99, 89))
+    tam = 86
+    while True:
+        f = fell(tam); lineas = []; linea = ""
+        for w in titulo.split():
+            prueba = (linea + " " + w).strip()
+            if d.textlength(prueba, font=f) > W - 160 and linea:
+                lineas.append(linea); linea = w
+            else:
+                linea = prueba
+        lineas.append(linea)
+        if len(lineas) <= 3 or tam <= 56:
+            break
+        tam -= 8
+    y = 210
+    for l in lineas[:3]:
+        d.text((80, y), l, font=f, fill=tinta); y += int(tam * 1.12)
+    sk = Image.open(RAIZ / "assets" / "skyline.png").convert("LA").split()[1]
+    sw = 720; sh = int(sk.height * sw / sk.width)
+    im.paste(Image.new("RGB", (sw, sh), sepia), (W - sw - 60, H - sh - 30), sk.resize((sw, sh), Image.LANCZOS))
+    im.save(dest, quality=84, optimize=True)
+    marca.write_text(huella)
+    return f"assets/og/{nombre}"
+
+
+# ---------------------------------------------------------------- construcción
+
 def construir():
     hoy = date.today().isoformat()
-    urls = []
+    ESTUDIOS.clear(); INDICE.clear()
+    titulos_seccion = {k: e for k, e, _ in MENU}
+    cuerpos = {}
     for ruta, frag, clave, titulo, desc in PAGINAS:
         texto = (FUENTE / f"{frag}.html").read_text(encoding="utf-8")
         base = profundidad(ruta)
-        texto = texto.replace("{{BASE}}", base)
-        if frag == "colabora":
-            texto = texto.replace("{{CONTACTO}}", contacto())
+        texto = (texto.replace("{{CONTACTO}}", contacto())
+                      .replace("{{NOVEDADES}}", lista_novedades(base))
+                      .replace("{{NOVEDADES_PORTADA}}", lista_novedades(base, 3, compacta=True))
+                      .replace("{{PERSONAS}}", tarjetas_personas(base))
+                      .replace("{{BASE}}", base))
+        cuerpos[ruta] = procesar(texto, ruta, base, titulo if ruta else NOMBRE, frag)
+    # Preguntas abiertas: se rellena con lo recogido en todas las páginas
+    for ruta, frag, clave, titulo, desc in PAGINAS:
+        if frag == "preguntas":
+            cuerpos[ruta] = cuerpos[ruta].replace("{{PREGUNTAS}}", preguntas(profundidad(ruta)))
+    urls = []
+    for ruta, frag, clave, titulo, desc in PAGINAS:
+        base = profundidad(ruta)
+        texto = cuerpos[ruta]
         if ruta == "":
             cuerpo = f'<main id="contenido">{texto}</main>'
         else:
             cuerpo = f'<main id="contenido" class="lectura">{texto}{vecinos(ruta, base)}</main>'
+        seccion = {"": LEMA}.get(ruta) or (titulos_seccion.get(clave) or "Amigos de Alaejos")
+        if clave == "personas" and ruta != "personas-de-alaejos/":
+            seccion = "Personas de Alaejos"
+        og = imagen_og(ruta, NOMBRE if ruta == "" else titulo, seccion)
+        extra = ""
+        if frag == "mapa":
+            extra = f'\n<link rel="stylesheet" href="{base}assets/js/leaflet.css">'
         destino = RAIZ / ruta / "index.html"
         destino.parent.mkdir(parents=True, exist_ok=True)
-        destino.write_text(pagina(ruta, titulo, desc, cuerpo, clave, es_portada=(ruta == "")), encoding="utf-8")
-        urls.append(URL_BASE + ruta)
+        destino.write_text(pagina(ruta, titulo, desc, cuerpo, clave, og, es_portada=(ruta == ""), extra_head=extra), encoding="utf-8")
+        if frag != "buscar":
+            urls.append(URL_BASE + ruta)
+
+    (RAIZ / "assets" / "buscar.json").write_text(json.dumps(INDICE, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
     for vieja, nueva in REDIRECCIONES.items():
         destino = RAIZ / vieja / "index.html"
         destino.parent.mkdir(parents=True, exist_ok=True)
         destino.write_text(redireccion(URL_BASE + nueva), encoding="utf-8")
 
-    # 404: rutas absolutas, porque GitHub la sirve desde cualquier carpeta
     cuerpo404 = ('<main id="contenido" class="lectura"><h1 class="h-pag">No encontramos esa página</h1>'
-                 '<p>Puede que la dirección esté mal escrita o que la página haya cambiado de sitio al trasladar la web. '
-                 'Vuelva a la <a href="/">portada</a> o busque en la <a href="https://biblioteca.amigosdealaejos.org/">biblioteca</a>.</p></main>')
-    t404 = pagina("x/", "Página no encontrada", "Página no encontrada.", cuerpo404, "")
-    t404 = t404.replace('href="../', 'href="/').replace('<link rel="canonical" href="https://www.amigosdealaejos.org/x/">', '')
+                 '<p>Puede que la dirección esté mal escrita o que la página haya cambiado de sitio. '
+                 'Pruebe con el <a href="/buscar/">buscador</a>, vuelva a la <a href="/">portada</a> o busque en la '
+                 '<a href="https://biblioteca.amigosdealaejos.org/">biblioteca</a>.</p></main>')
+    t404 = pagina("x/", "Página no encontrada", "Página no encontrada.", cuerpo404, "", "assets/og/portada.jpg")
+    t404 = t404.replace('href="../', 'href="/').replace('src="../', 'src="/').replace('<link rel="canonical" href="https://www.amigosdealaejos.org/x/">', '')
     (RAIZ / "404.html").write_text(t404, encoding="utf-8")
 
     mapa = "".join(f"<url><loc>{u}</loc><lastmod>{hoy}</lastmod></url>" for u in urls)
@@ -289,7 +582,8 @@ def construir():
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
         + mapa + "</urlset>\n", encoding="utf-8")
     (RAIZ / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {URL_BASE}sitemap.xml\n", encoding="utf-8")
-    print(f"{len(PAGINAS)} páginas y {len(REDIRECCIONES)} redirecciones generadas.")
+    print(f"{len(PAGINAS)} páginas, {len(REDIRECCIONES)} redirecciones, {len(ESTUDIOS)} preguntas abiertas, "
+          f"{len(INDICE)} entradas en el buscador.")
 
 
 def contacto():
@@ -317,6 +611,9 @@ FORMULARIO = """<form class="form" id="form-contacto" novalidate>
 (function(){
   var ENDPOINT="{{ENDPOINT}}", CLAVE="{{CLAVE}}", abierto=Date.now();
   var form=document.getElementById('form-contacto'), estado=document.getElementById('f-estado'), btn=document.getElementById('f-enviar');
+  var q=new URLSearchParams(location.search);
+  if(q.get('motivo')){form.motivo.value=q.get('motivo');}
+  if(q.get('sobre')){form.mensaje.value='Sobre «'+q.get('sobre')+'»:\\n\\n';}
   function aviso(t,tipo){estado.textContent=t;estado.className='estado'+(tipo?' '+tipo:'');}
   form.addEventListener('submit',function(e){
     e.preventDefault();

@@ -1,0 +1,13 @@
+<h1 class="h-pag">Buscar</h1>
+<p class="entradilla">Cualquier nombre, lugar, fecha o palabra en las páginas de esta web.</p>
+<form class="buscador" id="buscar-form" role="search" data-base="{{BASE}}">
+  <label for="q" class="oculto">Buscar en Amigos de Alaejos</label>
+  <input id="q" name="q" type="search" placeholder="Por ejemplo: Fonseca, charambita, 1812…" autocomplete="off" autofocus>
+  <button class="btn" type="submit">Buscar</button>
+</form>
+<p class="buscar-estado" id="buscar-estado" role="status" aria-live="polite"></p>
+<ol class="resultados" id="resultados"></ol>
+<div class="texto">
+  <p class="nota">Este buscador recorre las páginas de esta web. Los 178 artículos de los programas de fiestas tienen su propio buscador en la <a href="https://biblioteca.amigosdealaejos.org/">Biblioteca de los programas</a>.</p>
+</div>
+<script src="{{BASE}}assets/js/buscar.js" defer></script>

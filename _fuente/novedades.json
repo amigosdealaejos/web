@@ -1,0 +1,52 @@
+[
+ {
+  "fecha": "2026-11-15",
+  "titulo": "Una web más fácil de recorrer",
+  "html": "Se reorganiza la web: buscador, índice al principio de las páginas largas, menú plegable en el móvil, fotos que se amplían y cargan más rápido, una página para cada <a href=\"{{BASE}}personas-de-alaejos/\">persona</a> y una sola página de <a href=\"{{BASE}}fiestas-y-eventos/\">fiestas y tradiciones</a>. Y páginas nuevas: <a href=\"{{BASE}}preguntas-abiertas/\">Preguntas abiertas</a>, con todo lo que sigue en estudio; <a href=\"{{BASE}}patrimonio/la-plaza-mayor/\">la Plaza Mayor</a>; <a href=\"{{BASE}}patrimonio/mapa/\">el mapa</a>; <a href=\"{{BASE}}historia-del-pueblo/fotografias-antiguas/\">fotografías antiguas</a>, y <a href=\"{{BASE}}quienes-somos/\">quiénes somos</a>."
+ },
+ {
+  "fecha": "2026-11-15",
+  "titulo": "Fiestas y tradiciones de Alaejos",
+  "html": "La sección de fiestas estrena páginas. <a href=\"{{BASE}}fiestas-y-eventos/\">Fiestas y tradiciones</a> recorre el año entero, de Todos los Santos a septiembre, con el vino, las cabañuelas, la música, lo que se ha perdido y una cronología. Y cuatro páginas propias: <a href=\"{{BASE}}fiestas-y-eventos/semana-santa/\">Cuaresma y Semana Santa</a>, <a href=\"{{BASE}}fiestas-y-eventos/fiestas-de-la-virgen-de-la-casita/\">las fiestas de la Virgen de la Casita</a>, con la Mariseca y la charambita, <a href=\"{{BASE}}fiestas-y-eventos/toros-en-alaejos/\">los toros</a>, documentados desde 1583, y <a href=\"{{BASE}}fiestas-y-eventos/los-quintos/\">los quintos</a>. Con las muchas preguntas que siguen en estudio, como qué es la Mariseca o en qué consiste la dejada de paja de San Antón."
+ },
+ {
+  "fecha": "2026-11-15",
+  "titulo": "Diez personas de Alaejos",
+  "html": "La sección de <a href=\"{{BASE}}personas-de-alaejos/\">personas</a> pasa de una a diez semblanzas: el obispo Fernández Vadillo, fray Miguel de Alaejos, el cardenal Arias y Porres, fray Juan de Alaejos, Dámaso Puertas, Antonio Hernández Morejón, Alejandro Ramírez Blanco, Gonzala Santana, el beato Donato y Julio Mangas. Están hechas con los artículos de los programas, contrastados con fuentes externas, y con las fechas que no coinciden y los lugares de nacimiento sin probar señalados en estudio."
+ },
+ {
+  "fecha": "2026-11-15",
+  "titulo": "La historia del pueblo, en nueve capítulos",
+  "html": "La sección de <a href=\"{{BASE}}historia-del-pueblo/\">historia</a> se amplía con una cronología, una tabla de población desde el siglo XVI y nueve páginas nuevas: <a href=\"{{BASE}}historia-del-pueblo/origenes-y-edad-media/\">orígenes y Edad Media</a>, <a href=\"{{BASE}}historia-del-pueblo/la-villa-de-senorio/\">la villa de señorío</a>, <a href=\"{{BASE}}historia-del-pueblo/siglos-xvi-y-xvii/\">siglos XVI y XVII</a>, <a href=\"{{BASE}}historia-del-pueblo/el-vino-de-alaejos/\">el vino</a>, los siglos <a href=\"{{BASE}}historia-del-pueblo/el-siglo-xviii/\">XVIII</a>, <a href=\"{{BASE}}historia-del-pueblo/el-siglo-xix/\">XIX</a> y <a href=\"{{BASE}}historia-del-pueblo/el-siglo-xx/\">XX</a>, <a href=\"{{BASE}}historia-del-pueblo/oficios-agua-y-vida-diaria/\">oficios, agua y vida diaria</a> y <a href=\"{{BASE}}historia-del-pueblo/dichos-cabanuelas-y-habla/\">dichos, cabañuelas y habla</a>. Están hechas con los artículos de los programas de fiestas, incluidos los de 1999 sobre las cabañuelas y las elecciones de 1979, con fotografías y grabaciones de licencia libre y con las dudas que siguen en estudio."
+ },
+ {
+  "fecha": "2026-11-14",
+  "titulo": "El castillo, según los documentos",
+  "html": "Rehecha la página del <a href=\"{{BASE}}patrimonio/el-castillo/\">castillo</a>: el «castillo viejo» anterior a los Fonseca, la licencia real de 1453, la reina Juana de Portugal (que estuvo menos de un año, no dos), la «sala rica» de gusto morisco, el cerco comunero de 1520, el castillo como cárcel y armería, su ruina, las excavaciones y los archivos donde seguir buscando. Con fotografías de licencia libre y las dudas que siguen en estudio."
+ },
+ {
+  "fecha": "2026-11-14",
+  "titulo": "La Virgen de la Casita",
+  "html": "Nueva página de la <a href=\"{{BASE}}patrimonio/la-ermita-de-la-virgen-de-la-casita/\">ermita de la Virgen de la Casita</a>: la tradición de la aparición y lo que dicen las inscripciones de 1490 y 1699, la talla del siglo XIII, el retablo en forma de casita, la Cofradía de Pastores, la charambita, las fiestas y la bajada. Y la <a href=\"{{BASE}}biblioteca/novena-de-la-virgen-de-la-casita/\">novena</a> para descargar, en las ediciones de 1865 y 1952 y en castellano actual."
+ },
+ {
+  "fecha": "2026-11-14",
+  "titulo": "Las dos iglesias, a fondo",
+  "html": "Ampliadas las páginas de <a href=\"{{BASE}}patrimonio/iglesia-de-santa-maria/\">Santa María</a> y <a href=\"{{BASE}}patrimonio/iglesia-de-san-pedro/\">San Pedro</a>: historia, retablos, protección, restauraciones (incluida la obra de la torre de San Pedro en 2026) y los datos que siguen en estudio. Con fotografías actuales y antiguas de licencia libre y con lo publicado sobre ellas en los programas de fiestas: libros de fábrica, campanas, el retablo pintado escondido tras el retablo de San Pedro y los patronos de los altares barrocos. Incluye los alzados del estudio arqueológico de Santa María, la foto del sagrario en 1952 y las imágenes del retablo oculto de San Pedro."
+ },
+ {
+  "fecha": "2026-11-13",
+  "titulo": "Nueva web de Amigos de Alaejos",
+  "html": "El sitio deja Google Sites y estrena casa, con los textos de <a href=\"{{BASE}}historia-del-pueblo/\">historia</a> y <a href=\"{{BASE}}patrimonio/\">patrimonio</a> y el calendario de <a href=\"{{BASE}}fiestas-y-eventos/\">fiestas</a>."
+ },
+ {
+  "fecha": "2026-11",
+  "titulo": "Web del beato Donato Jiménez Bibiano",
+  "html": "Vida, martirio y memoria del redentorista alaejano, contados desde los documentos de su causa: <a href=\"https://beatodonato.com/\">beatodonato.com</a>."
+ },
+ {
+  "fecha": "2026-10",
+  "titulo": "Biblioteca de los programas de fiestas",
+  "html": "Los 178 artículos publicados en los programas entre 1954 y 2026, íntegros y con buscador: <a href=\"https://biblioteca.amigosdealaejos.org/\">biblioteca.amigosdealaejos.org</a>."
+ }
+]
