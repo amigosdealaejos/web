@@ -113,7 +113,7 @@ PAGINAS = [
     ("fiestas-y-eventos/", "fiestas", "fiestas", "Fiestas y eventos",
      "El año festivo de Alaejos, de los Quintos a las fiestas de la Virgen de la Casita, y la colección de programas de fiestas desde 1954."),
     ("personas-de-alaejos/", "personas", "personas", "Personas de Alaejos",
-     "Alaejanos de los que ha quedado memoria: semblanzas y documentación."),
+     "Alaejanos de los que ha quedado memoria: el cardenal Arias y Porres, Hernández Morejón, Alejandro Ramírez, el beato Donato, Gonzala Santana y otros, con sus fuentes."),
     ("novedades/", "novedades", "novedades", "Novedades",
      "Lo último que se ha incorporado a Amigos de Alaejos."),
     ("colabora/", "colabora", "colabora", "Colabora",
