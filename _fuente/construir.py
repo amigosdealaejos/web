@@ -73,7 +73,11 @@ HISTORIA = [
     ("El siglo XX", "historia-del-pueblo/el-siglo-xx/"),
     ("Oficios, agua y vida diaria", "historia-del-pueblo/oficios-agua-y-vida-diaria/"),
     ("Dichos, cabañuelas y habla", "historia-del-pueblo/dichos-cabanuelas-y-habla/"),
+    ("El término", "historia-del-pueblo/el-termino/"),
+    ("Escudo y bandera", "historia-del-pueblo/escudo-y-bandera/"),
+    ("Asociaciones", "historia-del-pueblo/asociaciones-y-lugares-de-encuentro/"),
     ("Fotografías antiguas", "historia-del-pueblo/fotografias-antiguas/"),
+    ("Alaejos en fechas", "historia-del-pueblo/cronologia/"),
 ]
 
 FIESTAS = [
@@ -111,9 +115,9 @@ PAGINAS = [
      "Valdefuentes, el lugar despoblado del término de Alaejos: su torre de frontera, el señorío de los Fonseca, su despoblamiento en el siglo XVII y lo que queda."),
     ("historia-del-pueblo/el-vino-de-alaejos/", "h-vino", "historia", "El vino de Alaejos",
      "El blanco de Alaejos, vino famoso del siglo XVI citado por Cervantes y Quevedo: su comercio, sus bodegas y lagares y su decadencia hasta la filoxera."),
-    ("historia-del-pueblo/el-siglo-xviii/", "h-siglo-xviii", "historia", "El siglo XVIII: el Catastro y los ilustrados",
+    ("historia-del-pueblo/el-siglo-xviii/", "h-siglo-xviii", "historia", "Siglo XVIII: el Catastro y los ilustrados",
      "Alaejos en 1751 según el Catastro de Ensenada, la cilla de los diezmos, la Real Sociedad Caritativo-Económica de 1785 y la Real Fábrica de paños."),
-    ("historia-del-pueblo/el-siglo-xix/", "h-siglo-xix", "historia", "El siglo XIX: guerra, epidemias y libertades",
+    ("historia-del-pueblo/el-siglo-xix/", "h-siglo-xix", "historia", "Siglo XIX: guerra, epidemias y libertades",
      "Alaejos en el siglo XIX: Marmont y Wellington en 1812, el cólera de 1834, la villa según Madoz, la república de tres días de 1873 y el fuego de las eras."),
     ("historia-del-pueblo/el-siglo-xx/", "h-siglo-xx", "historia", "El siglo XX",
      "Alaejos en el siglo XX: el ferrocarril que no llegó, la paz con Nava de 1928, la guerra civil, la emigración y el primer Ayuntamiento democrático."),
@@ -121,6 +125,14 @@ PAGINAS = [
      "El Caño y el Arca Madre, los pastores, los cantareros y los oficios desaparecidos de Alaejos: aguador, sereno, pregonero, capador, casitera."),
     ("historia-del-pueblo/dichos-cabanuelas-y-habla/", "h-tradicion-oral", "historia", "Dichos, cabañuelas y habla",
      "La tradición oral de Alaejos: las cabañuelas, los dichos sobre el pueblo y sobre Nava, los ramos de segadores, palabras propias y su música."),
+    ("historia-del-pueblo/el-termino/", "h-termino", "historia", "El término: clima, montes, prados y caminos",
+     "El campo de Alaejos en quinientos años: el clima y las lluvias, el monte de encinas desaparecido, el prado de Carrealvar, la cerca y la cruz de Carrezamora."),
+    ("historia-del-pueblo/escudo-y-bandera/", "h-escudo", "historia", "Escudo, bandera y distinciones",
+     "El escudo de Alaejos y su estrella de los Fonseca, la bandera de 1996, los bastones de mando, los escudos de las casas nobles y los honores municipales."),
+    ("historia-del-pueblo/asociaciones-y-lugares-de-encuentro/", "h-vida-social", "historia", "Asociaciones, servicios y lugares de encuentro",
+     "Del hospital del Buen Pastor al centro de salud, las escuelas, los alguaciles, la Asociación de Labradores, los amigos del patrimonio, el club ciclista y el teatro."),
+    ("historia-del-pueblo/cronologia/", "h-cronologia", "historia", "Alaejos en fechas",
+     "Cronología de Alaejos desde el siglo XII hasta hoy: señorío, iglesias, guerras, epidemias, fiestas y personas, con enlace a cada página."),
     ("historia-del-pueblo/fotografias-antiguas/", "h-fotos-antiguas", "historia", "Fotografías antiguas",
      "Alaejos en fotografías y grabados antiguos: el castillo en 1809, las iglesias, la Plaza Mayor y la Virgen de la Casita, con su procedencia."),
     ("patrimonio/", "patrimonio", "patrimonio", "Patrimonio",
@@ -265,7 +277,7 @@ def pie(base):
     otras = "".join(f'<a href="{u}">{n}</a>' for n, u in OTRAS_WEBS)
     propias = "".join(f'<a href="{base}{r}">{n}</a>' for n, r in [
         ("Quiénes somos", "quienes-somos/"), ("Preguntas abiertas", "preguntas-abiertas/"),
-        ("Mapa", "patrimonio/mapa/"), ("Bibliografía", "biblioteca/bibliografia/"), ("Glosario", "biblioteca/glosario/"), ("Buscar", "buscar/"), ("Colabora", "colabora/")])
+        ("Mapa", "patrimonio/mapa/"), ("Alaejos en fechas", "historia-del-pueblo/cronologia/"), ("Calendario de fiestas", "fiestas-y-eventos/#calendario"), ("Bibliografía", "biblioteca/bibliografia/"), ("Glosario", "biblioteca/glosario/"), ("Buscar", "buscar/"), ("Colabora", "colabora/")])
     return (f'<footer class="pie"><div class="pie-in"><div class="horizonte" aria-hidden="true"></div>'
             f'<p><strong>{NOMBRE}.</strong> Archivo abierto de historia, patrimonio y memoria de la villa de Alaejos (Valladolid).</p>'
             f'<div class="otras">{propias}</div>'
@@ -289,6 +301,8 @@ def pagina(ruta, titulo, descripcion, cuerpo, clave, og, es_portada=False, extra
 <meta property="og:title" content="{esc(titulo_completo)}"><meta property="og:description" content="{esc(descripcion)}"><meta property="og:type" content="website"><meta property="og:url" content="{url}"><meta property="og:locale" content="es_ES"><meta property="og:site_name" content="{NOMBRE}"><meta property="og:image" content="{URL_BASE}{og}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FDFCFA">
 <link rel="icon" href="{base}assets/escudo.png">
+<link rel="apple-touch-icon" href="{base}assets/icono-180.png">
+<link rel="manifest" href="{base}manifest.webmanifest">
 <link rel="preload" href="{base}assets/fuentes/literata-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{base}assets/fuentes/im-fell-dw-pica-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{base}assets/estilo.css">
@@ -442,6 +456,8 @@ def procesar(texto, ruta, base, titulo, frag):
                     td["data-label"] = et
     # 4. Fotos ligeras, carga diferida y ampliables
     procesar_imagenes(s, base)
+    # 4b. Términos del glosario
+    enlazar_glosario(s, base, frag)
     # 5. Índice «En esta página» en las páginas largas
     h2s = [h for h in s.find_all("h2") if not h.find_parent(class_=["indice", "ficha", "persona-tarjeta"])]
     palabras = len(s.get_text(" ").split())
@@ -473,6 +489,135 @@ def procesar(texto, ruta, base, titulo, frag):
                 continue
             INDICE.append({"t": titulo if ruta else "Portada", "a": apartado, "u": ruta + (f"#{ancla}" if ancla else ""), "x": limpio})
     return str(s)
+
+
+# ---------------------------------------------------------------- glosario y fechas
+
+# Formas en que aparece cada término del glosario en los textos (id del glosario → expresiones)
+FORMAS_GLOSARIO = {
+    "alcalde-ordinario": [r"alcaldes? ordinarios?"],
+    "arca-madre": [r"Arca Madre"],
+    "armadura": [r"armaduras? mudéjar(?:es)?"],
+    "beneficiado": [r"beneficiados?"],
+    "bic": [r"BIC", r"Bien(?:es)? de Interés Cultural"],
+    "cabanuelas": [r"cabañuelas"],
+    "carbunco": [r"carbuncos?"],
+    "catastro": [r"Catastro de(?: la Ensenada| Ensenada)"],
+    "cilla": [r"cillas?"],
+    "comunidad": [r"Comunidad de Villa y Tierra"],
+    "corregidor": [r"corregidor(?:es)?"],
+    "despoblado": [r"despoblados?"],
+    "diezmo": [r"diezmos?"],
+    "estado-noble": [r"estado noble", r"estado general"],
+    "grisalla": [r"grisallas?"],
+    "hidalgo": [r"hidalgos?"],
+    "lavajo": [r"lavajos?"],
+    "linaje": [r"linajes"],
+    "mayorazgo": [r"mayorazgos?"],
+    "mesta": [r"Mesta"],
+    "obrada": [r"obradas?"],
+    "ordenanzas": [r"ordenanzas"],
+    "pino": [r"a pino"],
+    "quintos": [r"quintos"],
+    "realengo": [r"realengo"],
+    "regidor": [r"regidor(?:es)?"],
+    "senorio": [r"señoríos?"],
+    "torrejon": [r"torrejon(?:es)?|torrejón"],
+}
+_GLOSARIO = {}
+
+
+def glosario_datos():
+    """id → (término, primera frase de la definición), leídos de la página del glosario."""
+    if not _GLOSARIO:
+        s = BeautifulSoup((FUENTE / "glosario.html").read_text(encoding="utf-8"), "html.parser")
+        for dt in s.select("dl.glosario dt"):
+            dd = dt.find_next_sibling("dd")
+            copia = BeautifulSoup(str(dd), "html.parser")
+            for a in copia.find_all("a"):
+                a.decompose()
+            txt = re.sub(r"\s+", " ", copia.get_text(" ", strip=True)).strip(" .")
+            frase = re.split(r"(?<=[a-záéíóúñ)])\. ", txt)[0]
+            _GLOSARIO[dt["id"]] = (dt.get_text(" ", strip=True), frase + ".")
+    return _GLOSARIO
+
+
+def enlazar_glosario(s, base, frag):
+    """Primera aparición de cada término en el texto corrido: enlace discreto al glosario."""
+    if frag in ("glosario", "bibliografia", "buscar", "preguntas", "inicio", "novedades", "colabora", "quienes-somos"):
+        return
+    datos = glosario_datos()
+    pendientes = {k: re.compile(r"(?<![\wáéíóúñÁÉÍÓÚÑ])(" + "|".join(v) + r")(?![\wáéíóúñÁÉÍÓÚÑ])")
+                  for k, v in FORMAS_GLOSARIO.items() if k in datos}
+    prohibidos = {"a", "h1", "h2", "h3", "figcaption", "caption", "th", "summary", "script", "em", "cite", "nav", "details", "dt"}
+    bloques = {"p", "li", "dd", "td"}
+    cola = list(s.find_all(string=True))
+    while cola and pendientes:
+        nodo = cola.pop(0)
+        padre = nodo.parent
+        if padre is None:
+            continue
+        cadena = [padre, *padre.parents]
+        if not any(x.name in bloques for x in cadena):
+            continue
+        if any(x.name in prohibidos for x in cadena):
+            continue
+        if any(set(x.get("class") or []) & {"estudio", "serie", "remite", "acciones"} for x in cadena if getattr(x, "get", None)):
+            continue
+        texto = str(nodo)
+        mejor = None
+        for k, rx in pendientes.items():
+            m = rx.search(texto)
+            if m and (mejor is None or m.start() < mejor[1].start()):
+                mejor = (k, m)
+        if not mejor:
+            continue
+        k, m = mejor
+        del pendientes[k]
+        termino, frase = datos[k]
+        a = s.new_tag("a", href=f"{base}biblioteca/glosario/#{k}", attrs={"class": "glosa", "title": f"{termino}: {frase}"})
+        a.string = m.group(1)
+        cola_txt = NavigableString(texto[m.end():])
+        nodo.replace_with(NavigableString(texto[:m.start()]), a, cola_txt)
+        cola.insert(0, cola_txt)
+
+
+_FECHAS = {}
+
+
+def fecha_fragmento(frag):
+    """Fecha (AAAA-MM-DD) del último cambio del fragmento: la de git, o hoy si tiene cambios sin guardar."""
+    if frag in _FECHAS:
+        return _FECHAS[frag]
+    import subprocess
+    f = f"_fuente/paginas/{frag}.html"
+    sucio = subprocess.run(["git", "status", "--porcelain", "--", f], cwd=RAIZ, capture_output=True, text=True).stdout.strip()
+    if sucio:
+        d = date.today().isoformat()
+    else:
+        d = subprocess.run(["git", "log", "-1", "--format=%cs", "--", f], cwd=RAIZ, capture_output=True, text=True).stdout.strip() or date.today().isoformat()
+    _FECHAS[frag] = d
+    return d
+
+
+GENERADAS = ("inicio", "novedades", "preguntas", "bibliografia", "personas")
+
+
+def fecha_pagina(frag):
+    if frag in GENERADAS:
+        return max(fecha_fragmento(f) for _, f, *_ in PAGINAS)
+    return fecha_fragmento(frag)
+
+
+def pie_lectura(ruta, titulo, frag):
+    """Fecha de la última revisión y cómo citar la página."""
+    if frag in ("buscar", "colabora"):
+        return ""
+    f = fecha_pagina(frag)
+    d = f"{int(f[8:10])}/{int(f[5:7])}/{f[:4]}"
+    cita = f"{NOMBRE}, «{esc(titulo)}», {URL_BASE}{ruta} (revisión del {d})."
+    return (f'<div class="revision"><span>Última revisión: <time datetime="{f}">{fecha_larga(f)}</time></span>'
+            f'<details class="citar"><summary>Cómo citar esta página</summary><p>{cita}</p></details></div>')
 
 
 # ---------------------------------------------------------------- piezas generadas
@@ -652,7 +797,7 @@ def construir():
         if ruta == "":
             cuerpo = f'<main id="contenido">{texto}</main>'
         else:
-            cuerpo = f'<main id="contenido" class="lectura">{texto}{acciones(ruta, titulo, base, frag)}{vecinos(ruta, base)}</main>'
+            cuerpo = f'<main id="contenido" class="lectura">{texto}{acciones(ruta, titulo, base, frag)}{pie_lectura(ruta, titulo, frag)}{vecinos(ruta, base)}</main>'
         seccion = {"": LEMA}.get(ruta) or (titulos_seccion.get(clave) or "Amigos de Alaejos")
         if clave == "personas" and ruta != "personas-de-alaejos/":
             seccion = "Personas de Alaejos"
@@ -664,7 +809,7 @@ def construir():
         destino.parent.mkdir(parents=True, exist_ok=True)
         destino.write_text(pagina(ruta, titulo, desc, cuerpo, clave, og, es_portada=(ruta == ""), extra_head=extra), encoding="utf-8")
         if frag != "buscar":
-            urls.append(URL_BASE + ruta)
+            urls.append((URL_BASE + ruta, fecha_pagina(frag)))
 
     (RAIZ / "novedades.xml").write_text(atom(), encoding="utf-8")
     (RAIZ / "assets" / "buscar.json").write_text(json.dumps(INDICE, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
@@ -682,7 +827,7 @@ def construir():
     t404 = t404.replace('href="../', 'href="/').replace('src="../', 'src="/').replace('<link rel="canonical" href="https://www.amigosdealaejos.org/x/">', '')
     (RAIZ / "404.html").write_text(t404, encoding="utf-8")
 
-    mapa = "".join(f"<url><loc>{u}</loc><lastmod>{hoy}</lastmod></url>" for u in urls)
+    mapa = "".join(f"<url><loc>{u}</loc><lastmod>{f}</lastmod></url>" for u, f in urls)
     (RAIZ / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
         + mapa + "</urlset>\n", encoding="utf-8")

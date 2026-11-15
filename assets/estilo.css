@@ -387,3 +387,11 @@ dl.glosario dd { margin: 0.2em 0 0; padding-bottom: 0.9em; border-bottom: 1px so
 dl.glosario dd a { white-space: nowrap; }
 .saltos-autores { font-family: var(--f-util); font-size: 0.92rem; line-height: 1.7; color: var(--tenue); }
 .texto h3[id] { scroll-margin-top: 5rem; }
+
+/* Términos del glosario, revisión y cita */
+a.glosa { color: inherit; text-decoration: underline dotted var(--sepia); text-decoration-thickness: 1px; text-underline-offset: 0.2em; }
+a.glosa:hover { color: var(--sepia); }
+.revision { font-family: var(--f-util); font-size: 0.86rem; color: var(--tenue); margin: 1.2rem 0 0; display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; align-items: baseline; }
+.revision details.citar summary { cursor: pointer; color: var(--sepia); }
+.revision details.citar p { margin: 0.4rem 0 0; padding: 0.6rem 0.8rem; background: var(--papel-2, #f5f1ea); border-radius: 4px; font-size: 0.85rem; user-select: all; }
+.cronologia .crono-ver { font-family: var(--f-util); font-size: 0.82rem; white-space: nowrap; margin-left: 0.3em; }

@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-15",
+  "titulo": "Escudo y bandera, el término, las asociaciones y una cronología",
+  "html": "Cuatro páginas nuevas de historia: <a href=\"{{BASE}}historia-del-pueblo/escudo-y-bandera/\">Escudo, bandera y distinciones</a>, <a href=\"{{BASE}}historia-del-pueblo/el-termino/\">El término</a> (el clima, el monte de encinas, el prado de Carrealvar y la cruz de Carrezamora), <a href=\"{{BASE}}historia-del-pueblo/asociaciones-y-lugares-de-encuentro/\">Asociaciones y lugares de encuentro</a> y <a href=\"{{BASE}}historia-del-pueblo/cronologia/\">Alaejos en fechas</a>, con más de sesenta fechas. Las palabras del <a href=\"{{BASE}}biblioteca/glosario/\">glosario</a> aparecen ahora subrayadas en los textos, y cada página dice cuándo se revisó y cómo citarla."
+ },
+ {
+  "fecha": "2026-11-15",
   "titulo": "Valdefuentes, cuatro alaejanos más, bibliografía y glosario",
   "html": "Nuevo capítulo de historia: <a href=\"{{BASE}}historia-del-pueblo/el-despoblado-de-valdefuentes/\">El despoblado de Valdefuentes</a>. Cuatro personas más: el médico <a href=\"{{BASE}}personas-de-alaejos/andres-de-villamediana/\">Andrés de Villamediana</a>, el jesuita <a href=\"{{BASE}}personas-de-alaejos/bernardo-recio/\">Bernardo Recio</a>, el <a href=\"{{BASE}}personas-de-alaejos/luis-manuel-de-isla/\">conde de Isla</a> y el escritor <a href=\"{{BASE}}personas-de-alaejos/serafin-puertas-garcia/\">Serafín Puertas</a>. Y dos herramientas: la <a href=\"{{BASE}}biblioteca/bibliografia/\">Bibliografía</a> y el <a href=\"{{BASE}}biblioteca/glosario/\">Glosario</a>. Cada página tiene ahora un enlace para avisar de un error y otro para compartirla por WhatsApp."
  },
