@@ -109,7 +109,7 @@ SECCIONES = {
 # Páginas: (ruta, fragmento, clave del menú, título, descripción)
 PAGINAS = [
     ("", "inicio", "inicio", NOMBRE + " · " + LEMA,
-     "Archivo abierto sobre Alaejos (Valladolid): historia, patrimonio, fiestas y personas de la villa, reunidos desde archivos, publicaciones y colecciones particulares."),
+     "Archivo abierto sobre Alaejos (Valladolid): historia, patrimonio, fiestas y personas, reunidos de archivos, publicaciones y colecciones particulares."),
     ("historia-del-pueblo/", "historia", "historia", "Historia del pueblo",
      "La historia de Alaejos (Valladolid), de aldea fronteriza de la Tierra de Medina a hoy: cronología, población y capítulos documentados con sus fuentes."),
     ("historia-del-pueblo/origenes-y-edad-media/", "h-origenes", "historia", "Orígenes y Edad Media",
@@ -132,12 +132,12 @@ PAGINAS = [
      "El Caño y el Arca Madre, los pastores, los cantareros y los oficios desaparecidos de Alaejos: aguador, sereno, pregonero, capador, casitera."),
     ("historia-del-pueblo/dichos-cabanuelas-y-habla/", "h-tradicion-oral", "historia", "Dichos, cabañuelas y habla",
      "La tradición oral de Alaejos: las cabañuelas, los dichos sobre el pueblo y sobre Nava, los ramos de segadores, palabras propias y su música."),
-    ("historia-del-pueblo/el-termino/", "h-termino", "historia", "El término: clima, montes, prados y caminos",
+    ("historia-del-pueblo/el-termino/", "h-termino", "historia", "El término: clima, montes y prados",
      "El campo de Alaejos en quinientos años: el clima y las lluvias, el monte de encinas desaparecido, el prado de Carrealvar, la cerca y la cruz de Carrezamora."),
     ("historia-del-pueblo/escudo-y-bandera/", "h-escudo", "historia", "Escudo, bandera y distinciones",
      "El escudo de Alaejos y su estrella de los Fonseca, la bandera de 1996, los bastones de mando, los escudos de las casas nobles y los honores municipales."),
-    ("historia-del-pueblo/asociaciones-y-lugares-de-encuentro/", "h-vida-social", "historia", "Asociaciones, servicios y lugares de encuentro",
-     "Del hospital del Buen Pastor al centro de salud, las escuelas, los alguaciles, la Asociación de Labradores, los amigos del patrimonio, el club ciclista y el teatro."),
+    ("historia-del-pueblo/asociaciones-y-lugares-de-encuentro/", "h-vida-social", "historia", "Asociaciones y lugares de encuentro",
+     "Del hospital del Buen Pastor al centro de salud, las escuelas, la Asociación de Labradores, los amigos del patrimonio, el club ciclista y el teatro."),
     ("historia-del-pueblo/cronologia/", "h-cronologia", "historia", "Alaejos en fechas",
      "Cronología de Alaejos desde el siglo XII hasta hoy: señorío, iglesias, guerras, epidemias, fiestas y personas, con enlace a cada página."),
     ("historia-del-pueblo/fotografias-antiguas/", "h-fotos-antiguas", "historia", "Fotografías antiguas",
@@ -175,6 +175,8 @@ PAGINAS = [
      "Las novenas a la Virgen de la Casita, patrona de Alaejos, en PDF: la original de 1865, la «Historia y novena» de 1952 y la edición actual de 2026."),
     ("biblioteca/bibliografia/", "bibliografia", "biblioteca", "Bibliografía",
      "Libros, estudios y artículos de los programas de fiestas sobre Alaejos citados en esta web, con las páginas en las que se usan."),
+    ("biblioteca/versos-y-recuerdos/", "versos", "biblioteca", "Versos y recuerdos de los programas",
+     "Poemas y recuerdos de vecinos publicados en los programas de fiestas de Alaejos, de 1971 a 2025, con lo que cuenta cada uno y enlace al texto completo."),
     ("biblioteca/glosario/", "glosario", "biblioteca", "Glosario",
      "Palabras de los documentos antiguos y del habla de Alaejos explicadas: beneficiado, cilla, diezmo, linaje, mayorazgo, Mesta, cabañuelas, lavajo y otras."),
     ("novedades/", "novedades", "novedades", "Novedades",
@@ -439,6 +441,7 @@ def procesar_imagenes(s, base):
 # ---------------------------------------------------------------- procesado de cada página
 
 ESTUDIOS = []      # recuadros «En estudio» de toda la web
+PETICIONES = []    # recuadros «Una petición»: lo que se busca (fotos, documentos, recuerdos)
 INDICE = []        # entradas del buscador
 
 
@@ -460,9 +463,10 @@ def procesar(texto, ruta, base, titulo, frag):
         h = e.find_previous("h2")
         copia = BeautifulSoup(e.decode_contents(), "html.parser")
         st = copia.find("strong")
-        if st and st.get_text(strip=True).lower().startswith("en estudio"):
+        peticion = bool(st and st.get_text(strip=True).lower().startswith("una petición"))
+        if st and (peticion or st.get_text(strip=True).lower().startswith("en estudio")):
             st.decompose()
-        ESTUDIOS.append(dict(ruta=ruta, titulo=titulo, apartado=h.get_text(" ", strip=True) if h else "",
+        (PETICIONES if peticion else ESTUDIOS).append(dict(ruta=ruta, titulo=titulo, apartado=h.get_text(" ", strip=True) if h else "",
                              ancla=e["id"], html=str(copia).strip()))
     # 3. Tablas de cuatro o más columnas: fichas en el móvil
     for t in s.select("table"):
@@ -580,7 +584,7 @@ def enlazar_glosario(s, base, frag):
             continue
         if any(x.name in prohibidos for x in cadena):
             continue
-        if any(set(x.get("class") or []) & {"estudio", "serie", "remite", "acciones"} for x in cadena if getattr(x, "get", None)):
+        if any(set(x.get("class") or []) & {"estudio", "serie", "remite", "acciones", "entradilla"} for x in cadena if getattr(x, "get", None)):
             continue
         texto = str(nodo)
         mejor = None
@@ -734,8 +738,18 @@ def preguntas(base):
             partes.append(f'<details class="preg-pagina" id="{slug(titulo)}"><summary><span>{esc(titulo)}</span> '
                           f'<span class="cuenta">{len(es)}</span></summary><ol class="preguntas">{"".join(items)}</ol></details>')
         bloques.append(f'<h2 id="sec-{clave or "otras"}">{esc(nombres.get(clave, "Otras páginas"))} <span class="cuenta">{total}</span></h2>' + "".join(partes))
-    return (f'<p class="resumen-preguntas"><strong>{len(ESTUDIOS)} preguntas</strong> en {len(por_pagina)} páginas. '
-            f'Pulse en una página para ver sus dudas.</p>' + "".join(bloques))
+    pets = []
+    for e in sorted(PETICIONES, key=lambda e: orden.index(e["ruta"])):
+        sobre = quote(e["titulo"])
+        pets.append(f'<li><strong>{esc(e["titulo"])}.</strong> {esc(BeautifulSoup(e["html"], "html.parser").get_text(" ", strip=True))} '
+                    f'<span class="preg-acc"><a href="{base}{e["ruta"]}#{e["ancla"]}">Ver en la página</a> · '
+                    f'<a href="{base}colabora/?motivo=material&amp;sobre={sobre}#contacto">Tengo algo</a></span></li>')
+    buscamos = (f'<h2 id="que-buscamos">Qué buscamos <span class="cuenta">{len(PETICIONES)}</span></h2>'
+                f'<p>Además de resolver dudas, nos ayudaría mucho reunir fotografías, documentos y recuerdos sobre estos temas:</p>'
+                f'<ol class="preguntas">{"".join(pets)}</ol>') if pets else ""
+    return (f'<p class="resumen-preguntas"><strong>{len(ESTUDIOS)} preguntas</strong> en {len(por_pagina)} páginas'
+            f'{f" y <a href=\"#que-buscamos\">{len(PETICIONES)} peticiones</a> de materiales" if pets else ""}. '
+            f'Pulse en una página para ver sus dudas.</p>' + "".join(bloques) + buscamos)
 
 
 # ---------------------------------------------------------------- imagen para compartir
@@ -790,7 +804,7 @@ def imagen_og(ruta, titulo, seccion):
 
 def construir():
     hoy = date.today().isoformat()
-    ESTUDIOS.clear(); INDICE.clear()
+    ESTUDIOS.clear(); PETICIONES.clear(); INDICE.clear()
     titulos_seccion = {k: e for k, e, _ in MENU}
     cuerpos = {}
     for ruta, frag, clave, titulo, desc in PAGINAS:
