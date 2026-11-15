@@ -26,6 +26,21 @@
     if (e.target.tagName === 'A' && !window.matchMedia('(min-width: 60rem)').matches) ind.open = false;
   });
 
+  // Compartir con el menú del teléfono, si lo hay
+  var nat = d.querySelector('.acc-nativo');
+  if (nat && navigator.share) {
+    nat.hidden = false;
+    nat.addEventListener('click', function () {
+      navigator.share({ title: nat.getAttribute('data-titulo'), url: nat.getAttribute('data-url') }).catch(function () {});
+    });
+  }
+
+  // Abrir el bloque plegable al que apunta el enlace (Preguntas abiertas)
+  if (location.hash) {
+    var dest = d.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (dest && dest.tagName === 'DETAILS') dest.open = true;
+  }
+
   // Volver arriba: aparece al bajar en las páginas largas
   var arriba = d.querySelector('.arriba');
   if (arriba && d.documentElement.scrollHeight > window.innerHeight * 3) {

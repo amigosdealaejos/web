@@ -66,6 +66,7 @@ HISTORIA = [
     ("Orígenes y Edad Media", "historia-del-pueblo/origenes-y-edad-media/"),
     ("La villa de señorío", "historia-del-pueblo/la-villa-de-senorio/"),
     ("Siglos XVI y XVII", "historia-del-pueblo/siglos-xvi-y-xvii/"),
+    ("El despoblado de Valdefuentes", "historia-del-pueblo/el-despoblado-de-valdefuentes/"),
     ("El vino de Alaejos", "historia-del-pueblo/el-vino-de-alaejos/"),
     ("El siglo XVIII", "historia-del-pueblo/el-siglo-xviii/"),
     ("El siglo XIX", "historia-del-pueblo/el-siglo-xix/"),
@@ -99,27 +100,29 @@ PAGINAS = [
     ("", "inicio", "inicio", NOMBRE + " · " + LEMA,
      "Archivo abierto sobre Alaejos (Valladolid): historia, patrimonio, fiestas y personas de la villa, reunidos desde archivos, publicaciones y colecciones particulares."),
     ("historia-del-pueblo/", "historia", "historia", "Historia del pueblo",
-     "La historia de Alaejos (Valladolid), de la aldea fronteriza de la Tierra de Medina a hoy: cronología, población a lo largo de los siglos y nueve capítulos documentados con los programas de fiestas."),
+     "La historia de Alaejos (Valladolid), de aldea fronteriza de la Tierra de Medina a hoy: cronología, población y capítulos documentados con sus fuentes."),
     ("historia-del-pueblo/origenes-y-edad-media/", "h-origenes", "historia", "Orígenes y Edad Media",
-     "Los orígenes de Alaejos: los bifaces del Trabancos, el nombre de Falafeios, la repoblación, la frontera con León, los cuatro linajes y el paso a los Fonseca en 1452."),
+     "Los orígenes de Alaejos: los bifaces del Trabancos, Falafeios, la repoblación, la frontera con León, los cuatro linajes y el paso a los Fonseca en 1452."),
     ("historia-del-pueblo/la-villa-de-senorio/", "h-senorio", "historia", "La villa de señorío",
-     "Alaejos, villa de señorío de 1452 a 1837: cómo se gobernaba, la sucesión de señores de los Fonseca a los duques de Alba, la visita de Felipe III en 1600 y la rebelión de 1593."),
+     "Alaejos, villa de señorío de 1452 a 1837: cómo se gobernaba, de los Fonseca a los duques de Alba, la rebelión de 1593 y la visita de Felipe III en 1600."),
     ("historia-del-pueblo/siglos-xvi-y-xvii/", "h-siglos-xvi-xvii", "historia", "Siglos XVI y XVII: esplendor y crisis",
-     "Alaejos en el Siglo de Oro: las ordenanzas de 1580, el pleito con la Mesta, el convento de los franciscanos descalzos, fray Miguel de Alaejos, la escuela y la crisis del siglo XVII."),
+     "Alaejos en el Siglo de Oro: las ordenanzas de 1580, el pleito con la Mesta, el convento franciscano, la escuela y la crisis del siglo XVII."),
+    ("historia-del-pueblo/el-despoblado-de-valdefuentes/", "h-valdefuentes", "historia", "El despoblado de Valdefuentes",
+     "Valdefuentes, el lugar despoblado del término de Alaejos: su torre de frontera, el señorío de los Fonseca, su despoblamiento en el siglo XVII y lo que queda."),
     ("historia-del-pueblo/el-vino-de-alaejos/", "h-vino", "historia", "El vino de Alaejos",
      "El blanco de Alaejos, vino famoso del siglo XVI citado por Cervantes y Quevedo: su comercio, sus bodegas y lagares y su decadencia hasta la filoxera."),
     ("historia-del-pueblo/el-siglo-xviii/", "h-siglo-xviii", "historia", "El siglo XVIII: el Catastro y los ilustrados",
      "Alaejos en 1751 según el Catastro de Ensenada, la cilla de los diezmos, la Real Sociedad Caritativo-Económica de 1785 y la Real Fábrica de paños."),
     ("historia-del-pueblo/el-siglo-xix/", "h-siglo-xix", "historia", "El siglo XIX: guerra, epidemias y libertades",
-     "Alaejos en el siglo XIX: Marmont y Wellington en 1812, el cólera de 1834, la villa según Madoz, la república federal de tres días de 1873 y el fuego de las eras de 1881."),
+     "Alaejos en el siglo XIX: Marmont y Wellington en 1812, el cólera de 1834, la villa según Madoz, la república de tres días de 1873 y el fuego de las eras."),
     ("historia-del-pueblo/el-siglo-xx/", "h-siglo-xx", "historia", "El siglo XX",
-     "Alaejos en el siglo XX: las fiestas de 1905, el ferrocarril que no llegó, la paz con Nava del Rey de 1928, la guerra civil, la emigración y el primer Ayuntamiento democrático."),
+     "Alaejos en el siglo XX: el ferrocarril que no llegó, la paz con Nava de 1928, la guerra civil, la emigración y el primer Ayuntamiento democrático."),
     ("historia-del-pueblo/oficios-agua-y-vida-diaria/", "h-oficios", "historia", "Oficios, agua y vida diaria",
      "El Caño y el Arca Madre, los pastores, los cantareros y los oficios desaparecidos de Alaejos: aguador, sereno, pregonero, capador, casitera."),
     ("historia-del-pueblo/dichos-cabanuelas-y-habla/", "h-tradicion-oral", "historia", "Dichos, cabañuelas y habla",
-     "La tradición oral de Alaejos: las cabañuelas, los dichos sobre el pueblo y sobre Nava, los ramos de segadores, las supersticiones, palabras propias y grabaciones de su música."),
+     "La tradición oral de Alaejos: las cabañuelas, los dichos sobre el pueblo y sobre Nava, los ramos de segadores, palabras propias y su música."),
     ("historia-del-pueblo/fotografias-antiguas/", "h-fotos-antiguas", "historia", "Fotografías antiguas",
-     "Alaejos en fotografías y grabados antiguos: el castillo en 1809, las postales de la villa, las iglesias, la Plaza Mayor y la Virgen de la Casita, con su procedencia."),
+     "Alaejos en fotografías y grabados antiguos: el castillo en 1809, las iglesias, la Plaza Mayor y la Virgen de la Casita, con su procedencia."),
     ("patrimonio/", "patrimonio", "patrimonio", "Patrimonio",
      "Las iglesias de Santa María y San Pedro, la ermita de la Virgen de la Casita, el castillo de los Fonseca y la Plaza Mayor: el patrimonio monumental de Alaejos."),
     ("patrimonio/iglesia-de-santa-maria/", "santa-maria", "patrimonio", "Iglesia de Santa María",
@@ -127,30 +130,34 @@ PAGINAS = [
     ("patrimonio/iglesia-de-san-pedro/", "san-pedro", "patrimonio", "Iglesia de San Pedro",
      "La iglesia de San Pedro Apóstol de Alaejos, en la Plaza Mayor: la torre más alta de la villa, bóvedas de yesería, grisallas y retablo mayor romanista."),
     ("patrimonio/la-ermita-de-la-virgen-de-la-casita/", "casita", "patrimonio", "Ermita de la Virgen de la Casita",
-     "El santuario de Nuestra Señora de la Casita, patrona de Alaejos: la talla del siglo XIII, la ermita de 1490 y 1699, la Cofradía de Pastores y la devoción a la patrona."),
+     "El santuario de Nuestra Señora de la Casita, patrona de Alaejos: la talla del siglo XIII, la ermita, la Cofradía de Pastores y la devoción a la patrona."),
     ("patrimonio/el-castillo/", "castillo", "patrimonio", "El castillo",
-     "El castillo de los Fonseca en Alaejos según los documentos: la licencia de 1453, la reina Juana de Portugal, la «sala rica» morisca, el cerco comunero de 1520, la ruina y las excavaciones."),
+     "El castillo de los Fonseca según los documentos: la licencia de 1453, la reina Juana de Portugal, el cerco comunero de 1520, la ruina y las excavaciones."),
     ("patrimonio/la-plaza-mayor/", "plaza-mayor", "patrimonio", "La Plaza Mayor",
      "La Plaza Mayor de Alaejos: el Ayuntamiento, los soportales, San Pedro y su balcón, el mercado, los toros y las casas blasonadas de la villa."),
     ("patrimonio/mapa/", "mapa", "patrimonio", "Mapa de Alaejos",
      "Mapa de los lugares de Alaejos que aparecen en esta web: iglesias, ermita, castillo, Plaza Mayor, el Caño y otros, con enlace a cada página."),
     ("fiestas-y-eventos/", "fiestas", "fiestas", "Fiestas y tradiciones",
-     "El año festivo de Alaejos mes a mes: quintos, San Antón, Semana Santa, la romería de mayo, la Mariseca, las fiestas de la Virgen de la Casita, los toros desde 1583, el vino, las cabañuelas y la charambita."),
+     "El año festivo de Alaejos mes a mes: quintos, San Antón, Semana Santa, la romería de mayo, la Mariseca, las fiestas de septiembre y los toros."),
     ("fiestas-y-eventos/semana-santa/", "fiestas-semana-santa", "fiestas", "Cuaresma y Semana Santa",
-     "La Semana Santa de Alaejos: el Cristo de la Caridad en Carnaval, los viernes de Jesús Nazareno, el vino del Cristo de la Salud, el Silencio y el Encuentro, y sus nueve cofradías."),
+     "La Semana Santa de Alaejos: el Cristo de la Caridad, los viernes de Jesús Nazareno, el vino del Cristo de la Salud, el Silencio y el Encuentro."),
     ("fiestas-y-eventos/fiestas-de-la-virgen-de-la-casita/", "fiestas-casita", "fiestas", "Las fiestas de la Virgen de la Casita",
-     "Las fiestas de la patrona de Alaejos: la romería del 10 de mayo, la bajada, la Mariseca de agosto, las fiestas de septiembre desde 1905 y la charambita de los danzantes."),
+     "Las fiestas de la patrona de Alaejos: la romería del 10 de mayo, la Mariseca de agosto, las fiestas de septiembre y la charambita de los danzantes."),
     ("fiestas-y-eventos/toros-en-alaejos/", "fiestas-toros", "fiestas", "Toros en Alaejos",
      "Los toros en Alaejos desde 1583: las corridas de las cofradías, las novilladas en la Plaza Mayor, las ganaderías del entorno y los encierros y festejos de hoy."),
     ("fiestas-y-eventos/los-quintos/", "fiestas-quintos", "fiestas", "Los quintos",
      "Los quintos de Alaejos: el rito de paso descrito en 1988, el aguinaldo y la hoguera de Nochevieja, la fiesta de Reyes y el álamo de mayo."),
     ("personas-de-alaejos/", "personas", "personas", "Personas de Alaejos",
-     "Alaejanos de los que ha quedado memoria: el cardenal Arias y Porres, Hernández Morejón, Alejandro Ramírez, el beato Donato, Gonzala Santana y otros, con sus fuentes."),
+     "Alaejanos de los que ha quedado memoria: el cardenal Arias y Porres, Hernández Morejón, Alejandro Ramírez, el beato Donato y otros, con sus fuentes."),
 ] + [(r, frag, "personas", n, f"{n} ({f}): semblanza con sus fuentes, en Personas de Alaejos.") for r, frag, n, f in PERSONAS] + [
     ("biblioteca/", "biblioteca", "biblioteca", "Biblioteca",
-     "Textos sobre Alaejos para leer y descargar: los 178 artículos de los programas de fiestas (1954–2026), los programas originales y la novena de la Virgen de la Casita."),
+     "Textos sobre Alaejos: los 178 artículos de los programas de fiestas (1954–2026), los programas originales y la novena de la Virgen de la Casita."),
     ("biblioteca/novena-de-la-virgen-de-la-casita/", "novena", "biblioteca", "La novena de la Virgen de la Casita",
-     "Las novenas a Nuestra Señora de la Casita, patrona de Alaejos, para descargar en PDF: la original de 1865, la «Historia y novena» de 1952 y la edición en castellano actual de 2026."),
+     "Las novenas a la Virgen de la Casita, patrona de Alaejos, en PDF: la original de 1865, la «Historia y novena» de 1952 y la edición actual de 2026."),
+    ("biblioteca/bibliografia/", "bibliografia", "biblioteca", "Bibliografía",
+     "Libros, estudios y artículos de los programas de fiestas sobre Alaejos citados en esta web, con las páginas en las que se usan."),
+    ("biblioteca/glosario/", "glosario", "biblioteca", "Glosario",
+     "Palabras de los documentos antiguos y del habla de Alaejos explicadas: beneficiado, cilla, diezmo, linaje, mayorazgo, Mesta, cabañuelas, lavajo y otras."),
     ("novedades/", "novedades", "novedades", "Novedades",
      "Lo último que se ha incorporado a Amigos de Alaejos, con su fecha."),
     ("colabora/", "colabora", "colabora", "Colabora",
@@ -240,12 +247,25 @@ def vecinos(ruta, base):
     return f'<nav class="vecinos" aria-label="Recorrido por {articulo}">' + "".join(partes) + '</nav>'
 
 
+def acciones(ruta, titulo, base, frag):
+    """Al pie de cada página: avisar de un error y compartir por WhatsApp."""
+    from urllib.parse import quote
+    if frag in ("buscar", "colabora"):
+        return ""
+    url = URL_BASE + ruta
+    wa = "https://wa.me/?text=" + quote(f"{titulo} · {NOMBRE}\n{url}")
+    return (f'<div class="acciones">'
+            f'<a class="acc-error" href="{base}colabora/?motivo=correccion&amp;sobre={quote(titulo)}#contacto">¿Ha visto un error o sabe algo más? Cuéntenoslo</a>'
+            f'<span class="acc-compartir"><a href="{wa}" rel="noopener">Compartir por WhatsApp</a>'
+            f'<button type="button" class="acc-nativo" hidden data-titulo="{esc(titulo)}" data-url="{url}">Compartir…</button></span></div>')
+
+
 def pie(base):
     redes = "".join(f'<a href="{u}" rel="me">{n}</a>' for n, u in REDES)
     otras = "".join(f'<a href="{u}">{n}</a>' for n, u in OTRAS_WEBS)
     propias = "".join(f'<a href="{base}{r}">{n}</a>' for n, r in [
         ("Quiénes somos", "quienes-somos/"), ("Preguntas abiertas", "preguntas-abiertas/"),
-        ("Mapa", "patrimonio/mapa/"), ("Buscar", "buscar/"), ("Colabora", "colabora/")])
+        ("Mapa", "patrimonio/mapa/"), ("Bibliografía", "biblioteca/bibliografia/"), ("Glosario", "biblioteca/glosario/"), ("Buscar", "buscar/"), ("Colabora", "colabora/")])
     return (f'<footer class="pie"><div class="pie-in"><div class="horizonte" aria-hidden="true"></div>'
             f'<p><strong>{NOMBRE}.</strong> Archivo abierto de historia, patrimonio y memoria de la villa de Alaejos (Valladolid).</p>'
             f'<div class="otras">{propias}</div>'
@@ -271,7 +291,8 @@ def pagina(ruta, titulo, descripcion, cuerpo, clave, og, es_portada=False, extra
 <link rel="icon" href="{base}assets/escudo.png">
 <link rel="preload" href="{base}assets/fuentes/literata-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="{base}assets/fuentes/im-fell-dw-pica-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="{base}assets/estilo.css">{extra_head}
+<link rel="stylesheet" href="{base}assets/estilo.css">
+<link rel="alternate" type="application/atom+xml" title="Novedades de {NOMBRE}" href="{URL_BASE}novedades.xml">{datos_estructurados(ruta, titulo, descripcion, clave)}{extra_head}
 <script>document.documentElement.className+=' js';</script>
 </head>
 <body id="top">
@@ -284,6 +305,40 @@ def pagina(ruta, titulo, descripcion, cuerpo, clave, og, es_portada=False, extra
 </body>
 </html>
 """
+
+
+def datos_estructurados(ruta, titulo, descripcion, clave):
+    if ruta == "":
+        d = {"@context": "https://schema.org", "@type": "WebSite", "name": NOMBRE, "url": URL_BASE,
+             "inLanguage": "es", "description": descripcion,
+             "potentialAction": {"@type": "SearchAction", "target": URL_BASE + "buscar/?q={q}", "query-input": "required name=q"}}
+    else:
+        migas = [("Inicio", URL_BASE)]
+        for k, etiqueta, destino in MENU:
+            if k == clave and destino and destino != ruta:
+                migas.append((etiqueta, URL_BASE + destino))
+        migas.append((titulo, URL_BASE + ruta))
+        d = {"@context": "https://schema.org", "@type": "BreadcrumbList",
+             "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(migas)]}
+    return '\n<script type="application/ld+json">' + json.dumps(d, ensure_ascii=False) + '</script>'
+
+
+def atom():
+    items = []
+    for e in novedades():
+        f = e["fecha"] if len(e["fecha"]) == 10 else e["fecha"] + "-01"
+        cont = e["html"].replace("{{BASE}}", URL_BASE)
+        primero = BeautifulSoup(cont, "html.parser").find("a")
+        enlace = primero["href"] if primero else URL_BASE + "novedades/"
+        items.append(f"<entry><title>{esc(e['title'] if 'title' in e else e['titulo'])}</title><link href=\"{esc(enlace)}\"/>"
+                     f"<id>{URL_BASE}novedades/#{f}-{slug(e['titulo'])}</id><updated>{f}T12:00:00+01:00</updated>"
+                     f"<content type=\"html\">{esc(cont)}</content></entry>")
+    ultima = (novedades()[0]["fecha"] + "-01")[:10]
+    return ('<?xml version="1.0" encoding="utf-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="es">'
+            f'<title>{NOMBRE} · Novedades</title><subtitle>{LEMA}</subtitle>'
+            f'<link href="{URL_BASE}"/><link rel="self" href="{URL_BASE}novedades.xml"/>'
+            f'<id>{URL_BASE}</id><updated>{ultima}T12:00:00+01:00</updated><author><name>{NOMBRE}</name></author>'
+            + "".join(items) + "</feed>\n")
 
 
 def redireccion(destino_abs):
@@ -457,20 +512,67 @@ def tarjetas_personas(base):
     return '<div class="personas-lista">' + "".join(out) + "</div>"
 
 
+def bibliografia(base):
+    """Artículos de los programas citados en la web, por autores, con las páginas que los citan."""
+    arts = json.loads((RAIZ / "_fuente" / "articulos.json").read_text(encoding="utf-8"))
+    citas = {}
+    for ruta, frag, clave, titulo, desc in PAGINAS:
+        if frag in ("bibliografia", "glosario"):
+            continue
+        txt = (FUENTE / f"{frag}.html").read_text(encoding="utf-8")
+        for u in re.findall(r'biblioteca\.amigosdealaejos\.org/(articulos/\d{4}/[^"#?]+\.html)', txt):
+            if u in arts:
+                lista = citas.setdefault(u, [])
+                if (ruta, titulo) not in lista:
+                    lista.append((ruta, titulo))
+    autores = {}
+    for u, pags in citas.items():
+        t, a, y = arts[u]
+        autores.setdefault(a, []).append((y, t, u, pags))
+    clave_orden = lambda a: (a == "Sin firma", unicodedata.normalize("NFD", a).lower())
+    orden = sorted(autores, key=clave_orden)
+    saltos = " · ".join(f'<a href="#autor-{slug(a)}">{esc(a)}</a>' for a in orden)
+    out = [f'<p class="resumen-preguntas"><strong>{len(citas)} artículos</strong> de {len(autores)} autores.</p>'
+           f'<p class="saltos-autores">{saltos}</p>']
+    for a in orden:
+        items = []
+        for y, t, u, pags in sorted(autores[a]):
+            enl = ", ".join(f'<a href="{base}{r}">{esc(n)}</a>' for r, n in pags)
+            items.append(f'<li><span class="anio">{y}</span> <a href="https://biblioteca.amigosdealaejos.org/{u}">«{esc(t)}»</a>'
+                         f'<span class="citado">Citado en {enl}.</span></li>')
+        out.append(f'<h3 id="autor-{slug(a)}">{esc(a)}</h3><ul class="biblio-prog">{"".join(items)}</ul>')
+    return "".join(out)
+
+
 def preguntas(base):
+    from urllib.parse import quote
+    claves = {r: k for r, _, k, _, _ in PAGINAS}
+    nombres = {k: e for k, e, _ in MENU}
     por_pagina = {}
     for e in ESTUDIOS:
         por_pagina.setdefault((e["ruta"], e["titulo"]), []).append(e)
     orden = [r for r, *_ in PAGINAS]
-    bloques = []
+    secciones = {}
     for (ruta, titulo), es in sorted(por_pagina.items(), key=lambda kv: orden.index(kv[0][0])):
-        items = "".join(
-            f'<li>{"<strong>" + esc(e["apartado"]) + ".</strong> " if e["apartado"] else ""}'
-            f'{BeautifulSoup(e["html"], "html.parser").get_text(" ", strip=True)} '
-            f'<a href="{base}{ruta}#{e["ancla"]}">Ver en la página</a></li>' for e in es)
-        bloques.append(f'<h2 id="{slug(titulo)}"><a href="{base}{ruta}">{esc(titulo)}</a> <span class="cuenta">{len(es)}</span></h2><ol class="preguntas">{items}</ol>')
-    return (f'<p class="resumen-preguntas"><strong>{len(ESTUDIOS)} preguntas</strong> en {len(por_pagina)} páginas.</p>'
-            + "".join(bloques))
+        secciones.setdefault(claves.get(ruta, ""), []).append((ruta, titulo, es))
+    bloques = []
+    for clave, paginas in secciones.items():
+        total = sum(len(es) for _, _, es in paginas)
+        partes = []
+        for ruta, titulo, es in paginas:
+            items = []
+            for e in es:
+                sobre = quote(f'{titulo} — {e["apartado"]}' if e["apartado"] else titulo)
+                items.append(
+                    f'<li>{"<strong>" + esc(e["apartado"]) + ".</strong> " if e["apartado"] else ""}'
+                    f'{esc(BeautifulSoup(e["html"], "html.parser").get_text(" ", strip=True))} '
+                    f'<span class="preg-acc"><a href="{base}{ruta}#{e["ancla"]}">Ver en la página</a> · '
+                    f'<a href="{base}colabora/?motivo=correccion&amp;sobre={sobre}#contacto">Puedo aclararlo</a></span></li>')
+            partes.append(f'<details class="preg-pagina" id="{slug(titulo)}"><summary><span>{esc(titulo)}</span> '
+                          f'<span class="cuenta">{len(es)}</span></summary><ol class="preguntas">{"".join(items)}</ol></details>')
+        bloques.append(f'<h2 id="sec-{clave or "otras"}">{esc(nombres.get(clave, "Otras páginas"))} <span class="cuenta">{total}</span></h2>' + "".join(partes))
+    return (f'<p class="resumen-preguntas"><strong>{len(ESTUDIOS)} preguntas</strong> en {len(por_pagina)} páginas. '
+            f'Pulse en una página para ver sus dudas.</p>' + "".join(bloques))
 
 
 # ---------------------------------------------------------------- imagen para compartir
@@ -541,6 +643,8 @@ def construir():
     for ruta, frag, clave, titulo, desc in PAGINAS:
         if frag == "preguntas":
             cuerpos[ruta] = cuerpos[ruta].replace("{{PREGUNTAS}}", preguntas(profundidad(ruta)))
+        if frag == "bibliografia":
+            cuerpos[ruta] = cuerpos[ruta].replace("{{BIBLIOGRAFIA}}", bibliografia(profundidad(ruta)))
     urls = []
     for ruta, frag, clave, titulo, desc in PAGINAS:
         base = profundidad(ruta)
@@ -548,7 +652,7 @@ def construir():
         if ruta == "":
             cuerpo = f'<main id="contenido">{texto}</main>'
         else:
-            cuerpo = f'<main id="contenido" class="lectura">{texto}{vecinos(ruta, base)}</main>'
+            cuerpo = f'<main id="contenido" class="lectura">{texto}{acciones(ruta, titulo, base, frag)}{vecinos(ruta, base)}</main>'
         seccion = {"": LEMA}.get(ruta) or (titulos_seccion.get(clave) or "Amigos de Alaejos")
         if clave == "personas" and ruta != "personas-de-alaejos/":
             seccion = "Personas de Alaejos"
@@ -562,6 +666,7 @@ def construir():
         if frag != "buscar":
             urls.append(URL_BASE + ruta)
 
+    (RAIZ / "novedades.xml").write_text(atom(), encoding="utf-8")
     (RAIZ / "assets" / "buscar.json").write_text(json.dumps(INDICE, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
     for vieja, nueva in REDIRECCIONES.items():

@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-15",
+  "titulo": "Valdefuentes, cuatro alaejanos más, bibliografía y glosario",
+  "html": "Nuevo capítulo de historia: <a href=\"{{BASE}}historia-del-pueblo/el-despoblado-de-valdefuentes/\">El despoblado de Valdefuentes</a>. Cuatro personas más: el médico <a href=\"{{BASE}}personas-de-alaejos/andres-de-villamediana/\">Andrés de Villamediana</a>, el jesuita <a href=\"{{BASE}}personas-de-alaejos/bernardo-recio/\">Bernardo Recio</a>, el <a href=\"{{BASE}}personas-de-alaejos/luis-manuel-de-isla/\">conde de Isla</a> y el escritor <a href=\"{{BASE}}personas-de-alaejos/serafin-puertas-garcia/\">Serafín Puertas</a>. Y dos herramientas: la <a href=\"{{BASE}}biblioteca/bibliografia/\">Bibliografía</a> y el <a href=\"{{BASE}}biblioteca/glosario/\">Glosario</a>. Cada página tiene ahora un enlace para avisar de un error y otro para compartirla por WhatsApp."
+ },
+ {
+  "fecha": "2026-11-15",
   "titulo": "Una web más fácil de recorrer",
   "html": "Se reorganiza la web: buscador, índice al principio de las páginas largas, menú plegable en el móvil, fotos que se amplían y cargan más rápido, una página para cada <a href=\"{{BASE}}personas-de-alaejos/\">persona</a> y una sola página de <a href=\"{{BASE}}fiestas-y-eventos/\">fiestas y tradiciones</a>. Y páginas nuevas: <a href=\"{{BASE}}preguntas-abiertas/\">Preguntas abiertas</a>, con todo lo que sigue en estudio; <a href=\"{{BASE}}patrimonio/la-plaza-mayor/\">la Plaza Mayor</a>; <a href=\"{{BASE}}patrimonio/mapa/\">el mapa</a>; <a href=\"{{BASE}}historia-del-pueblo/fotografias-antiguas/\">fotografías antiguas</a>, y <a href=\"{{BASE}}quienes-somos/\">quiénes somos</a>."
  },

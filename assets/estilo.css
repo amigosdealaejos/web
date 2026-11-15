@@ -356,3 +356,34 @@ mark { background: var(--resalte); color: inherit; padding: 0 0.1em; border-radi
   .cab-acc { order: 2; }
 }
 @media (max-width: 30rem) { .marca-2 { display: none; } .marca-1 { font-size: 1.25rem; } .hero-foto { order: -1; } }
+
+/* Al pie de cada página: avisar de un error y compartir */
+.acciones { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.6rem 1.5rem; margin-top: 2.5rem; padding: 0.9rem 1rem; background: var(--superficie); border-radius: var(--radio); font-family: var(--f-util); font-size: 0.95rem; }
+.acc-compartir { display: inline-flex; gap: 1rem; align-items: center; }
+.acc-nativo { font: inherit; color: var(--enlace); background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 0.18em; cursor: pointer; }
+.acciones + .vecinos { margin-top: 1.2rem; }
+@media print { .acciones { display: none; } }
+
+/* Preguntas abiertas plegables */
+.preg-pagina { border-top: 1px solid var(--raya); }
+.preg-pagina summary { cursor: pointer; padding: 0.7rem 0; font-family: var(--f-titulo); font-size: 1.3rem; display: flex; gap: 0.5rem; align-items: center; }
+.preg-pagina summary::marker { color: var(--sepia); }
+.preg-pagina[open] summary { color: var(--enlace); }
+.preg-pagina .preguntas { margin-bottom: 1.2rem; }
+.preg-acc { display: block; margin-top: 0.15rem; font-family: var(--f-util); font-size: 0.9rem; }
+.lectura > h2[id^="sec-"] { margin-top: 2.2rem; }
+
+/* Bibliografía y glosario */
+ul.biblio { padding-left: 1.1em; }
+ul.biblio li { margin: 0 0 0.55em; }
+.texto h3 { font-family: var(--f-util); font-size: 1.02rem; font-weight: 600; margin: 1.6em 0 0.4em; color: var(--tinta); }
+ul.biblio-prog { list-style: none; padding: 0 !important; margin: 0 0 1em; }
+ul.biblio-prog li { padding: 0.45rem 0; border-bottom: 1px solid var(--raya); margin: 0 !important; }
+ul.biblio-prog .anio { font-family: var(--f-util); font-weight: 600; color: var(--sepia); font-variant-numeric: tabular-nums; margin-right: 0.35em; }
+ul.biblio-prog .citado { display: block; font-family: var(--f-util); font-size: 0.86rem; color: var(--tenue); margin-top: 0.15rem; }
+dl.glosario { margin: 1.5em 0; }
+dl.glosario dt { font-family: var(--f-util); font-weight: 600; font-size: 1.05rem; color: var(--sepia); margin-top: 1.1em; scroll-margin-top: 5rem; }
+dl.glosario dd { margin: 0.2em 0 0; padding-bottom: 0.9em; border-bottom: 1px solid var(--raya); }
+dl.glosario dd a { white-space: nowrap; }
+.saltos-autores { font-family: var(--f-util); font-size: 0.92rem; line-height: 1.7; color: var(--tenue); }
+.texto h3[id] { scroll-margin-top: 5rem; }
