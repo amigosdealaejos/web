@@ -53,6 +53,25 @@ PATRIMONIO = [
     ("El castillo", "patrimonio/el-castillo/"),
 ]
 
+# Subapartados de Historia, en orden cronológico y después los temáticos
+HISTORIA = [
+    ("Orígenes y Edad Media", "historia-del-pueblo/origenes-y-edad-media/"),
+    ("La villa de señorío", "historia-del-pueblo/la-villa-de-senorio/"),
+    ("Siglos XVI y XVII", "historia-del-pueblo/siglos-xvi-y-xvii/"),
+    ("El vino de Alaejos", "historia-del-pueblo/el-vino-de-alaejos/"),
+    ("El siglo XVIII", "historia-del-pueblo/el-siglo-xviii/"),
+    ("El siglo XIX", "historia-del-pueblo/el-siglo-xix/"),
+    ("El siglo XX", "historia-del-pueblo/el-siglo-xx/"),
+    ("Oficios, agua y vida diaria", "historia-del-pueblo/oficios-agua-y-vida-diaria/"),
+    ("Dichos, cabañuelas y habla", "historia-del-pueblo/dichos-cabanuelas-y-habla/"),
+]
+
+# Secciones con submenú: clave del menú -> (título, ruta de la presentación, subapartados)
+SECCIONES = {
+    "historia": ("Historia", "historia-del-pueblo/", HISTORIA),
+    "patrimonio": ("Patrimonio", "patrimonio/", PATRIMONIO),
+}
+
 # Páginas: (ruta, fragmento, clave del menú, título, descripción)
 PAGINAS = [
     ("", "inicio", "inicio", NOMBRE + " · " + LEMA,
@@ -62,7 +81,25 @@ PAGINAS = [
     ("biblioteca/novena-de-la-virgen-de-la-casita/", "novena", "biblioteca", "La novena de la Virgen de la Casita",
      "Las novenas a Nuestra Señora de la Casita, patrona de Alaejos, para descargar en PDF: la original de 1865, la «Historia y novena» de 1952 y la edición en castellano actual de 2026."),
     ("historia-del-pueblo/", "historia", "historia", "Historia del pueblo",
-     "Alaejos, villa de señorío de los Fonseca en Tierra de Medina: el encierro de la reina Juana de Portugal, el cerco comunero de 1520 y el despoblado de Valdefuentes."),
+     "La historia de Alaejos (Valladolid), de la aldea fronteriza de la Tierra de Medina a hoy: cronología, población a lo largo de los siglos y nueve capítulos documentados con los programas de fiestas."),
+    ("historia-del-pueblo/origenes-y-edad-media/", "h-origenes", "historia", "Orígenes y Edad Media",
+     "Los orígenes de Alaejos: los bifaces del Trabancos, el nombre de Falafeios, la repoblación, la frontera con León, los cuatro linajes y el paso a los Fonseca en 1452."),
+    ("historia-del-pueblo/la-villa-de-senorio/", "h-senorio", "historia", "La villa de señorío",
+     "Alaejos, villa de señorío de 1452 a 1837: cómo se gobernaba, la sucesión de señores de los Fonseca a los duques de Alba, la visita de Felipe III en 1600 y la rebelión de 1593."),
+    ("historia-del-pueblo/siglos-xvi-y-xvii/", "h-siglos-xvi-xvii", "historia", "Siglos XVI y XVII: esplendor y crisis",
+     "Alaejos en el Siglo de Oro: las ordenanzas de 1580, el pleito con la Mesta, el convento de los franciscanos descalzos, fray Miguel de Alaejos, la escuela y la crisis del siglo XVII."),
+    ("historia-del-pueblo/el-vino-de-alaejos/", "h-vino", "historia", "El vino de Alaejos",
+     "El blanco de Alaejos, vino famoso del siglo XVI citado por Cervantes y Quevedo: su comercio, sus bodegas y lagares y su decadencia hasta la filoxera."),
+    ("historia-del-pueblo/el-siglo-xviii/", "h-siglo-xviii", "historia", "El siglo XVIII: el Catastro y los ilustrados",
+     "Alaejos en 1751 según el Catastro de Ensenada, la cilla de los diezmos, la Real Sociedad Caritativo-Económica de 1785 y la Real Fábrica de paños."),
+    ("historia-del-pueblo/el-siglo-xix/", "h-siglo-xix", "historia", "El siglo XIX: guerra, epidemias y libertades",
+     "Alaejos en el siglo XIX: Marmont y Wellington en 1812, el cólera de 1834, la villa según Madoz, la república federal de tres días de 1873 y el fuego de las eras de 1881."),
+    ("historia-del-pueblo/el-siglo-xx/", "h-siglo-xx", "historia", "El siglo XX",
+     "Alaejos en el siglo XX: las fiestas de 1905, el ferrocarril que no llegó, la paz con Nava del Rey de 1928, la guerra civil, la emigración y el primer Ayuntamiento democrático."),
+    ("historia-del-pueblo/oficios-agua-y-vida-diaria/", "h-oficios", "historia", "Oficios, agua y vida diaria",
+     "El Caño y el Arca Madre, los pastores, los cantareros y los oficios desaparecidos de Alaejos: aguador, sereno, pregonero, capador, casitera."),
+    ("historia-del-pueblo/dichos-cabanuelas-y-habla/", "h-tradicion-oral", "historia", "Dichos, cabañuelas y habla",
+     "La tradición oral de Alaejos: las cabañuelas, los dichos sobre el pueblo y sobre Nava, los ramos de segadores, las supersticiones, palabras propias y grabaciones de su música."),
     ("patrimonio/", "patrimonio", "patrimonio", "Patrimonio",
      "Las iglesias de Santa María y San Pedro, la ermita de la Virgen de la Casita y el castillo de los Fonseca: el patrimonio monumental de Alaejos."),
     ("patrimonio/iglesia-de-santa-maria/", "santa-maria", "patrimonio", "Iglesia de Santa María",
@@ -118,22 +155,26 @@ def cabecera(ruta, clave, base):
            f'<span class="escudo" aria-hidden="true"></span><span class="marca-txt">'
            f'<span class="marca-1">{NOMBRE}</span><span class="marca-2">{LEMA}</span></span></a>'
            f'<nav class="menu" aria-label="Secciones">{"".join(enlaces)}</nav></div></header>')
-    if clave == "patrimonio":
-        cur = ' aria-current="page"' if ruta == "patrimonio/" else ""
-        sub = [f'<a href="{base}patrimonio/"{cur}>Presentación</a>']
-        for etiqueta, destino in PATRIMONIO:
+    if clave in SECCIONES:
+        titulo, raiz, lista = SECCIONES[clave]
+        cur = ' aria-current="page"' if ruta == raiz else ""
+        sub = [f'<a href="{base}{raiz}"{cur}>Presentación</a>']
+        for etiqueta, destino in lista:
             cur = ' aria-current="page"' if destino == ruta else ""
             sub.append(f'<a href="{base}{destino}"{cur}>{etiqueta}</a>')
-        out += ('<nav class="submenu" aria-label="Patrimonio"><span class="submenu-tit">Patrimonio</span>'
+        out += (f'<nav class="submenu" aria-label="{titulo}"><span class="submenu-tit">{titulo}</span>'
                 + "".join(sub) + '</nav>')
     return out
 
 
 def vecinos(ruta, base):
-    """Anterior / siguiente dentro de Patrimonio."""
-    orden = [("Patrimonio", "patrimonio/")] + PATRIMONIO
-    rutas = [r for _, r in orden]
-    if ruta not in rutas:
+    """Anterior / siguiente dentro de una sección con subapartados (Historia, Patrimonio)."""
+    for titulo, raiz, lista in SECCIONES.values():
+        orden = [(titulo, raiz)] + lista
+        rutas = [r for _, r in orden]
+        if ruta in rutas:
+            break
+    else:
         return ""
     i = rutas.index(ruta)
     partes = []
@@ -141,7 +182,8 @@ def vecinos(ruta, base):
         partes.append(f'<a href="{base}{orden[i-1][1]}"><span>Anterior</span>{orden[i-1][0]}</a>')
     if i < len(orden) - 1:
         partes.append(f'<a class="sig" href="{base}{orden[i+1][1]}"><span>Siguiente</span>{orden[i+1][0]}</a>')
-    return '<nav class="vecinos" aria-label="Recorrido por el patrimonio">' + "".join(partes) + '</nav>'
+    articulo = {"Historia": "la historia", "Patrimonio": "el patrimonio"}.get(titulo, titulo.lower())
+    return f'<nav class="vecinos" aria-label="Recorrido por {articulo}">' + "".join(partes) + '</nav>'
 
 
 def pie(base):

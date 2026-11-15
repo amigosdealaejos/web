@@ -119,6 +119,27 @@ h1, h2, h3 { text-wrap: balance; }
 .galeria .foto img { aspect-ratio: 3 / 4; object-fit: cover; }
 .nota-planos { font-family: var(--f-util); font-size: 0.9rem; color: var(--tenue); }
 
+/* Tablas de datos (población, señores, oficios) */
+.tabla-env { margin: 1.6em 0; overflow-x: auto; }
+.tabla { width: 100%; border-collapse: collapse; font-family: var(--f-util); font-size: 0.95rem; line-height: 1.4; }
+.tabla caption { text-align: left; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tenue); padding-bottom: 0.4rem; }
+.tabla th, .tabla td { text-align: left; vertical-align: top; padding: 0.45rem 0.6rem 0.45rem 0; border-bottom: 1px solid var(--raya); }
+.tabla th { font-weight: 600; color: var(--tenue); border-bottom-width: 2px; }
+.tabla td.num, .tabla th.num { text-align: right; font-variant-numeric: tabular-nums; padding-right: 1rem; white-space: nowrap; }
+.tabla .nota { display: block; font-size: 0.82rem; color: var(--tenue); }
+
+/* Cronología: año a la izquierda, hecho a la derecha */
+.cronologia { list-style: none; padding: 0 !important; margin: 1.4em 0; font-size: 1.02rem; }
+.cronologia li { display: grid; grid-template-columns: 6.6rem 1fr; gap: 0 1rem; padding: 0.5rem 0; border-bottom: 1px solid var(--raya); margin: 0 !important; }
+.cronologia .anio { font-family: var(--f-util); font-weight: 600; white-space: nowrap; color: var(--sepia); font-variant-numeric: tabular-nums; }
+
+/* Grabaciones sonoras */
+.sonido { margin: 1.4em 0; padding: 0.9rem 1.1rem; background: var(--superficie); border-radius: var(--radio); }
+.sonido p { margin: 0 0 0.5rem; font-family: var(--f-util); font-size: 0.95rem; }
+.sonido audio { width: 100%; }
+.sonido .credito { display: block; font-family: var(--f-util); font-size: 0.8rem; color: var(--tenue); margin-top: 0.3rem; }
+.sonido .credito a { color: var(--tenue); }
+
 .ficha { margin: 2em 0; padding: 1.1rem 1.2rem; background: var(--superficie); border-radius: var(--radio); font-family: var(--f-util); font-size: 0.98rem; }
 .ficha h2, .ficha h3 { font-family: var(--f-util); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tenue); margin: 0 0 0.4rem; }
 .ficha p { margin: 0.3rem 0; }
@@ -187,3 +208,4 @@ h1, h2, h3 { text-wrap: balance; }
 .estado.error { color: #9A3324; }
 @media (prefers-color-scheme: dark) { .estado.ok { color: #9BCB8F; } .estado.error { color: #E59A8A; } }
 @media (max-width: 40rem) { .fila { grid-template-columns: 1fr; } }
+@media (max-width: 30rem) { .cronologia li { grid-template-columns: 5.6rem 1fr; gap: 0 0.7rem; } .cronologia .anio { font-size: 0.92rem; } }
