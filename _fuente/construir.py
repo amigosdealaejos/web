@@ -66,10 +66,16 @@ HISTORIA = [
     ("Dichos, cabañuelas y habla", "historia-del-pueblo/dichos-cabanuelas-y-habla/"),
 ]
 
+# Subapartados de Fiestas
+FIESTAS = [
+    ("Fiestas y tradiciones", "fiestas-y-eventos/fiestas-y-tradiciones-de-alaejos/"),
+]
+
 # Secciones con submenú: clave del menú -> (título, ruta de la presentación, subapartados)
 SECCIONES = {
     "historia": ("Historia", "historia-del-pueblo/", HISTORIA),
     "patrimonio": ("Patrimonio", "patrimonio/", PATRIMONIO),
+    "fiestas": ("Fiestas", "fiestas-y-eventos/", FIESTAS),
 }
 
 # Páginas: (ruta, fragmento, clave del menú, título, descripción)
@@ -112,6 +118,8 @@ PAGINAS = [
      "El castillo de los Fonseca en Alaejos según los documentos: la licencia de 1453, la reina Juana de Portugal, la «sala rica» morisca, el cerco comunero de 1520, la ruina y las excavaciones."),
     ("fiestas-y-eventos/", "fiestas", "fiestas", "Fiestas y eventos",
      "El año festivo de Alaejos, de los Quintos a las fiestas de la Virgen de la Casita, y la colección de programas de fiestas desde 1954."),
+    ("fiestas-y-eventos/fiestas-y-tradiciones-de-alaejos/", "fiestas-tradiciones", "fiestas", "Fiestas y tradiciones de Alaejos",
+     "El año festivo de Alaejos mes a mes: quintos, San Antón, Semana Santa, la romería de mayo, la Mariseca, las fiestas de la Virgen de la Casita, los toros desde 1583, el vino, las cabañuelas y la charambita."),
     ("personas-de-alaejos/", "personas", "personas", "Personas de Alaejos",
      "Alaejanos de los que ha quedado memoria: el cardenal Arias y Porres, Hernández Morejón, Alejandro Ramírez, el beato Donato, Gonzala Santana y otros, con sus fuentes."),
     ("novedades/", "novedades", "novedades", "Novedades",
@@ -182,7 +190,7 @@ def vecinos(ruta, base):
         partes.append(f'<a href="{base}{orden[i-1][1]}"><span>Anterior</span>{orden[i-1][0]}</a>')
     if i < len(orden) - 1:
         partes.append(f'<a class="sig" href="{base}{orden[i+1][1]}"><span>Siguiente</span>{orden[i+1][0]}</a>')
-    articulo = {"Historia": "la historia", "Patrimonio": "el patrimonio"}.get(titulo, titulo.lower())
+    articulo = {"Historia": "la historia", "Patrimonio": "el patrimonio", "Fiestas": "las fiestas"}.get(titulo, titulo.lower())
     return f'<nav class="vecinos" aria-label="Recorrido por {articulo}">' + "".join(partes) + '</nav>'
 
 
