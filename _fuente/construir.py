@@ -197,6 +197,7 @@ REDIRECCIONES = {
     "patrimonio/iglesia-de-santa-maría/": "patrimonio/iglesia-de-santa-maria/",
     "programas-de-las-fiestas-de-alaejos/": "biblioteca/#programas",
     "fiestas-y-eventos/fiestas-y-tradiciones-de-alaejos/": "fiestas-y-eventos/",
+    "mapa/": "patrimonio/mapa/",
 }
 
 ICONO_BUSCAR = ('<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
