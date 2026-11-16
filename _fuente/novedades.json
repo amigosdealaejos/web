@@ -1,5 +1,10 @@
 [
  {
+  "fecha": "2026-11-16",
+  "titulo": "Un pergamino de 1618 del Archivo Histórico Provincial",
+  "html": "El Archivo Histórico Provincial de Valladolid nos ha enviado la reproducción del pergamino por el que el presbítero alaejano Pedro Gutiérrez incorporó en 1618 su título de bachiller en cánones a la Universidad de Valladolid. Está en <a href=\"{{BASE}}historia-del-pueblo/siglos-xvi-y-xvii/\">Siglos XVI y XVII</a> y en la <a href=\"{{BASE}}historia-del-pueblo/cronologia/\">cronología</a>. Gracias al archivo, que conserva documentos sobre Alaejos desde el siglo XVI y los tiene en su catálogo en línea."
+ },
+ {
   "fecha": "2026-11-15",
   "titulo": "Pregoneros, santa Ana, versos y más correcciones",
   "html": "Nueva página <a href=\"{{BASE}}biblioteca/versos-y-recuerdos/\">Versos y recuerdos de los programas</a>. En las fiestas de la Casita, la lista de <a href=\"{{BASE}}fiestas-y-eventos/fiestas-de-la-virgen-de-la-casita/#los-pregoneros\">pregoneros</a> que conocemos (ayúdenos a completarla). En la ermita, la imagen de santa Ana a la que las mozas pedían novio. <a href=\"{{BASE}}personas-de-alaejos/gonzala-santana-delgado/\">Gonzala Santana</a>: su partida de bautismo aclara que nació en Salamanca. Y en <a href=\"{{BASE}}preguntas-abiertas/\">Preguntas abiertas</a>, una lista aparte de lo que buscamos."
