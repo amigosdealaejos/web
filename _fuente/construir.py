@@ -177,6 +177,8 @@ PAGINAS = [
      "Libros, estudios y artículos de los programas de fiestas sobre Alaejos citados en esta web, con las páginas en las que se usan."),
     ("biblioteca/versos-y-recuerdos/", "versos", "biblioteca", "Versos y recuerdos de los programas",
      "Poemas y recuerdos de vecinos publicados en los programas de fiestas de Alaejos, de 1971 a 2025, con lo que cuenta cada uno y enlace al texto completo."),
+    ("biblioteca/cancionero/", "cancionero", "biblioteca", "Cancionero de Alaejos",
+     "Las 37 canciones de Alaejos que recogió Antonio Lucas Varela en Arrecájel (1998): partituras, melodías para escuchar y el himno del pueblo."),
     ("biblioteca/glosario/", "glosario", "biblioteca", "Glosario",
      "Palabras de los documentos antiguos y del habla de Alaejos explicadas: beneficiado, cilla, diezmo, linaje, mayorazgo, Mesta, cabañuelas, lavajo y otras."),
     ("novedades/", "novedades", "novedades", "Novedades",
