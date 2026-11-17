@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-17",
+  "titulo": "El vocabulario de Alaejos y La matanza",
+  "html": "Dos páginas nuevas con el texto de <em>Arrecájel</em> (1998), de Antonio Lucas Varela. El <a href=\"{{BASE}}biblioteca/vocabulario/\">Vocabulario de Alaejos</a> reúne las 1.068 palabras, pagos y lugares y las 190 locuciones del libro, con un buscador. <a href=\"{{BASE}}historia-del-pueblo/la-matanza/\">La matanza</a> cuenta el mondongo paso a paso y trae las recetas tradicionales de la morcilla, la longaniza, el chorizo y el jamón. ¿Sabe dónde quedan los pagos del término? Ayúdenos a ponerlos en el mapa."
+ },
+ {
+  "fecha": "2026-11-17",
   "titulo": "Juegos de antes",
   "html": "Nueva página <a href=\"{{BASE}}historia-del-pueblo/juegos-de-antes/\">Juegos de antes</a>, con el capítulo que Antonio Lucas Varela dedicó en <em>Arrecájel</em> (1998) a los juegos de su infancia: treinta y cuatro juegos de salto, de escondite, de peón y bolas, de chicas, de corro y de casa, con sus reglas, sus palabras y sus canciones para escuchar. ¿Jugó usted a alguno? Cuéntenoslo."
  },

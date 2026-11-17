@@ -402,3 +402,23 @@ a.glosa:hover { color: var(--sepia); }
 .submenu a.submenu-tit:hover { text-decoration: underline; }
 .submenu a.submenu-otro { margin-left: auto; }
 @media (max-width: 44rem) { .submenu a.submenu-otro { display: none; } }
+
+/* Vocabulario de Alaejos */
+.vocab-busca { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.4rem 0 0.4rem; position: sticky; top: 0; z-index: 2; background: var(--papel); padding: 0.5rem 0; }
+.vocab-busca[hidden] { display: none; }
+.vocab-busca input { flex: 1 1 14rem; min-width: 0; font: 1.05rem var(--f-util); color: var(--tinta); background: var(--papel); border: 1px solid var(--raya); border-radius: var(--radio); padding: 0.6rem 0.8rem; }
+.vocab-busca select { font: 0.98rem var(--f-util); color: var(--tinta); background: var(--papel); border: 1px solid var(--raya); border-radius: var(--radio); padding: 0.5rem 0.6rem; }
+.vocab-busca input:focus, .vocab-busca select:focus { outline: none; border-color: var(--sepia); box-shadow: 0 0 0 3px var(--resalte); }
+.vocab-estado { font-family: var(--f-util); font-size: 0.92rem; color: var(--tenue); min-height: 1.2em; margin: 0.2rem 0 0.6rem; }
+.letras { font-family: var(--f-util); font-size: 0.98rem; line-height: 2; margin: 0.4rem 0 1rem; }
+.letras a { display: inline-block; min-width: 1.6em; text-align: center; }
+section.letra[hidden], dl.vocab [hidden] { display: none; }
+dl.vocab dt { font-size: 0.98rem; letter-spacing: 0.02em; }
+dl.vocab dt .cat { font-weight: 400; font-style: italic; color: var(--tenue); letter-spacing: 0; margin-left: 0.25em; }
+dl.vocab dt .etq { font-weight: 600; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--papel); background: var(--sepia); border-radius: var(--radio); padding: 0.05em 0.45em; margin-left: 0.4em; vertical-align: 0.12em; }
+dl.vocab dd a { white-space: normal; }
+dl.vocab dd .n { font-family: var(--f-util); color: var(--sepia); }
+dl.vocab dt:target, dl.vocab dt:target + dd { background: var(--resalte); }
+details.presentacion { margin: 1.4em 0; padding: 0.6rem 1rem; background: var(--superficie); border-radius: var(--radio); }
+details.presentacion summary { font-family: var(--f-util); font-weight: 600; cursor: pointer; }
+table.abrev th { font-family: var(--f-util); white-space: nowrap; }

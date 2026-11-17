@@ -77,6 +77,7 @@ HISTORIA_EPOCAS = [
 HISTORIA_TEMAS = [
     ("Oficios y agua", "historia-del-pueblo/oficios-agua-y-vida-diaria/"),
     ("Juegos de antes", "historia-del-pueblo/juegos-de-antes/"),
+    ("La matanza", "historia-del-pueblo/la-matanza/"),
     ("Dichos y habla", "historia-del-pueblo/dichos-cabanuelas-y-habla/"),
     ("El término", "historia-del-pueblo/el-termino/"),
     ("Escudo y bandera", "historia-del-pueblo/escudo-y-bandera/"),
@@ -133,6 +134,8 @@ PAGINAS = [
      "El Caño y el Arca Madre, los pastores, los cantareros y los oficios desaparecidos de Alaejos: aguador, sereno, pregonero, capador, casitera."),
     ("historia-del-pueblo/juegos-de-antes/", "h-juegos", "historia", "Juegos de antes",
      "A qué jugaban los niños de Alaejos a mediados del siglo XX, según Antonio Lucas Varela: la una anda la mula, el uso, el peón, las bolas, el tarol, la comba y los corros."),
+    ("historia-del-pueblo/la-matanza/", "h-matanza", "historia", "La matanza",
+     "El mondongo de Alaejos contado por Antonio Lucas Varela y las recetas tradicionales de la matanza: morcilla, longaniza, chorizo, morcón, salchichón, adobo y jamón."),
     ("historia-del-pueblo/dichos-cabanuelas-y-habla/", "h-tradicion-oral", "historia", "Dichos, cabañuelas y habla",
      "La tradición oral de Alaejos: las cabañuelas, los dichos sobre el pueblo y sobre Nava, los ramos de segadores, palabras propias y su música."),
     ("historia-del-pueblo/el-termino/", "h-termino", "historia", "El término: clima, montes y prados",
@@ -182,6 +185,8 @@ PAGINAS = [
      "Poemas y recuerdos de vecinos publicados en los programas de fiestas de Alaejos, de 1971 a 2025, con lo que cuenta cada uno y enlace al texto completo."),
     ("biblioteca/cancionero/", "cancionero", "biblioteca", "Cancionero de Alaejos",
      "Las 37 canciones de Alaejos que recogió Antonio Lucas Varela en Arrecájel (1998): partituras, melodías para escuchar y el himno del pueblo."),
+    ("biblioteca/vocabulario/", "vocabulario", "biblioteca", "Vocabulario de Alaejos",
+     "Las palabras de Alaejos que recogió Antonio Lucas Varela en Arrecájel (1998): 1.068 localismos, arcaísmos, pagos y lugares del término, y 190 locuciones."),
     ("biblioteca/glosario/", "glosario", "biblioteca", "Glosario",
      "Palabras de los documentos antiguos y del habla de Alaejos explicadas: beneficiado, cilla, diezmo, linaje, mayorazgo, Mesta, cabañuelas, lavajo y otras."),
     ("novedades/", "novedades", "novedades", "Novedades",
@@ -489,7 +494,7 @@ def procesar(texto, ruta, base, titulo, frag):
     # 5. Índice «En esta página» en las páginas largas
     h2s = [h for h in s.find_all("h2") if not h.find_parent(class_=["indice", "ficha", "persona-tarjeta"])]
     palabras = len(s.get_text(" ").split())
-    if ruta and len(h2s) >= 4 and palabras >= 1100:
+    if ruta and frag != "vocabulario" and len(h2s) >= 4 and palabras >= 1100:
         items = "".join(f'<li><a href="#{h["id"]}">{esc(h.get_text(" ", strip=True))}</a></li>' for h in h2s)
         ind = BeautifulSoup(f'<details class="indice"><summary>En esta página <span>({len(h2s)} apartados · {round(palabras/220)} min de lectura)</span></summary><ol>{items}</ol></details>', "html.parser")
         ancla = s.find(class_="entradilla") or s.find("h1")
@@ -500,6 +505,15 @@ def procesar(texto, ruta, base, titulo, frag):
         copia = BeautifulSoup(str(s), "html.parser")
         for t in copia.select("script, form, .indice, figcaption .credito, iframe"):
             t.decompose()
+        if frag == "vocabulario":
+            for dl in copia.select("dl.vocab"):
+                for dt in dl.find_all("dt"):
+                    dd = dt.find_next_sibling("dd")
+                    lema = re.sub(r"\s+", " ", dt.get_text(" ", strip=True))
+                    defi = re.sub(r"\s+", " ", dd.get_text(" ", strip=True)) if dd else ""
+                    defi = re.sub(r"\s+([,.;:)»?!])", r"\1", re.sub(r"([(«¿¡])\s+", r"\1", defi))
+                    INDICE.append({"t": titulo, "a": lema, "u": ruta + "#" + dt["id"], "x": defi})
+                dl.decompose()
         MARCA = "⁣§§"
         for h in copia.find_all("h2"):
             h.insert_before(NavigableString(f"{MARCA}{h['id']}|{h.get_text(' ', strip=True)}{MARCA}"))
@@ -572,7 +586,7 @@ def glosario_datos():
 
 def enlazar_glosario(s, base, frag):
     """Primera aparición de cada término en el texto corrido: enlace discreto al glosario."""
-    if frag in ("glosario", "bibliografia", "buscar", "preguntas", "inicio", "novedades", "colabora", "quienes-somos"):
+    if frag in ("glosario", "vocabulario", "bibliografia", "buscar", "preguntas", "inicio", "novedades", "colabora", "quienes-somos"):
         return
     datos = glosario_datos()
     pendientes = {k: re.compile(r"(?<![\wáéíóúñÁÉÍÓÚÑ])(" + "|".join(v) + r")(?![\wáéíóúñÁÉÍÓÚÑ])")
