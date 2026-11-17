@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-17",
+  "titulo": "Novenas más ligeras y la fecha del Conjunto Histórico",
+  "html": "Las novenas de <a href=\"{{BASE}}biblioteca/novena-de-la-virgen-de-la-casita/\">1865 y 1952</a> se pueden descargar ahora en versiones ligeras, de 4 y 6 MB, sin perder legibilidad; las de alta resolución siguen disponibles. En <a href=\"{{BASE}}patrimonio/la-plaza-mayor/\">La Plaza Mayor</a> se aclara por qué algunas webs dicen que Alaejos es Conjunto Histórico desde 1980: ese año se abrió el expediente, y la declaración llegó en 1997. Y en <a href=\"{{BASE}}personas-de-alaejos/\">Personas de Alaejos</a> pedimos retratos y nombres de alaejanas y alaejanos que merezcan una semblanza."
+ },
+ {
+  "fecha": "2026-11-17",
   "titulo": "El vocabulario de Alaejos y La matanza",
   "html": "Dos páginas nuevas con el texto de <em>Arrecájel</em> (1998), de Antonio Lucas Varela. El <a href=\"{{BASE}}biblioteca/vocabulario/\">Vocabulario de Alaejos</a> reúne las 1.068 palabras, pagos y lugares y las 190 locuciones del libro, con un buscador. <a href=\"{{BASE}}historia-del-pueblo/la-matanza/\">La matanza</a> cuenta el mondongo paso a paso y trae las recetas tradicionales de la morcilla, la longaniza, el chorizo y el jamón. ¿Sabe dónde quedan los pagos del término? Ayúdenos a ponerlos en el mapa."
  },

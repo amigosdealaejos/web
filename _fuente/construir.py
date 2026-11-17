@@ -176,7 +176,7 @@ PAGINAS = [
      "Alaejanos de los que ha quedado memoria: el cardenal Arias y Porres, Hernández Morejón, Alejandro Ramírez, el beato Donato y otros, con sus fuentes."),
 ] + [(r, frag, "personas", n, f"{n} ({f}): semblanza con sus fuentes, en Personas de Alaejos.") for r, frag, n, f in PERSONAS] + [
     ("biblioteca/", "biblioteca", "biblioteca", "Biblioteca",
-     "Textos sobre Alaejos: los 178 artículos de los programas de fiestas (1954–2026), los programas originales y la novena de la Virgen de la Casita."),
+     "Textos sobre Alaejos: los 178 artículos de los programas de fiestas (1954–2026), los programas originales, las novenas, el cancionero y el vocabulario de Arrecájel."),
     ("biblioteca/novena-de-la-virgen-de-la-casita/", "novena", "biblioteca", "La novena de la Virgen de la Casita",
      "Las novenas a la Virgen de la Casita, patrona de Alaejos, en PDF: la original de 1865, la «Historia y novena» de 1952 y la edición actual de 2026."),
     ("biblioteca/bibliografia/", "bibliografia", "biblioteca", "Bibliografía",
@@ -475,8 +475,10 @@ def procesar(texto, ruta, base, titulo, frag):
         copia = BeautifulSoup(e.decode_contents(), "html.parser")
         st = copia.find("strong")
         peticion = bool(st and st.get_text(strip=True).lower().startswith("una petición"))
-        if st and (peticion or st.get_text(strip=True).lower().startswith("en estudio")):
-            st.decompose()
+        en_estudio = bool(st and st.get_text(strip=True).lower().startswith("en estudio"))
+        if not (peticion or en_estudio):
+            continue   # otros recuadros (p. ej. «Aviso») no son preguntas abiertas
+        st.decompose()
         (PETICIONES if peticion else ESTUDIOS).append(dict(ruta=ruta, titulo=titulo, apartado=h.get_text(" ", strip=True) if h else "",
                              ancla=e["id"], html=str(copia).strip()))
     # 3. Tablas de cuatro o más columnas: fichas en el móvil
