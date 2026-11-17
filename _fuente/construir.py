@@ -76,6 +76,7 @@ HISTORIA_EPOCAS = [
 ]
 HISTORIA_TEMAS = [
     ("Oficios y agua", "historia-del-pueblo/oficios-agua-y-vida-diaria/"),
+    ("Juegos de antes", "historia-del-pueblo/juegos-de-antes/"),
     ("Dichos y habla", "historia-del-pueblo/dichos-cabanuelas-y-habla/"),
     ("El término", "historia-del-pueblo/el-termino/"),
     ("Escudo y bandera", "historia-del-pueblo/escudo-y-bandera/"),
@@ -130,6 +131,8 @@ PAGINAS = [
      "Alaejos en el siglo XX: el ferrocarril que no llegó, la paz con Nava de 1928, la guerra civil, la emigración y el primer Ayuntamiento democrático."),
     ("historia-del-pueblo/oficios-agua-y-vida-diaria/", "h-oficios", "historia", "Oficios, agua y vida diaria",
      "El Caño y el Arca Madre, los pastores, los cantareros y los oficios desaparecidos de Alaejos: aguador, sereno, pregonero, capador, casitera."),
+    ("historia-del-pueblo/juegos-de-antes/", "h-juegos", "historia", "Juegos de antes",
+     "A qué jugaban los niños de Alaejos a mediados del siglo XX, según Antonio Lucas Varela: la una anda la mula, el uso, el peón, las bolas, el tarol, la comba y los corros."),
     ("historia-del-pueblo/dichos-cabanuelas-y-habla/", "h-tradicion-oral", "historia", "Dichos, cabañuelas y habla",
      "La tradición oral de Alaejos: las cabañuelas, los dichos sobre el pueblo y sobre Nava, los ramos de segadores, palabras propias y su música."),
     ("historia-del-pueblo/el-termino/", "h-termino", "historia", "El término: clima, montes y prados",

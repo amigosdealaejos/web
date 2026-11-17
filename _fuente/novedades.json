@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-17",
+  "titulo": "Juegos de antes",
+  "html": "Nueva página <a href=\"{{BASE}}historia-del-pueblo/juegos-de-antes/\">Juegos de antes</a>, con el capítulo que Antonio Lucas Varela dedicó en <em>Arrecájel</em> (1998) a los juegos de su infancia: treinta y cuatro juegos de salto, de escondite, de peón y bolas, de chicas, de corro y de casa, con sus reglas, sus palabras y sus canciones para escuchar. ¿Jugó usted a alguno? Cuéntenoslo."
+ },
+ {
+  "fecha": "2026-11-17",
   "titulo": "El cancionero y las fotografías de Arrecájel",
   "html": "Antonio Lucas Varela nos ha permitido publicar su libro <em>Arrecájel. Alaejos, una forma de hablar, una manera de vivir</em> (1998). Empezamos por la música: el nuevo <a href=\"{{BASE}}biblioteca/cancionero/\">Cancionero de Alaejos</a> reúne sus 37 canciones —juegos de corro, cirios, ramos, romances y el himno, con letra de Serafín Adame y música de Fernando Díaz-Giles—, con la partitura y la melodía de cada una para escucharla. Sus veinte fotografías de la vida del pueblo en los años cincuenta están en <a href=\"{{BASE}}historia-del-pueblo/fotografias-antiguas/\">Fotografías antiguas</a>, y el libro, en la <a href=\"{{BASE}}biblioteca/bibliografia/\">Bibliografía</a>. Gracias al autor."
  },
