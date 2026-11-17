@@ -6,8 +6,8 @@
   </work>
   <movement-title>Alaejos (himno). Letra: Serafín Adame · Música: Fernando Díaz-Giles</movement-title>
   <identification>
-    <creator type="composer">Fernando Díaz-Giles</creator>
-    <creator type="lyricist">Serafín Adame</creator>
+    <creator type="composer">Música: Fernando Díaz-Giles</creator>
+    <creator type="lyricist">Letra: Serafín Adame</creator>
     <encoding>
       <encoding-date>2026-11-17</encoding-date>
       <software>music21 v.10.5.2</software>
@@ -22,20 +22,31 @@
       <tenths>40</tenths>
     </scaling>
   </defaults>
+  <credit page="1">
+    <credit-type>title</credit-type>
+    <credit-words default-x="1050" default-y="2860" halign="center" justify="center" valign="top">Nº 37. Alaejos (himno)</credit-words>
+  </credit>
+  <credit page="1">
+    <credit-type>lyricist</credit-type>
+    <credit-words default-x="90" default-y="2720" halign="center" justify="left" valign="top">Letra: Serafín Adame</credit-words>
+  </credit>
+  <credit page="1">
+    <credit-type>composer</credit-type>
+    <credit-words default-x="2010" default-y="2720" halign="center" justify="right" valign="top">Música: Fernando Díaz-Giles</credit-words>
+  </credit>
   <part-list>
-    <score-part id="P4ebe48f818fb667b197884966de8ae61">
-      <part-name />
+    <score-part id="Pb2f4968a100daeef61923791a8c2e3c5">
+      <part-name>Voz</part-name>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
-  <part id="P4ebe48f818fb667b197884966de8ae61">
+  <part id="Pb2f4968a100daeef61923791a8c2e3c5">
     <!--========================= Measure 1 ==========================-->
     <measure implicit="no" number="1">
       <attributes>
         <divisions>10080</divisions>
         <key>
           <fifths>3</fifths>
-          <mode>major</mode>
         </key>
         <time>
           <beats>2</beats>
@@ -54,7 +65,7 @@
       </direction>
       <direction>
         <direction-type>
-          <words default-y="45" font-weight="bold">Tiempo de pasodoble. Movido</words>
+          <words default-y="45" font-weight="bold">Tiempo de pasodoble</words>
         </direction-type>
       </direction>
       <note>
@@ -1568,20 +1579,17 @@
           <tied type="stop" />
         </notations>
       </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+      </barline>
     </measure>
     <!--========================= Measure 33 =========================-->
     <measure implicit="no" number="33">
       <attributes>
         <key>
           <fifths>0</fifths>
-          <mode>major</mode>
         </key>
       </attributes>
-      <note>
-        <rest />
-        <duration>10080</duration>
-        <type>quarter</type>
-      </note>
       <note>
         <pitch>
           <step>A</step>
@@ -1594,17 +1602,13 @@
           <text>La</text>
         </lyric>
       </note>
-    </measure>
-    <!--========================= Measure 34 =========================-->
-    <measure implicit="no" number="34">
       <note>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
-        <duration>15120</duration>
-        <type>quarter</type>
-        <dot />
+        <duration>5040</duration>
+        <type>eighth</type>
         <lyric name="1" number="1">
           <syllabic>begin</syllabic>
           <text>gra</text>
@@ -1623,8 +1627,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 35 =========================-->
-    <measure implicit="no" number="35">
+    <!--========================= Measure 34 =========================-->
+    <measure implicit="no" number="34">
       <note>
         <pitch>
           <step>A</step>
@@ -1666,8 +1670,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 36 =========================-->
-    <measure implicit="no" number="36">
+    <!--========================= Measure 35 =========================-->
+    <measure implicit="no" number="35">
       <note>
         <pitch>
           <step>C</step>
@@ -1709,8 +1713,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 37 =========================-->
-    <measure implicit="no" number="37">
+    <!--========================= Measure 36 =========================-->
+    <measure implicit="no" number="36">
       <note>
         <pitch>
           <step>E</step>
@@ -1752,8 +1756,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 38 =========================-->
-    <measure implicit="no" number="38">
+    <!--========================= Measure 37 =========================-->
+    <measure implicit="no" number="37">
       <note>
         <pitch>
           <step>F</step>
@@ -1795,8 +1799,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 39 =========================-->
-    <measure implicit="no" number="39">
+    <!--========================= Measure 38 =========================-->
+    <measure implicit="no" number="38">
       <note>
         <pitch>
           <step>D</step>
@@ -1838,8 +1842,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 40 =========================-->
-    <measure implicit="no" number="40">
+    <!--========================= Measure 39 =========================-->
+    <measure implicit="no" number="39">
       <note>
         <pitch>
           <step>G</step>
@@ -1857,8 +1861,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 41 =========================-->
-    <measure implicit="no" number="41">
+    <!--========================= Measure 40 =========================-->
+    <measure implicit="no" number="40">
       <note>
         <pitch>
           <step>G</step>
@@ -1872,8 +1876,8 @@
         </notations>
       </note>
     </measure>
-    <!--========================= Measure 42 =========================-->
-    <measure implicit="no" number="42">
+    <!--========================= Measure 41 =========================-->
+    <measure implicit="no" number="41">
       <note>
         <pitch>
           <step>A</step>
@@ -1915,8 +1919,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 43 =========================-->
-    <measure implicit="no" number="43">
+    <!--========================= Measure 42 =========================-->
+    <measure implicit="no" number="42">
       <note>
         <pitch>
           <step>A</step>
@@ -1958,8 +1962,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 44 =========================-->
-    <measure implicit="no" number="44">
+    <!--========================= Measure 43 =========================-->
+    <measure implicit="no" number="43">
       <note>
         <pitch>
           <step>C</step>
@@ -2001,8 +2005,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 45 =========================-->
-    <measure implicit="no" number="45">
+    <!--========================= Measure 44 =========================-->
+    <measure implicit="no" number="44">
       <note>
         <pitch>
           <step>E</step>
@@ -2044,8 +2048,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 46 =========================-->
-    <measure implicit="no" number="46">
+    <!--========================= Measure 45 =========================-->
+    <measure implicit="no" number="45">
       <note>
         <pitch>
           <step>G</step>
@@ -2061,10 +2065,12 @@
       <note>
         <pitch>
           <step>F</step>
+          <alter>1</alter>
           <octave>5</octave>
         </pitch>
         <duration>5040</duration>
         <type>eighth</type>
+        <accidental>sharp</accidental>
         <stem>down</stem>
         <beam number="1">begin</beam>
         <lyric name="1" number="1">
@@ -2087,8 +2093,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 47 =========================-->
-    <measure implicit="no" number="47">
+    <!--========================= Measure 46 =========================-->
+    <measure implicit="no" number="46">
       <note>
         <pitch>
           <step>D</step>
@@ -2132,8 +2138,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 48 =========================-->
-    <measure implicit="no" number="48">
+    <!--========================= Measure 47 =========================-->
+    <measure implicit="no" number="47">
       <note>
         <pitch>
           <step>E</step>
@@ -2151,8 +2157,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 49 =========================-->
-    <measure implicit="no" number="49">
+    <!--========================= Measure 48 =========================-->
+    <measure implicit="no" number="48">
       <note>
         <pitch>
           <step>E</step>
@@ -2171,8 +2177,8 @@
         <type>quarter</type>
       </note>
     </measure>
-    <!--========================= Measure 50 =========================-->
-    <measure implicit="no" number="50">
+    <!--========================= Measure 49 =========================-->
+    <measure implicit="no" number="49">
       <note>
         <pitch>
           <step>F</step>
@@ -2214,8 +2220,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 51 =========================-->
-    <measure implicit="no" number="51">
+    <!--========================= Measure 50 =========================-->
+    <measure implicit="no" number="50">
       <note>
         <pitch>
           <step>F</step>
@@ -2257,8 +2263,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 52 =========================-->
-    <measure implicit="no" number="52">
+    <!--========================= Measure 51 =========================-->
+    <measure implicit="no" number="51">
       <note>
         <pitch>
           <step>E</step>
@@ -2300,8 +2306,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 53 =========================-->
-    <measure implicit="no" number="53">
+    <!--========================= Measure 52 =========================-->
+    <measure implicit="no" number="52">
       <note>
         <pitch>
           <step>G</step>
@@ -2343,8 +2349,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 54 =========================-->
-    <measure implicit="no" number="54">
+    <!--========================= Measure 53 =========================-->
+    <measure implicit="no" number="53">
       <note>
         <pitch>
           <step>F</step>
@@ -2386,8 +2392,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 55 =========================-->
-    <measure implicit="no" number="55">
+    <!--========================= Measure 54 =========================-->
+    <measure implicit="no" number="54">
       <note>
         <pitch>
           <step>D</step>
@@ -2429,8 +2435,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 56 =========================-->
-    <measure implicit="no" number="56">
+    <!--========================= Measure 55 =========================-->
+    <measure implicit="no" number="55">
       <note>
         <pitch>
           <step>G</step>
@@ -2448,8 +2454,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 57 =========================-->
-    <measure implicit="no" number="57">
+    <!--========================= Measure 56 =========================-->
+    <measure implicit="no" number="56">
       <note>
         <pitch>
           <step>G</step>
@@ -2463,8 +2469,8 @@
         </notations>
       </note>
     </measure>
-    <!--========================= Measure 58 =========================-->
-    <measure implicit="no" number="58">
+    <!--========================= Measure 57 =========================-->
+    <measure implicit="no" number="57">
       <note>
         <pitch>
           <step>B</step>
@@ -2506,8 +2512,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 59 =========================-->
-    <measure implicit="no" number="59">
+    <!--========================= Measure 58 =========================-->
+    <measure implicit="no" number="58">
       <note>
         <pitch>
           <step>D</step>
@@ -2549,8 +2555,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 60 =========================-->
-    <measure implicit="no" number="60">
+    <!--========================= Measure 59 =========================-->
+    <measure implicit="no" number="59">
       <note>
         <pitch>
           <step>B</step>
@@ -2592,8 +2598,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 61 =========================-->
-    <measure implicit="no" number="61">
+    <!--========================= Measure 60 =========================-->
+    <measure implicit="no" number="60">
       <note>
         <pitch>
           <step>E</step>
@@ -2635,8 +2641,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 62 =========================-->
-    <measure implicit="no" number="62">
+    <!--========================= Measure 61 =========================-->
+    <measure implicit="no" number="61">
       <note>
         <pitch>
           <step>B</step>
@@ -2678,8 +2684,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 63 =========================-->
-    <measure implicit="no" number="63">
+    <!--========================= Measure 62 =========================-->
+    <measure implicit="no" number="62">
       <note>
         <pitch>
           <step>F</step>
@@ -2725,8 +2731,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 64 =========================-->
-    <measure implicit="no" number="64">
+    <!--========================= Measure 63 =========================-->
+    <measure implicit="no" number="63">
       <note>
         <pitch>
           <step>E</step>
@@ -2770,8 +2776,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 65 =========================-->
-    <measure implicit="no" number="65">
+    <!--========================= Measure 64 =========================-->
+    <measure implicit="no" number="64">
       <note>
         <pitch>
           <step>D</step>
@@ -2799,8 +2805,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 66 =========================-->
-    <measure implicit="no" number="66">
+    <!--========================= Measure 65 =========================-->
+    <measure implicit="no" number="65">
       <note>
         <pitch>
           <step>E</step>
@@ -2814,8 +2820,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 67 =========================-->
-    <measure implicit="no" number="67">
+    <!--========================= Measure 66 =========================-->
+    <measure implicit="no" number="66">
       <note>
         <pitch>
           <step>A</step>
@@ -2841,8 +2847,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 68 =========================-->
-    <measure implicit="no" number="68">
+    <!--========================= Measure 67 =========================-->
+    <measure implicit="no" number="67">
       <note>
         <pitch>
           <step>A</step>
@@ -2886,8 +2892,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 69 =========================-->
-    <measure implicit="no" number="69">
+    <!--========================= Measure 68 =========================-->
+    <measure implicit="no" number="68">
       <note>
         <pitch>
           <step>D</step>
@@ -2913,8 +2919,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 70 =========================-->
-    <measure implicit="no" number="70">
+    <!--========================= Measure 69 =========================-->
+    <measure implicit="no" number="69">
       <note>
         <pitch>
           <step>E</step>
@@ -2928,8 +2934,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 71 =========================-->
-    <measure implicit="no" number="71">
+    <!--========================= Measure 70 =========================-->
+    <measure implicit="no" number="70">
       <note>
         <pitch>
           <step>G</step>
@@ -2955,8 +2961,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 72 =========================-->
-    <measure implicit="no" number="72">
+    <!--========================= Measure 71 =========================-->
+    <measure implicit="no" number="71">
       <note>
         <pitch>
           <step>E</step>
@@ -2982,8 +2988,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 73 =========================-->
-    <measure implicit="no" number="73">
+    <!--========================= Measure 72 =========================-->
+    <measure implicit="no" number="72">
       <note>
         <pitch>
           <step>E</step>
@@ -3009,8 +3015,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 74 =========================-->
-    <measure implicit="no" number="74">
+    <!--========================= Measure 73 =========================-->
+    <measure implicit="no" number="73">
       <note>
         <pitch>
           <step>F</step>
@@ -3030,8 +3036,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 75 =========================-->
-    <measure implicit="no" number="75">
+    <!--========================= Measure 74 =========================-->
+    <measure implicit="no" number="74">
       <note>
         <pitch>
           <step>F</step>
@@ -3045,8 +3051,8 @@
         </notations>
       </note>
     </measure>
-    <!--========================= Measure 76 =========================-->
-    <measure implicit="no" number="76">
+    <!--========================= Measure 75 =========================-->
+    <measure implicit="no" number="75">
       <note>
         <pitch>
           <step>E</step>
@@ -3064,7 +3070,7 @@
         <pitch>
           <step>C</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>5040</duration>
         <type>eighth</type>
@@ -3079,7 +3085,7 @@
       <note>
         <pitch>
           <step>D</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>5040</duration>
         <type>eighth</type>
@@ -3090,19 +3096,21 @@
           <text>la</text>
         </lyric>
       </note>
+      <barline location="right">
+        <bar-style>light-light</bar-style>
+      </barline>
     </measure>
-    <!--========================= Measure 77 =========================-->
-    <measure implicit="no" number="77">
+    <!--========================= Measure 76 =========================-->
+    <measure implicit="no" number="76">
       <attributes>
         <key>
           <fifths>3</fifths>
-          <mode>major</mode>
         </key>
       </attributes>
       <note>
         <pitch>
           <step>E</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>5040</duration>
         <type>eighth</type>
@@ -3117,7 +3125,7 @@
         <pitch>
           <step>G</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>5040</duration>
         <type>eighth</type>
@@ -3132,7 +3140,7 @@
         <pitch>
           <step>F</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>5040</duration>
         <type>eighth</type>
@@ -3146,7 +3154,7 @@
       <note>
         <pitch>
           <step>E</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>5040</duration>
         <type>eighth</type>
@@ -3158,13 +3166,13 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 78 =========================-->
-    <measure implicit="no" number="78">
+    <!--========================= Measure 77 =========================-->
+    <measure implicit="no" number="77">
       <note>
         <pitch>
           <step>F</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>2520</duration>
         <type>16th</type>
@@ -3180,7 +3188,7 @@
         <pitch>
           <step>G</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>2520</duration>
         <type>16th</type>
@@ -3196,7 +3204,7 @@
         <pitch>
           <step>F</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>2520</duration>
         <type>16th</type>
@@ -3207,7 +3215,7 @@
       <note>
         <pitch>
           <step>E</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>2520</duration>
         <type>16th</type>
@@ -3218,7 +3226,7 @@
       <note>
         <pitch>
           <step>E</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>10080</duration>
         <tie type="start" />
@@ -3232,12 +3240,12 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 79 =========================-->
-    <measure implicit="no" number="79">
+    <!--========================= Measure 78 =========================-->
+    <measure implicit="no" number="78">
       <note>
         <pitch>
           <step>E</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>20160</duration>
         <tie type="stop" />
@@ -3247,12 +3255,12 @@
         </notations>
       </note>
     </measure>
-    <!--========================= Measure 80 =========================-->
-    <measure implicit="no" number="80">
+    <!--========================= Measure 79 =========================-->
+    <measure implicit="no" number="79">
       <note>
         <pitch>
           <step>B</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>10080</duration>
         <type>quarter</type>
@@ -3264,7 +3272,7 @@
       <note>
         <pitch>
           <step>B</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>5040</duration>
         <type>eighth</type>
@@ -3278,7 +3286,7 @@
       <note>
         <pitch>
           <step>B</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>5040</duration>
         <type>eighth</type>
@@ -3290,12 +3298,12 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 81 =========================-->
-    <measure implicit="no" number="81">
+    <!--========================= Measure 80 =========================-->
+    <measure implicit="no" number="80">
       <note>
         <pitch>
           <step>B</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>10080</duration>
         <type>quarter</type>
@@ -3307,7 +3315,7 @@
       <note>
         <pitch>
           <step>A</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>5040</duration>
         <type>eighth</type>
@@ -3322,7 +3330,7 @@
         <pitch>
           <step>G</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>5040</duration>
         <type>eighth</type>
@@ -3334,13 +3342,13 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 82 =========================-->
-    <measure implicit="no" number="82">
+    <!--========================= Measure 81 =========================-->
+    <measure implicit="no" number="81">
       <note>
         <pitch>
           <step>F</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>2520</duration>
         <type>16th</type>
@@ -3356,7 +3364,7 @@
         <pitch>
           <step>G</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>2520</duration>
         <type>16th</type>
@@ -3372,7 +3380,7 @@
         <pitch>
           <step>F</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>2520</duration>
         <type>16th</type>
@@ -3384,7 +3392,7 @@
         <pitch>
           <step>G</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>2520</duration>
         <type>16th</type>
@@ -3395,7 +3403,7 @@
       <note>
         <pitch>
           <step>A</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>10080</duration>
         <tie type="start" />
@@ -3409,12 +3417,12 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 83 =========================-->
-    <measure implicit="no" number="83">
+    <!--========================= Measure 82 =========================-->
+    <measure implicit="no" number="82">
       <note>
         <pitch>
           <step>A</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>20160</duration>
         <tie type="stop" />
@@ -3424,8 +3432,8 @@
         </notations>
       </note>
     </measure>
-    <!--========================= Measure 84 =========================-->
-    <measure implicit="no" number="84">
+    <!--========================= Measure 83 =========================-->
+    <measure implicit="no" number="83">
       <note>
         <rest />
         <duration>10080</duration>
@@ -3435,7 +3443,7 @@
         <pitch>
           <step>C</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>5040</duration>
         <type>eighth</type>
@@ -3449,7 +3457,7 @@
       <note>
         <pitch>
           <step>D</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>5040</duration>
         <type>eighth</type>
@@ -3461,12 +3469,12 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 85 =========================-->
-    <measure implicit="no" number="85">
+    <!--========================= Measure 84 =========================-->
+    <measure implicit="no" number="84">
       <note>
         <pitch>
           <step>E</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>5040</duration>
         <type>eighth</type>
@@ -3480,7 +3488,7 @@
       <note>
         <pitch>
           <step>A</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>5040</duration>
         <type>eighth</type>
@@ -3495,7 +3503,7 @@
         <pitch>
           <step>G</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>2520</duration>
         <type>16th</type>
@@ -3511,7 +3519,7 @@
         <pitch>
           <step>F</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>2520</duration>
         <type>16th</type>
@@ -3522,7 +3530,7 @@
       <note>
         <pitch>
           <step>E</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>5040</duration>
         <type>eighth</type>
@@ -3534,13 +3542,13 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 86 =========================-->
-    <measure implicit="no" number="86">
+    <!--========================= Measure 85 =========================-->
+    <measure implicit="no" number="85">
       <note>
         <pitch>
           <step>F</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>2520</duration>
         <type>16th</type>
@@ -3556,7 +3564,7 @@
         <pitch>
           <step>G</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>2520</duration>
         <type>16th</type>
@@ -3572,7 +3580,7 @@
         <pitch>
           <step>F</step>
           <alter>1</alter>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>2520</duration>
         <type>16th</type>
@@ -3583,7 +3591,7 @@
       <note>
         <pitch>
           <step>E</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>2520</duration>
         <type>16th</type>
@@ -3594,7 +3602,7 @@
       <note>
         <pitch>
           <step>E</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>10080</duration>
         <tie type="start" />
@@ -3608,12 +3616,12 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 87 =========================-->
-    <measure implicit="no" number="87">
+    <!--========================= Measure 86 =========================-->
+    <measure implicit="no" number="86">
       <note>
         <pitch>
           <step>E</step>
-          <octave>4</octave>
+          <octave>5</octave>
         </pitch>
         <duration>20160</duration>
         <tie type="stop" />
@@ -3623,8 +3631,8 @@
         </notations>
       </note>
     </measure>
-    <!--========================= Measure 88 =========================-->
-    <measure implicit="no" number="88">
+    <!--========================= Measure 87 =========================-->
+    <measure implicit="no" number="87">
       <note>
         <pitch>
           <step>D</step>
@@ -3666,8 +3674,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 89 =========================-->
-    <measure implicit="no" number="89">
+    <!--========================= Measure 88 =========================-->
+    <measure implicit="no" number="88">
       <note>
         <pitch>
           <step>D</step>
@@ -3710,8 +3718,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 90 =========================-->
-    <measure implicit="no" number="90">
+    <!--========================= Measure 89 =========================-->
+    <measure implicit="no" number="89">
       <note>
         <pitch>
           <step>C</step>
@@ -3779,8 +3787,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 91 =========================-->
-    <measure implicit="no" number="91">
+    <!--========================= Measure 90 =========================-->
+    <measure implicit="no" number="90">
       <note>
         <pitch>
           <step>E</step>
@@ -3807,8 +3815,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 92 =========================-->
-    <measure implicit="no" number="92">
+    <!--========================= Measure 91 =========================-->
+    <measure implicit="no" number="91">
       <note>
         <pitch>
           <step>G</step>
@@ -3845,8 +3853,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 93 =========================-->
-    <measure implicit="no" number="93">
+    <!--========================= Measure 92 =========================-->
+    <measure implicit="no" number="92">
       <note>
         <pitch>
           <step>G</step>
@@ -3907,8 +3915,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 94 =========================-->
-    <measure implicit="no" number="94">
+    <!--========================= Measure 93 =========================-->
+    <measure implicit="no" number="93">
       <note>
         <pitch>
           <step>F</step>
@@ -3977,8 +3985,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 95 =========================-->
-    <measure implicit="no" number="95">
+    <!--========================= Measure 94 =========================-->
+    <measure implicit="no" number="94">
       <note>
         <pitch>
           <step>D</step>
@@ -4007,8 +4015,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 96 =========================-->
-    <measure implicit="no" number="96">
+    <!--========================= Measure 95 =========================-->
+    <measure implicit="no" number="95">
       <note>
         <pitch>
           <step>E</step>
@@ -4039,8 +4047,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 97 =========================-->
-    <measure implicit="no" number="97">
+    <!--========================= Measure 96 =========================-->
+    <measure implicit="no" number="96">
       <note>
         <pitch>
           <step>E</step>
@@ -4098,8 +4106,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 98 =========================-->
-    <measure implicit="no" number="98">
+    <!--========================= Measure 97 =========================-->
+    <measure implicit="no" number="97">
       <note>
         <pitch>
           <step>C</step>
@@ -4167,8 +4175,8 @@
         </lyric>
       </note>
     </measure>
-    <!--========================= Measure 99 =========================-->
-    <measure implicit="no" number="99">
+    <!--========================= Measure 98 =========================-->
+    <measure implicit="no" number="98">
       <note>
         <pitch>
           <step>E</step>
@@ -4195,8 +4203,8 @@
         </lyric>
       </note>
     </measure>
-    <!--======================== Measure 100 =========================-->
-    <measure implicit="no" number="100">
+    <!--========================= Measure 99 =========================-->
+    <measure implicit="no" number="99">
       <note>
         <pitch>
           <step>G</step>
@@ -4233,8 +4241,8 @@
         </lyric>
       </note>
     </measure>
-    <!--======================== Measure 101 =========================-->
-    <measure implicit="no" number="101">
+    <!--======================== Measure 100 =========================-->
+    <measure implicit="no" number="100">
       <note>
         <pitch>
           <step>G</step>
@@ -4295,8 +4303,8 @@
         </lyric>
       </note>
     </measure>
-    <!--======================== Measure 102 =========================-->
-    <measure implicit="no" number="102">
+    <!--======================== Measure 101 =========================-->
+    <measure implicit="no" number="101">
       <note>
         <pitch>
           <step>F</step>
@@ -4365,8 +4373,8 @@
         </lyric>
       </note>
     </measure>
-    <!--======================== Measure 103 =========================-->
-    <measure implicit="no" number="103">
+    <!--======================== Measure 102 =========================-->
+    <measure implicit="no" number="102">
       <note>
         <pitch>
           <step>D</step>
@@ -4395,8 +4403,8 @@
         </lyric>
       </note>
     </measure>
-    <!--======================== Measure 104 =========================-->
-    <measure implicit="no" number="104">
+    <!--======================== Measure 103 =========================-->
+    <measure implicit="no" number="103">
       <note>
         <pitch>
           <step>E</step>
@@ -4431,8 +4439,8 @@
         </lyric>
       </note>
     </measure>
-    <!--======================== Measure 105 =========================-->
-    <measure implicit="no" number="105">
+    <!--======================== Measure 104 =========================-->
+    <measure implicit="no" number="104">
       <note>
         <pitch>
           <step>E</step>
@@ -4490,8 +4498,8 @@
         </lyric>
       </note>
     </measure>
-    <!--======================== Measure 106 =========================-->
-    <measure implicit="no" number="106">
+    <!--======================== Measure 105 =========================-->
+    <measure implicit="no" number="105">
       <note>
         <pitch>
           <step>C</step>
@@ -4559,8 +4567,8 @@
         </lyric>
       </note>
     </measure>
-    <!--======================== Measure 107 =========================-->
-    <measure implicit="no" number="107">
+    <!--======================== Measure 106 =========================-->
+    <measure implicit="no" number="106">
       <note>
         <pitch>
           <step>A</step>
@@ -4595,7 +4603,7 @@
       </note>
       <note>
         <pitch>
-          <step>D</step>
+          <step>E</step>
           <octave>5</octave>
         </pitch>
         <duration>2520</duration>
@@ -4609,11 +4617,11 @@
         </lyric>
       </note>
     </measure>
-    <!--======================== Measure 108 =========================-->
-    <measure implicit="no" number="108">
+    <!--======================== Measure 107 =========================-->
+    <measure implicit="no" number="107">
       <note>
         <pitch>
-          <step>D</step>
+          <step>E</step>
           <octave>5</octave>
         </pitch>
         <duration>10080</duration>
@@ -4625,27 +4633,34 @@
       </note>
       <note>
         <pitch>
-          <step>C</step>
-          <alter>1</alter>
+          <step>E</step>
           <octave>5</octave>
         </pitch>
         <duration>10080</duration>
+        <tie type="start" />
         <type>quarter</type>
+        <notations>
+          <tied type="start" />
+        </notations>
         <lyric name="1" number="1">
           <syllabic>end</syllabic>
           <text>jos,</text>
         </lyric>
       </note>
     </measure>
-    <!--======================== Measure 109 =========================-->
-    <measure implicit="no" number="109">
+    <!--======================== Measure 108 =========================-->
+    <measure implicit="no" number="108">
       <note>
         <pitch>
           <step>E</step>
           <octave>5</octave>
         </pitch>
         <duration>10080</duration>
+        <tie type="stop" />
         <type>quarter</type>
+        <notations>
+          <tied type="stop" />
+        </notations>
       </note>
       <note>
         <pitch>
@@ -4678,8 +4693,8 @@
         </lyric>
       </note>
     </measure>
-    <!--======================== Measure 110 =========================-->
-    <measure implicit="no" number="110">
+    <!--======================== Measure 109 =========================-->
+    <measure implicit="no" number="109">
       <note>
         <pitch>
           <step>E</step>
@@ -4709,8 +4724,8 @@
         </lyric>
       </note>
     </measure>
-    <!--======================== Measure 111 =========================-->
-    <measure implicit="no" number="111">
+    <!--======================== Measure 110 =========================-->
+    <measure implicit="no" number="110">
       <note>
         <pitch>
           <step>E</step>
@@ -4737,8 +4752,8 @@
         </lyric>
       </note>
     </measure>
-    <!--======================== Measure 112 =========================-->
-    <measure implicit="no" number="112">
+    <!--======================== Measure 111 =========================-->
+    <measure implicit="no" number="111">
       <note>
         <pitch>
           <step>F</step>
@@ -4766,8 +4781,8 @@
         </lyric>
       </note>
     </measure>
-    <!--======================== Measure 113 =========================-->
-    <measure implicit="no" number="113">
+    <!--======================== Measure 112 =========================-->
+    <measure implicit="no" number="112">
       <note>
         <pitch>
           <step>A</step>
@@ -4781,8 +4796,8 @@
         </lyric>
       </note>
     </measure>
-    <!--======================== Measure 114 =========================-->
-    <measure implicit="no" number="114">
+    <!--======================== Measure 113 =========================-->
+    <measure implicit="no" number="113">
       <note>
         <pitch>
           <step>A</step>
@@ -4800,8 +4815,8 @@
         </lyric>
       </note>
     </measure>
-    <!--======================== Measure 115 =========================-->
-    <measure implicit="no" number="115">
+    <!--======================== Measure 114 =========================-->
+    <measure implicit="no" number="114">
       <note>
         <pitch>
           <step>A</step>

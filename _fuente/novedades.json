@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-17",
+  "titulo": "El himno de Alaejos, para voz y piano",
+  "html": "El <a href=\"{{BASE}}biblioteca/cancionero/#pasodobles\">Cancionero</a> trae ya el himno de Alaejos completo, para voz y piano, con el arreglo para piano de Pablo Santana: partitura en PDF, versión editable y audio. También se ha corregido la línea cantada del himno en cuatro pasajes."
+ },
+ {
+  "fecha": "2026-11-17",
   "titulo": "Novenas más ligeras y la fecha del Conjunto Histórico",
   "html": "Las novenas de <a href=\"{{BASE}}biblioteca/novena-de-la-virgen-de-la-casita/\">1865 y 1952</a> se pueden descargar ahora en versiones ligeras, de 4 y 6 MB, sin perder legibilidad; las de alta resolución siguen disponibles. En <a href=\"{{BASE}}patrimonio/la-plaza-mayor/\">La Plaza Mayor</a> se aclara por qué algunas webs dicen que Alaejos es Conjunto Histórico desde 1980: ese año se abrió el expediente, y la declaración llegó en 1997. Y en <a href=\"{{BASE}}personas-de-alaejos/\">Personas de Alaejos</a> pedimos retratos y nombres de alaejanas y alaejanos que merezcan una semblanza."
  },
