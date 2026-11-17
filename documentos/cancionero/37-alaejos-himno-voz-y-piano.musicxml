@@ -44,16 +44,16 @@
     <credit-words default-x="2010" default-y="2680" font-size="11" halign="center" justify="right" valign="top">Arreglo para piano: Pablo Santana</credit-words>
   </credit>
   <part-list>
-    <score-part id="Ped7491d43b6d43b8ae70839aea77262a">
+    <score-part id="P154ff4349fb0b5499315809c363e65b3">
       <part-name>Voz</part-name>
       <part-abbreviation>V.</part-abbreviation>
     </score-part>
-    <score-part id="P45923849df6ea79f71788882de14ddb1">
+    <score-part id="P4b068f4d67613b7a9da6a9752fdafdb4">
       <part-name>Piano</part-name>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
-  <part id="Ped7491d43b6d43b8ae70839aea77262a">
+  <part id="P154ff4349fb0b5499315809c363e65b3">
     <!--========================= Measure 1 ==========================-->
     <measure implicit="no" number="1">
       <attributes>
@@ -3294,14 +3294,12 @@
     <measure implicit="no" number="105">
       <note>
         <pitch>
-          <step>F</step>
-          <alter>0</alter>
+          <step>E</step>
           <octave>5</octave>
         </pitch>
         <duration>20160</duration>
         <tie type="start" />
         <type>half</type>
-        <accidental>natural</accidental>
         <notations>
           <tied type="start" />
         </notations>
@@ -3315,7 +3313,7 @@
     <measure implicit="no" number="106">
       <note>
         <pitch>
-          <step>F</step>
+          <step>E</step>
           <octave>5</octave>
         </pitch>
         <duration>20160</duration>
@@ -5088,7 +5086,7 @@
     </measure>
   </part>
   <!--=========================== Part 2 ===========================-->
-  <part id="P45923849df6ea79f71788882de14ddb1">
+  <part id="P4b068f4d67613b7a9da6a9752fdafdb4">
     <!--========================= Measure 1 ==========================-->
     <measure implicit="no" number="1">
       <attributes>

@@ -35,12 +35,12 @@
     <credit-words default-x="2010" default-y="2720" halign="center" justify="right" valign="top">Música: Fernando Díaz-Giles</credit-words>
   </credit>
   <part-list>
-    <score-part id="Pd275c1755ad18f6d2e4ea847cd10a304">
+    <score-part id="P3068f79c665bbca4c89342b17c7e0732">
       <part-name>Voz</part-name>
     </score-part>
   </part-list>
   <!--=========================== Part 1 ===========================-->
-  <part id="Pd275c1755ad18f6d2e4ea847cd10a304">
+  <part id="P3068f79c665bbca4c89342b17c7e0732">
     <!--========================= Measure 1 ==========================-->
     <measure implicit="no" number="1">
       <attributes>
@@ -3001,14 +3001,12 @@
     <measure implicit="no" number="73">
       <note>
         <pitch>
-          <step>F</step>
-          <alter>0</alter>
+          <step>E</step>
           <octave>5</octave>
         </pitch>
         <duration>20160</duration>
         <tie type="start" />
         <type>half</type>
-        <accidental>natural</accidental>
         <notations>
           <tied type="start" />
         </notations>
@@ -3022,7 +3020,7 @@
     <measure implicit="no" number="74">
       <note>
         <pitch>
-          <step>F</step>
+          <step>E</step>
           <octave>5</octave>
         </pitch>
         <duration>20160</duration>
