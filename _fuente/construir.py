@@ -131,7 +131,7 @@ PAGINAS = [
     ("historia-del-pueblo/el-siglo-xviii/", "h-siglo-xviii", "historia", "Siglo XVIII: el Catastro y los ilustrados",
      "Alaejos en 1751 según el Catastro de Ensenada, la cilla de los diezmos, la Real Sociedad Caritativo-Económica de 1785 y la Real Fábrica de paños."),
     ("historia-del-pueblo/la-real-sociedad-caritativo-economica/", "h-real-sociedad", "historia", "La Real Sociedad Caritativo-Económica",
-     "La sociedad ilustrada de Alaejos (1785), según sus estatutos: la Junta de Comisión, los limosneros y los padres de pobres, la Casa de Misericordia, el montepío y las fábricas de velas y esteras."),
+     "La sociedad ilustrada de Alaejos (1785): limosneros, padres de pobres, la Casa de Misericordia, el montepío y las fábricas de velas y esteras."),
     ("historia-del-pueblo/el-siglo-xix/", "h-siglo-xix", "historia", "Siglo XIX: guerra, epidemias y libertades",
      "Alaejos en el siglo XIX: Marmont y Wellington en 1812, el cólera de 1834, la villa según Madoz, la república de tres días de 1873 y el fuego de las eras."),
     ("historia-del-pueblo/el-siglo-xx/", "h-siglo-xx", "historia", "El siglo XX",
@@ -143,7 +143,7 @@ PAGINAS = [
     ("historia-del-pueblo/la-matanza/", "h-matanza", "historia", "La matanza",
      "El mondongo de Alaejos contado por Antonio Lucas Varela y las recetas tradicionales de la matanza: morcilla, longaniza, chorizo, morcón, salchichón, adobo y jamón."),
     ("historia-del-pueblo/cocina-tradicional/", "h-cocina", "historia", "Cocina tradicional",
-     "Qué se comía en Alaejos en cada fiesta, según el libro de 1991: morcillas y flamencos, arrastraos, la alubiada de San Antón, rosquillas de San José, torrijas y la empanada de San Isidro."),
+     "Qué se comía en Alaejos en cada fiesta según el libro de 1991: flamencos, arrastraos, la alubiada de San Antón, torrijas y la empanada de San Isidro."),
     ("historia-del-pueblo/dichos-cabanuelas-y-habla/", "h-tradicion-oral", "historia", "Dichos, cabañuelas y habla",
      "La tradición oral de Alaejos: las cabañuelas, los dichos sobre el pueblo y sobre Nava, los ramos de segadores, palabras propias y su música."),
     ("historia-del-pueblo/el-termino/", "h-termino", "historia", "El término: clima, montes y prados",
@@ -171,7 +171,7 @@ PAGINAS = [
     ("patrimonio/casas-blasonadas/", "casas-blasonadas", "patrimonio", "Casas blasonadas y edificios civiles",
      "Las casas de hidalgos con escudo de Alaejos, casa por casa, y el Ayuntamiento, el hospital del Buen Pastor y la cilla, según Adolfo M. Araújo (1991)."),
     ("patrimonio/visitar-alaejos/", "visitar", "patrimonio", "Visitar Alaejos",
-     "Cómo visitar Alaejos: la Oficina de Turismo, las visitas guiadas gratuitas, el museo de arte sacro, el castillo y un paseo por el pueblo de la Plaza Mayor a la Casita."),
+     "Cómo visitar Alaejos: Oficina de Turismo, visitas guiadas gratuitas, museo de arte sacro, castillo y un paseo por el pueblo de la Plaza Mayor a la Casita."),
     ("patrimonio/mapa/", "mapa", "patrimonio", "Mapa de Alaejos",
      "Mapa de los lugares de Alaejos que aparecen en esta web: iglesias, ermita, castillo, Plaza Mayor, el Caño y otros, con enlace a cada página."),
     ("fiestas-y-eventos/", "fiestas", "fiestas", "Fiestas y tradiciones",
@@ -204,7 +204,7 @@ PAGINAS = [
     ("biblioteca/glosario/", "glosario", "biblioteca", "Glosario",
      "Palabras de los documentos antiguos y del habla de Alaejos explicadas: beneficiado, cilla, diezmo, linaje, mayorazgo, Mesta, cabañuelas, lavajo y otras."),
     ("novedades/", "novedades", "novedades", "Novedades",
-     "Lo último que se ha incorporado a Amigos de Alaejos, con su fecha: páginas nuevas, textos de libros y programas de fiestas, fotografías, preguntas resueltas y correcciones. También por RSS."),
+     "Lo último que se ha incorporado a Amigos de Alaejos, con su fecha: páginas nuevas, textos, fotografías, preguntas resueltas y correcciones. También por RSS."),
     ("colabora/", "colabora", "colabora", "Colabora",
      "Cómo aportar fotografías, programas de fiestas y documentos sobre Alaejos para que se digitalicen y se publiquen."),
     ("preguntas-abiertas/", "preguntas", "colabora", "Preguntas abiertas",
@@ -452,10 +452,13 @@ def procesar_imagenes(s, base):
             im["sizes"] = "(max-width: 44rem) 50vw, 21rem" if par else "(max-width: 44rem) 100vw, 42rem"
         fig = im.find_parent("figure")
         vertical = fig is not None and "vertical" in (fig.get("class") or [])
-        if i > 0 and not vertical:
+        if vertical and im.get("width") and im.get("height"):
+            # Las verticales se limitan a 34rem de alto. Se les da un ancho calculado
+            # para que ocupen su sitio antes de cargar y la carga diferida funcione.
+            fw, fh = int(im["width"]), int(im["height"])
+            im["style"] = f"width:min(100%,{34 * fw / fh:.2f}rem,{fw}px)"
+        if i > 0:
             im["loading"] = "lazy"
-        elif vertical:   # las verticales tienen ancho automático: con carga diferida medirían 0
-            im.attrs.pop("loading", None)
         im["decoding"] = "async"
         # Ampliar: enlace a la foto original (el visor lo abre en grande)
         if im.parent.name != "a" and im.find_parent("figure") is not None:

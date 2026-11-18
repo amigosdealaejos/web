@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-18",
+  "titulo": "Ocho preguntas para los vecinos",
+  "html": "De las casi cien dudas abiertas, en <a href=\"{{BASE}}colabora/#ocho-preguntas\">Colabora</a> destacamos ocho que puede resolver cualquiera con lo que recuerda o guarda en casa: qué es la Mariseca, las cofradías de Semana Santa, los pregoneros que faltan, la receta de la empanada o el Toro del Caño, entre otras. Y una corrección: en los «Nuevos gozos» de <a href=\"{{BASE}}biblioteca/versos-y-recuerdos/\">Versos y recuerdos</a> se leía «emanar memos?», una errata del escaneado; es «emanar vemos», como trae la novena."
+ },
+ {
+  "fecha": "2026-11-18",
   "titulo": "Visitar Alaejos",
   "html": "Nueva página práctica, <a href=\"{{BASE}}patrimonio/visitar-alaejos/\">Visitar Alaejos</a>: la Oficina de Turismo y sus horarios, las dos rutas guiadas gratuitas, el horario del museo de arte sacro, las visitas al castillo y un paseo por el pueblo de la Plaza Mayor a la Casita."
  },
