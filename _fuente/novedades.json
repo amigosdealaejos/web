@@ -1,5 +1,10 @@
 [
  {
+  "fecha": "2026-11-18",
+  "titulo": "Recuerdos musicales de Alaejos: veinte grabaciones",
+  "html": "Nueva página con las veinte pistas del disco <a href=\"{{BASE}}biblioteca/recuerdos-musicales-de-alaejos/\"><em>Recuerdos musicales de Alaejos</em></a>, grabado por iniciativa del Ayuntamiento y la Fundación Hernández Puertas: gozos, cirios y rogativas a la Virgen de la Casita, el himno, el pasodoble, las dianas, el ramo de los segadores y canciones de quintos y de escuela. Trece canciones del <a href=\"{{BASE}}biblioteca/cancionero/\">Cancionero</a> se pueden oír ya cantadas o tocadas en Alaejos."
+ },
+ {
   "fecha": "2026-11-17",
   "titulo": "El himno de Alaejos, para voz y piano",
   "html": "El <a href=\"{{BASE}}biblioteca/cancionero/#pasodobles\">Cancionero</a> trae ya el himno de Alaejos completo, para voz y piano, con el arreglo para piano de Pablo Santana: partitura en PDF, versión editable y audio. También se ha corregido la línea cantada del himno en cuatro pasajes."

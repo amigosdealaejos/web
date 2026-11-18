@@ -185,6 +185,8 @@ PAGINAS = [
      "Poemas y recuerdos de vecinos publicados en los programas de fiestas de Alaejos, de 1971 a 2025, con lo que cuenta cada uno y enlace al texto completo."),
     ("biblioteca/cancionero/", "cancionero", "biblioteca", "Cancionero de Alaejos",
      "Las 37 canciones de Alaejos que recogió Antonio Lucas Varela en Arrecájel (1998): partituras, melodías para escuchar y el himno del pueblo."),
+    ("biblioteca/recuerdos-musicales-de-alaejos/", "recuerdos-musicales", "biblioteca", "Recuerdos musicales de Alaejos",
+     "Las 20 grabaciones del disco Recuerdos musicales de Alaejos: gozos, cirios y rogativas a la Virgen de la Casita, el himno, las dianas y el ramo."),
     ("biblioteca/vocabulario/", "vocabulario", "biblioteca", "Vocabulario de Alaejos",
      "Las palabras de Alaejos que recogió Antonio Lucas Varela en Arrecájel (1998): 1.068 localismos, arcaísmos, pagos y lugares del término, y 190 locuciones."),
     ("biblioteca/glosario/", "glosario", "biblioteca", "Glosario",

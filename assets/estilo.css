@@ -157,6 +157,10 @@ h1, h2, h3 { text-wrap: balance; }
 .sonido audio { width: 100%; }
 .sonido .credito { display: block; font-family: var(--f-util); font-size: 0.8rem; color: var(--tenue); margin-top: 0.3rem; }
 .sonido .credito a { color: var(--tenue); }
+.sonido[id] { scroll-margin-top: 5rem; }
+.sonido details { margin-top: 0.5rem; font-size: 0.95rem; }
+.sonido details summary { cursor: pointer; font-family: var(--f-util); font-size: 0.85rem; color: var(--sepia); }
+.sonido details p { margin: 0.6rem 0 0; font-family: inherit; font-size: inherit; }
 
 .ficha { margin: 2em 0; padding: 1.1rem 1.2rem; background: var(--superficie); border-radius: var(--radio); font-family: var(--f-util); font-size: 0.98rem; }
 .ficha h2, .ficha h3 { font-family: var(--f-util); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--tenue); margin: 0 0 0.4rem; }
