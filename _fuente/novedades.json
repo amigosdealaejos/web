@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-18",
+  "titulo": "Lo que cuenta el libro del V Centenario de la Casita",
+  "html": "El libro que publicó la Diputación de Valladolid en 1991 por los 500 años de la Virgen de la Casita enriquece varias páginas. <a href=\"{{BASE}}patrimonio/la-ermita-de-la-virgen-de-la-casita/\">La ermita</a> suma un documento de 1493 que ya la llama «de la Visitación», las obras del siglo XVIII año a año, las medidas y la descripción de la imagen, la fundación de la Cofradía de Pastores en 1712 y un apartado nuevo sobre las camareras y los quince mantos de la Virgen. <a href=\"{{BASE}}fiestas-y-eventos/fiestas-de-la-virgen-de-la-casita/\">Las fiestas</a> cuentan cómo eran el 7 y el 8 de septiembre en 1990 y la historia de la Cofradía de Bailarines. Además: los gozos y los poemas completos en <a href=\"{{BASE}}biblioteca/versos-y-recuerdos/#libro-v-centenario\">Versos y recuerdos</a>, la partitura de la «Entradilla de Alaejos» en el <a href=\"{{BASE}}biblioteca/cancionero/\">Cancionero</a>, el V Centenario de 1990 en <a href=\"{{BASE}}historia-del-pueblo/el-siglo-xx/\">El siglo XX</a>, quince fechas nuevas en la <a href=\"{{BASE}}historia-del-pueblo/cronologia/\">Cronología</a> y siete palabras en el <a href=\"{{BASE}}biblioteca/glosario/\">Glosario</a>."
+ },
+ {
+  "fecha": "2026-11-18",
   "titulo": "Las casas blasonadas, casa por casa",
   "html": "Página nueva en Patrimonio: <a href=\"{{BASE}}patrimonio/casas-blasonadas/\">Casas blasonadas y edificios civiles</a>. Recoge, con su dirección, las casas de hidalgos con escudo que describió Adolfo M. Araújo en <em>Alaejos, apuntes histórico-artísticos</em> (1991), además del Ayuntamiento, el hospital del Buen Pastor, la cilla y el patio de guijarros de la Plaza Mayor. Los autores del libro han autorizado a usar sus textos y fotografías. Señalamos lo que no cuadra con otras fuentes y pedimos ayuda para saber cómo se llaman hoy algunas calles."
  },

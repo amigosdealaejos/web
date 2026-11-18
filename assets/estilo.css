@@ -426,3 +426,11 @@ dl.vocab dt:target, dl.vocab dt:target + dd { background: var(--resalte); }
 details.presentacion { margin: 1.4em 0; padding: 0.6rem 1rem; background: var(--superficie); border-radius: var(--radio); }
 details.presentacion summary { font-family: var(--f-util); font-weight: 600; cursor: pointer; }
 table.abrev th { font-family: var(--f-util); white-space: nowrap; }
+
+/* Poemas y gozos completos (Versos y recuerdos) */
+.poema { margin: 1rem 0 2rem; padding-left: 1.2rem; border-left: 2px solid var(--raya); }
+.poema p { margin: 0 0 1em; line-height: 1.55; }
+.poema p.estribillo { font-style: italic; padding-left: 1.5rem; color: var(--tenue); }
+.poema p.estrofa-num { font-family: var(--f-util); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; color: var(--tenue); margin: 1.4em 0 0.4em; }
+.poema p.firma { font-variant: small-caps; letter-spacing: 0.04em; text-align: right; margin-top: 1.4em; }
+.nota-poema { font-size: 0.95rem; color: var(--tenue); }
