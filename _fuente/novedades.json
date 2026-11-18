@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-18",
+  "titulo": "Las fiestas de 1991 y una página de cocina",
+  "html": "Nueva página, <a href=\"{{BASE}}historia-del-pueblo/cocina-tradicional/\">Cocina tradicional</a>: qué se comía en cada fiesta, con la primera descripción de la empanada de Alaejos. En <a href=\"{{BASE}}fiestas-y-eventos/\">Fiestas y tradiciones</a>, el folklore descrito en 1991: por qué se pone paja en San Antón, cómo eran las Águedas, el Corpus, la Fiesta de los Emigrantes y la vendimia. Los quintos, la Semana Santa, las fiestas de la Casita y los toros suman también lo que contaba el libro, con tres fotografías."
+ },
+ {
+  "fecha": "2026-11-18",
   "titulo": "Los personajes ilustres de 1991, uno a uno",
   "html": "En <a href=\"{{BASE}}personas-de-alaejos/#la-lista-de-1991\">Personas de Alaejos</a>, la relación de personajes ilustres que publicó Adolfo M. Araújo en <em>Alaejos, apuntes histórico-artísticos</em> (1991), con lo que hemos podido comprobar de cada uno. Una sorpresa: el arzobispo Antonio Paíno, que la tradición cuenta entre los alaejanos, nació en Medina de Rioseco según las fuentes eclesiásticas. Las semblanzas de <a href=\"{{BASE}}personas-de-alaejos/fray-miguel-de-alaejos/\">fray Miguel de Alaejos</a> y <a href=\"{{BASE}}personas-de-alaejos/antonio-hernandez-morejon/\">Hernández Morejón</a> suman lo que contaba el libro."
  },
