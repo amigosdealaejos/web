@@ -59,6 +59,7 @@ PATRIMONIO = [
     ("Ermita de la Virgen de la Casita", "patrimonio/la-ermita-de-la-virgen-de-la-casita/"),
     ("El castillo", "patrimonio/el-castillo/"),
     ("La Plaza Mayor", "patrimonio/la-plaza-mayor/"),
+    ("Casas blasonadas", "patrimonio/casas-blasonadas/"),
     ("Mapa", "patrimonio/mapa/"),
 ]
 
@@ -160,6 +161,8 @@ PAGINAS = [
      "El castillo de los Fonseca según los documentos: la licencia de 1453, la reina Juana de Portugal, el cerco comunero de 1520, la ruina y las excavaciones."),
     ("patrimonio/la-plaza-mayor/", "plaza-mayor", "patrimonio", "La Plaza Mayor",
      "La Plaza Mayor de Alaejos: el Ayuntamiento, los soportales, San Pedro y su balcón, el mercado, los toros y las casas blasonadas de la villa."),
+    ("patrimonio/casas-blasonadas/", "casas-blasonadas", "patrimonio", "Casas blasonadas y edificios civiles",
+     "Las casas de hidalgos con escudo de Alaejos, casa por casa, y el Ayuntamiento, el hospital del Buen Pastor y la cilla, según Adolfo M. Araújo (1991)."),
     ("patrimonio/mapa/", "mapa", "patrimonio", "Mapa de Alaejos",
      "Mapa de los lugares de Alaejos que aparecen en esta web: iglesias, ermita, castillo, Plaza Mayor, el Caño y otros, con enlace a cada página."),
     ("fiestas-y-eventos/", "fiestas", "fiestas", "Fiestas y tradiciones",
