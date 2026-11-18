@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-18",
+  "titulo": "Los personajes ilustres de 1991, uno a uno",
+  "html": "En <a href=\"{{BASE}}personas-de-alaejos/#la-lista-de-1991\">Personas de Alaejos</a>, la relación de personajes ilustres que publicó Adolfo M. Araújo en <em>Alaejos, apuntes histórico-artísticos</em> (1991), con lo que hemos podido comprobar de cada uno. Una sorpresa: el arzobispo Antonio Paíno, que la tradición cuenta entre los alaejanos, nació en Medina de Rioseco según las fuentes eclesiásticas. Las semblanzas de <a href=\"{{BASE}}personas-de-alaejos/fray-miguel-de-alaejos/\">fray Miguel de Alaejos</a> y <a href=\"{{BASE}}personas-de-alaejos/antonio-hernandez-morejon/\">Hernández Morejón</a> suman lo que contaba el libro."
+ },
+ {
+  "fecha": "2026-11-18",
   "titulo": "Santa María, San Pedro y la Casita, con el libro de 1991",
   "html": "El capítulo de arte religioso de Francisco José Rodríguez Carracedo en <em>Alaejos, apuntes histórico-artísticos</em> (1991) completa las páginas de las iglesias y la ermita. En <a href=\"{{BASE}}patrimonio/iglesia-de-santa-maria/\">Santa María</a>, la torre que sirvió de modelo a otras de la comarca, la sacristía y el dicho de la campana María de la O. En <a href=\"{{BASE}}patrimonio/iglesia-de-san-pedro/\">San Pedro</a>, la torre «a modo de minarete», el balcón con el escudo de la parroquia, dos retablos de la nave de la Epístola y fotos del retablo mayor y el órgano. En la <a href=\"{{BASE}}patrimonio/la-ermita-de-la-virgen-de-la-casita/\">Casita</a>, el escudo de 1699, el Humilladero y las ermitas desaparecidas."
  },
