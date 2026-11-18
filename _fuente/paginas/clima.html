@@ -1,0 +1,90 @@
+<h1 class="h-pag">El clima de Alaejos en datos</h1>
+<p class="entradilla">Cuánto ha llovido y qué temperaturas ha hecho en Alaejos cada día desde 1940 hasta ayer, y cómo ha cambiado el clima del pueblo en estos más de ochenta años.</p>
+<div class="clima" id="clima">
+  <noscript><p class="cl-aviso">Esta página necesita JavaScript para descargar los datos y dibujar los gráficos.</p></noscript>
+  <div class="cl-barra">
+    <p class="cl-estado" id="cl-estado" role="status">Descargando más de ochenta años de datos diarios…</p>
+    <label class="cl-control">Comparar con lo normal en
+      <select id="cl-ref">
+        <option value="1991-2020" selected>1991–2020</option>
+        <option value="1961-1990">1961–1990</option>
+      </select>
+    </label>
+  </div>
+
+  <section class="cl-sec" aria-labelledby="un-ano-dia-a-dia">
+    <h2 id="un-ano-dia-a-dia">Un año, día a día</h2>
+    <div class="texto"><p>Elija un año para ver sus temperaturas y su lluvia comparadas con lo normal. La banda clara marca los récords de cada fecha; la oscura, lo habitual en el periodo elegido arriba.</p></div>
+    <label class="cl-control">Año <select id="cl-anio"></select></label>
+    <div class="cl-fichas" id="cl-fichas"></div>
+    <h3 class="cl-tit">Temperaturas máximas y mínimas de cada día</h3>
+    <div class="cl-graf" id="g-dia-temp"></div>
+    <h3 class="cl-tit">Lluvia acumulada desde el 1 de enero</h3>
+    <div class="cl-graf" id="g-dia-lluvia"></div>
+  </section>
+
+  <section class="cl-sec" aria-labelledby="ano-a-ano">
+    <h2 id="ano-a-ano">Año a año</h2>
+    <div class="texto"><p id="cl-tendencia">Cada franja es un año: azul si fue más frío de lo normal, rojo si fue más cálido.</p></div>
+    <div class="cl-graf cl-franjas" id="g-franjas"></div>
+    <h3 class="cl-tit">Temperatura media de cada año</h3>
+    <div class="cl-graf" id="g-anual-temp"></div>
+    <h3 class="cl-tit">Lluvia de cada año</h3>
+    <div class="cl-graf" id="g-anual-lluvia"></div>
+    <details class="cl-tabla">
+      <summary>Ver los datos de cada año en una tabla</summary>
+      <div class="tabla-env" id="t-anual"></div>
+    </details>
+  </section>
+
+  <section class="cl-sec" aria-labelledby="mes-a-mes">
+    <h2 id="mes-a-mes">Mes a mes: antes y ahora</h2>
+    <div class="texto"><p>El año normal de Alaejos en dos épocas: 1961–1990 y 1991–2020. Así se ve qué meses han cambiado más.</p></div>
+    <h3 class="cl-tit">Temperatura media de cada mes</h3>
+    <div class="cl-graf" id="g-mes-temp"></div>
+    <h3 class="cl-tit">Lluvia de cada mes</h3>
+    <div class="cl-graf" id="g-mes-lluvia"></div>
+    <details class="cl-tabla">
+      <summary>Ver los valores de cada mes en una tabla</summary>
+      <div class="tabla-env" id="t-mes"></div>
+    </details>
+  </section>
+
+  <section class="cl-sec" aria-labelledby="heladas-y-calores">
+    <h2 id="heladas-y-calores">Heladas y calores</h2>
+    <div class="texto"><p id="cl-extremos-txt">Cuántos días helados y cuántos días de calor fuerte ha tenido cada año.</p></div>
+    <h3 class="cl-tit">Días con helada (mínima bajo cero)</h3>
+    <div class="cl-graf" id="g-heladas"></div>
+    <h3 class="cl-tit">Días de calor
+      <select id="cl-umbral" aria-label="Umbral de calor">
+        <option value="30">de 30 °C o más</option>
+        <option value="35" selected>de 35 °C o más</option>
+      </select>
+    </h3>
+    <div class="cl-graf" id="g-calor"></div>
+  </section>
+
+  <section class="cl-sec" aria-labelledby="los-records">
+    <h2 id="los-records">Los récords</h2>
+    <div class="cl-records" id="t-records"></div>
+  </section>
+
+  <section class="cl-sec" aria-labelledby="que-tiempo-hizo-aquel-dia">
+    <h2 id="que-tiempo-hizo-aquel-dia">¿Qué tiempo hizo aquel día?</h2>
+    <div class="texto"><p>Una boda, un nacimiento, unas fiestas, la romería de mayo: elija cualquier fecha desde 1940.</p></div>
+    <label class="cl-control">Fecha <input type="date" id="cl-fecha"></label>
+    <div class="cl-dia" id="cl-dia" aria-live="polite"></div>
+  </section>
+
+  <section class="cl-sec" aria-labelledby="de-donde-salen-los-datos">
+    <h2 id="de-donde-salen-los-datos">De dónde salen los datos</h2>
+    <div class="texto">
+      <p>En Alaejos no hay un observatorio con datos diarios públicos desde 1940. Los datos de esta página son del <strong>reanálisis ERA5</strong> del servicio europeo Copernicus, que reconstruye el tiempo de cada día en todo el mundo a partir de las observaciones que se hicieron (estaciones, globos, barcos y, desde los años setenta, satélites). Los descarga en el momento el servicio gratuito <a href="https://open-meteo.com/">Open-Meteo</a> para el punto del pueblo, ajustando la temperatura a sus 752 metros de altitud. Los últimos días, hasta ayer, salen de los modelos de predicción y son <strong>provisionales</strong>: se sustituyen solos por los definitivos al cabo de una semana.</p>
+      <p>ERA5 trabaja con cuadrados de unos 25 kilómetros de lado, así que da el tiempo de la comarca más que el del casco: suaviza los extremos (las heladas más fuertes y los días más calurosos fueron algo más intensos de lo que aquí aparece) y reparte la lluvia de las tormentas. Los datos de los años cuarenta y cincuenta, con menos observaciones, son menos fiables. Sirve sobre todo para comparar unos años con otros y ver las tendencias.</p>
+      <p id="cl-comparacion">El pluviómetro de Alaejos, que analizó Fernando Benito Álvarez en el <a href="https://biblioteca.amigosdealaejos.org/articulos/2016/analisis-y-evolucion-de-la-pluviometria-de-alaejos.html">programa de 2016</a>, dio una media de 323 litros por metro cuadrado al año entre 1942 y 2015 (véase <a href="{{BASE}}historia-del-pueblo/el-termino/">El término</a>).</p>
+      <p>Datos: <a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo</a> (licencia CC BY 4.0), con información del Copernicus Climate Change Service (ERA5). Si alguien conserva registros de un pluviómetro o un termómetro de Alaejos, <a href="{{BASE}}colabora/">nos gustaría conocerlos</a>.</p>
+    </div>
+    <p><button type="button" class="cl-boton" id="cl-csv" disabled>Descargar todos los datos diarios (CSV)</button></p>
+  </section>
+</div>
+<script src="{{BASE}}assets/js/clima.js" defer></script>
