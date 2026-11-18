@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-18",
+  "titulo": "Lo que cuenta «Alaejos, del sepia al color» (2001)",
+  "html": "Incorporamos a la web los contenidos del libro que Armando Caballero Morante recopiló sobre el pueblo en el año 2000, con autorización para usar sus textos y fotografías. Resuelve dos de nuestras preguntas: <a href=\"{{BASE}}fiestas-y-eventos/fiestas-de-la-virgen-de-la-casita/#la-mariseca-del-14-de-agosto-al-10-de-septiembre\">qué es la Mariseca</a> y <a href=\"{{BASE}}fiestas-y-eventos/semana-santa/#las-cofradias-en-2001\">cuáles son las nueve cofradías de Semana Santa</a>. Hay además <a href=\"{{BASE}}fiestas-y-eventos/#cofradias-de-devocion\">las cofradías de devoción</a>, <a href=\"{{BASE}}historia-del-pueblo/asociaciones-y-lugares-de-encuentro/#las-penas\">las peñas y asociaciones de 2000</a>, la historia del colegio, la letra de <a href=\"{{BASE}}biblioteca/cancionero/#letra-bandidos\">«Los bandidos de Sierra Armenia»</a>, tres <a href=\"{{BASE}}biblioteca/versos-y-recuerdos/#del-sepia-al-color\">poemas</a>, recetas y una crónica de <a href=\"{{BASE}}historia-del-pueblo/el-siglo-xx/#alaejos-en-el-ano-2000\">Alaejos en el año 2000</a>. Las discrepancias con otras fuentes quedan señaladas como «En estudio»."
+ },
+ {
+  "fecha": "2026-11-18",
   "titulo": "Ocho preguntas para los vecinos",
   "html": "De las casi cien dudas abiertas, en <a href=\"{{BASE}}colabora/#ocho-preguntas\">Colabora</a> destacamos ocho que puede resolver cualquiera con lo que recuerda o guarda en casa: qué es la Mariseca, las cofradías de Semana Santa, los pregoneros que faltan, la receta de la empanada o el Toro del Caño, entre otras. Y una corrección: en los «Nuevos gozos» de <a href=\"{{BASE}}biblioteca/versos-y-recuerdos/\">Versos y recuerdos</a> se leía «emanar memos?», una errata del escaneado; es «emanar vemos», como trae la novena."
  },

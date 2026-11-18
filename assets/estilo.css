@@ -278,6 +278,7 @@ dialog.visor::backdrop { background: rgba(20, 17, 14, 0.9); }
 /* Tablas anchas: fichas en el móvil */
 @media (max-width: 40rem) {
   table.fichas, table.fichas tbody, table.fichas tr, table.fichas td { display: block; width: 100%; }
+  table.fichas caption { display: block; }
   table.fichas thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   table.fichas tr { padding: 0.6rem 0; border-bottom: 1px solid var(--raya); }
   table.fichas td { border: 0; padding: 0.1rem 0; text-align: left !important; white-space: normal !important; }
