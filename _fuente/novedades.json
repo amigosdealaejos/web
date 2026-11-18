@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-18",
+  "titulo": "El álbum «Alaejos, nuestra historia fotográfica»",
+  "html": "Publicamos completo, con autorización, el álbum que editó la Fundación Hernández Puertas en homenaje al fotógrafo Pedro Varela Calvo: <a href=\"{{BASE}}biblioteca/alaejos-nuestra-historia-fotografica/\">176 fotografías de la vida del pueblo con sus pies de foto</a>, de los oficios y las escuelas a las fiestas, los toros y las procesiones, retocadas para quitar sombras y brillos. Si reconoce a alguien o sabe el año de alguna, díganoslo."
+ },
+ {
+  "fecha": "2026-11-18",
   "titulo": "El clima de Alaejos en datos",
   "html": "Nueva página con las lluvias y temperaturas de Alaejos día a día desde 1940 hasta ayer: <a href=\"{{BASE}}historia-del-pueblo/el-clima-en-datos/\">cómo fue cada año comparado con lo normal, cuánto han subido las temperaturas, heladas, récords y el tiempo que hizo en cualquier fecha</a>."
  },

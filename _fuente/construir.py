@@ -192,6 +192,8 @@ PAGINAS = [
 ] + [(r, frag, "personas", n, f"{n} ({f}): semblanza con sus fuentes, en Personas de Alaejos.") for r, frag, n, f in PERSONAS] + [
     ("biblioteca/", "biblioteca", "biblioteca", "Biblioteca",
      "Textos sobre Alaejos: los 178 artículos de los programas de fiestas (1954–2026), los programas originales, las novenas, el cancionero y el vocabulario de Arrecájel."),
+    ("biblioteca/alaejos-nuestra-historia-fotografica/", "historia-fotografica", "biblioteca", "Alaejos, nuestra historia fotográfica",
+     "El álbum Alaejos, nuestra historia fotográfica completo: 176 fotografías de Pedro Varela, Pedro Perlines y las familias del pueblo, con sus pies de foto."),
     ("biblioteca/novena-de-la-virgen-de-la-casita/", "novena", "biblioteca", "La novena de la Virgen de la Casita",
      "Las novenas a la Virgen de la Casita, patrona de Alaejos, en PDF: la original de 1865, la «Historia y novena» de 1952 y la edición actual de 2026."),
     ("biblioteca/bibliografia/", "bibliografia", "biblioteca", "Bibliografía",
