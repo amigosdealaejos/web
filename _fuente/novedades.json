@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-18",
+  "titulo": "Visitar Alaejos",
+  "html": "Nueva página práctica, <a href=\"{{BASE}}patrimonio/visitar-alaejos/\">Visitar Alaejos</a>: la Oficina de Turismo y sus horarios, las dos rutas guiadas gratuitas, el horario del museo de arte sacro, las visitas al castillo y un paseo por el pueblo de la Plaza Mayor a la Casita."
+ },
+ {
+  "fecha": "2026-11-18",
   "titulo": "El bosquejo de Ojeda y diecisiete fotografías de 1991",
   "html": "Las páginas de historia, de <a href=\"{{BASE}}historia-del-pueblo/origenes-y-edad-media/\">los orígenes</a> al <a href=\"{{BASE}}historia-del-pueblo/el-siglo-xx/\">siglo XX</a>, suman el «Bosquejo histórico» de José Ojeda Nieto (1991): los arrabales y la morería del siglo XVI, las rogativas y el trigo de Écija del XVII, la visita de Felipe V, el correo francés de 1808 y La Fundición. En <a href=\"{{BASE}}historia-del-pueblo/fotografias-antiguas/#las-fotografias-de-1991\">Fotografías antiguas</a>, una galería con todas las fotografías de la vida del pueblo publicadas en el libro."
  },
