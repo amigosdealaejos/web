@@ -19,6 +19,8 @@ Es un sitio estático, sin dependencias, pensado para GitHub Pages. Comparte ima
 
 1. Edita el archivo correspondiente en `_fuente/paginas/` (o crea uno nuevo y añádelo a `PAGINAS` en `_fuente/construir.py`).
 2. Ejecuta `python3 _fuente/construir.py` (necesita `beautifulsoup4` y `Pillow`). Además de las páginas, genera el buscador, la página de Preguntas abiertas (reúne los recuadros «En estudio»), el índice de las páginas largas, las versiones ligeras de las fotos y la imagen para compartir de cada página.
+   - Las fechas de «Última revisión» y del sitemap salen del historial de git, así que el script se detiene si la copia no lo tiene completo (por ejemplo, tras `git clone --depth=1`). Se arregla con `git fetch --depth=100000 origin main`.
+   - Al terminar avisa de las fotos de más de 1 MB o de más de 2.400 px de lado, y del tamaño total del sitio (GitHub Pages admite hasta 1 GB). Conviene reducir las fotos antes de subirlas: una vez subidas, quedan para siempre en el historial aunque luego se sustituyan.
 3. Sube los cambios.
 
 ## Formulario de contacto

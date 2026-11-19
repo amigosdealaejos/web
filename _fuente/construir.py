@@ -150,7 +150,7 @@ PAGINAS = [
     ("historia-del-pueblo/el-termino/", "h-termino", "historia", "El término: clima, montes y prados",
      "El campo de Alaejos en quinientos años: el clima y las lluvias, el monte de encinas desaparecido, el prado de Carrealvar, la cerca y la cruz de Carrezamora."),
     ("historia-del-pueblo/el-clima-en-datos/", "clima", "historia", "El clima de Alaejos en datos",
-     "Lluvias y temperaturas de Alaejos día a día desde 1940 hasta ayer: cada año comparado con lo normal, la subida de las temperaturas, heladas, récords y el tiempo de cualquier fecha."),
+     "Lluvias y temperaturas de Alaejos día a día desde 1940: cada año comparado con lo normal, heladas, calores, récords y el tiempo de cualquier fecha."),
     ("historia-del-pueblo/escudo-y-bandera/", "h-escudo", "historia", "Escudo, bandera y distinciones",
      "El escudo de Alaejos y su estrella de los Fonseca, la bandera de 1996, los bastones de mando, los escudos de las casas nobles y los honores municipales."),
     ("historia-del-pueblo/asociaciones-y-lugares-de-encuentro/", "h-vida-social", "historia", "Asociaciones y lugares de encuentro",
@@ -854,6 +854,7 @@ def imagen_og(ruta, titulo, seccion):
 # ---------------------------------------------------------------- construcción
 
 def construir():
+    comprobar_historial()
     hoy = date.today().isoformat()
     ESTUDIOS.clear(); PETICIONES.clear(); INDICE.clear()
     titulos_seccion = {k: e for k, e, _ in MENU}
@@ -917,6 +918,54 @@ def construir():
     (RAIZ / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {URL_BASE}sitemap.xml\n", encoding="utf-8")
     print(f"{len(PAGINAS)} páginas, {len(REDIRECCIONES)} redirecciones, {len(ESTUDIOS)} preguntas abiertas, "
           f"{len(INDICE)} entradas en el buscador.")
+    avisar_tamanos()
+
+
+# Límites orientativos. GitHub Pages admite sitios de hasta 1 GB.
+IMG_MAX_KB = 1024          # una foto de más de 1 MB casi siempre se puede reducir sin perder nada
+IMG_MAX_LADO = 2400        # píxeles del lado largo; de sobra para ampliarla en pantalla
+SITIO_AVISO_MB = 600       # a partir de aquí conviene decidir qué se guarda fuera del repositorio
+
+
+def avisar_tamanos():
+    """Avisa de las imágenes demasiado grandes y del tamaño total del sitio publicado."""
+    grandes = []
+    for f in sorted((RAIZ / "assets" / "img").glob("*.*")):
+        if f.suffix.lower() not in (".jpg", ".jpeg", ".png", ".webp"):
+            continue
+        kb = f.stat().st_size // 1024
+        try:
+            with Image.open(f) as im:
+                lado = max(im.size)
+        except Exception:
+            lado = 0
+        if kb > IMG_MAX_KB or lado > IMG_MAX_LADO:
+            grandes.append(f"  {f.name}: {kb} KB, {lado} px")
+    if grandes:
+        print(f"AVISO: {len(grandes)} imágenes pasan de {IMG_MAX_KB} KB o de {IMG_MAX_LADO} px de lado; "
+              "conviene reducirlas antes de subirlas:")
+        print("\n".join(grandes[:20]) + ("\n  …" if len(grandes) > 20 else ""))
+    total = sum(p.stat().st_size for p in RAIZ.rglob("*")
+                if p.is_file() and ".git" not in p.parts and "_fuente" not in p.parts)
+    mb = total / 1048576
+    print(f"Tamaño del sitio publicado: {mb:.0f} MB de 1.024 MB que admite GitHub Pages.")
+    if mb > SITIO_AVISO_MB:
+        print(f"AVISO: el sitio pasa de {SITIO_AVISO_MB} MB. Conviene decidir qué materiales "
+              "(PDF, audios, originales de fotos) se guardan fuera del repositorio.")
+
+
+def comprobar_historial():
+    """Las fechas de «Última revisión» y del sitemap salen del historial de git.
+    En una copia descargada sin historial completo (git clone --depth=…) todas las
+    páginas saldrían con la fecha del último cambio, así que se detiene."""
+    import subprocess, sys
+    r = subprocess.run(["git", "rev-parse", "--is-shallow-repository"], cwd=RAIZ,
+                       capture_output=True, text=True)
+    if r.stdout.strip() == "true":
+        sys.exit("ERROR: esta copia del repositorio no tiene el historial completo, y las fechas de\n"
+                 "«Última revisión» saldrían mal. Descárguelo antes con:\n"
+                 "    git fetch --depth=100000 origin main\n"
+                 "y vuelva a ejecutar construir.py.")
 
 
 def contacto():
