@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-19",
+  "titulo": "Las calles de Alaejos",
+  "html": "Nueva página, <a href=\"{{BASE}}historia-del-pueblo/las-calles-de-alaejos/\">Las calles de Alaejos</a>, con el estudio del callejero de Antonio Lucas Varela en <em>Cerramícalo</em> (2002): el origen del nombre de cada calle y plaza, los nombres populares, como la Calle sin Dios, la Calleja Cerrada o la calle de la Cárcel, el plano de 2001 y su hipótesis sobre quiénes repoblaron la aldea de Falafeios."
+ },
+ {
+  "fecha": "2026-11-19",
   "titulo": "Lo que añade «Cerramícalo»",
   "html": "Hemos repasado <em>Cerramícalo</em> (2002), la segunda edición ampliada de <em>Arrecájel</em>, de Antonio Lucas Varela, y añadido lo que trae de nuevo: <a href=\"{{BASE}}historia-del-pueblo/oficios-agua-y-vida-diaria/\">el año del labrador, los contratos de amos y criados, las medidas agrarias y las panaderías</a>; <a href=\"{{BASE}}historia-del-pueblo/cocina-tradicional/\">un recetario completo, las clases de pan y la receta de la empanada de San Isidro</a>, que buscábamos; <a href=\"{{BASE}}historia-del-pueblo/dichos-cabanuelas-y-habla/\">refranes del tiempo, señales de los animales y nuevos dichos</a>; <a href=\"{{BASE}}historia-del-pueblo/el-vino-de-alaejos/\">más citas del vino en los clásicos</a>; detalles de las <a href=\"{{BASE}}fiestas-y-eventos/\">fiestas del santoral</a> y del <a href=\"{{BASE}}fiestas-y-eventos/semana-santa/\">Cristo de la Caridad</a>, y <a href=\"{{BASE}}historia-del-pueblo/fotografias-antiguas/\">15 fotografías</a> de escuelas, pozos, peñas y encierros. Donde el libro no coincide con otras fuentes lo dejamos «en estudio»."
  },

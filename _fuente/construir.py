@@ -128,6 +128,8 @@ PAGINAS = [
      "Alaejos en el Siglo de Oro: las ordenanzas de 1580, el pleito con la Mesta, el convento franciscano, la escuela y la crisis del siglo XVII."),
     ("historia-del-pueblo/el-despoblado-de-valdefuentes/", "h-valdefuentes", "historia", "El despoblado de Valdefuentes",
      "Valdefuentes, el lugar despoblado del término de Alaejos: su torre de frontera, el señorío de los Fonseca, su despoblamiento en el siglo XVII y lo que queda."),
+    ("historia-del-pueblo/las-calles-de-alaejos/", "h-calles", "historia", "Las calles de Alaejos",
+     "El origen de los nombres de las calles de Alaejos según Antonio Lucas Varela: vecinos del siglo XVI, oficios, caminos, la cerca y los nombres populares."),
     ("historia-del-pueblo/el-vino-de-alaejos/", "h-vino", "historia", "El vino de Alaejos",
      "El blanco de Alaejos, vino famoso del siglo XVI citado por Cervantes y Quevedo: su comercio, sus bodegas y lagares y su decadencia hasta la filoxera."),
     ("historia-del-pueblo/el-siglo-xviii/", "h-siglo-xviii", "historia", "Siglo XVIII: el Catastro y los ilustrados",
