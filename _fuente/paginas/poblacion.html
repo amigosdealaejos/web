@@ -1,0 +1,130 @@
+<h1 class="h-pag">La población de Alaejos en datos</h1>
+<p class="entradilla">Cuántos habitantes ha tenido Alaejos desde el siglo XV hasta hoy, según los vecindarios, los catastros, los censos y el padrón: cuándo creció, cuándo se vació y quién vive hoy en el pueblo.</p>
+<div class="poblacion" id="poblacion" data-base="{{BASE}}">
+  <noscript><p class="po-aviso">Esta página necesita JavaScript para dibujar los gráficos. Todas las cifras están también en la <a href="{{BASE}}historia-del-pueblo/#la-poblacion-a-lo-largo-de-los-siglos">tabla de la página de Historia</a>.</p></noscript>
+  <div class="po-fichas" id="po-fichas"></div>
+
+  <section class="po-sec" aria-labelledby="cinco-siglos-de-poblacion">
+    <h2 id="cinco-siglos-de-poblacion">Cinco siglos de población</h2>
+    <div class="texto">
+      <p>Cada punto es una cifra con su fuente; pase el dedo o el ratón por encima para verla. Hasta el siglo XVIII los documentos cuentan <em>vecinos</em>, es decir, casas o cabezas de familia, no personas. Para ponerlos en la misma escala se multiplican por un número de habitantes por vecino, que puede cambiar abajo; la raya vertical de cada uno de esos puntos va de 3,5 a 5 habitantes por vecino, lo que se suele suponer. Madoz da para Alaejos 804 vecinos y 3.255 habitantes, unos cuatro por vecino.</p>
+    </div>
+    <div class="po-controles">
+      <div class="po-periodo" role="group" aria-label="Periodo">
+        <button type="button" data-desde="1440">Todo</button>
+        <button type="button" data-desde="1787">Desde 1787</button>
+        <button type="button" data-desde="1900">Desde 1900</button>
+        <button type="button" data-desde="1986">Padrón, desde 1986</button>
+      </div>
+      <label class="po-control">De <select id="po-desde"></select></label>
+      <label class="po-control">a <select id="po-hasta"></select></label>
+      <label class="po-control">Habitantes por vecino
+        <select id="po-coef">
+          <option value="3.5">3,5</option>
+          <option value="4" selected>4</option>
+          <option value="4.5">4,5</option>
+          <option value="5">5</option>
+        </select>
+      </label>
+    </div>
+    <div class="po-controles po-series">
+      <label><input type="checkbox" data-serie="censo" checked> Censos</label>
+      <label><input type="checkbox" data-serie="padron" checked> Padrón</label>
+      <label><input type="checkbox" data-serie="local" checked> Publicaciones locales</label>
+      <label><input type="checkbox" data-serie="est" checked> Siglos XV a XIX</label>
+      <label><input type="checkbox" id="po-hitos-ver" checked> Acontecimientos</label>
+    </div>
+    <div class="po-graf" id="g-grande"></div>
+    <ol class="po-hitos" id="po-hitos" aria-label="Acontecimientos marcados en el gráfico"></ol>
+    <div class="texto">
+      <p>La villa tuvo dos épocas grandes. A finales del siglo XVI pasaba de 900 vecinos, más de 4.000 personas; el siglo XVII la dejó en la mitad, y se fue recuperando hasta superar los 3.500 habitantes en la segunda mitad del XIX. Durante la primera mitad del siglo XX se mantuvo entre 3.450 y 3.700. Después vino la emigración: entre los censos de 1950 y 1981 Alaejos perdió 1.633 habitantes de hecho, el 45 %, a un ritmo de más de 500 por década. Desde entonces ha seguido bajando más despacio, hasta tocar fondo en 2019 con 1.369 empadronados, y en los últimos años ha vuelto a ganar algunos.</p>
+    </div>
+  </section>
+
+  <section class="po-sec" aria-labelledby="comparar-dos-fechas">
+    <h2 id="comparar-dos-fechas">Comparar dos fechas</h2>
+    <div class="texto"><p>Elija dos años para ver cuánto cambió la población entre ellos. Para el siglo XX se usa la población de hecho de los censos y, desde 1986, el padrón; antes de 1787 las cifras son aproximadas.</p></div>
+    <div class="po-controles">
+      <label class="po-control">Del año <select id="po-a"></select></label>
+      <label class="po-control">al año <select id="po-b"></select></label>
+    </div>
+    <div class="po-comp" id="po-comp" aria-live="polite"></div>
+  </section>
+
+  <section class="po-sec" aria-labelledby="el-ritmo-del-cambio">
+    <h2 id="el-ritmo-del-cambio">El ritmo del cambio</h2>
+    <div class="texto"><p>Cuánto creció o menguó la población cada año, de media, entre una cifra y la siguiente. Cada barra ocupa el periodo que mide: hacia arriba, años de crecimiento; hacia abajo, de pérdida.</p></div>
+    <label class="po-control">Desde
+      <select id="po-ritmo-desde">
+        <option value="1591">1591</option>
+        <option value="1787">1787</option>
+        <option value="1900" selected>1900</option>
+      </select>
+    </label>
+    <div class="po-graf" id="g-ritmo"></div>
+    <h3 class="po-tit">Año a año desde 1986: habitantes ganados o perdidos según el padrón</h3>
+    <div class="po-graf" id="g-anual"></div>
+    <div class="texto">
+      <p>Las peores décadas fueron las de 1950, 1960 y 1970, con caídas de alrededor del 18 % en cada una. José Ojeda Nieto la llamó «la emigración más abundante que ha sufrido nunca el pueblo»: el campo se mecanizó sin cambiar de cultivos, y cada máquina dejaba de sobra a más jornaleros (véase <a href="{{BASE}}historia-del-pueblo/el-siglo-xx/#la-posguerra-y-la-emigracion">El siglo XX</a>). La caída brusca de 1990 a 1991, de 199 habitantes, coincide con el censo de ese año, cuya cifra sustituyó a la del padrón; puede deberse más a una depuración de las listas que a una marcha de vecinos, pero no lo sabemos.</p>
+      <p>En los años de los que hay datos murieron más alaejanos de los que nacieron: en el año 2000 hubo 8 nacimientos y 27 defunciones (<em>Alaejos, del sepia al color</em>), y en 2023, 13 nacimientos y 15 defunciones (INE). Al mismo tiempo han llegado vecinos de fuera: en 1996 solo el 0,35 % de los empadronados había nacido en otro país, y en 2022 era casi el 12 %.</p>
+    </div>
+  </section>
+
+  <section class="po-sec" aria-labelledby="hombres-y-mujeres">
+    <h2 id="hombres-y-mujeres">Hombres y mujeres</h2>
+    <div class="texto"><p>El padrón cuenta por separado a hombres y mujeres desde 1986. Desde entonces siempre ha habido en Alaejos más hombres que mujeres, y la diferencia ha crecido: de 104 por cada 100 mujeres en 1986 a 115 en 2025.</p></div>
+    <div class="po-graf" id="g-sexo"></div>
+    <h3 class="po-tit">Hombres por cada 100 mujeres</h3>
+    <div class="po-graf" id="g-razon"></div>
+  </section>
+
+  <section class="po-sec" aria-labelledby="quien-vive-hoy-en-alaejos">
+    <h2 id="quien-vive-hoy-en-alaejos">Quién vive hoy en Alaejos</h2>
+    <div class="texto"><p>Según el censo anual del INE a 1 de enero de 2025, tres de cada diez vecinos tienen 65 años o más, y hay casi tres mayores por cada menor de edad. El grupo de edad más numeroso es el de 60 a 69 años.</p></div>
+    <div class="po-fichas" id="po-grandes"></div>
+    <div class="po-cols">
+      <div>
+        <h3 class="po-tit">Habitantes por edad, 2025</h3>
+        <div class="po-hbs" id="po-edades"></div>
+      </div>
+      <div>
+        <h3 class="po-tit">Nacionalidad, 2025</h3>
+        <div class="po-hbs" id="po-nacionalidad"></div>
+        <h3 class="po-tit">Dónde nacieron los empadronados en 2022</h3>
+        <div class="po-hbs" id="po-nacimiento"></div>
+      </div>
+    </div>
+    <p class="po-nota">Edades y nacionalidad: INE, Censo anual de población a 1 de enero de 2025 (1.426 personas; el padrón oficial da 1.427). Lugar de nacimiento: INE, padrón de 2022 (1.385 personas).</p>
+  </section>
+
+  <section class="po-sec" aria-labelledby="las-cifras-que-no-cuadran">
+    <h2 id="las-cifras-que-no-cuadran">Las cifras que no cuadran</h2>
+    <div class="texto">
+      <p>Comparar las fuentes resuelve alguna duda. La tabla de población de <em>Alaejos, del sepia al color</em> da 2.715 habitantes para 1950, y su tabla de matrícula escolar, 3.715. El censo de 1950 da 3.715 de derecho y 3.610 de hecho, así que el 2.715 es una errata, y los 3.715 que daba «una crónica de la época» hacia 1954 son la cifra oficial de aquel censo. Del mismo modo, los 1.616 habitantes que el libro da para el 1 de enero de 2001 no coinciden con el padrón oficial de esa fecha, 1.581, ni con el censo de noviembre de 2001, 1.550.</p>
+      <p>No hay que confundir <strong>población de hecho</strong> (los que estaban en el pueblo el día del censo, vivieran o no en él) con <strong>población de derecho</strong> (los que vivían en él, estuvieran o no ese día). En 1981, por ejemplo, Alaejos tenía 2.006 habitantes de derecho y 1.977 de hecho.</p>
+    </div>
+    <div class="estudio"><strong>En estudio</strong>Para 1930 y 1940 el libro de 2001 da 3.652 y 3.715 habitantes, y los censos del INE, 3.532 y 3.471 de hecho. La de 1940 coincide con la de derecho de 1950, y puede que la tabla del libro tenga alguna cifra corrida de década. Habría que comparar con las de derecho de esos dos censos.</div>
+    <div class="estudio"><strong>En estudio</strong>Faltan aquí las cifras oficiales de los censos del siglo XIX (1842, 1857, 1860, 1877, 1887 y 1897), que el INE publica en <a href="https://www.ine.es/intercensal/">Alteraciones de los municipios en los Censos de Población desde 1842</a>. Las de 1860 y 1877 que aparecen en el gráfico son las del libro de 2001, y la de 1887, la de la memoria del ferrocarril que nunca llegó.</div>
+  </section>
+
+  <section class="po-sec" aria-labelledby="todas-las-cifras">
+    <h2 id="todas-las-cifras">Todas las cifras</h2>
+    <details class="po-tabla">
+      <summary>Ver todas las cifras con su fuente</summary>
+      <div class="tabla-env" id="t-datos"></div>
+    </details>
+    <p><button type="button" class="po-boton" id="po-csv">Descargar las cifras (CSV)</button></p>
+  </section>
+
+  <section class="po-sec" aria-labelledby="de-donde-salen-los-datos">
+    <h2 id="de-donde-salen-los-datos">De dónde salen los datos</h2>
+    <div class="texto">
+      <p><strong>Siglos XV a XIX.</strong> Las cifras antiguas las han ido publicando los historiadores del pueblo, casi siempre en los programas de fiestas: José Ojeda Nieto (1991 y 2004), José M. Baraja (2021), el extracto del Catastro de Ensenada de Adelio Castaño Casquero (1981) y el del Diccionario de Madoz de Azucena Hernández Amez (1991). Madoz tomó sus cifras de la Matrícula catastral de 1842, que ocultaba población por motivos fiscales. Todas se explican en las páginas de <a href="{{BASE}}historia-del-pueblo/siglos-xvi-y-xvii/">los siglos XVI y XVII</a>, <a href="{{BASE}}historia-del-pueblo/el-siglo-xviii/">el siglo XVIII</a> y <a href="{{BASE}}historia-del-pueblo/el-siglo-xix/">el siglo XIX</a>.</p>
+      <p><strong>Censos del INE.</strong> Desde 1900 hay un censo cada diez años. La población de hecho de 1900 a 1981 es la serie del INE que publica <a href="https://www.foro-ciudad.com/valladolid/alaejos/habitantes.html">Foro-Ciudad</a>; las de 1950 y 1970 se han comprobado en los tomos de esos censos (<a href="https://www.ine.es/inebaseweb/71807.do?language=0">INEbase Historia</a>). Las de derecho de 1981 a 2021 son las del INE que recoge <a href="https://www.citypopulation.de/es/spain/castillayleon/valladolid/47004__alaejos/">City Population</a>.</p>
+      <p><strong>Padrón municipal.</strong> Las cifras oficiales del INE de cada año desde 1986, con hombres y mujeres (Foro-Ciudad). La de 2025, 1.427 habitantes (764 hombres y 663 mujeres), es la que declaró oficial el Real Decreto 1117/2025. Desde 1996 el padrón se actualiza de forma continua; antes se renovaba cada cinco años y se rectificaba cada año.</p>
+      <p><strong>Publicaciones locales.</strong> <a href="{{BASE}}biblioteca/bibliografia/#del-sepia-al-color"><em>Alaejos, del sepia al color</em></a> (2001), el programa de fiestas de 1954 y los artículos de Adelio Castaño (1984 y 1993). Se muestran aparte porque no siempre dicen de dónde salen sus cifras.</p>
+      <p>Si alguien conserva padrones, censos o cuentas de vecinos antiguas de Alaejos, <a href="{{BASE}}colabora/">nos gustaría conocerlos</a>.</p>
+    </div>
+  </section>
+</div>
+<script src="{{BASE}}assets/js/poblacion.js" defer></script>
