@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-19",
+  "titulo": "La población de Alaejos en datos",
+  "html": "Nueva página con <a href=\"{{BASE}}historia-del-pueblo/la-poblacion-en-datos/\">los habitantes de Alaejos desde el siglo XV hasta hoy</a>: vecindarios, censos y padrón en un mismo gráfico, una herramienta para comparar dos fechas, el ritmo de cada década, hombres y mujeres desde 1986, y edades y origen de los vecinos en 2025. El censo de 1950 resuelve una de nuestras preguntas: los 2.715 habitantes que daba <em>Alaejos, del sepia al color</em> para ese año eran una errata por 3.715."
+ },
+ {
+  "fecha": "2026-11-19",
   "titulo": "¿Reconoce a alguien en el álbum?",
   "html": "En <a href=\"{{BASE}}biblioteca/alaejos-nuestra-historia-fotografica/\">Alaejos, nuestra historia fotográfica</a> pedimos ayuda para saber quién sale en las fotos, dónde y de qué año son: basta con decirnos la página y el número de foto. Y dos correcciones: la fecha de «Última revisión» de cada página vuelve a ser la de su último cambio (desde el día 18 todas decían 18 de noviembre), y en <a href=\"{{BASE}}historia-del-pueblo/cronologia/\">Alaejos en fechas</a> la fundación de la Cofradía de Bailarines ya no figura como «hacia 1972», porque las fuentes dudan entre los años sesenta y los setenta."
  },
