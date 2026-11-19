@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-19",
+  "titulo": "Lo que añade «Cerramícalo»",
+  "html": "Hemos repasado <em>Cerramícalo</em> (2002), la segunda edición ampliada de <em>Arrecájel</em>, de Antonio Lucas Varela, y añadido lo que trae de nuevo: <a href=\"{{BASE}}historia-del-pueblo/oficios-agua-y-vida-diaria/\">el año del labrador, los contratos de amos y criados, las medidas agrarias y las panaderías</a>; <a href=\"{{BASE}}historia-del-pueblo/cocina-tradicional/\">un recetario completo, las clases de pan y la receta de la empanada de San Isidro</a>, que buscábamos; <a href=\"{{BASE}}historia-del-pueblo/dichos-cabanuelas-y-habla/\">refranes del tiempo, señales de los animales y nuevos dichos</a>; <a href=\"{{BASE}}historia-del-pueblo/el-vino-de-alaejos/\">más citas del vino en los clásicos</a>; detalles de las <a href=\"{{BASE}}fiestas-y-eventos/\">fiestas del santoral</a> y del <a href=\"{{BASE}}fiestas-y-eventos/semana-santa/\">Cristo de la Caridad</a>, y <a href=\"{{BASE}}historia-del-pueblo/fotografias-antiguas/\">15 fotografías</a> de escuelas, pozos, peñas y encierros. Donde el libro no coincide con otras fuentes lo dejamos «en estudio»."
+ },
+ {
+  "fecha": "2026-11-19",
   "titulo": "La población de Alaejos en datos",
   "html": "Nueva página con <a href=\"{{BASE}}historia-del-pueblo/la-poblacion-en-datos/\">los habitantes de Alaejos desde el siglo XV hasta hoy</a>: vecindarios, censos y padrón en un mismo gráfico, una herramienta para comparar dos fechas, el ritmo de cada década, hombres y mujeres desde 1986, y edades y origen de los vecinos en 2025. El censo de 1950 resuelve una de nuestras preguntas: los 2.715 habitantes que daba <em>Alaejos, del sepia al color</em> para ese año eran una errata por 3.715."
  },
