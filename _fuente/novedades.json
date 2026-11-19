@@ -1,5 +1,10 @@
 [
  {
+  "fecha": "2026-11-19",
+  "titulo": "¿Reconoce a alguien en el álbum?",
+  "html": "En <a href=\"{{BASE}}biblioteca/alaejos-nuestra-historia-fotografica/\">Alaejos, nuestra historia fotográfica</a> pedimos ayuda para saber quién sale en las fotos, dónde y de qué año son: basta con decirnos la página y el número de foto. Y dos correcciones: la fecha de «Última revisión» de cada página vuelve a ser la de su último cambio (desde el día 18 todas decían 18 de noviembre), y en <a href=\"{{BASE}}historia-del-pueblo/cronologia/\">Alaejos en fechas</a> la fundación de la Cofradía de Bailarines ya no figura como «hacia 1972», porque las fuentes dudan entre los años sesenta y los setenta."
+ },
+ {
   "fecha": "2026-11-18",
   "titulo": "El álbum «Alaejos, nuestra historia fotográfica»",
   "html": "Publicamos completo, con autorización, el álbum que editó la Fundación Hernández Puertas en homenaje al fotógrafo Pedro Varela Calvo: <a href=\"{{BASE}}biblioteca/alaejos-nuestra-historia-fotografica/\">176 fotografías de la vida del pueblo con sus pies de foto</a>, de los oficios y las escuelas a las fiestas, los toros y las procesiones, retocadas para quitar sombras y brillos. Si reconoce a alguien o sabe el año de alguna, díganoslo."
