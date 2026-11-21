@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-21",
+  "titulo": "Tres pregones y dos fotografías de las maestras",
+  "html": "Nueva sección de <a href=\"{{BASE}}biblioteca/pregones/\">Pregones</a> con tres textos completos que ha enviado Antonio Lucas Varela: el de las fiestas de la Virgen de la Casita de 1989, de César Otero Villoria («En los albores del V Centenario»), y los suyos de la Semana Santa de 2008 y las fiestas de 2011. También envió dos fotografías de las maestras Carmen Casas, Mercedes Romón, Adalia Sampedro y Juliana Ámez, ya en <a href=\"{{BASE}}historia-del-pueblo/asociaciones-y-lugares-de-encuentro/#las-escuelas\">Las escuelas</a>."
+ },
+ {
+  "fecha": "2026-11-21",
   "titulo": "La Biblioteca, en casa",
   "html": "Los 178 artículos de los programas de fiestas, que estaban en una web aparte, forman parte ya de esta: están en <a href=\"{{BASE}}biblioteca/programas-de-fiestas/\">Programas de fiestas</a>, por años, por <a href=\"{{BASE}}biblioteca/programas-de-fiestas/temas/\">temas</a> y por <a href=\"{{BASE}}biblioteca/programas-de-fiestas/autores/\">autores</a>, y el buscador de la web los encuentra. Cada artículo dice en qué páginas de la web se cita. La <a href=\"{{BASE}}biblioteca/\">Biblioteca</a> reúne además, en dos páginas nuevas, los <a href=\"{{BASE}}biblioteca/libros/\">libros sobre Alaejos</a> y los <a href=\"{{BASE}}biblioteca/documentos/\">documentos</a> que se pueden descargar."
  },
