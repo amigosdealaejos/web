@@ -2,7 +2,7 @@
  {
   "fecha": "2026-11-21",
   "titulo": "La Biblioteca, en casa",
-  "html": "Los 178 artículos de los programas de fiestas, que estaban en una web aparte, forman parte ya de esta: están en <a href=\"{{BASE}}biblioteca/programas-de-fiestas/\">Programas de fiestas</a>, por años, por <a href=\"{{BASE}}biblioteca/programas-de-fiestas/temas/\">temas</a> y por <a href=\"{{BASE}}biblioteca/programas-de-fiestas/autores/\">autores</a>, y el buscador de la web los encuentra. Cada artículo dice en qué páginas de la web se cita. La <a href=\"{{BASE}}biblioteca/\">Biblioteca</a> reúne además, en dos páginas nuevas, los <a href=\"{{BASE}}biblioteca/libros/\">libros sobre Alaejos</a> y los <a href=\"{{BASE}}biblioteca/documentos/\">documentos</a> que se pueden descargar. Las direcciones antiguas de biblioteca.amigosdealaejos.org llevan a las nuevas."
+  "html": "Los 178 artículos de los programas de fiestas, que estaban en una web aparte, forman parte ya de esta: están en <a href=\"{{BASE}}biblioteca/programas-de-fiestas/\">Programas de fiestas</a>, por años, por <a href=\"{{BASE}}biblioteca/programas-de-fiestas/temas/\">temas</a> y por <a href=\"{{BASE}}biblioteca/programas-de-fiestas/autores/\">autores</a>, y el buscador de la web los encuentra. Cada artículo dice en qué páginas de la web se cita. La <a href=\"{{BASE}}biblioteca/\">Biblioteca</a> reúne además, en dos páginas nuevas, los <a href=\"{{BASE}}biblioteca/libros/\">libros sobre Alaejos</a> y los <a href=\"{{BASE}}biblioteca/documentos/\">documentos</a> que se pueden descargar."
  },
  {
   "fecha": "2026-11-21",
@@ -212,6 +212,6 @@
  {
   "fecha": "2026-10",
   "titulo": "Biblioteca de los programas de fiestas",
-  "html": "Los 178 artículos publicados en los programas entre 1954 y 2026, íntegros y con buscador: <a href=\"{{BASE}}biblioteca/programas-de-fiestas/\">biblioteca.amigosdealaejos.org</a>."
+  "html": "Los 178 artículos publicados en los programas entre 1954 y 2026, íntegros y con buscador: <a href=\"{{BASE}}biblioteca/programas-de-fiestas/\">Programas de fiestas</a>."
  }
 ]

@@ -2,7 +2,7 @@
 
 Web de **www.amigosdealaejos.org**: archivo abierto de historia, patrimonio y memoria de la villa de Alaejos (Valladolid).
 
-Es un sitio estático, sin dependencias, pensado para GitHub Pages. Incluye la Biblioteca, con los artículos de los programas de fiestas, que hasta noviembre de 2026 estaban en biblioteca.amigosdealaejos.org (ese repositorio solo redirige ya a las direcciones nuevas).
+Es un sitio estático, sin dependencias, pensado para GitHub Pages. Incluye la Biblioteca, con los artículos de los programas de fiestas, que hasta noviembre de 2026 estaban en biblioteca.amigosdealaejos.org; esa web y su repositorio ya no existen.
 
 ## Estructura
 
