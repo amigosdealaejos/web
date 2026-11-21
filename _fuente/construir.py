@@ -37,7 +37,6 @@ REDES = [
     ("YouTube", "https://www.youtube.com/channel/UCeJp_c3fFBxIgiIaiYS2_iQ"),
 ]
 OTRAS_WEBS = [
-    ("Biblioteca de los programas de fiestas", "https://biblioteca.amigosdealaejos.org/"),
     ("Beato Donato Jiménez Bibiano", "https://beatodonato.com/"),
 ]
 
@@ -106,12 +105,53 @@ FIESTAS = [
 PERSONAS = [(f"personas-de-alaejos/{s}/", f"persona-{s}", n, f) for s, n, f in json.loads(
     (RAIZ / "_fuente" / "personas.json").read_text(encoding="utf-8"))]
 
+# Biblioteca de los programas de fiestas: los artículos publicados en los programas (1954–2026).
+# Datos en programas.json; el texto de cada artículo en paginas/programas/AÑO/slug.html
+PROGRAMAS = json.loads((RAIZ / "_fuente" / "programas.json").read_text(encoding="utf-8"))
+PROG = "biblioteca/programas-de-fiestas/"
+ARTICULOS = {f"programas/{a['anio']}/{a['slug']}": a for a in PROGRAMAS["articulos"]}
+ORDEN_ARTICULOS = list(ARTICULOS)            # orden cronológico, como en programas.json
+TEMAS_PROG = {t["id"]: t for t in PROGRAMAS["temas"]}
+AUTORES_PROG = {x["clave"]: x for x in PROGRAMAS["autores"]}
+LISTADOS_PROG = ("programas", "programas-temas", "programas-autores")
+
+
+def ruta_articulo(a):
+    return f"{PROG}{a['anio']}/{a['slug']}/"
+
+
+def desc_articulo(a):
+    quien = "texto sin firma" if a["autor"] == "Sin firma" else f"de {a['autor']}"
+    t = a["titulo"]
+    plantilla = "«{}», {}, en el programa de fiestas de Alaejos de {}."
+    while len(plantilla.format(t, quien, a["anio"])) > 155 and len(t) > 30:
+        t = t[: len(t) - 8].rsplit(" ", 1)[0] + "…"
+    return plantilla.format(t, quien, a["anio"])
+
+
+BIBLIOTECA = [
+    ("Programas de fiestas", PROG),
+    ("Libros", "biblioteca/libros/"),
+    ("Álbum fotográfico", "biblioteca/alaejos-nuestra-historia-fotografica/"),
+    ("Imágenes de la antropología", "biblioteca/imagenes-de-alaejos-una-antropologia-cultural/"),
+    ("A la antigua usanza", "biblioteca/alaejos-a-la-antigua-usanza/"),
+    ("La novena", "biblioteca/novena-de-la-virgen-de-la-casita/"),
+    ("Cancionero", "biblioteca/cancionero/"),
+    ("Recuerdos musicales", "biblioteca/recuerdos-musicales-de-alaejos/"),
+    ("Vocabulario", "biblioteca/vocabulario/"),
+    ("Glosario", "biblioteca/glosario/"),
+    ("Versos y recuerdos", "biblioteca/versos-y-recuerdos/"),
+    ("Documentos", "biblioteca/documentos/"),
+    ("Bibliografía", "biblioteca/bibliografia/"),
+]
+
 # Secciones con subapartados: clave -> (título, ruta de la presentación, subapartados, ¿submenú?)
 SECCIONES = {
     "historia": ("Historia", "historia-del-pueblo/", HISTORIA, True),
     "patrimonio": ("Patrimonio", "patrimonio/", PATRIMONIO, True),
     "fiestas": ("Fiestas", "fiestas-y-eventos/", FIESTAS, True),
     "personas": ("Personas", "personas-de-alaejos/", [(n, r) for r, _, n, _ in PERSONAS], False),
+    "biblioteca": ("Biblioteca", "biblioteca/", BIBLIOTECA, True),
 }
 
 # Páginas: (ruta, fragmento, clave del menú, título, descripción)
@@ -204,7 +244,17 @@ PAGINAS = [
      "Alaejanos de los que ha quedado memoria: el cardenal Arias y Porres, Hernández Morejón, Alejandro Ramírez, el beato Donato y otros, con sus fuentes."),
 ] + [(r, frag, "personas", n, f"{n} ({f}): semblanza con sus fuentes, en Personas de Alaejos.") for r, frag, n, f in PERSONAS] + [
     ("biblioteca/", "biblioteca", "biblioteca", "Biblioteca",
-     "Textos sobre Alaejos: los 178 artículos de los programas de fiestas (1954–2026), los programas originales, las novenas, el cancionero y el vocabulario de Arrecájel."),
+     "Lo que se ha escrito, cantado y fotografiado sobre Alaejos: artículos de los programas de fiestas, libros, novenas, cancionero, vocabulario y documentos."),
+    (PROG, "programas", "biblioteca", "Programas de fiestas",
+     "Los 178 artículos publicados en los programas de fiestas de Alaejos entre 1954 y 2026, íntegros y ordenados por años, con los programas originales."),
+    (PROG + "temas/", "programas-temas", "biblioteca", "Programas de fiestas por temas",
+     "Los artículos de los programas de fiestas de Alaejos (1954–2026) en once temas: historia, señorío, patrimonio, personajes, oficios, fiestas, habla y más."),
+    (PROG + "autores/", "programas-autores", "biblioteca", "Programas de fiestas por autores",
+     "Los autores de los artículos de los programas de fiestas de Alaejos (1954–2026), por orden alfabético, con todos sus textos."),
+    ("biblioteca/libros/", "libros", "biblioteca", "Libros sobre Alaejos",
+     "Los libros dedicados a Alaejos, de 1989 a 2024: qué contiene cada uno, quién lo escribió y en qué páginas de esta web se usa."),
+    ("biblioteca/documentos/", "documentos", "biblioteca", "Documentos",
+     "Los documentos que se pueden descargar en esta web: compendios de los programas de fiestas, novenas, cancionero y autorizaciones de la torre de San Pedro."),
     ("biblioteca/alaejos-nuestra-historia-fotografica/", "historia-fotografica", "biblioteca", "Alaejos, nuestra historia fotográfica",
      "El álbum Alaejos, nuestra historia fotográfica completo: 176 fotografías de Pedro Varela, Pedro Perlines y las familias del pueblo, con sus pies de foto."),
     ("biblioteca/imagenes-de-alaejos-una-antropologia-cultural/", "antropologia-imagenes", "biblioteca", "Las imágenes de «Alaejos. Una antropología cultural»",
@@ -237,11 +287,13 @@ PAGINAS = [
      "Buscador de Amigos de Alaejos: encuentre cualquier nombre, lugar o fecha en las páginas de la web."),
 ]
 
+PAGINAS += [(ruta_articulo(a), k, "biblioteca", f'{a["titulo"]} ({a["anio"]})', desc_articulo(a)) for k, a in ARTICULOS.items()]
+
 # Direcciones antiguas que deben seguir funcionando
 REDIRECCIONES = {
     "inicio/": "",
     "patrimonio/iglesia-de-santa-maría/": "patrimonio/iglesia-de-santa-maria/",
-    "programas-de-las-fiestas-de-alaejos/": "biblioteca/#programas",
+    "programas-de-las-fiestas-de-alaejos/": PROG,
     "fiestas-y-eventos/fiestas-y-tradiciones-de-alaejos/": "fiestas-y-eventos/",
     "mapa/": "patrimonio/mapa/",
 }
@@ -301,7 +353,7 @@ def cabecera(ruta, clave, base):
             otro = (f'<a class="submenu-otro" href="{base}{o_dest}">{o_nombre} →</a>' if g == 0
                     else f'<a class="submenu-otro" href="{base}{o_dest}">← {o_nombre}</a>')
         for etiqueta, destino in lista:
-            cur = ' aria-current="page"' if destino == ruta else ""
+            cur = ' aria-current="page"' if destino == ruta or (destino != raiz and ruta.startswith(destino)) else ""
             sub.append(f'<a href="{base}{destino}"{cur}>{etiqueta}</a>')
         out += (f'<nav class="submenu" aria-label="{titulo}">{cab_tit}'
                 f'<div class="submenu-in">{"".join(sub)}</div>{otro}</nav>')
@@ -322,7 +374,8 @@ def vecinos(ruta, base):
         partes.append(f'<a href="{base}{orden[i-1][1]}"><span>Anterior</span>{orden[i-1][0]}</a>')
     if i < len(orden) - 1:
         partes.append(f'<a class="sig" href="{base}{orden[i+1][1]}"><span>Siguiente</span>{orden[i+1][0]}</a>')
-    articulo = {"Historia": "la historia", "Patrimonio": "el patrimonio", "Fiestas": "las fiestas", "Personas": "las personas"}.get(titulo, titulo.lower())
+    articulo = {"Historia": "la historia", "Patrimonio": "el patrimonio", "Fiestas": "las fiestas", "Personas": "las personas",
+                "Biblioteca": "la biblioteca"}.get(titulo, titulo.lower())
     return f'<nav class="vecinos" aria-label="Recorrido por {articulo}">' + "".join(partes) + '</nav>'
 
 
@@ -634,7 +687,8 @@ def glosario_datos():
 
 def enlazar_glosario(s, base, frag):
     """Primera aparición de cada término en el texto corrido: enlace discreto al glosario."""
-    if frag in ("glosario", "vocabulario", "bibliografia", "buscar", "preguntas", "inicio", "novedades", "colabora", "quienes-somos"):
+    if frag in ("glosario", "vocabulario", "bibliografia", "buscar", "preguntas", "inicio", "novedades", "colabora", "quienes-somos") \
+            or frag in ARTICULOS:   # los artículos de los programas se reproducen tal cual
         return
     datos = glosario_datos()
     pendientes = {k: re.compile(r"(?<![\wáéíóúñÁÉÍÓÚÑ])(" + "|".join(v) + r")(?![\wáéíóúñÁÉÍÓÚÑ])")
@@ -690,7 +744,7 @@ def fecha_fragmento(frag):
     return d
 
 
-GENERADAS = ("inicio", "novedades", "preguntas", "bibliografia", "personas")
+GENERADAS = ("inicio", "novedades", "preguntas", "bibliografia", "personas", "libros") + LISTADOS_PROG
 
 
 def fecha_pagina(frag):
@@ -749,31 +803,20 @@ def tarjetas_personas(base):
 
 def bibliografia(base):
     """Artículos de los programas citados en la web, por autores, con las páginas que los citan."""
-    arts = json.loads((RAIZ / "_fuente" / "articulos.json").read_text(encoding="utf-8"))
-    citas = {}
-    for ruta, frag, clave, titulo, desc in PAGINAS:
-        if frag in ("bibliografia", "glosario"):
-            continue
-        txt = (FUENTE / f"{frag}.html").read_text(encoding="utf-8")
-        for u in re.findall(r'biblioteca\.amigosdealaejos\.org/(articulos/\d{4}/[^"#?]+\.html)', txt):
-            if u in arts:
-                lista = citas.setdefault(u, [])
-                if (ruta, titulo) not in lista:
-                    lista.append((ruta, titulo))
     autores = {}
-    for u, pags in citas.items():
-        t, a, y = arts[u]
-        autores.setdefault(a, []).append((y, t, u, pags))
+    for k, pags in CITAS.items():
+        a = ARTICULOS[k]
+        autores.setdefault(a["autor"], []).append((a["anio"], a["titulo"], ruta_articulo(a), pags))
     clave_orden = lambda a: (a == "Sin firma", unicodedata.normalize("NFD", a).lower())
     orden = sorted(autores, key=clave_orden)
     saltos = " · ".join(f'<a href="#autor-{slug(a)}">{esc(a)}</a>' for a in orden)
-    out = [f'<p class="resumen-preguntas"><strong>{len(citas)} artículos</strong> de {len(autores)} autores.</p>'
+    out = [f'<p class="resumen-preguntas"><strong>{len(CITAS)} artículos</strong> de {len(autores)} autores.</p>'
            f'<p class="saltos-autores">{saltos}</p>']
     for a in orden:
         items = []
         for y, t, u, pags in sorted(autores[a]):
-            enl = ", ".join(f'<a href="{base}{r}">{esc(n)}</a>' for r, n in pags)
-            items.append(f'<li><span class="anio">{y}</span> <a href="https://biblioteca.amigosdealaejos.org/{u}">«{esc(t)}»</a>'
+            enl = ", ".join(f'<a href="{base}{r}{"#" + an if an else ""}">{esc(n)}</a>' for r, n, an in pags)
+            items.append(f'<li><span class="anio">{y}</span> <a href="{base}{u}">«{esc(t)}»</a>'
                          f'<span class="citado">Citado en {enl}.</span></li>')
         out.append(f'<h3 id="autor-{slug(a)}">{esc(a)}</h3><ul class="biblio-prog">{"".join(items)}</ul>')
     return "".join(out)
@@ -870,6 +913,179 @@ def imagen_og(ruta, titulo, seccion):
 
 # ---------------------------------------------------------------- construcción
 
+# ---------------------------------------------------------------- programas de fiestas
+
+CITAS = {}   # artículo -> [(ruta, título y ancla de las páginas de la web que lo citan)]
+URL_BIBLIOTECA_ANTIGUA = "https://biblioteca.amigosdealaejos.org/"
+
+
+def traducir_biblioteca(texto, base, frag):
+    """Las direcciones de la antigua biblioteca.amigosdealaejos.org pasan a las de la web.
+    Así no se rompe ningún enlace aunque alguien copie uno antiguo en un texto nuevo."""
+    if URL_BIBLIOTECA_ANTIGUA not in texto:
+        return texto
+    n = texto.count(URL_BIBLIOTECA_ANTIGUA)
+    texto = re.sub(r"https://biblioteca\.amigosdealaejos\.org/articulos/(\d{4})/([^\"#?]+)\.html",
+                   lambda m: f"{base}{PROG}{m.group(1)}/{m.group(2)}/", texto)
+    texto = re.sub(r"https://biblioteca\.amigosdealaejos\.org/anios\.html", f"{base}{PROG}", texto)
+    texto = re.sub(r"https://biblioteca\.amigosdealaejos\.org/temas\.html", f"{base}{PROG}temas/", texto)
+    texto = re.sub(r"https://biblioteca\.amigosdealaejos\.org/autores\.html", f"{base}{PROG}autores/", texto)
+    texto = re.sub(r"https://biblioteca\.amigosdealaejos\.org/acerca\.html", f"{base}{PROG}#criterios", texto)
+    texto = re.sub(r"https://biblioteca\.amigosdealaejos\.org/pdf/", f"{base}documentos/", texto)
+    texto = re.sub(r"https://biblioteca\.amigosdealaejos\.org/(index\.html)?", f"{base}{PROG}", texto)
+    print(f"AVISO: {frag}.html usa {n} direcciones de la antigua biblioteca.amigosdealaejos.org; "
+          "se han cambiado al generar, pero conviene enlazar ya a biblioteca/programas-de-fiestas/.")
+    return texto
+
+
+def calcular_citas(cuerpos):
+    """Qué páginas de la web enlazan a cada artículo, y desde qué apartado."""
+    CITAS.clear()
+    patron = re.compile(r"(?:\.\./)*" + re.escape(PROG) + r"(\d{4})/([^/\"#]+)/")
+    excluir = {"bibliografia", "buscar", "preguntas", "novedades", "inicio", "libros", "documentos", "biblioteca"} | set(LISTADOS_PROG)
+    for ruta, frag, clave, titulo, desc in PAGINAS:
+        if frag in ARTICULOS or frag in excluir:
+            continue
+        s = BeautifulSoup(cuerpos[ruta], "html.parser")
+        for a in s.find_all("a", href=patron):
+            m = patron.search(a["href"])
+            k = f"programas/{m.group(1)}/{m.group(2)}"
+            if k not in ARTICULOS:
+                continue
+            h = a.find_previous("h2")
+            lista = CITAS.setdefault(k, [])
+            if all(r != ruta for r, _, _ in lista):
+                lista.append((ruta, titulo, h.get("id", "") if h else ""))
+
+
+def enlace_autor(clave, base, texto=None):
+    x = AUTORES_PROG[clave]
+    return f'<a href="{base}{PROG}autores/#{x["id"]}">{esc(texto or x["nombre"])}</a>'
+
+
+def item_articulo(k, base, con_autor=True):
+    a = ARTICULOS[k]
+    meta = (esc(a["autor"]) + " · " if con_autor else "") + f'{a["palabras"]:,}'.replace(",", ".") + " palabras"
+    return (f'<li><span class="anio">{a["anio"]}</span> <a href="{base}{ruta_articulo(a)}">{esc(a["titulo"])}</a>'
+            f'<span class="citado">{meta}</span></li>')
+
+
+def envolver_articulo(k, cuerpo, base):
+    a = ARTICULOS[k]
+    tema = TEMAS_PROG[a["tema"]]
+    if len(a["claves"]) == 1:
+        autoria = enlace_autor(a["claves"][0], base, a["autor"])
+    else:
+        autoria = esc(a["autor"]) + " (" + ", ".join(enlace_autor(c, base) for c in a["claves"]) + ")"
+    cab = (f'<p class="miga"><a href="{base}{PROG}#y{a["anio"]}">Programa de fiestas de {a["anio"]}</a></p>'
+           f'<h1 class="h-pag">{esc(a["titulo"])}</h1>'
+           f'<p class="autoria">{autoria} · <a href="{base}{PROG}temas/#t{tema["id"]}">{esc(tema["nombre"])}</a></p>')
+    ficha = [f'<section class="ficha-prog" aria-label="Datos del artículo">'
+             f'<h2 class="h-peq">Cómo citar</h2><p class="cita" id="cita">{esc(a["cita"])}</p>'
+             f'<button type="button" class="btn btn-sec" data-copiar="cita" hidden>Copiar la cita</button>']
+    if a.get("pdf_pagina"):
+        ficha.append(f'<h2 class="h-peq">En el compendio impreso</h2><p><a href="{base}documentos/Alaejos_Compendio_Articulos_1954-2026.pdf#page={a["pdf_pagina"]}">'
+                     f'Edición cronológica, página {a["pdf_pagina"]} (PDF)</a></p>')
+    if CITAS.get(k):
+        items = "".join(f'<li><a href="{base}{r}{"#" + an if an else ""}">{esc(t)}</a></li>' for r, t, an in CITAS[k])
+        ficha.append(f'<h2 class="h-peq">Se cita en esta web</h2><ul class="lista-prog">{items}</ul>')
+    if a["autor"] != "Sin firma":
+        del_autor = [o for o in ORDEN_ARTICULOS if o != k and set(ARTICULOS[o]["claves"]) & set(a["claves"])]
+        if del_autor:
+            items = "".join(item_articulo(o, base, False) for o in del_autor[:6])
+            mas = f'<p class="mas"><a href="{base}{PROG}autores/#{AUTORES_PROG[a["claves"][0]]["id"]}">Todos sus artículos</a></p>' if len(del_autor) > 6 else ""
+            ficha.append(f'<h2 class="h-peq">Más de {esc(a["autor"])}</h2><ul class="biblio-prog">{items}</ul>{mas}')
+    mismos = [o for o in ORDEN_ARTICULOS if o != k and ARTICULOS[o]["tema"] == a["tema"]]
+    mismos.sort(key=lambda o: abs(int(ARTICULOS[o]["anio"]) - int(a["anio"])))
+    if mismos:
+        items = "".join(item_articulo(o, base) for o in sorted(mismos[:5], key=ORDEN_ARTICULOS.index))
+        ficha.append(f'<h2 class="h-peq">Otros artículos de «{esc(tema["nombre"])}»</h2><ul class="biblio-prog">{items}</ul>')
+    ficha.append(f'<p class="aviso-retirada">Este texto se reproduce íntegro, citando su autor y su año, con fines culturales y sin ánimo de lucro. '
+                 f'Si es usted su autor, o familiar suyo, y prefiere que no figure aquí, '
+                 f'<a href="{base}colabora/?motivo=retirada&amp;sobre={esc(a["titulo"])}#contacto">díganoslo</a> y lo retiraremos.</p></section>')
+    return cab + cuerpo + "".join(ficha)
+
+
+def vecinos_articulo(k, base):
+    i = ORDEN_ARTICULOS.index(k)
+    partes = []
+    if i > 0:
+        o = ARTICULOS[ORDEN_ARTICULOS[i - 1]]
+        partes.append(f'<a href="{base}{ruta_articulo(o)}"><span>Anterior · {o["anio"]}</span>{esc(o["titulo"])}</a>')
+    if i < len(ORDEN_ARTICULOS) - 1:
+        o = ARTICULOS[ORDEN_ARTICULOS[i + 1]]
+        partes.append(f'<a class="sig" href="{base}{ruta_articulo(o)}"><span>Siguiente · {o["anio"]}</span>{esc(o["titulo"])}</a>')
+    return '<nav class="vecinos" aria-label="Artículo anterior y siguiente">' + "".join(partes) + "</nav>"
+
+
+def resumen_programas():
+    anios = sorted({a["anio"] for a in ARTICULOS.values()})
+    firmantes = {c for a in ARTICULOS.values() for c in a["claves"] if c != "SF"}
+    return f"{len(ARTICULOS)} artículos de {len(firmantes)} autores, en {len(anios)} programas publicados entre {anios[0]} y {anios[-1]}"
+
+
+def pestanas_prog(base, actual):
+    ops = [("Por años", PROG, "programas"), ("Por temas", PROG + "temas/", "programas-temas"), ("Por autores", PROG + "autores/", "programas-autores")]
+    return ('<nav class="pestanas" aria-label="Ordenar los artículos">' + "".join(
+        f'<a href="{base}{r}"{" aria-current=\"page\"" if f == actual else ""}>{t}</a>' for t, r, f in ops) + "</nav>")
+
+
+def listado_anios(base):
+    por = {}
+    for k in ORDEN_ARTICULOS:
+        por.setdefault(ARTICULOS[k]["anio"], []).append(k)
+    saltos = "".join(f'<a href="#y{y}">{y}</a>' for y in por)
+    out = [pestanas_prog(base, "programas"), f'<nav class="saltos-anios" aria-label="Ir al año">{saltos}</nav>']
+    for y, ks in por.items():
+        n = len(ks)
+        out.append(f'<h2 id="y{y}">{y} <span class="cuenta">{n} artículo{"s" if n > 1 else ""}</span></h2>'
+                   f'<ul class="biblio-prog">{"".join(item_articulo(k, base) for k in ks)}</ul>')
+    return "".join(out)
+
+
+def listado_temas(base):
+    out = [pestanas_prog(base, "programas-temas"),
+           '<nav class="saltos-anios saltos-txt" aria-label="Ir al tema">' + "".join(f'<a href="#t{t["id"]}">{esc(t["nombre"])}</a>' for t in PROGRAMAS["temas"]) + "</nav>"]
+    for t in PROGRAMAS["temas"]:
+        ks = [k for k in ORDEN_ARTICULOS if ARTICULOS[k]["tema"] == t["id"]]
+        out.append(f'<h2 id="t{t["id"]}">{esc(t["nombre"])} <span class="cuenta">{len(ks)} artículos</span></h2>'
+                   + (f'<p class="tema-desc">{esc(t["desc"])}.</p>' if t["desc"] else "")
+                   + f'<ul class="biblio-prog">{"".join(item_articulo(k, base) for k in ks)}</ul>')
+    return "".join(out)
+
+
+def listado_autores(base):
+    out = [pestanas_prog(base, "programas-autores")]
+    letras, bloques = [], []
+    for x in PROGRAMAS["autores"]:
+        ks = [k for k in ORDEN_ARTICULOS if x["clave"] in ARTICULOS[k]["claves"]]
+        if not ks:
+            continue
+        iniciales = re.fullmatch(r"(?:[A-ZÁÉÍÓÚÑ]\. ?)+", x["nombre"].strip())   # firmas como «M. G.»
+        inicial = "Otras firmas" if x["clave"] == "SF" or iniciales else unicodedata.normalize("NFD", x["nombre"])[0].upper()
+        if inicial not in [l for l, _ in letras]:
+            letras.append((inicial, x["id"]))
+        anios = sorted({ARTICULOS[k]["anio"] for k in ks})
+        cuando = anios[0] if len(anios) == 1 else f"{anios[0]}–{anios[-1]}"
+        bloques.append(f'<h2 id="{x["id"]}">{esc(x["nombre"])} <span class="cuenta">{len(ks)} · {cuando}</span></h2>'
+                       f'<ul class="biblio-prog">{"".join(item_articulo(k, base, False) for k in ks)}</ul>')
+    out.append('<nav class="saltos-anios" aria-label="Ir a la letra">' + "".join(f'<a href="#{i}">{l}</a>' for l, i in letras) + "</nav>")
+    return "".join(out + bloques)
+
+
+def citado_en(patron, base):
+    """Páginas de la web cuyo texto menciona una obra (para la página de libros)."""
+    rx = re.compile(patron, re.I)
+    usos = []
+    for ruta, frag, clave, titulo, desc in PAGINAS:
+        if frag in ARTICULOS or frag in ("libros", "bibliografia", "biblioteca", "novedades", "buscar", "preguntas", "documentos") or frag in LISTADOS_PROG:
+            continue
+        txt = re.sub(r"<[^>]+>", " ", (FUENTE / f"{frag}.html").read_text(encoding="utf-8"))
+        if rx.search(txt):
+            usos.append(f'<a href="{base}{ruta}">{esc(titulo)}</a>')
+    return (f'<p class="usos"><strong>Se usa en:</strong> {", ".join(usos)}.</p>' if usos else "")
+
+
 def construir():
     comprobar_historial()
     comprobar_fuentes()
@@ -880,30 +1096,51 @@ def construir():
     for ruta, frag, clave, titulo, desc in PAGINAS:
         texto = (FUENTE / f"{frag}.html").read_text(encoding="utf-8")
         base = profundidad(ruta)
+        if frag in ARTICULOS:
+            texto = f'<div class="texto programa">{texto}</div>'
         texto = (texto.replace("{{CONTACTO}}", contacto())
                       .replace("{{NOVEDADES}}", lista_novedades(base))
                       .replace("{{NOVEDADES_PORTADA}}", lista_novedades(base, 3, compacta=True))
                       .replace("{{PERSONAS}}", tarjetas_personas(base))
+                      .replace("{{PROG_RESUMEN}}", resumen_programas())
                       .replace("{{BASE}}", base))
+        texto = re.sub(r"\{\{CITADO_EN:([^}]+)\}\}", lambda m: citado_en(m.group(1), base), texto)
+        texto = traducir_biblioteca(texto, base, frag)
+        n_indice = len(INDICE)
         cuerpos[ruta] = procesar(texto, ruta, base, titulo if ruta else NOMBRE, frag)
+        if frag in ARTICULOS:   # en el buscador, cada artículo con su año y su autor
+            a = ARTICULOS[frag]
+            for e in INDICE[n_indice:]:
+                e["a"] = e["a"] or f"Programa de fiestas de {a['anio']} · {a['autor']}"
+    calcular_citas(cuerpos)
     # Preguntas abiertas: se rellena con lo recogido en todas las páginas
     for ruta, frag, clave, titulo, desc in PAGINAS:
         if frag == "preguntas":
             cuerpos[ruta] = cuerpos[ruta].replace("{{PREGUNTAS}}", preguntas(profundidad(ruta)))
         if frag == "bibliografia":
             cuerpos[ruta] = cuerpos[ruta].replace("{{BIBLIOGRAFIA}}", bibliografia(profundidad(ruta)))
+        if frag in LISTADOS_PROG:
+            b = profundidad(ruta)
+            cuerpos[ruta] = (cuerpos[ruta].replace("{{PROG_ANIOS}}", listado_anios(b))
+                             .replace("{{PROG_TEMAS}}", listado_temas(b)).replace("{{PROG_AUTORES}}", listado_autores(b)))
+        if frag in ARTICULOS:
+            cuerpos[ruta] = envolver_articulo(frag, cuerpos[ruta], profundidad(ruta))
     urls = []
     for ruta, frag, clave, titulo, desc in PAGINAS:
         base = profundidad(ruta)
         texto = cuerpos[ruta]
         if ruta == "":
             cuerpo = f'<main id="contenido">{texto}</main>'
+        elif frag in ARTICULOS:
+            cuerpo = f'<main id="contenido" class="lectura">{texto}{acciones(ruta, titulo, base, frag)}{vecinos_articulo(frag, base)}</main>'
         else:
             cuerpo = f'<main id="contenido" class="lectura">{texto}{acciones(ruta, titulo, base, frag)}{pie_lectura(ruta, titulo, frag)}{vecinos(ruta, base)}</main>'
         seccion = {"": LEMA}.get(ruta) or (titulos_seccion.get(clave) or "Amigos de Alaejos")
         if clave == "personas" and ruta != "personas-de-alaejos/":
             seccion = "Personas de Alaejos"
-        og = imagen_og(ruta, NOMBRE if ruta == "" else titulo, seccion)
+        if frag in ARTICULOS:
+            seccion = f"Programa de fiestas · {ARTICULOS[frag]['anio']}"
+        og = imagen_og(ruta, NOMBRE if ruta == "" else (ARTICULOS[frag]["titulo"] if frag in ARTICULOS else titulo), seccion)
         extra = ""
         if frag == "mapa":
             extra = f'\n<link rel="stylesheet" href="{base}assets/js/leaflet.css">'
@@ -924,7 +1161,7 @@ def construir():
     cuerpo404 = ('<main id="contenido" class="lectura"><h1 class="h-pag">No encontramos esa página</h1>'
                  '<p>Puede que la dirección esté mal escrita o que la página haya cambiado de sitio. '
                  'Pruebe con el <a href="/buscar/">buscador</a>, vuelva a la <a href="/">portada</a> o busque en la '
-                 '<a href="https://biblioteca.amigosdealaejos.org/">biblioteca</a>.</p></main>')
+                 '<a href="/biblioteca/">biblioteca</a>.</p></main>')
     t404 = pagina("x/", "Página no encontrada", "Página no encontrada.", cuerpo404, "", "assets/og/portada.jpg")
     t404 = t404.replace('href="../', 'href="/').replace('src="../', 'src="/').replace('<link rel="canonical" href="https://www.amigosdealaejos.org/x/">', '')
     (RAIZ / "404.html").write_text(t404, encoding="utf-8")

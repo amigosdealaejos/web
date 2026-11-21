@@ -2,7 +2,7 @@
 
 Web de **www.amigosdealaejos.org**: archivo abierto de historia, patrimonio y memoria de la villa de Alaejos (Valladolid).
 
-Es un sitio estático, sin dependencias, pensado para GitHub Pages. Comparte imagen con la [Biblioteca de los programas de fiestas](https://biblioteca.amigosdealaejos.org/).
+Es un sitio estático, sin dependencias, pensado para GitHub Pages. Incluye la Biblioteca, con los artículos de los programas de fiestas, que hasta noviembre de 2026 estaban en biblioteca.amigosdealaejos.org (ese repositorio solo redirige ya a las direcciones nuevas).
 
 ## Estructura
 
@@ -12,6 +12,8 @@ Es un sitio estático, sin dependencias, pensado para GitHub Pages. Comparte ima
 | `_fuente/paginas/` | Texto de cada página. **Aquí se corrige el contenido.** |
 | `_fuente/novedades.json` | Entradas de Novedades, con su fecha; las tres últimas salen en la portada |
 | `_fuente/personas.json` | Lista de personas (cada una tiene su texto en `_fuente/paginas/persona-*.html`) |
+| `_fuente/programas.json` | Los artículos de los programas de fiestas: título, autor, tema, año, página en el compendio impreso y cita. Su texto está en `_fuente/paginas/programas/AÑO/slug.html` |
+| `documentos/` | PDF descargables: compendios de los programas, novenas, cancionero, autorizaciones de la torre |
 | `_fuente/construir.py` | Une cada texto con la cabecera, el menú y el pie, y genera páginas, `sitemap.xml`, `robots.txt`, `404.html` y las redirecciones de las direcciones antiguas de Google Sites |
 | `assets/` | Estilos, tipografías propias (`fuentes/`), escudo, horizonte, fotos (`img/` y sus versiones ligeras `img/800/`), imagen para compartir de cada página (`og/`), scripts (`js/`) e índice del buscador (`buscar.json`) |
 
@@ -30,3 +32,11 @@ El formulario de la página «Colabora» envía los mensajes a un script de Goog
 ## Criterios
 
 Lo que no está documentado se dice. Donde las fuentes no coinciden, se marca como **en estudio** en lugar de elegir una versión.
+
+## Los artículos de los programas de fiestas
+
+Cada artículo se publica en `biblioteca/programas-de-fiestas/AÑO/slug/`, con su autor, su tema, la cita, la página del compendio impreso, las páginas de la web que lo citan y otros artículos del mismo autor y tema. Los listados por años, temas y autores, la Bibliografía y el buscador se generan solos.
+
+- Para corregir un artículo: su texto en `_fuente/paginas/programas/AÑO/slug.html`; sus datos en `_fuente/programas.json`.
+- Para añadir uno: el texto en esa carpeta y una entrada en `programas.json`, en su lugar cronológico.
+- Para citarlo desde otra página: `{{BASE}}biblioteca/programas-de-fiestas/AÑO/slug/`. Si se copia por error una dirección antigua de biblioteca.amigosdealaejos.org, el script la convierte y avisa.

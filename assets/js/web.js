@@ -79,4 +79,17 @@
       });
     });
   }
+  // «Copiar la cita» en los artículos de los programas de fiestas
+  document.querySelectorAll('[data-copiar]').forEach(function (b) {
+    var origen = document.getElementById(b.getAttribute('data-copiar'));
+    if (!origen) return;
+    b.hidden = false;
+    b.addEventListener('click', function () {
+      var txt = origen.textContent.trim();
+      var hecho = function () { b.textContent = 'Cita copiada'; setTimeout(function () { b.textContent = 'Copiar la cita'; }, 2000); };
+      var seleccionar = function () { var r = document.createRange(); r.selectNodeContents(origen); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(hecho, seleccionar);
+      else seleccionar();
+    });
+  });
 })();

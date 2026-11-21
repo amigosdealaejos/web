@@ -656,3 +656,35 @@ rect.cl-calor-b { fill: var(--cl-calor); }
   .po-fichas { grid-template-columns: repeat(2, 1fr); }
   .po-hb { grid-template-columns: 6.5rem minmax(0, 1fr) 5.6rem; font-size: 0.85rem; }
 }
+
+/* ---- Biblioteca: programas de fiestas ---- */
+.autoria { font-family: var(--f-util); font-size: 1rem; color: var(--tenue); margin: -0.2rem 0 1.6rem; }
+.programa .firma { font-family: var(--f-util); font-size: 1rem; color: var(--tenue); margin-bottom: 1.6em; }
+.programa .firma strong, .programa .firma em { font-weight: 400; font-style: normal; }
+.programa .sangria { margin-left: 1.5em; }
+.programa .item { padding-left: 1.2em; text-indent: -1.2em; }
+.programa .centro { text-align: center; }
+.programa .derecha { text-align: right; }
+.programa .verso { margin: 1.2em 0; font-style: italic; text-align: center; }
+.programa .verso p { margin: 0; }
+.ficha-prog { margin-top: 2.5rem; padding-top: 0.6rem; border-top: 1px solid var(--raya); }
+.h-peq { font: 600 0.78rem var(--f-util); letter-spacing: 0.08em; text-transform: uppercase; color: var(--tenue); margin: 1.6rem 0 0.5rem; }
+.ficha-prog .cita { font-family: var(--f-util); font-size: 1rem; margin: 0 0 0.6rem; }
+.lista-prog { list-style: none; padding: 0; margin: 0; font-family: var(--f-util); }
+.lista-prog li { padding: 0.2rem 0; }
+.ficha-prog .mas { font-family: var(--f-util); font-size: 0.95rem; margin: 0.4rem 0 0; }
+.aviso-retirada { font-family: var(--f-util); font-size: 0.88rem; color: var(--tenue); margin-top: 2rem; }
+.pestanas { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 1.2rem 0 0.8rem; font-family: var(--f-util); }
+.pestanas a { padding: 0.35rem 0.85rem; border: 1.5px solid var(--raya); border-radius: var(--radio); text-decoration: none; color: var(--enlace); }
+.pestanas a[aria-current] { background: var(--enlace); border-color: var(--enlace); color: var(--papel); }
+.saltos-anios { display: flex; flex-wrap: wrap; gap: 0.25rem 0.7rem; font-family: var(--f-util); font-size: 0.95rem; font-variant-numeric: tabular-nums; margin: 0 0 1.4rem; }
+.saltos-anios.saltos-txt { gap: 0.25rem 1.1rem; }
+.tema-desc { font-family: var(--f-util); color: var(--tenue); margin: 0 0 0.5rem; }
+.busca-prog { margin: 1.4rem 0; font-family: var(--f-util); }
+.busca-prog label { display: block; font-size: 0.92rem; color: var(--tenue); margin-bottom: 0.35rem; }
+.busca-prog div { display: flex; gap: 0.5rem; }
+.busca-prog input { flex: 1; min-width: 0; font: inherit; font-size: 1rem; padding: 0.55rem 0.7rem; border: 1.5px solid var(--raya); border-radius: var(--radio); background: var(--papel); color: var(--tinta); }
+.usos { font-family: var(--f-util); font-size: 0.95rem; color: var(--tenue); }
+ul.lista-docs { list-style: none; padding: 0 !important; }
+ul.lista-docs li { padding: 0.5rem 0; border-bottom: 1px solid var(--raya); margin: 0 !important; }
+ul.lista-docs .citado { display: block; font-family: var(--f-util); font-size: 0.86rem; color: var(--tenue); margin-top: 0.15rem; }
