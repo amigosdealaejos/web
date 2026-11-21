@@ -548,6 +548,11 @@ PETICIONES = []    # recuadros «Una petición»: lo que se busca (fotos, docume
 INDICE = []        # entradas del buscador
 
 
+def plano(nodo):
+    """Texto de un fragmento HTML sin etiquetas y sin el espacio que dejan antes de comas y puntos."""
+    return re.sub(r"\s+([,.;:)»])", r"\1", re.sub(r"\s+", " ", nodo.get_text(" ", strip=True)))
+
+
 def procesar(texto, ruta, base, titulo, frag):
     s = BeautifulSoup(texto, "html.parser")
     # 1. Anclas en los h2 (y h3 de personas, etc.)
@@ -604,7 +609,7 @@ def procesar(texto, ruta, base, titulo, frag):
                 for dt in dl.find_all("dt"):
                     dd = dt.find_next_sibling("dd")
                     lema = re.sub(r"\s+", " ", dt.get_text(" ", strip=True))
-                    defi = re.sub(r"\s+", " ", dd.get_text(" ", strip=True)) if dd else ""
+                    defi = plano(dd) if dd else ""
                     defi = re.sub(r"\s+([,.;:)»?!])", r"\1", re.sub(r"([(«¿¡])\s+", r"\1", defi))
                     INDICE.append({"t": titulo, "a": lema, "u": ruta + "#" + dt["id"], "x": defi})
                 dl.decompose()
@@ -679,7 +684,7 @@ def glosario_datos():
             copia = BeautifulSoup(str(dd), "html.parser")
             for a in copia.find_all("a"):
                 a.decompose()
-            txt = re.sub(r"\s+", " ", copia.get_text(" ", strip=True)).strip(" .")
+            txt = plano(copia).strip(" .")
             frase = re.split(r"(?<=[a-záéíóúñ)])\. ", txt)[0]
             _GLOSARIO[dt["id"]] = (dt.get_text(" ", strip=True), frase + ".")
     return _GLOSARIO
@@ -775,7 +780,7 @@ def lista_novedades(base, n=None, compacta=False):
     for e in novedades()[:n]:
         texto = e["html"].replace("{{BASE}}", base)
         if compacta:
-            txt = BeautifulSoup(texto, "html.parser").get_text(" ", strip=True)
+            txt = plano(BeautifulSoup(texto, "html.parser"))
             txt = (txt[:170].rsplit(" ", 1)[0] + "…") if len(txt) > 175 else txt
             primero = BeautifulSoup(texto, "html.parser").find("a")
             destino = primero["href"] if primero else f"{base}novedades/"
@@ -843,7 +848,7 @@ def preguntas(base):
                 sobre = quote(f'{titulo} — {e["apartado"]}' if e["apartado"] else titulo)
                 items.append(
                     f'<li>{"<strong>" + esc(e["apartado"]) + ".</strong> " if e["apartado"] else ""}'
-                    f'{esc(BeautifulSoup(e["html"], "html.parser").get_text(" ", strip=True))} '
+                    f'{esc(plano(BeautifulSoup(e["html"], "html.parser")))} '
                     f'<span class="preg-acc"><a href="{base}{ruta}#{e["ancla"]}">Ver en la página</a> · '
                     f'<a href="{base}colabora/?motivo=correccion&amp;sobre={sobre}#contacto">Puedo aclararlo</a></span></li>')
             partes.append(f'<details class="preg-pagina" id="{slug(titulo)}"><summary><span>{esc(titulo)}</span> '
@@ -852,7 +857,7 @@ def preguntas(base):
     pets = []
     for e in sorted(PETICIONES, key=lambda e: orden.index(e["ruta"])):
         sobre = quote(e["titulo"])
-        pets.append(f'<li><strong>{esc(e["titulo"])}.</strong> {esc(BeautifulSoup(e["html"], "html.parser").get_text(" ", strip=True))} '
+        pets.append(f'<li><strong>{esc(e["titulo"])}.</strong> {esc(plano(BeautifulSoup(e["html"], "html.parser")))} '
                     f'<span class="preg-acc"><a href="{base}{e["ruta"]}#{e["ancla"]}">Ver en la página</a> · '
                     f'<a href="{base}colabora/?motivo=material&amp;sobre={sobre}#contacto">Tengo algo</a></span></li>')
     buscamos = (f'<h2 id="que-buscamos">Qué buscamos <span class="cuenta">{len(PETICIONES)}</span></h2>'
