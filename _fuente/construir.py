@@ -185,7 +185,7 @@ PAGINAS = [
     ("historia-del-pueblo/el-agua-y-los-pozos/", "h-agua", "historia", "El agua del término y los pozos",
      "El Trabancos, los 36 lavajos, las fuentes y arroyos y los pozos del campo de Alaejos uno por uno, con quién los picó y cuándo, según Antonio Lucas Varela."),
     ("historia-del-pueblo/el-sindicato-agricola-y-las-sociedades/", "h-sindicato", "historia", "El Sindicato Agrícola y las sociedades",
-     "El Sindicato Agrícola de Alaejos (1913), la Hermandad de Labradores y la Cámara Agraria: presidentes, acuerdos, jornales y precios, y los Socorros Mutuos de la Casita."),
+     "El Sindicato Agrícola (1913), la Hermandad de Labradores y la Cámara Agraria de Alaejos: presidentes, acuerdos, jornales, precios y los Socorros Mutuos."),
     ("historia-del-pueblo/comercios-oficios-y-servicios-del-siglo-xx/", "h-comercios", "historia", "Comercios, oficios y servicios del siglo XX",
      "Quién llevaba cada tienda, taberna, taller y servicio de Alaejos entre 1901 y 2000, y la lista de alcaldes del siglo, según Antonio Lucas Varela."),
     ("historia-del-pueblo/historietas-chascarrillos-y-romances/", "h-chascarrillos", "historia", "Historietas, chascarrillos y romances",
@@ -193,7 +193,7 @@ PAGINAS = [
     ("historia-del-pueblo/juegos-de-antes/", "h-juegos", "historia", "Juegos de antes",
      "A qué jugaban los niños de Alaejos a mediados del siglo XX, según Antonio Lucas Varela."),
     ("historia-del-pueblo/la-matanza/", "h-matanza", "historia", "La matanza",
-     "El mondongo de Alaejos contado por Antonio Lucas Varela y las recetas tradicionales de la matanza: morcilla, longaniza, chorizo, morcón, salchichón, adobo y jamón."),
+     "El mondongo de Alaejos contado por Antonio Lucas Varela y las recetas de la matanza: morcilla, longaniza, chorizo, morcón, salchichón, adobo y jamón."),
     ("historia-del-pueblo/cocina-tradicional/", "h-cocina", "historia", "Cocina tradicional",
      "Qué se comía en Alaejos en cada fiesta según el libro de 1991: flamencos, arrastraos, la alubiada de San Antón, torrijas y la empanada de San Isidro."),
     ("historia-del-pueblo/dichos-cabanuelas-y-habla/", "h-tradicion-oral", "historia", "Dichos, cabañuelas y habla",
@@ -287,7 +287,11 @@ PAGINAS = [
      "Buscador de Amigos de Alaejos: encuentre cualquier nombre, lugar o fecha en las páginas de la web."),
 ]
 
-PAGINAS += [(ruta_articulo(a), k, "biblioteca", f'{a["titulo"]} ({a["anio"]})', desc_articulo(a)) for k, a in ARTICULOS.items()]
+# El año va en el título solo si otra página tiene el mismo título, para no alargarlo sin necesidad
+_titulos = [t for _, _, _, t, _ in PAGINAS] + [a["titulo"] for a in ARTICULOS.values()]
+PAGINAS += [(ruta_articulo(a), k, "biblioteca",
+             f'{a["titulo"]} ({a["anio"]})' if _titulos.count(a["titulo"]) > 1 else a["titulo"], desc_articulo(a))
+            for k, a in ARTICULOS.items()]
 
 # Direcciones antiguas que deben seguir funcionando
 REDIRECCIONES = {
@@ -408,7 +412,8 @@ def pie(base):
 
 def pagina(ruta, titulo, descripcion, cuerpo, clave, og, es_portada=False, extra_head=""):
     base = profundidad(ruta)
-    titulo_completo = titulo if es_portada else f"{titulo} · {NOMBRE}"
+    # Google corta los títulos de más de unos 65 caracteres: en los largos se omite el nombre de la web
+    titulo_completo = titulo if es_portada or len(titulo) > 65 - len(f" · {NOMBRE}") else f"{titulo} · {NOMBRE}"
     url = URL_BASE + ruta
     return f"""<!doctype html>
 <html lang="es">
