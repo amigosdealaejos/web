@@ -5,7 +5,7 @@
     _fuente/novedades.json        entradas de Novedades (también salen en la portada)
     -> RUTA/index.html            página completa, con cabecera, menú, índice y pie
 
-Además genera: el índice del buscador (assets/buscar.json), la página de
+Además genera: el índice del buscador (pagefind/, con Pagefind), la página de
 Preguntas abiertas (reúne los recuadros «En estudio»), las versiones ligeras de
 las fotos (assets/img/800/), la imagen para compartir de cada página
 (assets/og/), sitemap.xml, robots.txt, 404.html y las redirecciones.
@@ -979,7 +979,7 @@ def envolver_articulo(k, cuerpo, base):
         autoria = esc(a["autor"]) + " (" + ", ".join(enlace_autor(c, base) for c in a["claves"]) + ")"
     cab = (f'<p class="miga"><a href="{base}{PROG}#y{a["anio"]}">Programa de fiestas de {a["anio"]}</a></p>'
            f'<h1 class="h-pag">{esc(a["titulo"])}</h1>'
-           f'<p class="autoria">{autoria} · <a href="{base}{PROG}temas/#t{tema["id"]}">{esc(tema["nombre"])}</a></p>')
+           f'<p class="autoria" data-pagefind-meta="sub:Programa de fiestas de {a["anio"]} · {esc(a["autor"])}">{autoria} · <a href="{base}{PROG}temas/#t{tema["id"]}">{esc(tema["nombre"])}</a></p>')
     ficha = [f'<section class="ficha-prog" aria-label="Datos del artículo">'
              f'<h2 class="h-peq">Cómo citar</h2><p class="cita" id="cita">{esc(a["cita"])}</p>'
              f'<button type="button" class="btn btn-sec" data-copiar="cita" hidden>Copiar la cita</button>']
@@ -1132,9 +1132,10 @@ def construir():
         if ruta == "":
             cuerpo = f'<main id="contenido">{texto}</main>'
         elif frag in ARTICULOS:
-            cuerpo = f'<main id="contenido" class="lectura">{texto}{acciones(ruta, titulo, base, frag)}{vecinos_articulo(frag, base)}</main>'
+            cuerpo = f'<main id="contenido" class="lectura" data-pagefind-body>{texto}{acciones(ruta, titulo, base, frag)}{vecinos_articulo(frag, base)}</main>'
         else:
-            cuerpo = f'<main id="contenido" class="lectura">{texto}{acciones(ruta, titulo, base, frag)}{pie_lectura(ruta, titulo, frag)}{vecinos(ruta, base)}</main>'
+            indexar = "" if frag in NO_BUSCADOR else " data-pagefind-body"
+            cuerpo = f'<main id="contenido" class="lectura"{indexar}>{texto}{acciones(ruta, titulo, base, frag)}{pie_lectura(ruta, titulo, frag)}{vecinos(ruta, base)}</main>'
         seccion = {"": LEMA}.get(ruta) or (titulos_seccion.get(clave) or "Amigos de Alaejos")
         if clave == "personas" and ruta != "personas-de-alaejos/":
             seccion = "Personas de Alaejos"
@@ -1151,7 +1152,6 @@ def construir():
             urls.append((URL_BASE + ruta, fecha_pagina(frag)))
 
     (RAIZ / "novedades.xml").write_text(atom(), encoding="utf-8")
-    (RAIZ / "assets" / "buscar.json").write_text(json.dumps(INDICE, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
     for vieja, nueva in REDIRECCIONES.items():
         destino = RAIZ / vieja / "index.html"
@@ -1171,9 +1171,59 @@ def construir():
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
         + mapa + "</urlset>\n", encoding="utf-8")
     (RAIZ / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {URL_BASE}sitemap.xml\n", encoding="utf-8")
+    n_buscador = indexar_busqueda()
     print(f"{len(PAGINAS)} páginas, {len(REDIRECCIONES)} redirecciones, {len(ESTUDIOS)} preguntas abiertas, "
-          f"{len(INDICE)} entradas en el buscador.")
+          f"{n_buscador} páginas y palabras en el buscador.")
     avisar_tamanos()
+
+
+# ---------------------------------------------------------------- buscador
+
+# Páginas que no entran en el buscador: listados que repetirían los títulos de todo
+NO_BUSCADOR = ("buscar", "preguntas", "novedades") + LISTADOS_PROG
+EXCLUIR_BUSCADOR = [".acciones", ".revision", ".vecinos", ".indice", ".ficha-prog", ".miga", "figcaption .credito",
+                    "form", "script", "iframe", "dl.vocab"]
+
+
+def indexar_busqueda():
+    """Índice del buscador con Pagefind, en la carpeta pagefind/. Va troceado: en cada búsqueda
+    el navegador descarga solo la parte que contiene las palabras buscadas. Cada palabra del
+    Vocabulario entra como un resultado propio, con su enlace."""
+    import asyncio, shutil, sys
+    try:
+        from pagefind.index import PagefindIndex, IndexConfig
+    except ImportError:
+        sys.exit("ERROR: falta Pagefind, que genera el índice del buscador. Instálelo con\n"
+                 "    pip install 'pagefind[bin]'\n"
+                 "y vuelva a ejecutar construir.py.")
+    salida = RAIZ / "pagefind"
+    if salida.exists():
+        shutil.rmtree(salida)
+    vocab = [e for e in INDICE if e["u"].startswith("biblioteca/vocabulario/#")]
+
+    # El enlace de Python con Pagefind espera 0,1 s tras cada respuesta; con las más de dos mil
+    # palabras del Vocabulario serían casi cuatro minutos. Se le quita esa espera, que no hace falta.
+    import types, pagefind.service as servicio
+    servicio.asyncio = types.SimpleNamespace(**{k: getattr(asyncio, k) for k in dir(asyncio) if not k.startswith("__")})
+    servicio.asyncio.sleep = lambda *a, **k: asyncio.sleep(0)
+
+    async def indexar():
+        cfg = IndexConfig(force_language="es", exclude_selectors=EXCLUIR_BUSCADOR, output_path=str(salida))
+        async with PagefindIndex(config=cfg) as idx:
+            r = await idx.add_directory(path=str(RAIZ), glob="**/index.html")
+            for e in vocab:
+                await idx.add_custom_record(url="/" + e["u"], content=f'{e["a"]}. {e["x"]}', language="es",
+                                            meta={"title": e["a"], "sub": "Vocabulario de Alaejos"})
+            await idx.write_files(output_path=str(salida))
+            return r["page_count"]
+
+    n = asyncio.run(indexar())
+    # Pagefind trae también sus interfaces ya hechas; esta web usa la suya (assets/js/buscar.js)
+    for f in salida.glob("pagefind-*ui*"):
+        f.unlink()
+    (salida / "pagefind-highlight.js").unlink(missing_ok=True)
+    return n + len(vocab)
+
 
 
 # Límites orientativos. GitHub Pages admite sitios de hasta 1 GB.
