@@ -688,3 +688,4 @@ rect.cl-calor-b { fill: var(--cl-calor); }
 ul.lista-docs { list-style: none; padding: 0 !important; }
 ul.lista-docs li { padding: 0.5rem 0; border-bottom: 1px solid var(--raya); margin: 0 !important; }
 ul.lista-docs .citado { display: block; font-family: var(--f-util); font-size: 0.86rem; color: var(--tenue); margin-top: 0.15rem; }
+.buscar-mas { margin: -1rem 0 2rem; }

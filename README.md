@@ -15,12 +15,13 @@ Es un sitio estático, sin dependencias, pensado para GitHub Pages. Incluye la B
 | `_fuente/programas.json` | Los artículos de los programas de fiestas: título, autor, tema, año, página en el compendio impreso y cita. Su texto está en `_fuente/paginas/programas/AÑO/slug.html` |
 | `documentos/` | PDF descargables: compendios de los programas, novenas, cancionero, autorizaciones de la torre |
 | `_fuente/construir.py` | Une cada texto con la cabecera, el menú y el pie, y genera páginas, `sitemap.xml`, `robots.txt`, `404.html` y las redirecciones de las direcciones antiguas de Google Sites |
-| `assets/` | Estilos, tipografías propias (`fuentes/`), escudo, horizonte, fotos (`img/` y sus versiones ligeras `img/800/`), imagen para compartir de cada página (`og/`), scripts (`js/`) e índice del buscador (`buscar.json`) |
+| `assets/` | Estilos, tipografías propias (`fuentes/`), escudo, horizonte, fotos (`img/` y sus versiones ligeras `img/800/`), imagen para compartir de cada página (`og/`), y scripts (`js/`) |
+| `pagefind/` | Índice del buscador, troceado: cada búsqueda descarga solo la parte que necesita. Lo genera el script; no se edita a mano |
 
 ## Cómo cambiar un texto o añadir una página
 
 1. Edita el archivo correspondiente en `_fuente/paginas/` (o crea uno nuevo y añádelo a `PAGINAS` en `_fuente/construir.py`).
-2. Ejecuta `python3 _fuente/construir.py` (necesita `beautifulsoup4` y `Pillow`). Además de las páginas, genera el buscador, la página de Preguntas abiertas (reúne los recuadros «En estudio»), el índice de las páginas largas, las versiones ligeras de las fotos y la imagen para compartir de cada página.
+2. Ejecuta `python3 _fuente/construir.py` (necesita `beautifulsoup4`, `Pillow` y Pagefind: `pip install beautifulsoup4 Pillow 'pagefind[bin]'`). Además de las páginas, genera el buscador (con Pagefind; cada palabra del Vocabulario es un resultado propio), la página de Preguntas abiertas (reúne los recuadros «En estudio»), el índice de las páginas largas, las versiones ligeras de las fotos y la imagen para compartir de cada página.
    - Las fechas de «Última revisión» y del sitemap salen del historial de git, así que el script se detiene si la copia no lo tiene completo (por ejemplo, tras `git clone --depth=1`). Se arregla con `git fetch --depth=100000 origin main`.
    - Al terminar avisa de las fotos de más de 1 MB o de más de 2.400 px de lado, y del tamaño total del sitio (GitHub Pages admite hasta 1 GB). Conviene reducir las fotos antes de subirlas: una vez subidas, quedan para siempre en el historial aunque luego se sustituyan.
 3. Sube los cambios.
