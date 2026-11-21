@@ -1,5 +1,10 @@
 [
  {
+  "fecha": "2026-11-21",
+  "titulo": "Lo que añade «Alaejos. Una antropología cultural» (I)",
+  "html": "Empezamos a incorporar el libro que Antonio Lucas Varela publicó en 2024, con su autorización. Tres páginas nuevas: <a href=\"{{BASE}}historia-del-pueblo/el-agua-y-los-pozos/\">El agua del término y los pozos</a>, con los 36 lavajos, las fuentes, los arroyos y los pozos del campo uno por uno, quién los picó y cuánto costaron; <a href=\"{{BASE}}historia-del-pueblo/el-sindicato-agricola-y-las-sociedades/\">El Sindicato Agrícola y las sociedades</a>, de 1913 a la Cámara Agraria, con sus presidentes, acuerdos, jornales y precios y los Socorros Mutuos de la Casita; y <a href=\"{{BASE}}historia-del-pueblo/comercios-oficios-y-servicios-del-siglo-xx/\">Comercios, oficios y servicios del siglo XX</a>, con quién llevaba cada tienda, taller y servicio y la lista de alcaldes del siglo. El libro aclara además las fechas del agua corriente: 1965 el pozo y el depósito, 1967 la acometida a las casas."
+ },
+ {
   "fecha": "2026-11-19",
   "titulo": "Las calles de Alaejos",
   "html": "Nueva página, <a href=\"{{BASE}}historia-del-pueblo/las-calles-de-alaejos/\">Las calles de Alaejos</a>, con el estudio del callejero de Antonio Lucas Varela en <em>Cerramícalo</em> (2002): el origen del nombre de cada calle y plaza, los nombres populares, como la Calle sin Dios, la Calleja Cerrada o la calle de la Cárcel, el plano de 2001 y su hipótesis sobre quiénes repoblaron la aldea de Falafeios."
