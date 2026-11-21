@@ -1,0 +1,2606 @@
+{
+ "temas": [
+  {
+   "id": 1,
+   "nombre": "Historia general de Alaejos",
+   "desc": "Historia de la villa, cronología, épocas y sucesos históricos"
+  },
+  {
+   "id": 2,
+   "nombre": "El señorío: nobles y linajes",
+   "desc": "Los Fonseca, señores, duques y grandes figuras del poder en Alaejos"
+  },
+  {
+   "id": 3,
+   "nombre": "Patrimonio artístico y religioso",
+   "desc": "Iglesias, altares, esculturas, objetos de culto, arquitectura y vida conventual"
+  },
+  {
+   "id": 4,
+   "nombre": "Personajes ilustres",
+   "desc": "Biografías y semblanzas de alaejanos notables"
+  },
+  {
+   "id": 5,
+   "nombre": "Economía, oficios y vida cotidiana",
+   "desc": "Vino, artesanía, agricultura, comercio, servicios e instituciones sociales"
+  },
+  {
+   "id": 6,
+   "nombre": "Fiestas, toros y tradiciones",
+   "desc": "Los festejos, la tauromaquia y el folklore festivo"
+  },
+  {
+   "id": 7,
+   "nombre": "Naturaleza y territorio",
+   "desc": "Flora, fauna, agua, paisaje, climatología y geografía local"
+  },
+  {
+   "id": 8,
+   "nombre": "Lengua, toponimia y costumbres",
+   "desc": "Nombres de calles y lugares, refranes, supersticiones y dichos populares"
+  },
+  {
+   "id": 9,
+   "nombre": "Heráldica e instituciones",
+   "desc": "Escudos, ordenanzas, sociedades locales, honores y documentos oficiales"
+  },
+  {
+   "id": 10,
+   "nombre": "Poesía y textos literarios",
+   "desc": "Poemas, relatos, ensayos de creación y textos literarios"
+  },
+  {
+   "id": 11,
+   "nombre": "Miscelánea",
+   "desc": "Artículos de temática variada y textos difíciles de clasificar"
+  }
+ ],
+ "autores": [
+  {
+   "clave": "FAL",
+   "nombre": "Aguilar Lucas, Felipe",
+   "id": "a-aguilar-lucas-felipe"
+  },
+  {
+   "clave": "GUI",
+   "nombre": "Alonso Guinot, Javier",
+   "id": "a-alonso-guinot-javier"
+  },
+  {
+   "clave": "ARA",
+   "nombre": "Araújo y González, Adolfo M.",
+   "id": "a-araujo-y-gonzalez-adolfo-m"
+  },
+  {
+   "clave": "APC",
+   "nombre": "Asociación Amigos del Patrimonio Cultural de Alaejos (A.P.C.A.)",
+   "id": "a-asociacion-amigos-del-patrimonio-cultural-de-alaej"
+  },
+  {
+   "clave": "BAR",
+   "nombre": "Baraja, José M.",
+   "id": "a-baraja-jose-m"
+  },
+  {
+   "clave": "FBA",
+   "nombre": "Benito Álvarez, Fernando",
+   "id": "a-benito-alvarez-fernando"
+  },
+  {
+   "clave": "JMB",
+   "nombre": "Benito Álvarez, José Manuel",
+   "id": "a-benito-alvarez-jose-manuel"
+  },
+  {
+   "clave": "ACA",
+   "nombre": "Caballero, Armando",
+   "id": "a-caballero-armando"
+  },
+  {
+   "clave": "JCA",
+   "nombre": "Caballero, Jaime",
+   "id": "a-caballero-jaime"
+  },
+  {
+   "clave": "JCA2",
+   "nombre": "Casado Aguado, José María",
+   "id": "a-casado-aguado-jose-maria"
+  },
+  {
+   "clave": "ADE",
+   "nombre": "Castaño Casquero, Adelio",
+   "id": "a-castano-casquero-adelio"
+  },
+  {
+   "clave": "ADL",
+   "nombre": "Diez Lucas, Alejandro",
+   "id": "a-diez-lucas-alejandro"
+  },
+  {
+   "clave": "MGR",
+   "nombre": "García Guerras, Mario",
+   "id": "a-garcia-guerras-mario"
+  },
+  {
+   "clave": "FCG",
+   "nombre": "García Martínez, Félix-Carmelo",
+   "id": "a-garcia-martinez-felix-carmelo"
+  },
+  {
+   "clave": "AHA",
+   "nombre": "Hernández Amez, Azucena",
+   "id": "a-hernandez-amez-azucena"
+  },
+  {
+   "clave": "IHN",
+   "nombre": "Hernández Nieto, Isidoro",
+   "id": "a-hernandez-nieto-isidoro"
+  },
+  {
+   "clave": "JMA",
+   "nombre": "José-Manuel",
+   "id": "a-jose-manuel"
+  },
+  {
+   "clave": "NOE",
+   "nombre": "León, Noé",
+   "id": "a-leon-noe"
+  },
+  {
+   "clave": "FLC",
+   "nombre": "Lucas Castander, Fidel",
+   "id": "a-lucas-castander-fidel"
+  },
+  {
+   "clave": "JLM",
+   "nombre": "Lucas Mediero, Julio",
+   "id": "a-lucas-mediero-julio"
+  },
+  {
+   "clave": "ALV",
+   "nombre": "Lucas Varela, Antonio",
+   "id": "a-lucas-varela-antonio"
+  },
+  {
+   "clave": "TML",
+   "nombre": "Mangas Lucas, Teresa",
+   "id": "a-mangas-lucas-teresa"
+  },
+  {
+   "clave": "JMP",
+   "nombre": "Mangas Peña, Jorge",
+   "id": "a-mangas-pena-jorge"
+  },
+  {
+   "clave": "VMS",
+   "nombre": "Martínez Sogorb, Victoria",
+   "id": "a-martinez-sogorb-victoria"
+  },
+  {
+   "clave": "JMM",
+   "nombre": "Menéndez Montes, Jesús",
+   "id": "a-menendez-montes-jesus"
+  },
+  {
+   "clave": "GMR",
+   "nombre": "Mora Rodríguez, Gloria",
+   "id": "a-mora-rodriguez-gloria"
+  },
+  {
+   "clave": "MMO",
+   "nombre": "Morales, Martín",
+   "id": "a-morales-martin"
+  },
+  {
+   "clave": "OJE",
+   "nombre": "Ojeda Nieto, José",
+   "id": "a-ojeda-nieto-jose"
+  },
+  {
+   "clave": "AOT",
+   "nombre": "Ojeda Torrero, Almudena",
+   "id": "a-ojeda-torrero-almudena"
+  },
+  {
+   "clave": "AOV",
+   "nombre": "Otero Villoria, Alfredo",
+   "id": "a-otero-villoria-alfredo"
+  },
+  {
+   "clave": "JLP",
+   "nombre": "Pérez Muñoz, José Luis",
+   "id": "a-perez-munoz-jose-luis"
+  },
+  {
+   "clave": "MPM",
+   "nombre": "Pérez Muñoz, Marisa",
+   "id": "a-perez-munoz-marisa"
+  },
+  {
+   "clave": "PER",
+   "nombre": "Perlines Carretero, Felipe de",
+   "id": "a-perlines-carretero-felipe-de"
+  },
+  {
+   "clave": "ARR",
+   "nombre": "Rapado Rodríguez, Agustín",
+   "id": "a-rapado-rodriguez-agustin"
+  },
+  {
+   "clave": "CRC",
+   "nombre": "Rubio Corrales, Carlos",
+   "id": "a-rubio-corrales-carlos"
+  },
+  {
+   "clave": "MRM",
+   "nombre": "Rubio Martínez, Mariano",
+   "id": "a-rubio-martinez-mariano"
+  },
+  {
+   "clave": "ASS",
+   "nombre": "Salamanqués Santana, Alicia",
+   "id": "a-salamanques-santana-alicia"
+  },
+  {
+   "clave": "CSS",
+   "nombre": "Salamanqués Santana, César",
+   "id": "a-salamanques-santana-cesar"
+  },
+  {
+   "clave": "SPO",
+   "nombre": "Sánchez Poncela, José",
+   "id": "a-sanchez-poncela-jose"
+  },
+  {
+   "clave": "PSA",
+   "nombre": "Santana, Pablo",
+   "id": "a-santana-pablo"
+  },
+  {
+   "clave": "CRV",
+   "nombre": "Vega, Charo R.",
+   "id": "a-vega-charo-r"
+  },
+  {
+   "clave": "MG",
+   "nombre": "M. G.",
+   "id": "a-m-g"
+  },
+  {
+   "clave": "MGG",
+   "nombre": "M. G. G.",
+   "id": "a-m-g-g"
+  },
+  {
+   "clave": "PSB",
+   "nombre": "P. S. B.",
+   "id": "a-p-s-b"
+  },
+  {
+   "clave": "SF",
+   "nombre": "Textos sin firma y documentos históricos",
+   "id": "a-textos-sin-firma-y-documentos-historicos"
+  }
+ ],
+ "articulos": [
+  {
+   "anio": "1954",
+   "slug": "nuestra-bienvenida",
+   "titulo": "Nuestra bienvenida",
+   "autor": "Sin firma",
+   "claves": [
+    "SF"
+   ],
+   "tema": 11,
+   "palabras": 58,
+   "pdf_pagina": 10,
+   "cita": "Anónimo: «Nuestra bienvenida». Programa de Fiestas Patronales de Alaejos, 1954."
+  },
+  {
+   "anio": "1954",
+   "slug": "origen-de-alaejos",
+   "titulo": "Origen de Alaejos",
+   "autor": "Sin firma",
+   "claves": [
+    "SF"
+   ],
+   "tema": 8,
+   "palabras": 194,
+   "pdf_pagina": 10,
+   "cita": "Anónimo: «Origen de Alaejos». Programa de Fiestas Patronales de Alaejos, 1954."
+  },
+  {
+   "anio": "1954",
+   "slug": "su-situacion",
+   "titulo": "Su situación",
+   "autor": "Sin firma",
+   "claves": [
+    "SF"
+   ],
+   "tema": 7,
+   "palabras": 83,
+   "pdf_pagina": 11,
+   "cita": "Anónimo: «Su situación». Programa de Fiestas Patronales de Alaejos, 1954."
+  },
+  {
+   "anio": "1954",
+   "slug": "riqueza-artistica",
+   "titulo": "Riqueza artística",
+   "autor": "Sin firma",
+   "claves": [
+    "SF"
+   ],
+   "tema": 3,
+   "palabras": 392,
+   "pdf_pagina": 12,
+   "cita": "Anónimo: «Riqueza artística». Programa de Fiestas Patronales de Alaejos, 1954."
+  },
+  {
+   "anio": "1971",
+   "slug": "la-heraldica-municipal-de-alaejos",
+   "titulo": "La heráldica municipal de Alaejos",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 9,
+   "palabras": 776,
+   "pdf_pagina": 15,
+   "cita": "Adolfo M. Araújo y González: «La heráldica municipal de Alaejos». Programa de Fiestas Patronales de Alaejos, 1971."
+  },
+  {
+   "anio": "1971",
+   "slug": "carta-a-un-alaejano",
+   "titulo": "Carta a un alaejano",
+   "autor": "José-Manuel",
+   "claves": [
+    "JMA"
+   ],
+   "tema": 10,
+   "palabras": 907,
+   "pdf_pagina": 17,
+   "cita": "José-Manuel: «Carta a un alaejano». Programa de Fiestas Patronales de Alaejos, 1971."
+  },
+  {
+   "anio": "1971",
+   "slug": "la-comision-de-festejos-y-la-alegria-organizada",
+   "titulo": "La comisión de festejos y la alegría organizada",
+   "autor": "Félix-Carmelo García Martínez",
+   "claves": [
+    "FCG"
+   ],
+   "tema": 6,
+   "palabras": 650,
+   "pdf_pagina": 20,
+   "cita": "Félix-Carmelo García Martínez: «La comisión de festejos y la alegría organizada». Programa de Fiestas Patronales de Alaejos, 1971."
+  },
+  {
+   "anio": "1980",
+   "slug": "cual-es-el-destino-del-edificio-que-fue-colegio-libre-adoptado",
+   "titulo": "¿Cuál es el destino del edificio que fue colegio libre adoptado?",
+   "autor": "Adelio Castaño Casquero",
+   "claves": [
+    "ADE"
+   ],
+   "tema": 1,
+   "palabras": 458,
+   "pdf_pagina": 23,
+   "cita": "Adelio Castaño Casquero: «¿Cuál es el destino del edificio que fue colegio libre adoptado?». Programa de Fiestas Patronales de Alaejos, 1980."
+  },
+  {
+   "anio": "1981",
+   "slug": "el-prado-carrealvar",
+   "titulo": "El prado Carrealvar",
+   "autor": "Adelio Castaño Casquero",
+   "claves": [
+    "ADE"
+   ],
+   "tema": 7,
+   "palabras": 579,
+   "pdf_pagina": 26,
+   "cita": "Adelio Castaño Casquero: «El prado Carrealvar». Programa de Fiestas Patronales de Alaejos, 1981."
+  },
+  {
+   "anio": "1981",
+   "slug": "alaejos-en-el-siglo-xviii",
+   "titulo": "Alaejos en el siglo XVIII",
+   "autor": "Adelio Castaño Casquero",
+   "claves": [
+    "ADE"
+   ],
+   "tema": 1,
+   "palabras": 611,
+   "pdf_pagina": 28,
+   "cita": "Adelio Castaño Casquero: «Alaejos en el siglo XVIII». Programa de Fiestas Patronales de Alaejos, 1981."
+  },
+  {
+   "anio": "1981",
+   "slug": "la-iglesia-de-san-pedro-de-alaejos",
+   "titulo": "La iglesia de San Pedro de Alaejos",
+   "autor": "Adelio Castaño Casquero",
+   "claves": [
+    "ADE"
+   ],
+   "tema": 3,
+   "palabras": 513,
+   "pdf_pagina": 30,
+   "cita": "Adelio Castaño Casquero: «La iglesia de San Pedro de Alaejos». Programa de Fiestas Patronales de Alaejos, 1981."
+  },
+  {
+   "anio": "1982",
+   "slug": "el-escudo-heraldico-de-la-villa-de-alaejos-reformado",
+   "titulo": "El escudo heráldico de la villa de Alaejos, reformado",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 9,
+   "palabras": 847,
+   "pdf_pagina": 33,
+   "cita": "Adolfo M. Araújo y González: «El escudo heráldico de la villa de Alaejos, reformado». Programa de Fiestas Patronales de Alaejos, 1982."
+  },
+  {
+   "anio": "1982",
+   "slug": "gloria-y-decadencia-del-vino-de-alaejos",
+   "titulo": "Gloria y decadencia del vino de Alaejos",
+   "autor": "Adelio Castaño Casquero",
+   "claves": [
+    "ADE"
+   ],
+   "tema": 5,
+   "palabras": 945,
+   "pdf_pagina": 36,
+   "cita": "Adelio Castaño Casquero: «Gloria y decadencia del vino de Alaejos». Programa de Fiestas Patronales de Alaejos, 1982."
+  },
+  {
+   "anio": "1982",
+   "slug": "un-hijo-ilustre-de-alaejos-antonio-hernandez-morejon",
+   "titulo": "Un hijo ilustre de Alaejos: Antonio Hernández Morejón",
+   "autor": "Sin firma",
+   "claves": [
+    "SF"
+   ],
+   "tema": 4,
+   "palabras": 683,
+   "pdf_pagina": 39,
+   "cita": "Anónimo: «Un hijo ilustre de Alaejos: Antonio Hernández Morejón». Programa de Fiestas Patronales de Alaejos, 1982."
+  },
+  {
+   "anio": "1984",
+   "slug": "la-portada-del-programa",
+   "titulo": "La portada del programa",
+   "autor": "Isidoro Hernández Nieto",
+   "claves": [
+    "IHN"
+   ],
+   "tema": 3,
+   "palabras": 401,
+   "pdf_pagina": 42,
+   "cita": "Isidoro Hernández Nieto: «La portada del programa». Programa de Fiestas Patronales de Alaejos, 1984."
+  },
+  {
+   "anio": "1984",
+   "slug": "las-fiestas-en-alaejos-a-principio-de-siglo",
+   "titulo": "Las fiestas en Alaejos, a principio de siglo",
+   "autor": "Adelio Castaño Casquero",
+   "claves": [
+    "ADE"
+   ],
+   "tema": 6,
+   "palabras": 1197,
+   "pdf_pagina": 43,
+   "cita": "Adelio Castaño Casquero: «Las fiestas en Alaejos, a principio de siglo». Programa de Fiestas Patronales de Alaejos, 1984."
+  },
+  {
+   "anio": "1984",
+   "slug": "dos-esculturas-del-siglo-xv-y-xvii",
+   "titulo": "Dos esculturas del siglo XV y XVII",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 3,
+   "palabras": 496,
+   "pdf_pagina": 46,
+   "cita": "Adolfo M. Araújo y González: «Dos esculturas del siglo XV y XVII». Programa de Fiestas Patronales de Alaejos, 1984."
+  },
+  {
+   "anio": "1984",
+   "slug": "alaejos-senorio-de-los-fonseca-y-sus-sucesores-siglo-xv-1937",
+   "titulo": "Alaejos: señorío de los Fonseca y sus sucesores (siglo XV – 1937)",
+   "autor": "Sin firma",
+   "claves": [
+    "SF"
+   ],
+   "tema": 2,
+   "palabras": 631,
+   "pdf_pagina": 48,
+   "cita": "Anónimo: «Alaejos: señorío de los Fonseca y sus sucesores (siglo XV – 1937)». Programa de Fiestas Patronales de Alaejos, 1984."
+  },
+  {
+   "anio": "1985",
+   "slug": "la-virgen-de-la-casita-de-alaejos-y-su-santuario",
+   "titulo": "La Virgen de la Casita, de Alaejos, y su santuario",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 3,
+   "palabras": 1224,
+   "pdf_pagina": 51,
+   "cita": "Adolfo M. Araújo y González: «La Virgen de la Casita, de Alaejos, y su santuario». Programa de Fiestas Patronales de Alaejos, 1985."
+  },
+  {
+   "anio": "1985",
+   "slug": "ordenanzas-de-la-villa-de-alaejos",
+   "titulo": "Ordenanzas de la villa de Alaejos",
+   "autor": "Adelio Castaño Casquero",
+   "claves": [
+    "ADE"
+   ],
+   "tema": 9,
+   "palabras": 2507,
+   "pdf_pagina": 55,
+   "cita": "Adelio Castaño Casquero: «Ordenanzas de la villa de Alaejos». Programa de Fiestas Patronales de Alaejos, 1985."
+  },
+  {
+   "anio": "1985",
+   "slug": "mi-pueblo-alaejos",
+   "titulo": "Mi pueblo Alaejos",
+   "autor": "Marisa Pérez Muñoz",
+   "claves": [
+    "MPM"
+   ],
+   "tema": 10,
+   "palabras": 303,
+   "pdf_pagina": 62,
+   "cita": "Marisa Pérez Muñoz: «Mi pueblo Alaejos». Programa de Fiestas Patronales de Alaejos, 1985."
+  },
+  {
+   "anio": "1985",
+   "slug": "a-mi-querida-patrona-la-virgen-de-la-casita",
+   "titulo": "A mi querida patrona, la Virgen de la Casita",
+   "autor": "Marisa Pérez Muñoz",
+   "claves": [
+    "MPM"
+   ],
+   "tema": 10,
+   "palabras": 120,
+   "pdf_pagina": 65,
+   "cita": "Marisa Pérez Muñoz: «A mi querida patrona, la Virgen de la Casita». Programa de Fiestas Patronales de Alaejos, 1985."
+  },
+  {
+   "anio": "1985",
+   "slug": "a-la-cafeteria-viena",
+   "titulo": "A la cafetería Viena",
+   "autor": "P. S. B.",
+   "claves": [
+    "PSB"
+   ],
+   "tema": 10,
+   "palabras": 257,
+   "pdf_pagina": 67,
+   "cita": "P. S. B.: «A la cafetería Viena». Programa de Fiestas Patronales de Alaejos, 1985."
+  },
+  {
+   "anio": "1986",
+   "slug": "alaejos-hace-treinta-y-dos-anos",
+   "titulo": "Alaejos, hace treinta y dos años",
+   "autor": "Armando Caballero",
+   "claves": [
+    "ACA"
+   ],
+   "tema": 5,
+   "palabras": 723,
+   "pdf_pagina": 70,
+   "cita": "Armando Caballero: «Alaejos, hace treinta y dos años». Programa de Fiestas Patronales de Alaejos, 1986."
+  },
+  {
+   "anio": "1986",
+   "slug": "la-bandera-de-la-cofradia-de-pastores-el-estandarte-de-la-asociacion-d",
+   "titulo": "La bandera de la cofradía de pastores, el estandarte de la asociación de danzantes y la corona antigua de Nuestra Señora de la Casita",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 3,
+   "palabras": 2521,
+   "pdf_pagina": 72,
+   "cita": "Adolfo M. Araújo y González: «La bandera de la cofradía de pastores, el estandarte de la asociación de danzantes y la corona antigua de Nuestra Señora de la Casita». Programa de Fiestas Patronales de Alaejos, 1986."
+  },
+  {
+   "anio": "1986",
+   "slug": "reglamento-a-que-han-de-sujetarse-los-alguaciles-para-desempenar-el-ca",
+   "titulo": "Reglamento a que han de sujetarse los alguaciles para desempeñar el cargo. Alaejos 1906",
+   "autor": "Adelio Castaño Casquero",
+   "claves": [
+    "ADE"
+   ],
+   "tema": 9,
+   "palabras": 687,
+   "pdf_pagina": 78,
+   "cita": "Adelio Castaño Casquero: «Reglamento a que han de sujetarse los alguaciles para desempeñar el cargo. Alaejos 1906». Programa de Fiestas Patronales de Alaejos, 1986."
+  },
+  {
+   "anio": "1986",
+   "slug": "1873-instalacion-del-consejo-democratico-federal-de-la-villa-de-alaejo",
+   "titulo": "1873: Instalación del consejo democrático federal de la villa de Alaejos",
+   "autor": "Adelio Castaño Casquero",
+   "claves": [
+    "ADE"
+   ],
+   "tema": 9,
+   "palabras": 449,
+   "pdf_pagina": 80,
+   "cita": "Adelio Castaño Casquero: «1873: Instalación del consejo democrático federal de la villa de Alaejos». Programa de Fiestas Patronales de Alaejos, 1986."
+  },
+  {
+   "anio": "1987",
+   "slug": "los-senores-de-alaejos-hasta-los-trastamaras",
+   "titulo": "Los señores de Alaejos hasta los Trastamaras",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 2,
+   "palabras": 1859,
+   "pdf_pagina": 83,
+   "cita": "Adolfo M. Araújo y González: «Los señores de Alaejos hasta los Trastamaras». Programa de Fiestas Patronales de Alaejos, 1987."
+  },
+  {
+   "anio": "1987",
+   "slug": "nuestra-flora",
+   "titulo": "Nuestra flora",
+   "autor": "Jesús Menéndez Montes",
+   "claves": [
+    "JMM"
+   ],
+   "tema": 7,
+   "palabras": 868,
+   "pdf_pagina": 88,
+   "cita": "Jesús Menéndez Montes: «Nuestra flora». Programa de Fiestas Patronales de Alaejos, 1987."
+  },
+  {
+   "anio": "1987",
+   "slug": "mitos-y-fiestas-en-la-villa-de-alaejos",
+   "titulo": "Mitos y fiestas en la villa de Alaejos",
+   "autor": "José Manuel Benito Álvarez",
+   "claves": [
+    "JMB"
+   ],
+   "tema": 6,
+   "palabras": 2251,
+   "pdf_pagina": 90,
+   "cita": "José Manuel Benito Álvarez: «Mitos y fiestas en la villa de Alaejos». Programa de Fiestas Patronales de Alaejos, 1987."
+  },
+  {
+   "anio": "1988",
+   "slug": "alaejos-oficios-tradicionales-cesteros-y-alfareros",
+   "titulo": "Alaejos: oficios tradicionales — cesteros y alfareros",
+   "autor": "Adelio Castaño Casquero",
+   "claves": [
+    "ADE"
+   ],
+   "tema": 5,
+   "palabras": 335,
+   "pdf_pagina": 97,
+   "cita": "Adelio Castaño Casquero: «Alaejos: oficios tradicionales — cesteros y alfareros». Programa de Fiestas Patronales de Alaejos, 1988."
+  },
+  {
+   "anio": "1988",
+   "slug": "breve-repaso-historico-de-alaejos",
+   "titulo": "Breve repaso histórico de Alaejos",
+   "autor": "Adelio Castaño Casquero",
+   "claves": [
+    "ADE"
+   ],
+   "tema": 1,
+   "palabras": 595,
+   "pdf_pagina": 98,
+   "cita": "Adelio Castaño Casquero: «Breve repaso histórico de Alaejos». Programa de Fiestas Patronales de Alaejos, 1988."
+  },
+  {
+   "anio": "1988",
+   "slug": "curiosidades-historicas-sacadas-de-los-libros-de-la-cofradia-de-pastor",
+   "titulo": "Curiosidades históricas sacadas de los libros de la cofradía de pastores de la Virgen de la Casita",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 3,
+   "palabras": 896,
+   "pdf_pagina": 100,
+   "cita": "Adolfo M. Araújo y González: «Curiosidades históricas sacadas de los libros de la cofradía de pastores de la Virgen de la Casita». Programa de Fiestas Patronales de Alaejos, 1988."
+  },
+  {
+   "anio": "1988",
+   "slug": "mitos-y-fiestas-en-la-villa-de-alaejos-ii",
+   "titulo": "Mitos y fiestas en la villa de Alaejos (II)",
+   "autor": "José Manuel Benito Álvarez",
+   "claves": [
+    "JMB"
+   ],
+   "tema": 6,
+   "palabras": 2215,
+   "pdf_pagina": 102,
+   "cita": "José Manuel Benito Álvarez: «Mitos y fiestas en la villa de Alaejos (II)». Programa de Fiestas Patronales de Alaejos, 1988."
+  },
+  {
+   "anio": "1989",
+   "slug": "la-real-sociedad-caritativo-economica-de-la-villa-de-alaejos",
+   "titulo": "La Real Sociedad Caritativo-Económica de la villa de Alaejos",
+   "autor": "Julio Lucas Mediero",
+   "claves": [
+    "JLM"
+   ],
+   "tema": 9,
+   "palabras": 366,
+   "pdf_pagina": 109,
+   "cita": "Julio Lucas Mediero: «La Real Sociedad Caritativo-Económica de la villa de Alaejos». Programa de Fiestas Patronales de Alaejos, 1989."
+  },
+  {
+   "anio": "1989",
+   "slug": "toponimia-del-termino-municipal-de-alaejos",
+   "titulo": "Toponimia del término municipal de Alaejos",
+   "autor": "Adelio Castaño Casquero",
+   "claves": [
+    "ADE"
+   ],
+   "tema": 8,
+   "palabras": 534,
+   "pdf_pagina": 111,
+   "cita": "Adelio Castaño Casquero: «Toponimia del término municipal de Alaejos». Programa de Fiestas Patronales de Alaejos, 1989."
+  },
+  {
+   "anio": "1989",
+   "slug": "grandezas-de-alaejos",
+   "titulo": "Grandezas de Alaejos",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 4,
+   "palabras": 1637,
+   "pdf_pagina": 114,
+   "cita": "Adolfo M. Araújo y González: «Grandezas de Alaejos». Programa de Fiestas Patronales de Alaejos, 1989."
+  },
+  {
+   "anio": "1989",
+   "slug": "algunos-datos-de-la-fiesta-nacional-que-debe-conocer-todo-buen-aficion",
+   "titulo": "Algunos datos de la fiesta nacional que debe conocer todo buen aficionado",
+   "autor": "Sin firma",
+   "claves": [
+    "SF"
+   ],
+   "tema": 6,
+   "palabras": 1434,
+   "pdf_pagina": 119,
+   "cita": "Anónimo: «Algunos datos de la fiesta nacional que debe conocer todo buen aficionado». Programa de Fiestas Patronales de Alaejos, 1989."
+  },
+  {
+   "anio": "1990",
+   "slug": "salamanca-y-alaejos",
+   "titulo": "Salamanca y Alaejos",
+   "autor": "Adelio Castaño Casquero",
+   "claves": [
+    "ADE"
+   ],
+   "tema": 1,
+   "palabras": 539,
+   "pdf_pagina": 126,
+   "cita": "Adelio Castaño Casquero: «Salamanca y Alaejos». Programa de Fiestas Patronales de Alaejos, 1990."
+  },
+  {
+   "anio": "1990",
+   "slug": "toros-en-alaejos",
+   "titulo": "Toros en Alaejos",
+   "autor": "Jaime Caballero",
+   "claves": [
+    "JCA"
+   ],
+   "tema": 6,
+   "palabras": 1458,
+   "pdf_pagina": 128,
+   "cita": "Jaime Caballero: «Toros en Alaejos». Programa de Fiestas Patronales de Alaejos, 1990."
+  },
+  {
+   "anio": "1990",
+   "slug": "voces-amigas-campanas-en-alaejos",
+   "titulo": "Voces amigas (campanas en Alaejos)",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 3,
+   "palabras": 1407,
+   "pdf_pagina": 132,
+   "cita": "Adolfo M. Araújo y González: «Voces amigas (campanas en Alaejos)». Programa de Fiestas Patronales de Alaejos, 1990."
+  },
+  {
+   "anio": "1991",
+   "slug": "el-prado-carreelbal",
+   "titulo": "El prado «Carreelbal»",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 7,
+   "palabras": 805,
+   "pdf_pagina": 137,
+   "cita": "José Ojeda Nieto: «El prado «Carreelbal»». Programa de Fiestas Patronales de Alaejos, 1991."
+  },
+  {
+   "anio": "1991",
+   "slug": "la-ensenanza-en-alaejos",
+   "titulo": "La enseñanza en Alaejos",
+   "autor": "Adelio Castaño Casquero",
+   "claves": [
+    "ADE"
+   ],
+   "tema": 5,
+   "palabras": 1186,
+   "pdf_pagina": 139,
+   "cita": "Adelio Castaño Casquero: «La enseñanza en Alaejos». Programa de Fiestas Patronales de Alaejos, 1991."
+  },
+  {
+   "anio": "1991",
+   "slug": "voces-amigas",
+   "titulo": "Voces amigas",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 3,
+   "palabras": 937,
+   "pdf_pagina": 142,
+   "cita": "Adolfo M. Araújo y González: «Voces amigas». Programa de Fiestas Patronales de Alaejos, 1991."
+  },
+  {
+   "anio": "1991",
+   "slug": "alaejos-de-otros-tiempos",
+   "titulo": "Alaejos de otros tiempos",
+   "autor": "Azucena Hernández Amez",
+   "claves": [
+    "AHA"
+   ],
+   "tema": 1,
+   "palabras": 1159,
+   "pdf_pagina": 145,
+   "cita": "Azucena Hernández Amez: «Alaejos de otros tiempos». Programa de Fiestas Patronales de Alaejos, 1991."
+  },
+  {
+   "anio": "1992",
+   "slug": "fray-juan-de-alaejos-1687-1752",
+   "titulo": "Fray Juan de Alaejos (1687-1752)",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 4,
+   "palabras": 993,
+   "pdf_pagina": 150,
+   "cita": "Adolfo M. Araújo y González: «Fray Juan de Alaejos (1687-1752)». Programa de Fiestas Patronales de Alaejos, 1992."
+  },
+  {
+   "anio": "1992",
+   "slug": "el-cano",
+   "titulo": "El caño",
+   "autor": "Julio Lucas Mediero",
+   "claves": [
+    "JLM"
+   ],
+   "tema": 5,
+   "palabras": 237,
+   "pdf_pagina": 153,
+   "cita": "Julio Lucas Mediero: «El caño». Programa de Fiestas Patronales de Alaejos, 1992."
+  },
+  {
+   "anio": "1992",
+   "slug": "alaejos-y-su-relacion-con-america",
+   "titulo": "Alaejos y su relación con América",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 1,
+   "palabras": 1057,
+   "pdf_pagina": 154,
+   "cita": "José Ojeda Nieto: «Alaejos y su relación con América». Programa de Fiestas Patronales de Alaejos, 1992."
+  },
+  {
+   "anio": "1992",
+   "slug": "historia-de-dona-juana",
+   "titulo": "Historia de doña Juana",
+   "autor": "Felipe Aguilar Lucas",
+   "claves": [
+    "FAL"
+   ],
+   "tema": 2,
+   "palabras": 1356,
+   "pdf_pagina": 157,
+   "cita": "Felipe Aguilar Lucas: «Historia de doña Juana». Programa de Fiestas Patronales de Alaejos, 1992."
+  },
+  {
+   "anio": "1993",
+   "slug": "historia-de-la-villa-de-alaejos",
+   "titulo": "Historia de la villa de Alaejos",
+   "autor": "José Sánchez Poncela",
+   "claves": [
+    "SPO"
+   ],
+   "tema": 1,
+   "palabras": 1444,
+   "pdf_pagina": 161,
+   "cita": "José Sánchez Poncela: «Historia de la villa de Alaejos». Programa de Fiestas Patronales de Alaejos, 1993."
+  },
+  {
+   "anio": "1993",
+   "slug": "razon-y-necesidad-de-los-pequenos-museos-rurales",
+   "titulo": "Razón y necesidad de los pequeños museos rurales",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 3,
+   "palabras": 561,
+   "pdf_pagina": 165,
+   "cita": "Adolfo M. Araújo y González: «Razón y necesidad de los pequeños museos rurales». Programa de Fiestas Patronales de Alaejos, 1993."
+  },
+  {
+   "anio": "1993",
+   "slug": "el-hospital-del-buen-pastor-debe-convertirse-en-unidad-sanitaria-local",
+   "titulo": "El hospital del Buen Pastor debe convertirse en unidad sanitaria local",
+   "autor": "Adelio Castaño Casquero",
+   "claves": [
+    "ADE"
+   ],
+   "tema": 5,
+   "palabras": 388,
+   "pdf_pagina": 167,
+   "cita": "Adelio Castaño Casquero: «El hospital del Buen Pastor debe convertirse en unidad sanitaria local». Programa de Fiestas Patronales de Alaejos, 1993."
+  },
+  {
+   "anio": "1993",
+   "slug": "se-quedo-en-proyecto",
+   "titulo": "Se quedó en proyecto",
+   "autor": "Adelio Castaño Casquero",
+   "claves": [
+    "ADE"
+   ],
+   "tema": 5,
+   "palabras": 418,
+   "pdf_pagina": 169,
+   "cita": "Adelio Castaño Casquero: «Se quedó en proyecto». Programa de Fiestas Patronales de Alaejos, 1993."
+  },
+  {
+   "anio": "1994",
+   "slug": "alaejos-contra-el-honrado-concejo-de-la-mesta",
+   "titulo": "Alaejos contra el honrado concejo de la Mesta",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 5,
+   "palabras": 1468,
+   "pdf_pagina": 172,
+   "cita": "José Ojeda Nieto: «Alaejos contra el honrado concejo de la Mesta». Programa de Fiestas Patronales de Alaejos, 1994."
+  },
+  {
+   "anio": "1994",
+   "slug": "introduccion-y-estatutos-de-la-real-sociedad-caritativo-economica-de-l",
+   "titulo": "Introducción y estatutos de la Real Sociedad Caritativo-Económica de la villa de Alaejos",
+   "autor": "Sin firma",
+   "claves": [
+    "SF"
+   ],
+   "tema": 9,
+   "palabras": 2725,
+   "pdf_pagina": 176,
+   "cita": "Anónimo: «Introducción y estatutos de la Real Sociedad Caritativo-Económica de la villa de Alaejos». Programa de Fiestas Patronales de Alaejos, 1994."
+  },
+  {
+   "anio": "1994",
+   "slug": "atributos-o-insignias-de-las-autoridades-de-alaejos-bastones-de-mando",
+   "titulo": "Atributos o insignias de las autoridades de Alaejos (bastones de mando)",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 9,
+   "palabras": 1146,
+   "pdf_pagina": 182,
+   "cita": "Adolfo M. Araújo y González: «Atributos o insignias de las autoridades de Alaejos (bastones de mando)». Programa de Fiestas Patronales de Alaejos, 1994."
+  },
+  {
+   "anio": "1994",
+   "slug": "origen-del-nombre-de-algunas-calles-de-alaejos",
+   "titulo": "Origen del nombre de algunas calles de Alaejos",
+   "autor": "Julio Lucas Mediero",
+   "claves": [
+    "JLM"
+   ],
+   "tema": 8,
+   "palabras": 282,
+   "pdf_pagina": 185,
+   "cita": "Julio Lucas Mediero: «Origen del nombre de algunas calles de Alaejos». Programa de Fiestas Patronales de Alaejos, 1994."
+  },
+  {
+   "anio": "1995",
+   "slug": "las-antiguas-fiestas-de-alaejos",
+   "titulo": "Las antiguas fiestas de Alaejos",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 6,
+   "palabras": 1512,
+   "pdf_pagina": 187,
+   "cita": "José Ojeda Nieto: «Las antiguas fiestas de Alaejos». Programa de Fiestas Patronales de Alaejos, 1995."
+  },
+  {
+   "anio": "1995",
+   "slug": "las-ordenes-militares-de-caballeria-en-la-heraldica-del-estado-noble-d",
+   "titulo": "Las órdenes militares de caballería en la heráldica del estado noble de la villa de Alaejos",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 9,
+   "palabras": 1582,
+   "pdf_pagina": 191,
+   "cita": "Adolfo M. Araújo y González: «Las órdenes militares de caballería en la heráldica del estado noble de la villa de Alaejos». Programa de Fiestas Patronales de Alaejos, 1995."
+  },
+  {
+   "anio": "1995",
+   "slug": "estatutos-de-la-real-sociedad-economica-de-la-villa-de-alaejos",
+   "titulo": "Estatutos de la Real Sociedad-Económica de la villa de Alaejos",
+   "autor": "Sin firma",
+   "claves": [
+    "SF"
+   ],
+   "tema": 9,
+   "palabras": 2094,
+   "pdf_pagina": 196,
+   "cita": "Anónimo: «Estatutos de la Real Sociedad-Económica de la villa de Alaejos». Programa de Fiestas Patronales de Alaejos, 1995."
+  },
+  {
+   "anio": "1996",
+   "slug": "primer-ano-del-club-cicloturista-de-alaejos",
+   "titulo": "Primer año del club cicloturista de Alaejos",
+   "autor": "César Salamanqués Santana",
+   "claves": [
+    "CSS"
+   ],
+   "tema": 5,
+   "palabras": 1000,
+   "pdf_pagina": 203,
+   "cita": "César Salamanqués Santana: «Primer año del club cicloturista de Alaejos». Programa de Fiestas Patronales de Alaejos, 1996."
+  },
+  {
+   "anio": "1996",
+   "slug": "nuestra-bandera-patrimonio-de-todos",
+   "titulo": "Nuestra bandera patrimonio de todos",
+   "autor": "Asociación Amigos del Patrimonio Cultural de Alaejos",
+   "claves": [
+    "APC"
+   ],
+   "tema": 9,
+   "palabras": 777,
+   "pdf_pagina": 206,
+   "cita": "Asociación Amigos del Patrimonio Cultural de Alaejos: «Nuestra bandera patrimonio de todos». Programa de Fiestas Patronales de Alaejos, 1996."
+  },
+  {
+   "anio": "1996",
+   "slug": "el-arbol-de-la-virgen",
+   "titulo": "El árbol de la Virgen",
+   "autor": "Fidel Lucas Castander",
+   "claves": [
+    "FLC"
+   ],
+   "tema": 6,
+   "palabras": 635,
+   "pdf_pagina": 208,
+   "cita": "Fidel Lucas Castander: «El árbol de la Virgen». Programa de Fiestas Patronales de Alaejos, 1996."
+  },
+  {
+   "anio": "1996",
+   "slug": "la-ensenanza-en-alaejos-durante-el-siglo-de-oro",
+   "titulo": "La enseñanza en Alaejos durante el «Siglo de Oro»",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 5,
+   "palabras": 1423,
+   "pdf_pagina": 210,
+   "cita": "José Ojeda Nieto: «La enseñanza en Alaejos durante el «Siglo de Oro»». Programa de Fiestas Patronales de Alaejos, 1996."
+  },
+  {
+   "anio": "1996",
+   "slug": "universitarios-alaejanos-en-la-universidad-de-santo-tomas-de-avila-en",
+   "titulo": "Universitarios alaejanos en la Universidad de Santo Tomás de Ávila en el siglo XVII",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 4,
+   "palabras": 1870,
+   "pdf_pagina": 214,
+   "cita": "Adolfo M. Araújo y González: «Universitarios alaejanos en la Universidad de Santo Tomás de Ávila en el siglo XVII». Programa de Fiestas Patronales de Alaejos, 1996."
+  },
+  {
+   "anio": "1997",
+   "slug": "club-cicloturista-de-alaejos",
+   "titulo": "Club cicloturista de Alaejos",
+   "autor": "César Salamanqués Santana",
+   "claves": [
+    "CSS"
+   ],
+   "tema": 5,
+   "palabras": 618,
+   "pdf_pagina": 220,
+   "cita": "César Salamanqués Santana: «Club cicloturista de Alaejos». Programa de Fiestas Patronales de Alaejos, 1997."
+  },
+  {
+   "anio": "1997",
+   "slug": "el-pico-del-arca-madre",
+   "titulo": "El pico del Arca Madre",
+   "autor": "Antonio Lucas Varela",
+   "claves": [
+    "ALV"
+   ],
+   "tema": 7,
+   "palabras": 337,
+   "pdf_pagina": 222,
+   "cita": "Antonio Lucas Varela: «El pico del Arca Madre». Programa de Fiestas Patronales de Alaejos, 1997."
+  },
+  {
+   "anio": "1998",
+   "slug": "la-escuela-de-ciclismo-de-alaejos",
+   "titulo": "La escuela de ciclismo de Alaejos",
+   "autor": "César Salamanqués Santana",
+   "claves": [
+    "CSS"
+   ],
+   "tema": 5,
+   "palabras": 501,
+   "pdf_pagina": 224,
+   "cita": "César Salamanqués Santana: «La escuela de ciclismo de Alaejos». Programa de Fiestas Patronales de Alaejos, 1998."
+  },
+  {
+   "anio": "1998",
+   "slug": "una-pieza-de-orfebreria-sacra-de-la-epoca-de-felipe-ii-1527-1598",
+   "titulo": "Una pieza de orfebrería sacra de la época de Felipe II (1527-1598)",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 3,
+   "palabras": 894,
+   "pdf_pagina": 226,
+   "cita": "Adolfo M. Araújo y González: «Una pieza de orfebrería sacra de la época de Felipe II (1527-1598)». Programa de Fiestas Patronales de Alaejos, 1998."
+  },
+  {
+   "anio": "2000",
+   "slug": "una-rebelion-contra-los-fonseca",
+   "titulo": "Una rebelión contra los Fonseca",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 2,
+   "palabras": 1146,
+   "pdf_pagina": 230,
+   "cita": "José Ojeda Nieto: «Una rebelión contra los Fonseca». Programa de Fiestas Patronales de Alaejos, 2000."
+  },
+  {
+   "anio": "2000",
+   "slug": "la-cruz-de-carrezamora",
+   "titulo": "La cruz de Carrezamora",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 3,
+   "palabras": 685,
+   "pdf_pagina": 233,
+   "cita": "Adolfo M. Araújo y González: «La cruz de Carrezamora». Programa de Fiestas Patronales de Alaejos, 2000."
+  },
+  {
+   "anio": "2001",
+   "slug": "nuevamente-en-torno-a-la-sociedad-economica-de-amigos-del-pais-de-la-v",
+   "titulo": "Nuevamente en torno a la Sociedad Económica de Amigos del País de la villa de Alaejos (Real Sociedad Caritativo-Económica)",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 9,
+   "palabras": 2293,
+   "pdf_pagina": 236,
+   "cita": "Adolfo M. Araújo y González: «Nuevamente en torno a la Sociedad Económica de Amigos del País de la villa de Alaejos (Real Sociedad Caritativo-Económica)». Programa de Fiestas Patronales de Alaejos, 2001."
+  },
+  {
+   "anio": "2001",
+   "slug": "rencillas-y-peleas-en-el-siglo-de-oro",
+   "titulo": "Rencillas y peleas en el Siglo de Oro",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 1,
+   "palabras": 1330,
+   "pdf_pagina": 242,
+   "cita": "José Ojeda Nieto: «Rencillas y peleas en el Siglo de Oro». Programa de Fiestas Patronales de Alaejos, 2001."
+  },
+  {
+   "anio": "2002",
+   "slug": "las-sus-villas-de-coca-y-alhaexos",
+   "titulo": "«Las sus villas de Coca y Alhaexos»",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 1,
+   "palabras": 543,
+   "pdf_pagina": 246,
+   "cita": "Adolfo M. Araújo y González: ««Las sus villas de Coca y Alhaexos»». Programa de Fiestas Patronales de Alaejos, 2002."
+  },
+  {
+   "anio": "2002",
+   "slug": "hace-550-anos",
+   "titulo": "Hace 550 años",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 1,
+   "palabras": 1294,
+   "pdf_pagina": 248,
+   "cita": "José Ojeda Nieto: «Hace 550 años». Programa de Fiestas Patronales de Alaejos, 2002."
+  },
+  {
+   "anio": "2003",
+   "slug": "lagarto-lagarto",
+   "titulo": "¡Lagarto, lagarto!",
+   "autor": "Antonio Lucas Varela",
+   "claves": [
+    "ALV"
+   ],
+   "tema": 8,
+   "palabras": 1877,
+   "pdf_pagina": 252,
+   "cita": "Antonio Lucas Varela: «¡Lagarto, lagarto!». Programa de Fiestas Patronales de Alaejos, 2003."
+  },
+  {
+   "anio": "2003",
+   "slug": "el-vino-en-el-siglo-xviii-produccion-y-rendimiento",
+   "titulo": "El vino en el siglo XVIII: producción y rendimiento",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 5,
+   "palabras": 1626,
+   "pdf_pagina": 257,
+   "cita": "José Ojeda Nieto: «El vino en el siglo XVIII: producción y rendimiento». Programa de Fiestas Patronales de Alaejos, 2003."
+  },
+  {
+   "anio": "2004",
+   "slug": "la-poblacion-de-alaejos-en-los-ultimos-500-anos",
+   "titulo": "La población de Alaejos en los últimos 500 años",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 5,
+   "palabras": 910,
+   "pdf_pagina": 262,
+   "cita": "José Ojeda Nieto: «La población de Alaejos en los últimos 500 años». Programa de Fiestas Patronales de Alaejos, 2004."
+  },
+  {
+   "anio": "2004",
+   "slug": "lagarto-lagarto-supersticiones-segunda-parte",
+   "titulo": "¡Lagarto, lagarto! Supersticiones. Segunda parte",
+   "autor": "Antonio Lucas Varela",
+   "claves": [
+    "ALV"
+   ],
+   "tema": 8,
+   "palabras": 1004,
+   "pdf_pagina": 264,
+   "cita": "Antonio Lucas Varela: «¡Lagarto, lagarto! Supersticiones. Segunda parte». Programa de Fiestas Patronales de Alaejos, 2004."
+  },
+  {
+   "anio": "2005",
+   "slug": "la-casa-de-los-diezmos-o-cilla",
+   "titulo": "La casa de los diezmos, o cilla",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 3,
+   "palabras": 1418,
+   "pdf_pagina": 268,
+   "cita": "José Ojeda Nieto: «La casa de los diezmos, o cilla». Programa de Fiestas Patronales de Alaejos, 2005."
+  },
+  {
+   "anio": "2005",
+   "slug": "cervantes-don-quijote-el-libro",
+   "titulo": "Cervantes, don Quijote, el libro",
+   "autor": "José Sánchez Poncela",
+   "claves": [
+    "SPO"
+   ],
+   "tema": 10,
+   "palabras": 2153,
+   "pdf_pagina": 271,
+   "cita": "José Sánchez Poncela: «Cervantes, don Quijote, el libro». Programa de Fiestas Patronales de Alaejos, 2005."
+  },
+  {
+   "anio": "2005",
+   "slug": "diez-anos-de-pedales-y-amistad",
+   "titulo": "Diez años de pedales y amistad",
+   "autor": "César Salamanqués Santana",
+   "claves": [
+    "CSS"
+   ],
+   "tema": 5,
+   "palabras": 747,
+   "pdf_pagina": 277,
+   "cita": "César Salamanqués Santana: «Diez años de pedales y amistad». Programa de Fiestas Patronales de Alaejos, 2005."
+  },
+  {
+   "anio": "2005",
+   "slug": "un-alaejano-ilustre-el-medico-y-numismata-damaso-puertas-alvarez-1770",
+   "titulo": "Un alaejano ilustre: el médico y numísmata, Dámaso Puertas Álvarez (1770-1830)",
+   "autor": "Gloria Mora Rodríguez",
+   "claves": [
+    "GMR"
+   ],
+   "tema": 4,
+   "palabras": 1298,
+   "pdf_pagina": 279,
+   "cita": "Gloria Mora Rodríguez: «Un alaejano ilustre: el médico y numísmata, Dámaso Puertas Álvarez (1770-1830)». Programa de Fiestas Patronales de Alaejos, 2005."
+  },
+  {
+   "anio": "2006",
+   "slug": "los-retablos-del-santisimo-cristo-de-la-caridad-y-de-nuestra-senora-de",
+   "titulo": "Los retablos del Santísimo Cristo de la Caridad y de Nuestra Señora de la Esclavitud de la parroquia de San Pedro",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 3,
+   "palabras": 1525,
+   "pdf_pagina": 283,
+   "cita": "José Ojeda Nieto: «Los retablos del Santísimo Cristo de la Caridad y de Nuestra Señora de la Esclavitud de la parroquia de San Pedro». Programa de Fiestas Patronales de Alaejos, 2006."
+  },
+  {
+   "anio": "2007",
+   "slug": "alaejos",
+   "titulo": "Alaejos",
+   "autor": "Antonio Lucas Varela",
+   "claves": [
+    "ALV"
+   ],
+   "tema": 8,
+   "palabras": 1448,
+   "pdf_pagina": 287,
+   "cita": "Antonio Lucas Varela: «Alaejos». Programa de Fiestas Patronales de Alaejos, 2007."
+  },
+  {
+   "anio": "2007",
+   "slug": "el-reloj-de-la-villa",
+   "titulo": "El reloj de la villa",
+   "autor": "José Luis Pérez Muñoz",
+   "claves": [
+    "JLP"
+   ],
+   "tema": 3,
+   "palabras": 3099,
+   "pdf_pagina": 292,
+   "cita": "José Luis Pérez Muñoz: «El reloj de la villa». Programa de Fiestas Patronales de Alaejos, 2007."
+  },
+  {
+   "anio": "2007",
+   "slug": "el-politico-y-el-guerrero-o-la-cruz-y-la-espada",
+   "titulo": "El político y el guerrero o la cruz y la espada...",
+   "autor": "José Ojeda Nieto y Adolfo M. Araújo y González",
+   "claves": [
+    "OJE",
+    "ARA"
+   ],
+   "tema": 2,
+   "palabras": 1508,
+   "pdf_pagina": 299,
+   "cita": "José Ojeda Nieto y Adolfo M. Araújo y González: «El político y el guerrero o la cruz y la espada...». Programa de Fiestas Patronales de Alaejos, 2007."
+  },
+  {
+   "anio": "2007",
+   "slug": "en-defensa-del-publico-reconocimiento-del-que-fue-ilustre-hijo-de-la-v",
+   "titulo": "En defensa del público reconocimiento del que fue ilustre hijo de la villa: don Juan Fernández Vadillo",
+   "autor": "Sin firma",
+   "claves": [
+    "SF"
+   ],
+   "tema": 4,
+   "palabras": 1182,
+   "pdf_pagina": 303,
+   "cita": "Anónimo: «En defensa del público reconocimiento del que fue ilustre hijo de la villa: don Juan Fernández Vadillo». Programa de Fiestas Patronales de Alaejos, 2007."
+  },
+  {
+   "anio": "2008",
+   "slug": "honores-y-distinciones",
+   "titulo": "Honores y distinciones",
+   "autor": "José Luis Pérez Muñoz",
+   "claves": [
+    "JLP"
+   ],
+   "tema": 9,
+   "palabras": 2794,
+   "pdf_pagina": 307,
+   "cita": "José Luis Pérez Muñoz: «Honores y distinciones». Programa de Fiestas Patronales de Alaejos, 2008."
+  },
+  {
+   "anio": "2008",
+   "slug": "abundando-en-los-fonseca",
+   "titulo": "Abundando en los Fonseca",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 2,
+   "palabras": 1777,
+   "pdf_pagina": 313,
+   "cita": "Adolfo M. Araújo y González: «Abundando en los Fonseca». Programa de Fiestas Patronales de Alaejos, 2008."
+  },
+  {
+   "anio": "2008",
+   "slug": "cave-canem-cuidado-con-el-perro",
+   "titulo": "Cave Canem (cuidado con el perro)",
+   "autor": "Antonio Lucas Varela",
+   "claves": [
+    "ALV"
+   ],
+   "tema": 8,
+   "palabras": 809,
+   "pdf_pagina": 317,
+   "cita": "Antonio Lucas Varela: «Cave Canem (cuidado con el perro)». Programa de Fiestas Patronales de Alaejos, 2008."
+  },
+  {
+   "anio": "2008",
+   "slug": "los-vinos-de-alaejos-en-la-literatura-del-siglo-xvi",
+   "titulo": "Los vinos de Alaejos en la literatura del siglo XVI",
+   "autor": "Teresa Mangas Lucas",
+   "claves": [
+    "TML"
+   ],
+   "tema": 5,
+   "palabras": 774,
+   "pdf_pagina": 319,
+   "cita": "Teresa Mangas Lucas: «Los vinos de Alaejos en la literatura del siglo XVI». Programa de Fiestas Patronales de Alaejos, 2008."
+  },
+  {
+   "anio": "2008",
+   "slug": "montes-y-arboles-de-alaejos",
+   "titulo": "Montes y árboles de Alaejos",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 7,
+   "palabras": 2141,
+   "pdf_pagina": 322,
+   "cita": "José Ojeda Nieto: «Montes y árboles de Alaejos». Programa de Fiestas Patronales de Alaejos, 2008."
+  },
+  {
+   "anio": "2009",
+   "slug": "expositos-y-huerfanos-ninos-queridos-ninos-no-deseados",
+   "titulo": "Expósitos y huérfanos: ¿niños queridos, niños no deseados?",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 5,
+   "palabras": 1577,
+   "pdf_pagina": 328,
+   "cita": "José Ojeda Nieto: «Expósitos y huérfanos: ¿niños queridos, niños no deseados?». Programa de Fiestas Patronales de Alaejos, 2009."
+  },
+  {
+   "anio": "2009",
+   "slug": "significado-del-cuartelado-de-castilla-y-leon-su-presencia-en-las-arma",
+   "titulo": "Significado del cuartelado de Castilla y León, su presencia en las armas de España",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 9,
+   "palabras": 979,
+   "pdf_pagina": 332,
+   "cita": "Adolfo M. Araújo y González: «Significado del cuartelado de Castilla y León, su presencia en las armas de España». Programa de Fiestas Patronales de Alaejos, 2009."
+  },
+  {
+   "anio": "2009",
+   "slug": "cambios-en-el-callejero",
+   "titulo": "Cambios en el callejero",
+   "autor": "José Luis Pérez Muñoz",
+   "claves": [
+    "JLP"
+   ],
+   "tema": 8,
+   "palabras": 2677,
+   "pdf_pagina": 335,
+   "cita": "José Luis Pérez Muñoz: «Cambios en el callejero». Programa de Fiestas Patronales de Alaejos, 2009."
+  },
+  {
+   "anio": "2010",
+   "slug": "el-cuerpo-de-bomberos",
+   "titulo": "El cuerpo de bomberos",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 5,
+   "palabras": 2302,
+   "pdf_pagina": 342,
+   "cita": "Adolfo M. Araújo y González: «El cuerpo de bomberos». Programa de Fiestas Patronales de Alaejos, 2010."
+  },
+  {
+   "anio": "2010",
+   "slug": "nuestras-piedras-labradas-artisticamente",
+   "titulo": "Nuestras piedras labradas artísticamente",
+   "autor": "Adolfo M. Araújo y González",
+   "claves": [
+    "ARA"
+   ],
+   "tema": 3,
+   "palabras": 898,
+   "pdf_pagina": 348,
+   "cita": "Adolfo M. Araújo y González: «Nuestras piedras labradas artísticamente». Programa de Fiestas Patronales de Alaejos, 2010."
+  },
+  {
+   "anio": "2010",
+   "slug": "andres-de-villamediana-primer-historiador-de-alaejos",
+   "titulo": "Andrés de Villamediana, primer historiador de Alaejos",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 4,
+   "palabras": 1634,
+   "pdf_pagina": 351,
+   "cita": "José Ojeda Nieto: «Andrés de Villamediana, primer historiador de Alaejos». Programa de Fiestas Patronales de Alaejos, 2010."
+  },
+  {
+   "anio": "2010",
+   "slug": "del-altar-mayor-de-santa-maria",
+   "titulo": "Del altar mayor de Santa María",
+   "autor": "Mario García Guerras",
+   "claves": [
+    "MGR"
+   ],
+   "tema": 3,
+   "palabras": 1284,
+   "pdf_pagina": 355,
+   "cita": "Mario García Guerras: «Del altar mayor de Santa María». Programa de Fiestas Patronales de Alaejos, 2010."
+  },
+  {
+   "anio": "2010",
+   "slug": "la-escuela-de-ciclismo-de-alaejos",
+   "titulo": "La escuela de ciclismo de Alaejos",
+   "autor": "César Salamanqués Santana",
+   "claves": [
+    "CSS"
+   ],
+   "tema": 5,
+   "palabras": 649,
+   "pdf_pagina": 358,
+   "cita": "César Salamanqués Santana: «La escuela de ciclismo de Alaejos». Programa de Fiestas Patronales de Alaejos, 2010."
+  },
+  {
+   "anio": "2010",
+   "slug": "los-animales-en-el-refranero-popular-alejano",
+   "titulo": "Los animales en el refranero popular alejano",
+   "autor": "Antonio Lucas Varela",
+   "claves": [
+    "ALV"
+   ],
+   "tema": 8,
+   "palabras": 913,
+   "pdf_pagina": 360,
+   "cita": "Antonio Lucas Varela: «Los animales en el refranero popular alejano». Programa de Fiestas Patronales de Alaejos, 2010."
+  },
+  {
+   "anio": "2010",
+   "slug": "monografia-sobre-los-toros-i",
+   "titulo": "Monografía sobre los toros (I)",
+   "autor": "Antonio Lucas Varela",
+   "claves": [
+    "ALV"
+   ],
+   "tema": 6,
+   "palabras": 1787,
+   "pdf_pagina": 363,
+   "cita": "Antonio Lucas Varela: «Monografía sobre los toros (I)». Programa de Fiestas Patronales de Alaejos, 2010."
+  },
+  {
+   "anio": "2010",
+   "slug": "reflexion-sobre-la-fiesta-taurina",
+   "titulo": "Reflexión sobre la fiesta taurina",
+   "autor": "José Sánchez Poncela",
+   "claves": [
+    "SPO"
+   ],
+   "tema": 6,
+   "palabras": 351,
+   "pdf_pagina": 368,
+   "cita": "José Sánchez Poncela: «Reflexión sobre la fiesta taurina». Programa de Fiestas Patronales de Alaejos, 2010."
+  },
+  {
+   "anio": "2011",
+   "slug": "el-castillo-segun-los-documentos",
+   "titulo": "El castillo según los documentos",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 3,
+   "palabras": 2400,
+   "pdf_pagina": 370,
+   "cita": "José Ojeda Nieto: «El castillo según los documentos». Programa de Fiestas Patronales de Alaejos, 2011."
+  },
+  {
+   "anio": "2011",
+   "slug": "la-lapida-sepulcral-de-josepha-mendez",
+   "titulo": "La lápida sepulcral de Josepha Méndez",
+   "autor": "Felipe de Perlines Carretero",
+   "claves": [
+    "PER"
+   ],
+   "tema": 9,
+   "palabras": 1256,
+   "pdf_pagina": 376,
+   "cita": "Felipe de Perlines Carretero: «La lápida sepulcral de Josepha Méndez». Programa de Fiestas Patronales de Alaejos, 2011."
+  },
+  {
+   "anio": "2011",
+   "slug": "monografia-sobre-los-toros-ii",
+   "titulo": "Monografía sobre los toros (II)",
+   "autor": "José Sánchez Poncela",
+   "claves": [
+    "SPO"
+   ],
+   "tema": 6,
+   "palabras": 1663,
+   "pdf_pagina": 379,
+   "cita": "José Sánchez Poncela: «Monografía sobre los toros (II)». Programa de Fiestas Patronales de Alaejos, 2011."
+  },
+  {
+   "anio": "2011",
+   "slug": "la-epidemia-de-colera-de-1834",
+   "titulo": "La epidemia de cólera de 1834",
+   "autor": "José Luis Pérez Muñoz",
+   "claves": [
+    "JLP"
+   ],
+   "tema": 1,
+   "palabras": 3068,
+   "pdf_pagina": 384,
+   "cita": "José Luis Pérez Muñoz: «La epidemia de cólera de 1834». Programa de Fiestas Patronales de Alaejos, 2011."
+  },
+  {
+   "anio": "2012",
+   "slug": "curas-e-iglesias-patrimonios-del-pueblo",
+   "titulo": "Curas e iglesias, patrimonios del pueblo",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 3,
+   "palabras": 1510,
+   "pdf_pagina": 392,
+   "cita": "José Ojeda Nieto: «Curas e iglesias, patrimonios del pueblo». Programa de Fiestas Patronales de Alaejos, 2012."
+  },
+  {
+   "anio": "2012",
+   "slug": "alaejos-un-pueblo-de-pastores",
+   "titulo": "Alaejos... un pueblo de pastores",
+   "autor": "Alejandro Diez Lucas",
+   "claves": [
+    "ADL"
+   ],
+   "tema": 5,
+   "palabras": 1482,
+   "pdf_pagina": 396,
+   "cita": "Alejandro Diez Lucas: «Alaejos... un pueblo de pastores». Programa de Fiestas Patronales de Alaejos, 2012."
+  },
+  {
+   "anio": "2012",
+   "slug": "los-inicios-del-alumbrado-publico",
+   "titulo": "Los inicios del alumbrado público",
+   "autor": "José Luis Pérez Muñoz",
+   "claves": [
+    "JLP"
+   ],
+   "tema": 5,
+   "palabras": 991,
+   "pdf_pagina": 400,
+   "cita": "José Luis Pérez Muñoz: «Los inicios del alumbrado público». Programa de Fiestas Patronales de Alaejos, 2012."
+  },
+  {
+   "anio": "2012",
+   "slug": "casa-del-marques-de-gastanaga",
+   "titulo": "Casa del marqués de Gastañaga",
+   "autor": "Felipe de Perlines Carretero",
+   "claves": [
+    "PER"
+   ],
+   "tema": 9,
+   "palabras": 815,
+   "pdf_pagina": 403,
+   "cita": "Felipe de Perlines Carretero: «Casa del marqués de Gastañaga». Programa de Fiestas Patronales de Alaejos, 2012."
+  },
+  {
+   "anio": "2013",
+   "slug": "el-barrabiajo-y-santalperro-o-charco-verde",
+   "titulo": "El Barrabiajo y Santalperro o Charco Verde",
+   "autor": "Fidel Lucas Castander",
+   "claves": [
+    "FLC"
+   ],
+   "tema": 7,
+   "palabras": 444,
+   "pdf_pagina": 407,
+   "cita": "Fidel Lucas Castander: «El Barrabiajo y Santalperro o Charco Verde». Programa de Fiestas Patronales de Alaejos, 2013."
+  },
+  {
+   "anio": "2013",
+   "slug": "temas-pendientes-de-la-historia-de-alaejos",
+   "titulo": "Temas pendientes de la historia de Alaejos",
+   "autor": "José Ojeda Nieto",
+   "claves": [
+    "OJE"
+   ],
+   "tema": 1,
+   "palabras": 2566,
+   "pdf_pagina": 409,
+   "cita": "José Ojeda Nieto: «Temas pendientes de la historia de Alaejos». Programa de Fiestas Patronales de Alaejos, 2013."
+  },
+  {
+   "anio": "2013",
+   "slug": "observaciones-sobre-tres-nombres-alaejanos-de-aves-arrecajel-ucho-y-ma",
+   "titulo": "Observaciones sobre tres nombres alaejanos de aves: Arrecájel, Ucho y Marica",
+   "autor": "Fernando Benito Álvarez",
+   "claves": [
+    "FBA"
+   ],
+   "tema": 8,
+   "palabras": 1938,
+   "pdf_pagina": 415,
+   "cita": "Fernando Benito Álvarez: «Observaciones sobre tres nombres alaejanos de aves: Arrecájel, Ucho y Marica». Programa de Fiestas Patronales de Alaejos, 2013."
+  },
+  {
+   "anio": "2013",
+   "slug": "los-senores-de-alaejos-de-los-fonseca-a-los-duques-de-alba-y-berwick",
+   "titulo": "Los señores de Alaejos: de los Fonseca a los duques de Alba y Berwick",
+   "autor": "José M. Baraja",
+   "claves": [
+    "BAR"
+   ],
+   "tema": 2,
+   "palabras": 1857,
+   "pdf_pagina": 420,
+   "cita": "José M. Baraja: «Los señores de Alaejos: de los Fonseca a los duques de Alba y Berwick». Programa de Fiestas Patronales de Alaejos, 2013."
+  },
+  {
+   "anio": "2013",
+   "slug": "los-escudos-del-obispo-vadillo-adolfo-m-araujo-y-gonzalez-in-memoriam",
+   "titulo": "Los escudos del obispo Vadillo. Adolfo-M Araujo y González. In memoriam",
+   "autor": "Felipe de Perlines Carretero",
+   "claves": [
+    "PER"
+   ],
+   "tema": 9,
+   "palabras": 1465,
+   "pdf_pagina": 424,
+   "cita": "Felipe de Perlines Carretero: «Los escudos del obispo Vadillo. Adolfo-M Araujo y González. In memoriam». Programa de Fiestas Patronales de Alaejos, 2013."
+  },
+  {
+   "anio": "2014",
+   "slug": "el-convento-de-san-francisco-de-alaejos",
+   "titulo": "El convento de San Francisco de Alaejos",
+   "autor": "Almudena Ojeda Torrero",
+   "claves": [
+    "AOT"
+   ],
+   "tema": 3,
+   "palabras": 942,
+   "pdf_pagina": 429,
+   "cita": "Almudena Ojeda Torrero: «El convento de San Francisco de Alaejos». Programa de Fiestas Patronales de Alaejos, 2014."
+  },
+  {
+   "anio": "2014",
+   "slug": "anecdotario-alaejano-ano-1928",
+   "titulo": "Anecdotario alaejano — año 1928",
+   "autor": "Javier Alonso Guinot",
+   "claves": [
+    "GUI"
+   ],
+   "tema": 1,
+   "palabras": 932,
+   "pdf_pagina": 432,
+   "cita": "Javier Alonso Guinot: «Anecdotario alaejano — año 1928». Programa de Fiestas Patronales de Alaejos, 2014."
+  },
+  {
+   "anio": "2014",
+   "slug": "wellington-en-alaejos",
+   "titulo": "Wellington en Alaejos",
+   "autor": "Mario García Guerras",
+   "claves": [
+    "MGR"
+   ],
+   "tema": 1,
+   "palabras": 385,
+   "pdf_pagina": 435,
+   "cita": "Mario García Guerras: «Wellington en Alaejos». Programa de Fiestas Patronales de Alaejos, 2014."
+  },
+  {
+   "anio": "2014",
+   "slug": "alaejos-una-aproximacion-historica-a-su-entorno-natural",
+   "titulo": "Alaejos: una aproximación histórica a su entorno natural",
+   "autor": "Fernando Benito Álvarez",
+   "claves": [
+    "FBA"
+   ],
+   "tema": 7,
+   "palabras": 832,
+   "pdf_pagina": 437,
+   "cita": "Fernando Benito Álvarez: «Alaejos: una aproximación histórica a su entorno natural». Programa de Fiestas Patronales de Alaejos, 2014."
+  },
+  {
+   "anio": "2015",
+   "slug": "el-desliz-de-alaejos-de-juana-de-portugal",
+   "titulo": "El desliz de Alaejos de Juana de Portugal",
+   "autor": "Felipe de Perlines Carretero",
+   "claves": [
+    "PER"
+   ],
+   "tema": 2,
+   "palabras": 1998,
+   "pdf_pagina": 440,
+   "cita": "Felipe de Perlines Carretero: «El desliz de Alaejos de Juana de Portugal». Programa de Fiestas Patronales de Alaejos, 2015."
+  },
+  {
+   "anio": "2015",
+   "slug": "fray-miguel-de-alahejos",
+   "titulo": "Fray Miguel de Alahejos",
+   "autor": "M. G. G.",
+   "claves": [
+    "MGG"
+   ],
+   "tema": 4,
+   "palabras": 577,
+   "pdf_pagina": 445,
+   "cita": "M. G. G.: «Fray Miguel de Alahejos». Programa de Fiestas Patronales de Alaejos, 2015."
+  },
+  {
+   "anio": "2015",
+   "slug": "la-iglesia-de-santa-maria-arreglos-y-reparaciones",
+   "titulo": "La iglesia de Santa María: arreglos y reparaciones",
+   "autor": "Almudena Ojeda Torrero",
+   "claves": [
+    "AOT"
+   ],
+   "tema": 3,
+   "palabras": 1100,
+   "pdf_pagina": 447,
+   "cita": "Almudena Ojeda Torrero: «La iglesia de Santa María: arreglos y reparaciones». Programa de Fiestas Patronales de Alaejos, 2015."
+  },
+  {
+   "anio": "2015",
+   "slug": "don-alejandro-ramirez-blanco",
+   "titulo": "Don Alejandro Ramírez Blanco",
+   "autor": "Javier Alonso Guinot",
+   "claves": [
+    "GUI"
+   ],
+   "tema": 4,
+   "palabras": 1418,
+   "pdf_pagina": 450,
+   "cita": "Javier Alonso Guinot: «Don Alejandro Ramírez Blanco». Programa de Fiestas Patronales de Alaejos, 2015."
+  },
+  {
+   "anio": "2015",
+   "slug": "de-la-novena-a-la-virgen-de-la-casita",
+   "titulo": "De la novena a la Virgen de la Casita",
+   "autor": "José Luis Pérez Muñoz",
+   "claves": [
+    "JLP"
+   ],
+   "tema": 3,
+   "palabras": 3742,
+   "pdf_pagina": 454,
+   "cita": "José Luis Pérez Muñoz: «De la novena a la Virgen de la Casita». Programa de Fiestas Patronales de Alaejos, 2015."
+  },
+  {
+   "anio": "2016",
+   "slug": "don-luis-manuel-de-isla-y-delgado",
+   "titulo": "Don Luis Manuel de Isla y Delgado",
+   "autor": "Felipe de Perlines Carretero",
+   "claves": [
+    "PER"
+   ],
+   "tema": 4,
+   "palabras": 1562,
+   "pdf_pagina": 464,
+   "cita": "Felipe de Perlines Carretero: «Don Luis Manuel de Isla y Delgado». Programa de Fiestas Patronales de Alaejos, 2016."
+  },
+  {
+   "anio": "2016",
+   "slug": "don-andres-de-villamediana",
+   "titulo": "Don Andrés de Villamediana",
+   "autor": "Javier Alonso Guinot",
+   "claves": [
+    "GUI"
+   ],
+   "tema": 4,
+   "palabras": 3585,
+   "pdf_pagina": 468,
+   "cita": "Javier Alonso Guinot: «Don Andrés de Villamediana». Programa de Fiestas Patronales de Alaejos, 2016."
+  },
+  {
+   "anio": "2016",
+   "slug": "analisis-y-evolucion-de-la-pluviometria-de-alaejos",
+   "titulo": "Análisis y evolución de la pluviometría de Alaejos",
+   "autor": "Fernando Benito Álvarez",
+   "claves": [
+    "FBA"
+   ],
+   "tema": 7,
+   "palabras": 1402,
+   "pdf_pagina": 476,
+   "cita": "Fernando Benito Álvarez: «Análisis y evolución de la pluviometría de Alaejos». Programa de Fiestas Patronales de Alaejos, 2016."
+  },
+  {
+   "anio": "2016",
+   "slug": "una-gloria-salamantina-nacida-en-alaejos",
+   "titulo": "Una «gloria salamantina» nacida en Alaejos",
+   "autor": "Almudena Ojeda Torrero",
+   "claves": [
+    "AOT"
+   ],
+   "tema": 4,
+   "palabras": 1157,
+   "pdf_pagina": 480,
+   "cita": "Almudena Ojeda Torrero: «Una «gloria salamantina» nacida en Alaejos». Programa de Fiestas Patronales de Alaejos, 2016."
+  },
+  {
+   "anio": "2016",
+   "slug": "vuelvo-a-vivir",
+   "titulo": "Vuelvo a vivir",
+   "autor": "Charo R. Vega",
+   "claves": [
+    "CRV"
+   ],
+   "tema": 10,
+   "palabras": 184,
+   "pdf_pagina": 483,
+   "cita": "Charo R. Vega: «Vuelvo a vivir». Programa de Fiestas Patronales de Alaejos, 2016."
+  },
+  {
+   "anio": "2017",
+   "slug": "las-mujeres-tambien-hacen-la-historia-de-alaejos",
+   "titulo": "Las mujeres también hacen la historia de Alaejos",
+   "autor": "Victoria Martínez Sogorb",
+   "claves": [
+    "VMS"
+   ],
+   "tema": 1,
+   "palabras": 1462,
+   "pdf_pagina": 486,
+   "cita": "Victoria Martínez Sogorb: «Las mujeres también hacen la historia de Alaejos». Programa de Fiestas Patronales de Alaejos, 2017."
+  },
+  {
+   "anio": "2017",
+   "slug": "apuntes-sobre-el-senorio-de-alaejos",
+   "titulo": "Apuntes sobre el señorío de Alaejos",
+   "autor": "Javier Alonso Guinot",
+   "claves": [
+    "GUI"
+   ],
+   "tema": 2,
+   "palabras": 6894,
+   "pdf_pagina": 490,
+   "cita": "Javier Alonso Guinot: «Apuntes sobre el señorío de Alaejos». Programa de Fiestas Patronales de Alaejos, 2017."
+  },
+  {
+   "anio": "2017",
+   "slug": "a-proposito-del-castillo",
+   "titulo": "A propósito del castillo",
+   "autor": "José M. Baraja",
+   "claves": [
+    "BAR"
+   ],
+   "tema": 3,
+   "palabras": 1943,
+   "pdf_pagina": 506,
+   "cita": "José M. Baraja: «A propósito del castillo». Programa de Fiestas Patronales de Alaejos, 2017."
+  },
+  {
+   "anio": "2017",
+   "slug": "tres-cosas-te-pido",
+   "titulo": "«Tres cosas te pido»",
+   "autor": "M. G.",
+   "claves": [
+    "MG"
+   ],
+   "tema": 8,
+   "palabras": 519,
+   "pdf_pagina": 511,
+   "cita": "M. G.: ««Tres cosas te pido»». Programa de Fiestas Patronales de Alaejos, 2017."
+  },
+  {
+   "anio": "2018",
+   "slug": "altar-de-san-miguel-arcangel",
+   "titulo": "Altar de San Miguel Arcángel",
+   "autor": "Felipe de Perlines Carretero y Jorge Mangas Peña",
+   "claves": [
+    "PER",
+    "JMP"
+   ],
+   "tema": 3,
+   "palabras": 2340,
+   "pdf_pagina": 514,
+   "cita": "Felipe de Perlines Carretero y Jorge Mangas Peña: «Altar de San Miguel Arcángel». Programa de Fiestas Patronales de Alaejos, 2018."
+  },
+  {
+   "anio": "2018",
+   "slug": "un-alaejano-en-la-guerra-de-cuba-1895-1898",
+   "titulo": "Un alaejano en la guerra de Cuba (1895-1898)",
+   "autor": "Isidoro Hernández Nieto",
+   "claves": [
+    "IHN"
+   ],
+   "tema": 1,
+   "palabras": 1763,
+   "pdf_pagina": 520,
+   "cita": "Isidoro Hernández Nieto: «Un alaejano en la guerra de Cuba (1895-1898)». Programa de Fiestas Patronales de Alaejos, 2018."
+  },
+  {
+   "anio": "2018",
+   "slug": "dichos-y-refranes-de-alaejos",
+   "titulo": "Dichos y refranes de Alaejos",
+   "autor": "Armando Caballero",
+   "claves": [
+    "ACA"
+   ],
+   "tema": 8,
+   "palabras": 428,
+   "pdf_pagina": 524,
+   "cita": "Armando Caballero: «Dichos y refranes de Alaejos». Programa de Fiestas Patronales de Alaejos, 2018."
+  },
+  {
+   "anio": "2018",
+   "slug": "ya-que-llega-la-temporada-hablemos-de-codornices",
+   "titulo": "Ya que llega la temporada, hablemos de codornices",
+   "autor": "Fernando Benito Álvarez",
+   "claves": [
+    "FBA"
+   ],
+   "tema": 7,
+   "palabras": 1674,
+   "pdf_pagina": 527,
+   "cita": "Fernando Benito Álvarez: «Ya que llega la temporada, hablemos de codornices». Programa de Fiestas Patronales de Alaejos, 2018."
+  },
+  {
+   "anio": "2018",
+   "slug": "la-guerra-de-la-independencia-en-alaejos",
+   "titulo": "La guerra de la Independencia en Alaejos",
+   "autor": "Javier Alonso Guinot",
+   "claves": [
+    "GUI"
+   ],
+   "tema": 1,
+   "palabras": 3330,
+   "pdf_pagina": 531,
+   "cita": "Javier Alonso Guinot: «La guerra de la Independencia en Alaejos». Programa de Fiestas Patronales de Alaejos, 2018."
+  },
+  {
+   "anio": "2018",
+   "slug": "la-casita",
+   "titulo": "La Casita",
+   "autor": "José M. Baraja",
+   "claves": [
+    "BAR"
+   ],
+   "tema": 3,
+   "palabras": 1348,
+   "pdf_pagina": 539,
+   "cita": "José M. Baraja: «La Casita». Programa de Fiestas Patronales de Alaejos, 2018."
+  },
+  {
+   "anio": "2019",
+   "slug": "sobre-la-desamortizacion",
+   "titulo": "Sobre la desamortización",
+   "autor": "Almudena Ojeda Torrero",
+   "claves": [
+    "AOT"
+   ],
+   "tema": 5,
+   "palabras": 699,
+   "pdf_pagina": 543,
+   "cita": "Almudena Ojeda Torrero: «Sobre la desamortización». Programa de Fiestas Patronales de Alaejos, 2019."
+  },
+  {
+   "anio": "2019",
+   "slug": "la-plaza-de-la-constitucion-de-1869-y-la-i-republica-en-alaejos",
+   "titulo": "La plaza de la Constitución de 1869 y la I República en Alaejos",
+   "autor": "Noé León",
+   "claves": [
+    "NOE"
+   ],
+   "tema": 1,
+   "palabras": 1868,
+   "pdf_pagina": 545,
+   "cita": "Noé León: «La plaza de la Constitución de 1869 y la I República en Alaejos». Programa de Fiestas Patronales de Alaejos, 2019."
+  },
+  {
+   "anio": "2019",
+   "slug": "curiosidades-a-la-vieja-usanza",
+   "titulo": "Curiosidades. A la vieja usanza",
+   "autor": "Armando Caballero",
+   "claves": [
+    "ACA"
+   ],
+   "tema": 8,
+   "palabras": 226,
+   "pdf_pagina": 549,
+   "cita": "Armando Caballero: «Curiosidades. A la vieja usanza». Programa de Fiestas Patronales de Alaejos, 2019."
+  },
+  {
+   "anio": "2019",
+   "slug": "arrendamiento-de-la-barbechera-despojo-de-espiga-y-hoja-de-vinedo",
+   "titulo": "Arrendamiento de la Barbechera, despojo de espiga y hoja de viñedo",
+   "autor": "Sin firma",
+   "claves": [
+    "SF"
+   ],
+   "tema": 5,
+   "palabras": 1033,
+   "pdf_pagina": 551,
+   "cita": "Anónimo: «Arrendamiento de la Barbechera, despojo de espiga y hoja de viñedo». Programa de Fiestas Patronales de Alaejos, 2019."
+  },
+  {
+   "anio": "2019",
+   "slug": "pliego-de-condiciones-para-el-arriendo-de-la-guarderia",
+   "titulo": "Pliego de condiciones para el arriendo de la guardería",
+   "autor": "Sin firma",
+   "claves": [
+    "SF"
+   ],
+   "tema": 5,
+   "palabras": 992,
+   "pdf_pagina": 554,
+   "cita": "Anónimo: «Pliego de condiciones para el arriendo de la guardería». Programa de Fiestas Patronales de Alaejos, 2019."
+  },
+  {
+   "anio": "2019",
+   "slug": "los-pagos-del-termino-de-alaejos",
+   "titulo": "Los pagos del término de Alaejos",
+   "autor": "Martín Morales",
+   "claves": [
+    "MMO"
+   ],
+   "tema": 7,
+   "palabras": 673,
+   "pdf_pagina": 557,
+   "cita": "Martín Morales: «Los pagos del término de Alaejos». Programa de Fiestas Patronales de Alaejos, 2019."
+  },
+  {
+   "anio": "2020",
+   "slug": "apuntes-sobre-el-estado-de-la-sanidad-en-alaejos-en-el-siglo-xix",
+   "titulo": "Apuntes sobre el estado de la sanidad en Alaejos en el siglo XIX",
+   "autor": "Javier Alonso Guinot",
+   "claves": [
+    "GUI"
+   ],
+   "tema": 1,
+   "palabras": 3488,
+   "pdf_pagina": 565,
+   "cita": "Javier Alonso Guinot: «Apuntes sobre el estado de la sanidad en Alaejos en el siglo XIX». Programa de Fiestas Patronales de Alaejos, 2020."
+  },
+  {
+   "anio": "2020",
+   "slug": "santa-maria",
+   "titulo": "Santa María",
+   "autor": "José M. Baraja",
+   "claves": [
+    "BAR"
+   ],
+   "tema": 3,
+   "palabras": 1800,
+   "pdf_pagina": 569,
+   "cita": "José M. Baraja: «Santa María». Programa de Fiestas Patronales de Alaejos, 2020."
+  },
+  {
+   "anio": "2020",
+   "slug": "apendice-d-antonio-hernandez-morejon",
+   "titulo": "Apéndice: D. Antonio Hernández Morejón",
+   "autor": "Javier Alonso Guinot",
+   "claves": [
+    "GUI"
+   ],
+   "tema": 4,
+   "palabras": 803,
+   "pdf_pagina": 577,
+   "cita": "Javier Alonso Guinot: «Apéndice: D. Antonio Hernández Morejón». Programa de Fiestas Patronales de Alaejos, 2020."
+  },
+  {
+   "anio": "2020",
+   "slug": "frases-y-dichos-populares",
+   "titulo": "Frases y dichos populares",
+   "autor": "Armando Caballero",
+   "claves": [
+    "ACA"
+   ],
+   "tema": 8,
+   "palabras": 772,
+   "pdf_pagina": 579,
+   "cita": "Armando Caballero: «Frases y dichos populares». Programa de Fiestas Patronales de Alaejos, 2020."
+  },
+  {
+   "anio": "2021",
+   "slug": "marcha-de-concienciacion-contra-la-violencia-de-genero",
+   "titulo": "Marcha de concienciación contra la violencia de género",
+   "autor": "Alicia Salamanqués Santana",
+   "claves": [
+    "ASS"
+   ],
+   "tema": 11,
+   "palabras": 285,
+   "pdf_pagina": 583,
+   "cita": "Alicia Salamanqués Santana: «Marcha de concienciación contra la violencia de género». Programa de Fiestas Patronales de Alaejos, 2021."
+  },
+  {
+   "anio": "2021",
+   "slug": "historias-del-conventillo",
+   "titulo": "Historias del Conventillo",
+   "autor": "Javier Alonso Guinot",
+   "claves": [
+    "GUI"
+   ],
+   "tema": 3,
+   "palabras": 3935,
+   "pdf_pagina": 584,
+   "cita": "Javier Alonso Guinot: «Historias del Conventillo». Programa de Fiestas Patronales de Alaejos, 2021."
+  },
+  {
+   "anio": "2021",
+   "slug": "serafin-puertas-nuestro-escritor-desconocido",
+   "titulo": "Serafín Puertas: nuestro escritor desconocido",
+   "autor": "M. G.",
+   "claves": [
+    "MG"
+   ],
+   "tema": 4,
+   "palabras": 352,
+   "pdf_pagina": 593,
+   "cita": "M. G.: «Serafín Puertas: nuestro escritor desconocido». Programa de Fiestas Patronales de Alaejos, 2021."
+  },
+  {
+   "anio": "2021",
+   "slug": "el-ferrocarril-un-sueno-el-suceso-de-alaejos-una-realidad",
+   "titulo": "El ferrocarril, un sueño. El suceso de Alaejos, una realidad",
+   "autor": "Noé León",
+   "claves": [
+    "NOE"
+   ],
+   "tema": 5,
+   "palabras": 1246,
+   "pdf_pagina": 594,
+   "cita": "Noé León: «El ferrocarril, un sueño. El suceso de Alaejos, una realidad». Programa de Fiestas Patronales de Alaejos, 2021."
+  },
+  {
+   "anio": "2021",
+   "slug": "los-ilustrados",
+   "titulo": "Los ilustrados",
+   "autor": "José M. Baraja",
+   "claves": [
+    "BAR"
+   ],
+   "tema": 1,
+   "palabras": 1745,
+   "pdf_pagina": 597,
+   "cita": "José M. Baraja: «Los ilustrados». Programa de Fiestas Patronales de Alaejos, 2021."
+  },
+  {
+   "anio": "2022",
+   "slug": "los-secretos-de-san-pedro",
+   "titulo": "Los secretos de San Pedro",
+   "autor": "José M. Baraja",
+   "claves": [
+    "BAR"
+   ],
+   "tema": 3,
+   "palabras": 705,
+   "pdf_pagina": 602,
+   "cita": "José M. Baraja: «Los secretos de San Pedro». Programa de Fiestas Patronales de Alaejos, 2022."
+  },
+  {
+   "anio": "2022",
+   "slug": "las-espigadoras-de-1803-y-el-fuego-de-1881",
+   "titulo": "Las espigadoras de 1803 y el fuego de 1881",
+   "autor": "Noé León",
+   "claves": [
+    "NOE"
+   ],
+   "tema": 1,
+   "palabras": 2319,
+   "pdf_pagina": 604,
+   "cita": "Noé León: «Las espigadoras de 1803 y el fuego de 1881». Programa de Fiestas Patronales de Alaejos, 2022."
+  },
+  {
+   "anio": "2022",
+   "slug": "cronologia-de-la-historia-postal-historia-de-correos",
+   "titulo": "Cronología de la historia postal. Historia de Correos",
+   "autor": "José Sánchez Poncela",
+   "claves": [
+    "SPO"
+   ],
+   "tema": 5,
+   "palabras": 1072,
+   "pdf_pagina": 609,
+   "cita": "José Sánchez Poncela: «Cronología de la historia postal. Historia de Correos». Programa de Fiestas Patronales de Alaejos, 2022."
+  },
+  {
+   "anio": "2022",
+   "slug": "altar-de-san-antonio-de-padua",
+   "titulo": "Altar de San Antonio de Padua",
+   "autor": "Felipe de Perlines Carretero",
+   "claves": [
+    "PER"
+   ],
+   "tema": 3,
+   "palabras": 1281,
+   "pdf_pagina": 612,
+   "cita": "Felipe de Perlines Carretero: «Altar de San Antonio de Padua». Programa de Fiestas Patronales de Alaejos, 2022."
+  },
+  {
+   "anio": "2022",
+   "slug": "los-franciscanos-descalzos-en-alaejos-historias-del-conventillo-contin",
+   "titulo": "Los franciscanos descalzos en Alaejos. Historias del Conventillo (continuación)",
+   "autor": "Javier Alonso Guinot",
+   "claves": [
+    "GUI"
+   ],
+   "tema": 3,
+   "palabras": 5201,
+   "pdf_pagina": 615,
+   "cita": "Javier Alonso Guinot: «Los franciscanos descalzos en Alaejos. Historias del Conventillo (continuación)». Programa de Fiestas Patronales de Alaejos, 2022."
+  },
+  {
+   "anio": "2023",
+   "slug": "acuerdo-de-paz-entre-alaejos-y-nava-del-rey",
+   "titulo": "Acuerdo de paz entre Alaejos y Nava del Rey",
+   "autor": "Noé León",
+   "claves": [
+    "NOE"
+   ],
+   "tema": 1,
+   "palabras": 1384,
+   "pdf_pagina": 628,
+   "cita": "Noé León: «Acuerdo de paz entre Alaejos y Nava del Rey». Programa de Fiestas Patronales de Alaejos, 2023."
+  },
+  {
+   "anio": "2023",
+   "slug": "cantareros",
+   "titulo": "Cantareros",
+   "autor": "José M. Baraja",
+   "claves": [
+    "BAR"
+   ],
+   "tema": 5,
+   "palabras": 1545,
+   "pdf_pagina": 631,
+   "cita": "José M. Baraja: «Cantareros». Programa de Fiestas Patronales de Alaejos, 2023."
+  },
+  {
+   "anio": "2023",
+   "slug": "de-la-tauromaquia-prohibiciones-y-otros-argumentos",
+   "titulo": "De la tauromaquia, prohibiciones y otros argumentos",
+   "autor": "José Sánchez Poncela",
+   "claves": [
+    "SPO"
+   ],
+   "tema": 6,
+   "palabras": 2523,
+   "pdf_pagina": 635,
+   "cita": "José Sánchez Poncela: «De la tauromaquia, prohibiciones y otros argumentos». Programa de Fiestas Patronales de Alaejos, 2023."
+  },
+  {
+   "anio": "2023",
+   "slug": "alaejos-recursos-hidricos",
+   "titulo": "Alaejos — recursos hídricos",
+   "autor": "Antonio Lucas Varela",
+   "claves": [
+    "ALV"
+   ],
+   "tema": 7,
+   "palabras": 2806,
+   "pdf_pagina": 641,
+   "cita": "Antonio Lucas Varela: «Alaejos — recursos hídricos». Programa de Fiestas Patronales de Alaejos, 2023."
+  },
+  {
+   "anio": "2023",
+   "slug": "d-feliciano-muniz-costales-y-las-raices-carlistas-en-alaejos",
+   "titulo": "D. Feliciano Muñiz Costales y las raíces carlistas en Alaejos",
+   "autor": "Javier Alonso Guinot",
+   "claves": [
+    "GUI"
+   ],
+   "tema": 4,
+   "palabras": 3607,
+   "pdf_pagina": 647,
+   "cita": "Javier Alonso Guinot: «D. Feliciano Muñiz Costales y las raíces carlistas en Alaejos». Programa de Fiestas Patronales de Alaejos, 2023."
+  },
+  {
+   "anio": "2024",
+   "slug": "el-renacer-del-teatro",
+   "titulo": "El renacer del teatro",
+   "autor": "Charo R. Vega",
+   "claves": [
+    "CRV"
+   ],
+   "tema": 10,
+   "palabras": 138,
+   "pdf_pagina": 657,
+   "cita": "Charo R. Vega: «El renacer del teatro». Programa de Fiestas Patronales de Alaejos, 2024."
+  },
+  {
+   "anio": "2024",
+   "slug": "oficios-desaparecidos",
+   "titulo": "Oficios desaparecidos",
+   "autor": "Antonio Lucas Varela",
+   "claves": [
+    "ALV"
+   ],
+   "tema": 5,
+   "palabras": 2622,
+   "pdf_pagina": 659,
+   "cita": "Antonio Lucas Varela: «Oficios desaparecidos». Programa de Fiestas Patronales de Alaejos, 2024."
+  },
+  {
+   "anio": "2024",
+   "slug": "de-los-origenes-en-el-reino-de-castilla",
+   "titulo": "De los orígenes en el reino de Castilla",
+   "autor": "Noé León",
+   "claves": [
+    "NOE"
+   ],
+   "tema": 1,
+   "palabras": 1030,
+   "pdf_pagina": 665,
+   "cita": "Noé León: «De los orígenes en el reino de Castilla». Programa de Fiestas Patronales de Alaejos, 2024."
+  },
+  {
+   "anio": "2024",
+   "slug": "gonzaleros",
+   "titulo": "Gonzaleros",
+   "autor": "José M. Baraja",
+   "claves": [
+    "BAR"
+   ],
+   "tema": 5,
+   "palabras": 1025,
+   "pdf_pagina": 668,
+   "cita": "José M. Baraja: «Gonzaleros». Programa de Fiestas Patronales de Alaejos, 2024."
+  },
+  {
+   "anio": "2024",
+   "slug": "contestando-a-mis-lectores",
+   "titulo": "Contestando a mis lectores",
+   "autor": "José María Casado Aguado",
+   "claves": [
+    "JCA2"
+   ],
+   "tema": 2,
+   "palabras": 2239,
+   "pdf_pagina": 671,
+   "cita": "José María Casado Aguado: «Contestando a mis lectores». Programa de Fiestas Patronales de Alaejos, 2024."
+  },
+  {
+   "anio": "2025",
+   "slug": "3-plazas-3",
+   "titulo": "3 plazas 3",
+   "autor": "Alfredo Otero Villoria",
+   "claves": [
+    "AOV"
+   ],
+   "tema": 10,
+   "palabras": 582,
+   "pdf_pagina": 677,
+   "cita": "Alfredo Otero Villoria: «3 plazas 3». Programa de Fiestas Patronales de Alaejos, 2025."
+  },
+  {
+   "anio": "2025",
+   "slug": "un-pueblo-dos-iglesias-una-parroquia",
+   "titulo": "Un pueblo, dos iglesias... una parroquia",
+   "autor": "Noé León",
+   "claves": [
+    "NOE"
+   ],
+   "tema": 3,
+   "palabras": 1627,
+   "pdf_pagina": 682,
+   "cita": "Noé León: «Un pueblo, dos iglesias... una parroquia». Programa de Fiestas Patronales de Alaejos, 2025."
+  },
+  {
+   "anio": "2025",
+   "slug": "donato-jimenez-bibiano-la-huella-de-un-santo-en-alaejos",
+   "titulo": "Donato Jiménez Bibiano: la huella de un santo en Alaejos",
+   "autor": "Pablo Santana",
+   "claves": [
+    "PSA"
+   ],
+   "tema": 4,
+   "palabras": 1479,
+   "pdf_pagina": 686,
+   "cita": "Pablo Santana: «Donato Jiménez Bibiano: la huella de un santo en Alaejos». Programa de Fiestas Patronales de Alaejos, 2025."
+  },
+  {
+   "anio": "2025",
+   "slug": "campanas-de-alaejos-y-sus-toques",
+   "titulo": "Campanas de Alaejos y sus toques",
+   "autor": "Mariano Rubio Martínez, Agustín Rapado Rodríguez y Carlos Rubio Corrales",
+   "claves": [
+    "MRM",
+    "ARR",
+    "CRC"
+   ],
+   "tema": 3,
+   "palabras": 951,
+   "pdf_pagina": 690,
+   "cita": "Mariano Rubio Martínez, Agustín Rapado Rodríguez y Carlos Rubio Corrales: «Campanas de Alaejos y sus toques». Programa de Fiestas Patronales de Alaejos, 2025."
+  },
+  {
+   "anio": "2025",
+   "slug": "no-volveran",
+   "titulo": "No volverán",
+   "autor": "Antonio Lucas Varela",
+   "claves": [
+    "ALV"
+   ],
+   "tema": 8,
+   "palabras": 2792,
+   "pdf_pagina": 694,
+   "cita": "Antonio Lucas Varela: «No volverán». Programa de Fiestas Patronales de Alaejos, 2025."
+  },
+  {
+   "anio": "2026",
+   "slug": "carceles-contra-espadas",
+   "titulo": "Cárceles contra espadas",
+   "autor": "Noé León",
+   "claves": [
+    "NOE"
+   ],
+   "tema": 1,
+   "palabras": 2090,
+   "pdf_pagina": 702,
+   "cita": "Noé León: «Cárceles contra espadas». Programa de Fiestas Patronales de Alaejos, 2026."
+  },
+  {
+   "anio": "2026",
+   "slug": "si-a-la-tauromaquia-no-a-la-taurofobia",
+   "titulo": "Sí a la tauromaquia, no a la taurofobia",
+   "autor": "José Sánchez Poncela",
+   "claves": [
+    "SPO"
+   ],
+   "tema": 6,
+   "palabras": 4498,
+   "pdf_pagina": 707,
+   "cita": "José Sánchez Poncela: «Sí a la tauromaquia, no a la taurofobia». Programa de Fiestas Patronales de Alaejos, 2026."
+  }
+ ]
+}
