@@ -148,6 +148,8 @@ PAGINAS = [
      "El Sindicato Agrícola de Alaejos (1913), la Hermandad de Labradores y la Cámara Agraria: presidentes, acuerdos, jornales y precios, y los Socorros Mutuos de la Casita."),
     ("historia-del-pueblo/comercios-oficios-y-servicios-del-siglo-xx/", "h-comercios", "historia", "Comercios, oficios y servicios del siglo XX",
      "Quién llevaba cada tienda, taberna, taller y servicio de Alaejos entre 1901 y 2000, y la lista de alcaldes del siglo, según Antonio Lucas Varela."),
+    ("historia-del-pueblo/historietas-chascarrillos-y-romances/", "h-chascarrillos", "historia", "Historietas, chascarrillos y romances",
+     "Anécdotas del pueblo, retahílas de niños, dichos del trabajo y los romances y canciones que se cantaban en Alaejos, según Antonio Lucas Varela."),
     ("historia-del-pueblo/juegos-de-antes/", "h-juegos", "historia", "Juegos de antes",
      "A qué jugaban los niños de Alaejos a mediados del siglo XX, según Antonio Lucas Varela."),
     ("historia-del-pueblo/la-matanza/", "h-matanza", "historia", "La matanza",

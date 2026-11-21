@@ -1,6 +1,11 @@
 [
  {
   "fecha": "2026-11-21",
+  "titulo": "Lo que añade «Alaejos. Una antropología cultural» (II)",
+  "html": "Segunda tanda del libro de Antonio Lucas Varela: el <a href=\"{{BASE}}biblioteca/vocabulario/\">Vocabulario</a> crece con 676 palabras y 268 refranes y locuciones nuevos, marcados «2024»; una página nueva, <a href=\"{{BASE}}historia-del-pueblo/historietas-chascarrillos-y-romances/\">Historietas, chascarrillos y romances</a>, con las anécdotas del pueblo, las retahílas de los niños y la letra de los romances y canciones; los <a href=\"{{BASE}}historia-del-pueblo/dichos-cabanuelas-y-habla/#supersticiones-y-creencias\">agüeros</a> y la rosa de los vientos de Alaejos; y en <a href=\"{{BASE}}fiestas-y-eventos/fiestas-de-la-virgen-de-la-casita/#la-charambita-y-los-danzantes\">las fiestas de la Casita</a>, la fecha de fundación de la Cofradía de Bailarines, 1971, que da el autor, que redactó sus estatutos, y lo que cuenta de la Mariseca."
+ },
+ {
+  "fecha": "2026-11-21",
   "titulo": "Lo que añade «Alaejos. Una antropología cultural» (I)",
   "html": "Empezamos a incorporar el libro que Antonio Lucas Varela publicó en 2024, con su autorización. Tres páginas nuevas: <a href=\"{{BASE}}historia-del-pueblo/el-agua-y-los-pozos/\">El agua del término y los pozos</a>, con los 36 lavajos, las fuentes, los arroyos y los pozos del campo uno por uno, quién los picó y cuánto costaron; <a href=\"{{BASE}}historia-del-pueblo/el-sindicato-agricola-y-las-sociedades/\">El Sindicato Agrícola y las sociedades</a>, de 1913 a la Cámara Agraria, con sus presidentes, acuerdos, jornales y precios y los Socorros Mutuos de la Casita; y <a href=\"{{BASE}}historia-del-pueblo/comercios-oficios-y-servicios-del-siglo-xx/\">Comercios, oficios y servicios del siglo XX</a>, con quién llevaba cada tienda, taller y servicio y la lista de alcaldes del siglo. El libro aclara además las fechas del agua corriente: 1965 el pozo y el depósito, 1967 la acometida a las casas."
  },
