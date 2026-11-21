@@ -211,6 +211,8 @@ PAGINAS = [
      "Las 20 grabaciones del disco Recuerdos musicales de Alaejos: gozos, cirios y rogativas a la Virgen de la Casita, el himno, las dianas y el ramo."),
     ("biblioteca/vocabulario/", "vocabulario", "biblioteca", "Vocabulario de Alaejos",
      "Las palabras de Alaejos que recogió Antonio Lucas Varela en Arrecájel (1998): 1.068 localismos, arcaísmos, pagos y lugares del término, y 190 locuciones."),
+    ("biblioteca/alaejos-a-la-antigua-usanza/", "antigua-usanza", "biblioteca", "Alaejos, a la antigua usanza",
+     "Palabras, frases populares, refranes y juegos de Alaejos recopilados por Armando Caballero Morante en 1997: lo que no recoge el Vocabulario de Lucas Varela."),
     ("biblioteca/glosario/", "glosario", "biblioteca", "Glosario",
      "Palabras de los documentos antiguos y del habla de Alaejos explicadas: beneficiado, cilla, diezmo, linaje, mayorazgo, Mesta, cabañuelas, lavajo y otras."),
     ("novedades/", "novedades", "novedades", "Novedades",
