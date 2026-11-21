@@ -207,6 +207,8 @@ PAGINAS = [
      "Textos sobre Alaejos: los 178 artículos de los programas de fiestas (1954–2026), los programas originales, las novenas, el cancionero y el vocabulario de Arrecájel."),
     ("biblioteca/alaejos-nuestra-historia-fotografica/", "historia-fotografica", "biblioteca", "Alaejos, nuestra historia fotográfica",
      "El álbum Alaejos, nuestra historia fotográfica completo: 176 fotografías de Pedro Varela, Pedro Perlines y las familias del pueblo, con sus pies de foto."),
+    ("biblioteca/imagenes-de-alaejos-una-antropologia-cultural/", "antropologia-imagenes", "biblioteca", "Las imágenes de «Alaejos. Una antropología cultural»",
+     "Las 144 fotografías, dibujos y documentos del libro de Antonio Lucas Varela (2024): pozos, oficios, comercios, cofradías, fiestas, juegos y objetos del pueblo."),
     ("biblioteca/novena-de-la-virgen-de-la-casita/", "novena", "biblioteca", "La novena de la Virgen de la Casita",
      "Las novenas a la Virgen de la Casita, patrona de Alaejos, en PDF: la original de 1865, la «Historia y novena» de 1952 y la edición actual de 2026."),
     ("biblioteca/bibliografia/", "bibliografia", "biblioteca", "Bibliografía",
