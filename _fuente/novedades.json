@@ -1,5 +1,10 @@
 [
  {
+  "fecha": "2026-11-21",
+  "titulo": "Cinco enlaces arreglados",
+  "html": "Cinco enlaces de <a href=\"{{BASE}}historia-del-pueblo/cocina-tradicional/\">Cocina tradicional</a>, <a href=\"{{BASE}}historia-del-pueblo/oficios-agua-y-vida-diaria/\">Oficios, agua y vida diaria</a> y <a href=\"{{BASE}}historia-del-pueblo/dichos-cabanuelas-y-habla/\">Dichos, cabañuelas y habla</a>, añadidos el día 19, llevaban a una página de error. Ya funcionan."
+ },
+ {
   "fecha": "2026-11-19",
   "titulo": "Las calles de Alaejos",
   "html": "Nueva página, <a href=\"{{BASE}}historia-del-pueblo/las-calles-de-alaejos/\">Las calles de Alaejos</a>, con el estudio del callejero de Antonio Lucas Varela en <em>Cerramícalo</em> (2002): el origen del nombre de cada calle y plaza, los nombres populares, como la Calle sin Dios, la Calleja Cerrada o la calle de la Cárcel, el plano de 2001 y su hipótesis sobre quiénes repoblaron la aldea de Falafeios."
