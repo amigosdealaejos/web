@@ -155,7 +155,7 @@ PAGINAS = [
     ("historia-del-pueblo/el-clima-en-datos/", "clima", "historia", "El clima de Alaejos en datos",
      "Lluvias y temperaturas de Alaejos día a día desde 1940: cada año comparado con lo normal, heladas, calores, récords y el tiempo de cualquier fecha."),
     ("historia-del-pueblo/la-poblacion-en-datos/", "poblacion", "historia", "La población de Alaejos en datos",
-     "Los habitantes de Alaejos desde el siglo XV hasta hoy: vecindarios, censos y padrón en gráficos, el ritmo de cada época, hombres y mujeres, edades y origen de los vecinos."),
+     "Los habitantes de Alaejos desde el siglo XV hasta hoy en gráficos: vecindarios, censos y padrón, el ritmo de cada época, edades y origen de los vecinos."),
     ("historia-del-pueblo/escudo-y-bandera/", "h-escudo", "historia", "Escudo, bandera y distinciones",
      "El escudo de Alaejos y su estrella de los Fonseca, la bandera de 1996, los bastones de mando, los escudos de las casas nobles y los honores municipales."),
     ("historia-del-pueblo/asociaciones-y-lugares-de-encuentro/", "h-vida-social", "historia", "Asociaciones y lugares de encuentro",
@@ -860,6 +860,7 @@ def imagen_og(ruta, titulo, seccion):
 
 def construir():
     comprobar_historial()
+    comprobar_fuentes()
     hoy = date.today().isoformat()
     ESTUDIOS.clear(); PETICIONES.clear(); INDICE.clear()
     titulos_seccion = {k: e for k, e, _ in MENU}
@@ -957,6 +958,18 @@ def avisar_tamanos():
     if mb > SITIO_AVISO_MB:
         print(f"AVISO: el sitio pasa de {SITIO_AVISO_MB} MB. Conviene decidir qué materiales "
               "(PDF, audios, originales de fotos) se guardan fuera del repositorio.")
+
+
+def comprobar_fuentes():
+    """Detiene la construcción si algún texto usa {BASE} con una sola llave: el enlace saldría roto."""
+    import re, sys
+    malos = []
+    for f in sorted((RAIZ / "_fuente" / "paginas").glob("*.html")):
+        for n, linea in enumerate(f.read_text(encoding="utf-8").splitlines(), 1):
+            if re.search(r"(?<!\{)\{BASE\}(?!\})", linea):
+                malos.append(f"  {f.name}, línea {n}")
+    if malos:
+        sys.exit("ERROR: estos enlaces usan {BASE} en lugar de {{BASE}} y saldrían rotos:\n" + "\n".join(malos))
 
 
 def comprobar_historial():
