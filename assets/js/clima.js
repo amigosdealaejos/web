@@ -727,8 +727,14 @@
     }
   }
   function fallo(e) {
+    if (window.console) console.warn("Clima: no se pudieron descargar los datos", e);
+    // Sin datos, los gráficos quedarían vacíos: se ocultan y queda solo la explicación de las fuentes.
+    Array.prototype.forEach.call(document.querySelectorAll(".cl-sec, .cl-barra .cl-control"), function (s) {
+      if (s.getAttribute("aria-labelledby") !== "de-donde-salen-los-datos") s.style.display = "none";
+    });
+    raiz.classList.add("cl-listo");
     estado.innerHTML = "";
-    estado.appendChild(document.createTextNode("No se han podido descargar los datos del clima (" + (e && e.message ? e.message : "sin conexión") + "). "));
+    estado.appendChild(document.createTextNode("El servicio que da los datos del tiempo no responde ahora mismo. Pruebe dentro de un rato. "));
     var b = document.createElement("button");
     b.type = "button"; b.className = "cl-boton"; b.textContent = "Volver a intentarlo";
     b.addEventListener("click", function () { location.reload(); });
