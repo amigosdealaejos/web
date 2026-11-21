@@ -5,6 +5,21 @@
   "html": "Cinco enlaces de <a href=\"{{BASE}}historia-del-pueblo/cocina-tradicional/\">Cocina tradicional</a>, <a href=\"{{BASE}}historia-del-pueblo/oficios-agua-y-vida-diaria/\">Oficios, agua y vida diaria</a> y <a href=\"{{BASE}}historia-del-pueblo/dichos-cabanuelas-y-habla/\">Dichos, cabañuelas y habla</a>, añadidos el día 19, llevaban a una página de error. Ya funcionan."
  },
  {
+  "fecha": "2026-11-21",
+  "titulo": "Lo que añade «Alaejos. Una antropología cultural» (III)",
+  "html": "Última tanda del libro de Antonio Lucas Varela: <a href=\"{{BASE}}biblioteca/imagenes-de-alaejos-una-antropologia-cultural/\">sus 144 fotografías, dibujos y documentos</a> en una página de la biblioteca; los ocho <a href=\"{{BASE}}fiestas-y-eventos/fiestas-de-la-virgen-de-la-casita/\">cirios a la Virgen de la Casita</a>; más historietas, coplas y pullas y la letra del pasodoble «Alaejos» en <a href=\"{{BASE}}historia-del-pueblo/historietas-chascarrillos-y-romances/\">Historietas, chascarrillos y romances</a>; 361 definiciones ampliadas en el <a href=\"{{BASE}}biblioteca/vocabulario/\">Vocabulario</a>; todas las medidas antiguas, las cifras de la ganadería y los nombres de los animales según su edad en <a href=\"{{BASE}}historia-del-pueblo/oficios-agua-y-vida-diaria/\">Oficios</a>; siete juegos más en <a href=\"{{BASE}}historia-del-pueblo/juegos-de-antes/\">Juegos de antes</a>; y la bibliografía completa del libro."
+ },
+ {
+  "fecha": "2026-11-21",
+  "titulo": "Lo que añade «Alaejos. Una antropología cultural» (II)",
+  "html": "Segunda tanda del libro de Antonio Lucas Varela: el <a href=\"{{BASE}}biblioteca/vocabulario/\">Vocabulario</a> crece con 676 palabras y 268 refranes y locuciones nuevos, marcados «2024»; una página nueva, <a href=\"{{BASE}}historia-del-pueblo/historietas-chascarrillos-y-romances/\">Historietas, chascarrillos y romances</a>, con las anécdotas del pueblo, las retahílas de los niños y la letra de los romances y canciones; los <a href=\"{{BASE}}historia-del-pueblo/dichos-cabanuelas-y-habla/#supersticiones-y-creencias\">agüeros</a> y la rosa de los vientos de Alaejos; y en <a href=\"{{BASE}}fiestas-y-eventos/fiestas-de-la-virgen-de-la-casita/#la-charambita-y-los-danzantes\">las fiestas de la Casita</a>, la fecha de fundación de la Cofradía de Bailarines, 1971, que da el autor, que redactó sus estatutos, y lo que cuenta de la Mariseca."
+ },
+ {
+  "fecha": "2026-11-21",
+  "titulo": "Lo que añade «Alaejos. Una antropología cultural» (I)",
+  "html": "Empezamos a incorporar el libro que Antonio Lucas Varela publicó en 2024, con su autorización. Tres páginas nuevas: <a href=\"{{BASE}}historia-del-pueblo/el-agua-y-los-pozos/\">El agua del término y los pozos</a>, con los 36 lavajos, las fuentes, los arroyos y los pozos del campo uno por uno, quién los picó y cuánto costaron; <a href=\"{{BASE}}historia-del-pueblo/el-sindicato-agricola-y-las-sociedades/\">El Sindicato Agrícola y las sociedades</a>, de 1913 a la Cámara Agraria, con sus presidentes, acuerdos, jornales y precios y los Socorros Mutuos de la Casita; y <a href=\"{{BASE}}historia-del-pueblo/comercios-oficios-y-servicios-del-siglo-xx/\">Comercios, oficios y servicios del siglo XX</a>, con quién llevaba cada tienda, taller y servicio y la lista de alcaldes del siglo. El libro aclara además las fechas del agua corriente: 1965 el pozo y el depósito, 1967 la acometida a las casas."
+ },
+ {
   "fecha": "2026-11-19",
   "titulo": "Las calles de Alaejos",
   "html": "Nueva página, <a href=\"{{BASE}}historia-del-pueblo/las-calles-de-alaejos/\">Las calles de Alaejos</a>, con el estudio del callejero de Antonio Lucas Varela en <em>Cerramícalo</em> (2002): el origen del nombre de cada calle y plaza, los nombres populares, como la Calle sin Dios, la Calleja Cerrada o la calle de la Cárcel, el plano de 2001 y su hipótesis sobre quiénes repoblaron la aldea de Falafeios."
@@ -28,6 +43,11 @@
   "fecha": "2026-11-18",
   "titulo": "El álbum «Alaejos, nuestra historia fotográfica»",
   "html": "Publicamos completo, con autorización, el álbum que editó la Fundación Hernández Puertas en homenaje al fotógrafo Pedro Varela Calvo: <a href=\"{{BASE}}biblioteca/alaejos-nuestra-historia-fotografica/\">176 fotografías de la vida del pueblo con sus pies de foto</a>, de los oficios y las escuelas a las fiestas, los toros y las procesiones, retocadas para quitar sombras y brillos. Si reconoce a alguien o sabe el año de alguna, díganoslo."
+ },
+ {
+  "fecha": "2026-11-18",
+  "titulo": "Lo que cuenta «Alaejos, a la antigua usanza» (1997)",
+  "html": "Incorporamos el libro que Armando Caballero Morante recopiló en 1997, con su permiso. Nueva página con <a href=\"{{BASE}}biblioteca/alaejos-a-la-antigua-usanza/\">279 palabras que no están en el Vocabulario de Lucas Varela, 117 frases populares y 61 refranes</a>. Además, <a href=\"{{BASE}}historia-del-pueblo/fotografias-antiguas/#las-fotografias-de-1997\">trece fotografías de vecinos</a> de los años sesenta a los noventa, <a href=\"{{BASE}}historia-del-pueblo/la-matanza/#la-matanza-en-1994\">una matanza de 1994</a>, <a href=\"{{BASE}}historia-del-pueblo/oficios-agua-y-vida-diaria/#como-se-ajustaba-el-trabajo\">cómo se ajustaba el trabajo en el campo</a>, ocho juegos más y una nueva pregunta sobre la Mariseca: ¿toro o vaca?"
  },
  {
   "fecha": "2026-11-18",
