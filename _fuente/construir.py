@@ -1087,7 +1087,8 @@ def listado_autores(base):
         anios = sorted({ARTICULOS[k]["anio"] for k in ks})
         cuando = anios[0] if len(anios) == 1 else f"{anios[0]}–{anios[-1]}"
         bloques.append(f'<h2 id="{x["id"]}">{esc(x["nombre"])} <span class="cuenta">{len(ks)} · {cuando}</span></h2>'
-                       f'<ul class="biblio-prog">{"".join(item_articulo(k, base, False) for k in ks)}</ul>')
+                       + (f'<p class="tema-desc">{x["nota"].replace("{{BASE}}", base)}</p>' if x.get("nota") else "")
+                       + f'<ul class="biblio-prog">{"".join(item_articulo(k, base, False) for k in ks)}</ul>')
     out.append('<nav class="saltos-anios" aria-label="Ir a la letra">' + "".join(f'<a href="#{i}">{l}</a>' for l, i in letras) + "</nav>")
     return "".join(out + bloques)
 

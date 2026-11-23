@@ -93,14 +93,16 @@
    "id": "a-benito-alvarez-jose-manuel"
   },
   {
-   "clave": "ACA",
-   "nombre": "Caballero, Armando",
-   "id": "a-caballero-armando"
+   "clave": "JCA",
+   "nombre": "Caballero Hernández, Jaime",
+   "id": "a-caballero-jaime",
+   "nota": "Firma «Jaime Caballero». Se le identifica, sin confirmar, con el Jaime Caballero Hernández que escribió «Alaejos en la distancia» en <em>Alaejos, del sepia al color</em> (2001)."
   },
   {
-   "clave": "JCA",
-   "nombre": "Caballero, Jaime",
-   "id": "a-caballero-jaime"
+   "clave": "ACA",
+   "nombre": "Caballero Morante, Armando",
+   "id": "a-caballero-armando",
+   "nota": "Autor de <a href=\"{{BASE}}biblioteca/alaejos-a-la-antigua-usanza/\"><em>Alaejos, a la antigua usanza</em></a> (1997)."
   },
   {
    "clave": "JCA2",
@@ -120,7 +122,8 @@
   {
    "clave": "MGR",
    "nombre": "García Guerras, Mario",
-   "id": "a-garcia-guerras-mario"
+   "id": "a-garcia-guerras-mario",
+   "nota": "Incluye los artículos firmados «M. G. G.» (2015) y «M. G.» (2017 y 2021), que se le atribuyen por las iniciales, sin confirmar."
   },
   {
    "clave": "FCG",
@@ -261,16 +264,6 @@
    "clave": "CRV",
    "nombre": "Vega, Charo R.",
    "id": "a-vega-charo-r"
-  },
-  {
-   "clave": "MG",
-   "nombre": "M. G.",
-   "id": "a-m-g"
-  },
-  {
-   "clave": "MGG",
-   "nombre": "M. G. G.",
-   "id": "a-m-g-g"
   },
   {
    "clave": "PSB",
@@ -587,14 +580,14 @@
    "anio": "1986",
    "slug": "alaejos-hace-treinta-y-dos-anos",
    "titulo": "Alaejos, hace treinta y dos años",
-   "autor": "Armando Caballero",
+   "autor": "Armando Caballero Morante",
    "claves": [
     "ACA"
    ],
    "tema": 5,
    "palabras": 723,
    "pdf_pagina": 70,
-   "cita": "Armando Caballero: «Alaejos, hace treinta y dos años». Programa de Fiestas Patronales de Alaejos, 1986."
+   "cita": "Armando Caballero Morante: «Alaejos, hace treinta y dos años». Programa de Fiestas Patronales de Alaejos, 1986."
   },
   {
    "anio": "1986",
@@ -795,14 +788,14 @@
    "anio": "1990",
    "slug": "toros-en-alaejos",
    "titulo": "Toros en Alaejos",
-   "autor": "Jaime Caballero",
+   "autor": "Jaime Caballero Hernández",
    "claves": [
     "JCA"
    ],
    "tema": 6,
    "palabras": 1458,
    "pdf_pagina": 128,
-   "cita": "Jaime Caballero: «Toros en Alaejos». Programa de Fiestas Patronales de Alaejos, 1990."
+   "cita": "Jaime Caballero Hernández (firmado «Jaime Caballero»): «Toros en Alaejos». Programa de Fiestas Patronales de Alaejos, 1990."
   },
   {
    "anio": "1990",
@@ -1875,14 +1868,14 @@
    "anio": "2015",
    "slug": "fray-miguel-de-alahejos",
    "titulo": "Fray Miguel de Alahejos",
-   "autor": "M. G. G.",
+   "autor": "Mario García Guerras",
    "claves": [
-    "MGG"
+    "MGR"
    ],
    "tema": 4,
    "palabras": 577,
    "pdf_pagina": 445,
-   "cita": "M. G. G.: «Fray Miguel de Alahejos». Programa de Fiestas Patronales de Alaejos, 2015."
+   "cita": "Mario García Guerras (firmado «M. G. G.»): «Fray Miguel de Alahejos». Programa de Fiestas Patronales de Alaejos, 2015."
   },
   {
    "anio": "2015",
@@ -2031,14 +2024,14 @@
    "anio": "2017",
    "slug": "tres-cosas-te-pido",
    "titulo": "«Tres cosas te pido»",
-   "autor": "M. G.",
+   "autor": "Mario García Guerras",
    "claves": [
-    "MG"
+    "MGR"
    ],
    "tema": 8,
    "palabras": 519,
    "pdf_pagina": 511,
-   "cita": "M. G.: ««Tres cosas te pido»». Programa de Fiestas Patronales de Alaejos, 2017."
+   "cita": "Mario García Guerras (firmado «M. G.»): «“Tres cosas te pido”». Programa de Fiestas Patronales de Alaejos, 2017."
   },
   {
    "anio": "2018",
@@ -2071,14 +2064,14 @@
    "anio": "2018",
    "slug": "dichos-y-refranes-de-alaejos",
    "titulo": "Dichos y refranes de Alaejos",
-   "autor": "Armando Caballero",
+   "autor": "Armando Caballero Morante",
    "claves": [
     "ACA"
    ],
    "tema": 8,
    "palabras": 428,
    "pdf_pagina": 524,
-   "cita": "Armando Caballero: «Dichos y refranes de Alaejos». Programa de Fiestas Patronales de Alaejos, 2018."
+   "cita": "Armando Caballero Morante: «Dichos y refranes de Alaejos». Programa de Fiestas Patronales de Alaejos, 2018."
   },
   {
    "anio": "2018",
@@ -2149,14 +2142,14 @@
    "anio": "2019",
    "slug": "curiosidades-a-la-vieja-usanza",
    "titulo": "Curiosidades. A la vieja usanza",
-   "autor": "Armando Caballero",
+   "autor": "Armando Caballero Morante",
    "claves": [
     "ACA"
    ],
    "tema": 8,
    "palabras": 226,
    "pdf_pagina": 549,
-   "cita": "Armando Caballero: «Curiosidades. A la vieja usanza». Programa de Fiestas Patronales de Alaejos, 2019."
+   "cita": "Armando Caballero Morante: «Curiosidades. A la vieja usanza». Programa de Fiestas Patronales de Alaejos, 2019."
   },
   {
    "anio": "2019",
@@ -2240,14 +2233,14 @@
    "anio": "2020",
    "slug": "frases-y-dichos-populares",
    "titulo": "Frases y dichos populares",
-   "autor": "Armando Caballero",
+   "autor": "Armando Caballero Morante",
    "claves": [
     "ACA"
    ],
    "tema": 8,
    "palabras": 772,
    "pdf_pagina": 579,
-   "cita": "Armando Caballero: «Frases y dichos populares». Programa de Fiestas Patronales de Alaejos, 2020."
+   "cita": "Armando Caballero Morante: «Frases y dichos populares». Programa de Fiestas Patronales de Alaejos, 2020."
   },
   {
    "anio": "2021",
@@ -2279,14 +2272,14 @@
    "anio": "2021",
    "slug": "serafin-puertas-nuestro-escritor-desconocido",
    "titulo": "Serafín Puertas: nuestro escritor desconocido",
-   "autor": "M. G.",
+   "autor": "Mario García Guerras",
    "claves": [
-    "MG"
+    "MGR"
    ],
    "tema": 4,
    "palabras": 352,
    "pdf_pagina": 593,
-   "cita": "M. G.: «Serafín Puertas: nuestro escritor desconocido». Programa de Fiestas Patronales de Alaejos, 2021."
+   "cita": "Mario García Guerras (firmado «M. G.»): «Serafín Puertas: nuestro escritor desconocido». Programa de Fiestas Patronales de Alaejos, 2021."
   },
   {
    "anio": "2021",
